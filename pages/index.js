@@ -1,4 +1,4 @@
-//import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import Head from 'next/head'
 import Nav from 'react-bootstrap/Nav'
@@ -22,6 +22,7 @@ const Home = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
 
+        
           <Nav
             activeKey="/"
             onSelect={selectedKey => alert(`selected ${selectedKey}`)}
@@ -39,7 +40,10 @@ const Home = () => (
 
         </Navbar.Collapse>
       </Navbar>
-      <Row><Col><h1>Flowers way<br /> Країна очима велосипедистів</h1></Col></Row>
+      <Row><Col><img src="/NewProject.png" alt="Не вышло :(">
+
+        </img>
+<h1>Flowers way<br /> Країна очима велосипедистів</h1></Col></Row>
       {/* Projects */}
       <Row>
         <Col>Our Projects</Col>
