@@ -8,12 +8,13 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Navbar from 'react-bootstrap/Navbar'
+import Image from 'react-bootstrap/Image'
 
 const Home = () => (
   <div>
     <Head>
       <title>Flowers way. Країна очима велосипедистів</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/icon.ico" />
     </Head>
 
     <Container>
@@ -40,18 +41,31 @@ const Home = () => (
 
         </Navbar.Collapse>
       </Navbar>
-      <Row><Col><img src="/NewProject.png" alt="Не вышло :(">
+      <Row><Col><Image src="/IMG_0078.jpg" fluid alt="Не вышло :(">
 
-        </img>
+        </Image>
 <h1>Flowers way<br /> Країна очима велосипедистів</h1></Col></Row>
       {/* Projects */}
       <Row>
         <Col>Our Projects</Col>
       </Row>
       <Row>
-        <Col>Pathfinder</Col>
-        <Col>Blog</Col>
-        <Col>Equipment</Col>
+        <Col style={{'text-align': 'center'}}>
+          
+          <Image src="/pathfinger_350*329.png" alt="Не вышло :("></Image>
+          <div>Путівник</div>
+        </Col>
+        
+
+        <Col style={{'text-align': 'center'}}>
+          <div>Блог Flower`s way</div>
+          <Image src="/blog_350*337.png"></Image>
+        </Col>
+       
+        <Col style={{'text-align': 'center'}}>
+          <div>Велоспорядження для легких подорожей</div>
+          <Image src="/shop_350*318.png"></Image>
+        </Col>
       </Row>
       <Row>
         <Col>About Us</Col>
