@@ -28,6 +28,7 @@ const Home = () => (
             activeKey="/"
             onSelect={selectedKey => alert(`selected ${selectedKey}`)}
           >
+            
             <Nav.Item>
               <Nav.Link href="#pathfinder">Pathfinder</Nav.Link>
             </Nav.Item>
@@ -38,22 +39,31 @@ const Home = () => (
               <Nav.Link href="#shop">Shop</Nav.Link>
             </Nav.Item>
           </Nav>
+          <Image src="/line_750*50.png" fluid alt="Не вышло :(">
 
+          </Image> 
         </Navbar.Collapse>
       </Navbar>
-      <Row><Col><Image src="/IMG_0078.jpg" fluid alt="Не вышло :(">
+
+
+
+      <Row><Col>
+      <Image src="/title_1400*401.jpg" fluid alt="Не вышло :(">
 
         </Image>
 <h1>Flowers way<br /> Країна очима велосипедистів</h1></Col></Row>
       {/* Projects */}
       <Row>
-        <Col>Our Projects</Col>
+        <Col> 
+        <center> <h2 style={{color: "#ff0000"}} >Наші проекти</h2> </center>
+        </Col>
       </Row>
+      
       <Row>
         <Col style={{'text-align': 'center'}}>
-          
-          <Image src="/pathfinger_350*329.png" alt="Не вышло :("></Image>
           <div>Путівник</div>
+          <Image src="/pathfinger_350*329.png" alt="Не вышло :("></Image>
+          
         </Col>
         
 
