@@ -1,0 +1,7 @@
+name: flowers-way
+
+flowers-way:
+  component: serverless-next.js
+  inputs:
+    bucketName: flowers-way
+    domain: flowersway.com.ua
