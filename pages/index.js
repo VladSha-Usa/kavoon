@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Navbar from 'react-bootstrap/Navbar'
 import Image from 'react-bootstrap/Image'
+import Carousel from 'react-bootstrap/Carousel'
 
 import ListGroup from 'react-bootstrap/ListGroup'
 
@@ -20,12 +21,10 @@ const Home = () => (
     </Head>
 
     <Container>
-      <Navbar bg="light" expand="lg" fixed="top">
+      <Navbar bg="light" expand="lg" sticky="top">
         <Navbar.Brand href="#home">Flowers way</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-
-
           <Nav
             activeKey="/"
             onSelect={selectedKey => alert(`selected ${selectedKey}`)}
@@ -41,18 +40,9 @@ const Home = () => (
               <Nav.Link href="#shop">Shop</Nav.Link>
             </Nav.Item>
           </Nav>
-          <Image src="/line_750*50.png" fluid alt="Не вышло :(">
-
-          </Image>
         </Navbar.Collapse>
       </Navbar>
 
-
-      {/* Title */}
-      <Row variant="secondary" style={{ 'text-align': 'center' }}><Col>
-        <Image src="/title_1400*401.jpg" style={{ 'object-fit': 'cover', 'min-height': '200px' }} fluid alt="Не вышло :(" />
-        <h1>Flowers way<br /> Країна очима велосипедистів</h1>
-      </Col></Row>
       {/* Projects */}
       <Row>
         <Col className="hero">
@@ -60,6 +50,12 @@ const Home = () => (
         </Col>
       </Row>
 
+      <Row>
+        <Col style={{ 'text-align': 'center' }}>
+          <div>Cпорядження</div>
+          <Image src="/shop_350*318.png"></Image>
+        </Col>
+      </Row>
       <Row>
         <Col style={{ 'text-align': 'center' }}>
           <div>Путівник</div>
@@ -73,13 +69,51 @@ const Home = () => (
           <Image src="/blog_350*337.png"></Image>
         </Col>
 
-        <Col style={{ 'text-align': 'center' }}>
-          <div>Велоспорядження для легких подорожей</div>
-          <Image src="/shop_350*318.png"></Image>
-        </Col>
+
       </Row>
       <Row>
-        <Col>Shop</Col>
+        <Col style={{ 'text-align': 'center' }}><h1>Shop</h1></Col>
+      </Row>
+
+      <Row>
+        <Col>
+          - швидко забрудняться...<br />
+          - порвуться...<br />
+          - у іншого виробника є кращі...<br />
+          - чому на переднє колесо?<br /><br />
+
+          Це тільки частина того, що ми чули... 😱<br />
+
+          Чому ж ми вирішили робити власні сумки коли є багато готових? 🤷‍♀️<br />
+
+          Ми купили готові. Нарульна та підседільну. Але жодна з них нам не підійшла. Нарульна просто не причепилася на руль, як ми на старалися, а підседільна:<br />
+          1. Не зручно знімати/кріпити.<br />
+          2. Постійно розстібалась, за що отримала призьвисько "блюющая" 🙊 (вибачте, але виглядало саме так, коли перед твоїм велосипедом випадає купа речей з попереднього ровера)<br />
+          <br />
+          Тож, зручні та легкі вело-сумки - це мета, яку ми поставили перед собою.
+<br />
+          Наразі наші сумки мандрують світом, і довели надійність і зручність. Навіть "Двоколісні Хроники" мандрують пвденною америкою.
+
+        </Col>
+      </Row>
+
+      <Row style={{ 'height': "200px" }}>
+        <Col style={{ 'text-align': 'center', 'height': '100%' }}>
+          <Carousel>
+            <Carousel.Item style={{ 'backgroundColor': '#333333', 'height': "200px" }} >
+              <Carousel.Caption>
+                <h2>Надійні!!</h2>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item style={{'backgroundColor': '#333333', 'height': "200px" }}>
+              <Carousel.Caption>
+                <h3>Зручні</h3>
+                <p>Кріпляться на спеціальні кріплення</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </Col>
       </Row>
 
       <Row>
@@ -105,18 +139,22 @@ const Home = () => (
         </Col>
       </Row>
 
-      <Row style={{ 'text-align': 'center', 'height': '200px' }}>
-        <Col style={{ 'vertical-align': 'middle' }}>Путівник</Col>
+      <Row>
+        <Col style={{ 'text-align': 'center' }}><h1>Путівник.<br /> Країна очима велосипедистів</h1></Col>
       </Row>
-
+      <Row>
+        <Col>
+          На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
+        </Col>
+      </Row>
       <Row>
         <Container>
-          <Row  style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
-              <Image src="https://via.placeholder.com/200" style={{ 'padding': '10px 10px 10px 0px'}} alt="Не вышло :("></Image>
+              <Image src="https://via.placeholder.com/200" style={{ 'padding': '10px 10px 10px 0px' }} alt="Не вышло :("></Image>
             </Col>
             <Col>
-              <div>Супер пупуер опис маршрута1</div>
+              <h3>Мальовничий Свірж</h3>
             </Col>
           </Row>
 
@@ -124,12 +162,12 @@ const Home = () => (
       </Row>
       <Row>
         <Container>
-          <Row  style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
-              <Image src="https://via.placeholder.com/200" alt="Не вышло :(" style={{ 'padding': '10px 10px 10px 0px'}} ></Image>
+              <Image src="https://via.placeholder.com/200" alt="Не вышло :(" style={{ 'padding': '10px 10px 10px 0px' }} ></Image>
             </Col>
             <Col>
-              <div>Супер пупуер опис маршрута2</div>
+              <h2></h2>
             </Col>
           </Row>
 
@@ -137,7 +175,7 @@ const Home = () => (
       </Row>
       <Row>
         <Container>
-          <Row style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
               <Image src="https://via.placeholder.com/200" alt="Не вышло :("></Image>
             </Col>
@@ -155,11 +193,11 @@ const Home = () => (
 
       <Row>
         <Container>
-          <Row  style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
-              <Image  src="https://via.placeholder.com/200" style={{ 'padding': '10px 10px 10px 0px'}} alt="Не вышло :("></Image>
+              <Image src="https://via.placeholder.com/200" style={{ 'padding': '10px 10px 10px 0px' }} alt="Не вышло :("></Image>
             </Col>
-            <Col style={{background: "#333"}}>
+            <Col>
               <div>Супер стаття блога1</div>
             </Col>
           </Row>
@@ -168,9 +206,9 @@ const Home = () => (
       </Row>
       <Row>
         <Container>
-          <Row style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
-              <Image src="https://via.placeholder.com/200" alt="Не вышло :(" style={{ 'padding': '10px 10px 10px 0px'}} ></Image>
+              <Image src="https://via.placeholder.com/200" alt="Не вышло :(" style={{ 'padding': '10px 10px 10px 0px' }} ></Image>
             </Col>
             <Col>
               <div>Супер стаття блога2</div>
@@ -181,13 +219,13 @@ const Home = () => (
       </Row>
       <Row>
         <Container>
-          <Row style={{ 'text-align': 'left'}}>
+          <Row style={{ 'text-align': 'left' }}>
             <Col xs="auto">
               <Image src="https://via.placeholder.com/200" alt="Не вышло :("></Image>
-             
+
             </Col>
             <Col>
-            <div>Супер стаття блога3</div>
+              <div>Супер стаття блога3</div>
             </Col>
           </Row>
         </Container>
