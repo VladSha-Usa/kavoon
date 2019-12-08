@@ -1,19 +1,42 @@
 import React from 'react'
-import Link from 'next/link'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/">
-          <a>Blog</a>
-        </Link>
-      </li>
-    </ul>
-  </nav>
-)
+import { useRouter } from 'next/router'
 
-export default Nav
+const Nav1 = () => {
+  const router = useRouter()
+  return (<Navbar expand="lg" sticky="top">
+    <Navbar.Brand href="#home">Flowers way</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav
+        activeKey="/"
+        onSelect={selectedKey => {
+          const href = `/#${selectedKey}`
+          router.push(href, href, { shallow: true })
+          document.getElementById(`id_${selectedKey}`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }
+        }
+      >
+
+        <Nav.Item >
+          <Nav.Link eventKey="shop">Магазин</Nav.Link>
+          {/* <NextLink scroll={true} href="shop">Pathfinder</NextLink> */}
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="blog">Блог</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="pathfinder">Путівник</Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
+  )
+}
+
+export default Nav1
