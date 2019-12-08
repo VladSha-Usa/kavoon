@@ -1,5 +1,6 @@
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
+import Pathfinder from '../components/pathfinder'
 // import Head from 'next/head'
 // import Nav from '../components/nav'
 // import Banner from '../components/banner'
@@ -37,6 +38,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    <Pathfinder />
     <style jsx>{`uu
       header {
         display: flex;
