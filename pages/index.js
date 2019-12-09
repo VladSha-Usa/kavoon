@@ -8,7 +8,7 @@ const Home = () => {
   return (<>
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,900&display=swap" rel="stylesheet" />
     </Head>
 
     <div className="map-image">
@@ -44,15 +44,37 @@ const Home = () => {
       <div className="main page-content">
         <span className="background-text">FLOWERS<br /> WAY</span>
         <div id="left">
-          <div id="block-left">
-            <span className="flowers-way">FLOWERS</span><br />
-            <span className="flowers-way text-style-sss">WAY</span>
+          {/* <div id="block-left"> */}
+          <span className="flowers-way">FLOWERS</span><br />
+          <span className="flowers-way text-style-sss">WAY</span>
+          <div className="flex pathfinder-blog-margin-adjust">
+            <div className="pathfinder-blog-item">
+              <img src="img/blog.jpg" srcset="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
+              <div className="vertical-small-text-style blog-text-adjust">BLOG</div>
+              <div className="flex">
+                <div className="shape" />
+                <div>BLOG</div>
+                <div className="shape" />
+
+              </div>
+            </div>
+            <div className="pathfinder-blog-item">
+              <img src="img/image.jpg" srcset="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
+              <div className="vertical-small-text-style pathfinder-text-adjust">ПУТІВНИК</div>
+              <div className="flex">
+                <div className="shape" />
+                <div>ПУТІВНИК</div>
+                <div className="shape" />
+
+              </div>
+            </div>
           </div>
+          {/* </div> */}
         </div>
         <div id="right">
           <div id="block-right">
             <img src="img/shop-image.jpg" className="shop-image" />
-            <div className="shop-text">МАГАЗИН</div>
+            <div className="vertical-text-style shop-text-margin-adjust">МАГАЗИН</div>
           </div>
           <div className="text equipmnt-margin-ajust">
             <div className="shape" />
@@ -63,7 +85,7 @@ const Home = () => {
           <div className="flex where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
             <button className="button-field button-field-text" type="button">
-              {/* <img src="img/shop-icon.svg" className="shop-icon" /> */}
+              <img src="img/shop-icon.svg" className="shop-icon" />
               Shop
               </button>
           </div>
@@ -191,22 +213,36 @@ const Home = () => {
 
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -3%, rgba(255, 255, 255, 0.68) 117%), url(img/map-image.png);
       }
-      .shop-text {
-
-        position: relative;
+      .vertical-text-style {
+          position: relative;
+          object-fit: contain;
+          transform: rotate(-90deg);
+          opacity: 0.12;
+          font-family: 'Montserrat', sans-serif;;
+          font-size: 70px;
+          font-weight: 900;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 0.57;
+          letter-spacing: 0.82px;
+          color: #296fdc;
+      }
+      .vertical-small-text-style {
         object-fit: contain;
-        left: 180px;
-        top: -210px;
         transform: rotate(-90deg);
         opacity: 0.12;
-        font-family: 'Montserrat', sans-serif;;
-        font-size: 70px;
+        font-family: Montserrat;
+        font-size: 36px;
         font-weight: 900;
         font-stretch: normal;
         font-style: normal;
-        line-height: 0.57;
-        letter-spacing: 0.82px;
+        line-height: 1.11;
+        letter-spacing: 1.68px;
         color: #296fdc;
+      }
+      .shop-text-margin-adjust {
+        left: 177px;
+        top: -183px;
       }
 
       .shop-image {
@@ -247,6 +283,7 @@ const Home = () => {
         background-color: #1831aa;
       }
       .shop-icon {
+        margin-right: 12px;
         width: 20px;
         height: 20px;
         object-fit: contain;
@@ -286,7 +323,34 @@ const Home = () => {
         text-transform: uppercase;
         color: #061434;
       }
-
+      .pathfinder-blog-image {
+        border-radius: 10px;
+        position: relative;
+        width: 250px;
+        height: 200px;
+        object-fit: contain;
+        box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
+        z-index: 1;
+      }
+      .pathfinder-blog-margin-adjust {
+        margin-top: 70px;
+      }
+      .pathfinder-blog-item {
+        margin-right: 45px;
+        width: 280px;
+        height: 244px;
+      }
+      .blog-text-adjust {
+        position: relative;
+        left: 120px;
+        top: -160px;
+      }
+      .pathfinder-text-adjust {
+        position: relative;
+        left: 120px;
+        top: -160px;
+      }
+      
     `}
     </style>
   </>)
