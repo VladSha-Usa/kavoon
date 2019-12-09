@@ -50,7 +50,7 @@ const Home = () => {
           <div className="flex pathfinder-blog-margin-adjust">
             <div className="pathfinder-blog-item">
               <img src="img/blog.jpg" srcset="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
-              <div className="vertical-small-text-style blog-text-adjust">BLOG</div>
+              <div className="blog-vertical-text-style blog-text-adjust">BLOG</div>
               <div className="flex">
                 <div className="shape" />
                 <div>BLOG</div>
@@ -60,8 +60,8 @@ const Home = () => {
             </div>
             <div className="pathfinder-blog-item">
               <img src="img/image.jpg" srcset="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
-              <div className="vertical-small-text-style pathfinder-text-adjust">ПУТІВНИК</div>
-              <div className="flex">
+              <div className="pathfinder-vertical-text-style pathfinder-text-adjust">ПУТІВНИК</div>
+              <div className="text equipmnt-margin-ajust">
                 <div className="shape" />
                 <div>ПУТІВНИК</div>
                 <div className="shape" />
@@ -73,7 +73,7 @@ const Home = () => {
         </div>
         <div id="right">
           <div id="block-right">
-            <img src="img/shop-image.jpg" className="shop-image" />
+            <img src="img/shop-image.jpg" srcset="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x" className="shop-image" />
             <div className="vertical-text-style shop-text-margin-adjust">МАГАЗИН</div>
           </div>
           <div className="text equipmnt-margin-ajust">
@@ -227,19 +227,6 @@ const Home = () => {
           letter-spacing: 0.82px;
           color: #296fdc;
       }
-      .vertical-small-text-style {
-        object-fit: contain;
-        transform: rotate(-90deg);
-        opacity: 0.12;
-        font-family: Montserrat;
-        font-size: 36px;
-        font-weight: 900;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.11;
-        letter-spacing: 1.68px;
-        color: #296fdc;
-      }
       .shop-text-margin-adjust {
         left: 177px;
         top: -183px;
@@ -272,6 +259,10 @@ const Home = () => {
         margin-right: 43px;
        }
       .flex {
+        display: flex;
+        align-items: center;
+       }
+       .center {
         display: flex;
         align-items: center;
        }
@@ -350,7 +341,32 @@ const Home = () => {
         left: 120px;
         top: -160px;
       }
-      
+      .pathfinder-vertical-text-style {
+        object-fit: contain;
+        transform: rotate(-90deg);
+        opacity: 0.12;
+        font-family: Montserrat;
+        font-size: 33px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.21;
+        letter-spacing: 1.54px;
+        color: #296fdc;
+      }
+      .blog-vertical-text-style {
+        object-fit: contain;
+        transform: rotate(-90deg);
+        opacity: 0.12;
+        font-family: Montserrat;
+        font-size: 36px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.11;
+        letter-spacing: 1.68px;
+        color: #296fdc;
+      }
     `}
     </style>
   </>)
