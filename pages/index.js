@@ -1,6 +1,9 @@
+import '../components/styleguide.css'
+
 import React from 'react'
 import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const headerHegith = 110
 
@@ -11,8 +14,8 @@ const Home = () => {
       <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,900&display=swap" rel="stylesheet" />
     </Head>
 
-    <div className="map-image">
-      <header >
+    <div className="map-image" >
+      <header className="nav-menu-title">
         <div>
           <nav style={{ justifyContent: 'flex-start' }}>
             left
@@ -20,74 +23,71 @@ const Home = () => {
           <nav style={{ justifyContent: 'flex-start' }}>
             left
           </nav>
-          <nav style={{ width: "90px", marginLeft: "auto", justifyContent: 'flex-center' }}>
-            <a href="#">Магазин</a>
+          <nav style={{ marginLeft: "auto", justifyContent: 'flex-center' }}>
+            <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
           </nav>
-          <nav style={{ width: "90px", margin: "40px", justifyContent: 'flex-center' }}>
-            <a href="#">Путівник</a>
+          <nav style={{ margin: "40px", justifyContent: 'flex-center' }}>
+            <Link disabled href="#">Путівник</Link>
           </nav>
-          <nav style={{ width: "90px", marginRight: "auto", justifyContent: 'flex-center' }}>
-            <a href="#">Блог</a>
-          </nav>
-          <nav style={{ justifyContent: 'flex-end' }}>
-
-            <img src="img/tg.svg"
-              className="TG" />
-
+          <nav style={{ marginRight: "auto", justifyContent: 'flex-center' }}>
+            <span className="disabled">Блог</span>
           </nav>
           <nav style={{ justifyContent: 'flex-end' }}>
-            rightNav
+            <a href="#">
+              <img src="img/tg.svg"
+                className="TG" />
+            </a>
           </nav>
+
         </div>
       </header>
 
       <div className="main page-content">
         <span className="background-text">FLOWERS<br /> WAY</span>
         <div id="left">
-          {/* <div id="block-left"> */}
           <span className="flowers-way">FLOWERS</span><br />
           <span className="flowers-way text-style-sss">WAY</span>
           <div className="flex pathfinder-blog-margin-adjust">
             <div className="pathfinder-blog-item">
-              <img src="img/blog.jpg" srcset="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
-              <div className="blog-vertical-text-style blog-text-adjust">BLOG</div>
-              <div className="flex">
-                <div className="shape" />
-                <div>BLOG</div>
-                <div className="shape" />
-
+              <img src="img/blog.jpg" srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
+              <div className="blog-vertical-text-style pathfinder-blog-text-adjust">BLOG</div>
+              <div className="flex pathfinder-blog-text-margin-adjust">
+                <div className="shape-left" />
+                <div className="text">BLOG</div>
+                <div className="shape-right" /> 
               </div>
             </div>
             <div className="pathfinder-blog-item">
-              <img src="img/image.jpg" srcset="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
-              <div className="pathfinder-vertical-text-style pathfinder-text-adjust">ПУТІВНИК</div>
-              <div className="text equipmnt-margin-ajust">
-                <div className="shape" />
-                <div>ПУТІВНИК</div>
-                <div className="shape" />
+              <img src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
+              <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
+              <div className="flex pathfinder-blog-text-margin-adjust">
+                <div className="shape-left" />
+                <div className="text">ПУТІВНИК</div>
+                <div className="shape-right" />
 
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
         <div id="right">
           <div id="block-right">
-            <img src="img/shop-image.jpg" srcset="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x" className="shop-image" />
+            <img src="img/shop-image.jpg" srcSet="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x" className="shop-image" />
             <div className="vertical-text-style shop-text-margin-adjust">МАГАЗИН</div>
           </div>
-          <div className="text equipmnt-margin-ajust">
-            <div className="shape" />
-            <div>Велоспорядження для легких подорожей </div>
-            <div className="shape" />
+          <div className="equipmnt-margin-ajust">
+            <div className="shape-left" />
+            <div className="text">Велоспорядження<br />для легких подорожей </div>
+            <div className="shape-right" />
 
           </div>
           <div className="flex where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
-            <button className="button-field button-field-text" type="button">
-              <img src="img/shop-icon.svg" className="shop-icon" />
-              Shop
-              </button>
+            <a href="#" className="button-field button-field-text">
+              <div className="center">
+                <img src="img/shop-icon.svg" className="shop-icon" />
+                Shop
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -97,16 +97,6 @@ const Home = () => {
     </div>
 
     <style jsx>{`
-      nav {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 0.79px;
-        color: #061434;
-      }
       header {
         height: ${headerHegith}px;
         position: fixed;
@@ -264,12 +254,30 @@ const Home = () => {
        }
        .center {
         display: flex;
+        margins: auto;
         align-items: center;
        }
 
-      .shape {
-        margin: 2px;
-        width: 25px;
+      //  .left {
+      //   margin-left: auto;
+      //   margin-right: 10px;
+      // }
+      // .right {
+      //   margin-left: 10px;
+      //   margin-right: auto;
+      // }
+       
+      .shape-left {
+        margin-left: auto;
+        margin-right: 10px;
+        width: 15px;
+        height: 2px;
+        background-color: #1831aa;
+      }
+      .shape-right {
+        margin-left: 10px;
+        margin-right: auto;
+        width: 15px;
         height: 2px;
         background-color: #1831aa;
       }
@@ -326,17 +334,16 @@ const Home = () => {
       .pathfinder-blog-margin-adjust {
         margin-top: 70px;
       }
+      .pathfinder-blog-text-margin-adjust {
+        margin-top: -30px;
+        width: 250px;
+       }
       .pathfinder-blog-item {
         margin-right: 45px;
         width: 280px;
         height: 244px;
       }
-      .blog-text-adjust {
-        position: relative;
-        left: 120px;
-        top: -160px;
-      }
-      .pathfinder-text-adjust {
+      .pathfinder-blog-text-adjust {
         position: relative;
         left: 120px;
         top: -160px;

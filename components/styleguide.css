@@ -1,0 +1,102 @@
+:root {
+    --texticonscolor: #040f2a;
+    --shadow: rgba(9, 21, 85, 0.2);
+    --primarycolor: #1831aa;
+    --transparency: #296fdc;
+    --light-blue-grey: #b9c8e2;
+}
+
+.flowers-Way-Caption {
+    font-family: ArchivoBlack;
+    font-size: 128px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: 5.98px;
+    color: var(--texticonscolor);
+}
+
+.text-style {
+    font-family: ArchivoBlack;
+    font-size: 128px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: 5.98px;
+    color: var(--primarycolor);
+}
+
+.back-title {
+    font-family: Montserrat;
+    font-size: 70px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.57;
+    letter-spacing: 0.82px;
+    color: var(--transparency);
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    color: var(--texticonscolor);
+}
+
+.nav-menu-title {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.79px;
+    color: #061434;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.nav-menu-title a:link {
+    color: #061434;
+}
+
+.nav-menu-title a:visited {
+    color: #061434;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.nav-menu-title a:hover {
+    color: var(--primarycolor);
+}
+
+/* .Nav-menu-title a:hover {
+  color: var(--primarycolor);
+} */
+
+.Prodg-style {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: 0.79px;
+    text-align: center;
+    color: #061434;
+}
