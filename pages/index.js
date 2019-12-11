@@ -18,6 +18,23 @@ const setActive = (active, id) => () => {
 }
 
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
+  authDomain: "flowers-way.firebaseapp.com",
+  databaseURL: "https://flowers-way.firebaseio.com",
+  projectId: "flowers-way",
+  storageBucket: "flowers-way.appspot.com",
+  messagingSenderId: "305623494289",
+  appId: "1:305623494289:web:fa6954b42047c910079930",
+  measurementId: "G-PSBJYP7E5X"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+console.log(firebase)
+
+
 
 const Home = () => {
 
@@ -25,6 +42,8 @@ const Home = () => {
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,900&display=swap" rel="stylesheet" />
+      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     </Head>
 
     <div className="map-image" >
@@ -92,7 +111,7 @@ const Home = () => {
                 <div className="shape-right" />
               </div>
             </div>
-            <div className="pathfinder-blog-item" onMouseEnter={setActive(true, "pathfinder-img") } onMouseLeave = { setActive(false, "pathfinder-img") }>
+            <div className="pathfinder-blog-item" onMouseEnter={setActive(true, "pathfinder-img")} onMouseLeave={setActive(false, "pathfinder-img")}>
               <a href="#">
                 <img id="pathfinder-img" src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
                 <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
@@ -103,6 +122,11 @@ const Home = () => {
                 </div>
               </a>
             </div>
+            {/* <div className="">
+              <a href="#">
+                <img src="img/scroll-down.svg" class="scroll-down"/>
+              </a>
+            </div> */}
           </div>
         </div>
         <div id="right">
@@ -406,6 +430,12 @@ const Home = () => {
         line-height: 1.11;
         letter-spacing: 1.68px;
         color: #296fdc;
+      }
+
+      .scroll-down {
+        width: 45px;
+        height: 160px;
+        object-fit: contain;
       }
     `}
     </style>
