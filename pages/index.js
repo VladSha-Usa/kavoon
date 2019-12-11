@@ -159,6 +159,7 @@ const Home = () => {
         padding-top: ${headerHegith + 40}px;
         background-color: transparent;
       }
+      
       .flowers-way {
         font-family: 'Archivo Black', sans-serif;
         font-size: 128px;
@@ -169,7 +170,11 @@ const Home = () => {
         letter-spacing: 5.98px;
         color: #040f2a;
       }
-      
+      @media only screen and (max-width: 1166px) {
+        .flowers-way {
+          font-size: 100px;
+        }
+      }
       .text-style-sss {
         color: #1831aa;
       }
@@ -192,32 +197,17 @@ const Home = () => {
       #left {
         position: relative;
         justify-content: flex-start;
-        margin-left: 0px;
         margin-right: auto;
-        //width: 100%;
-        //height: 500px;
-        //background-color: rgba(0,255, 255, 0.3);
       }
       #right {
         position: relative;
         justify-content: flex-end;
         margin-top: 20px;
         width: 360px;
-        //margin: auto;
-        //height: 400px;
-        //background-color: rgba(255,255, 0, 0.3);
-      }
-      #block-left {
-        //position: relative;
-        // width: 250px;
-        // height: 250px;
       }
       #block-right {
-        //display: flex;
         position: relative;
-         width: 320px;
-        // height: 400px;
-        //background-color: black;
+        width: 320px;
       }
 
       .map-image {
