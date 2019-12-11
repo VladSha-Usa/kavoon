@@ -7,7 +7,20 @@ import Link from 'next/link'
 
 const headerHegith = 100
 
+
+const setActive = (active, id) => () => {
+  const element = document.getElementById(id);
+  if (active) {
+    element.classList.add("pathfinder-blog-item-hover");
+  } else {
+    element.classList.remove("pathfinder-blog-item-hover")
+  }
+}
+
+
+
 const Home = () => {
+
   return (<>
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
@@ -24,7 +37,7 @@ const Home = () => {
               </a>
             </nav>
           </div>
-          <div className="flex" style={{ position: "relative", margin:"auto" }}>
+          <div className="flex" style={{ position: "relative", margin: "auto" }}>
             <nav style={{ margin: "20px" }} className="nav-menu-title-underline" >
               <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
             </nav>
@@ -79,16 +92,14 @@ const Home = () => {
                 <div className="shape-right" />
               </div>
             </div>
-            <div className="pathfinder-blog-item">
-              <a href="">
-                <img src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
+            <div className="pathfinder-blog-item" onMouseEnter={setActive(true, "pathfinder-img") } onMouseLeave = { setActive(false, "pathfinder-img") }>
+              <a href="#">
+                <img id="pathfinder-img" src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
                 <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
                 <div className="flex pathfinder-blog-text-margin-adjust">
                   <div className="shape-left" />
                   <div className="text">ПУТІВНИК</div>
                   <div className="shape-right" />
-
-
                 </div>
               </a>
             </div>
@@ -136,7 +147,7 @@ const Home = () => {
         height: 100%;
       }
       .page-content {
-        min-width: 1066px;
+        //min-width: 1066px;
         max-width: 1166px;
         margin: auto;
         width: 100%;
@@ -144,7 +155,6 @@ const Home = () => {
       .main {
         height: 100vh;
         display: flex;
-        //justify-content: center;
         position: relative;
         padding-top: ${headerHegith + 40}px;
         background-color: transparent;
@@ -356,7 +366,7 @@ const Home = () => {
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
         z-index: 1;
       }
-       .pathfinder-blog-item-hover {
+      .pathfinder-blog-item-hover {
         width: 250px;
         height: 200px;
         margin: -1px;
