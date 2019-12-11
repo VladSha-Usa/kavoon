@@ -5,7 +5,7 @@ import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const headerHegith = 110
+const headerHegith = 100
 
 const Home = () => {
   return (<>
@@ -16,28 +16,50 @@ const Home = () => {
 
     <div className="map-image" >
       <header className="nav-menu-title">
-        <div>
-          <nav style={{ justifyContent: 'flex-start' }}>
-            left
-          </nav>
-          <nav style={{ justifyContent: 'flex-start' }}>
-            left
-          </nav>
-          <nav style={{ marginLeft: "auto", justifyContent: 'flex-center' }}>
-            <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
-          </nav>
-          <nav style={{ margin: "40px", justifyContent: 'flex-center' }}>
-            <Link disabled href="#">Путівник</Link>
-          </nav>
-          <nav style={{ marginRight: "auto", justifyContent: 'flex-center' }}>
-            <span className="disabled">Блог</span>
-          </nav>
-          <nav style={{ justifyContent: 'flex-end' }}>
-            <a href="#">
-              <img src="img/tg.svg"
-                className="TG" />
-            </a>
-          </nav>
+        <div className="page-content header-page flex">
+          <div style={{ width: "220px", justifyContent: "flex-start" }}>
+            <nav >
+              <a href="#">
+                <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x" />
+              </a>
+            </nav>
+          </div>
+          <div className="flex" style={{ position: "relative", margin:"auto" }}>
+            <nav style={{ margin: "20px" }} className="nav-menu-title-underline" >
+              <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
+            </nav>
+            <nav style={{ margin: "20px" }} className="nav-menu-title-underline">
+              <a href="#">Путівник</a>
+            </nav>
+            <nav style={{ margin: "20px" }} >
+              <span className="disabled">Блог</span>
+            </nav>
+          </div>
+          <div className="flex" style={{ width: "220px", justifyContent: "flex-end" }}>
+
+            <nav style={{ width: "50px", height: "40px" }}>
+              <a href="#">
+                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+                  className="TG" />
+              </a>
+
+            </nav>
+
+            <nav style={{ width: "50px", height: "40px" }}>
+              <a href="#">
+                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+                  className="TG" />
+              </a>
+
+            </nav>
+            <nav style={{ width: "50px", height: "40px" }}>
+              <a href="#">
+                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+                  className="TG" />
+              </a>
+
+            </nav>
+          </div>
 
         </div>
       </header>
@@ -48,24 +70,27 @@ const Home = () => {
           <span className="flowers-way">FLOWERS</span><br />
           <span className="flowers-way text-style-sss">WAY</span>
           <div className="flex pathfinder-blog-margin-adjust">
-            <div className="pathfinder-blog-item">
+            <div className="pathfinder-blog-item disabled">
               <img src="img/blog.jpg" srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
               <div className="blog-vertical-text-style pathfinder-blog-text-adjust">BLOG</div>
               <div className="flex pathfinder-blog-text-margin-adjust">
                 <div className="shape-left" />
                 <div className="text">BLOG</div>
-                <div className="shape-right" /> 
+                <div className="shape-right" />
               </div>
             </div>
             <div className="pathfinder-blog-item">
-              <img src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
-              <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
-              <div className="flex pathfinder-blog-text-margin-adjust">
-                <div className="shape-left" />
-                <div className="text">ПУТІВНИК</div>
-                <div className="shape-right" />
+              <a href="">
+                <img src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
+                <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
+                <div className="flex pathfinder-blog-text-margin-adjust">
+                  <div className="shape-left" />
+                  <div className="text">ПУТІВНИК</div>
+                  <div className="shape-right" />
 
-              </div>
+
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -82,10 +107,10 @@ const Home = () => {
           </div>
           <div className="flex where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
-            <a href="#" className="button-field button-field-text">
-              <div className="center">
-                <img src="img/shop-icon.svg" className="shop-icon" />
-                Shop
+            <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">
+              <div className="button-field button-field-text flex">
+                <img style={{ marginLeft: "auto", marginRight: "6px" }} src="img/shop-icon.svg" className="shop-icon" />
+                <div style={{ marginRight: "auto", marginLeft: "6px" }}>Shop</div>
               </div>
             </a>
           </div>
@@ -106,14 +131,9 @@ const Home = () => {
         width: 100%;
       }
       
-      header div {
+      .header-page {
         align-items: center;
-        display: flex;
         height: 100%;
-        width: 100%;
-        min-width: 1066px;
-        max-width: 1166px;
-        margin: auto;
       }
       .page-content {
         min-width: 1066px;
@@ -126,7 +146,7 @@ const Home = () => {
         display: flex;
         //justify-content: center;
         position: relative;
-        padding-top: ${headerHegith + 30}px;
+        padding-top: ${headerHegith + 40}px;
         background-color: transparent;
       }
       .flowers-way {
@@ -258,14 +278,14 @@ const Home = () => {
         align-items: center;
        }
 
-      //  .left {
-      //   margin-left: auto;
-      //   margin-right: 10px;
-      // }
-      // .right {
-      //   margin-left: 10px;
-      //   margin-right: auto;
-      // }
+       .margins-left {
+        margin-left: auto;
+        margin-right: 10px;
+      }
+      .margins-right {
+        margin-left: 10px;
+        margin-right: auto;
+      }
        
       .shape-left {
         margin-left: auto;
@@ -288,12 +308,17 @@ const Home = () => {
         object-fit: contain;
       }
       .button-field {
+        position: relative;
+        left:20px;
+        top: 0px;
         width: 180px;
         height: 50px;
-        margin-left: 20px;
         border-radius: 25px;
         box-shadow: 0 14px 24px 0 rgba(13, 26, 113, 0.25);
         background-color: #1831aa;
+      }
+      .button-field :hover{
+          background-color: #3653e2;
       }
       .button-field-text {
         font-family: Montserrat;
@@ -331,6 +356,13 @@ const Home = () => {
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
         z-index: 1;
       }
+       .pathfinder-blog-item-hover {
+        width: 250px;
+        height: 200px;
+        margin: -1px;
+        border: solid 1px var(--primarycolor);
+      }
+
       .pathfinder-blog-margin-adjust {
         margin-top: 70px;
       }
@@ -343,6 +375,7 @@ const Home = () => {
         width: 280px;
         height: 244px;
       }
+     
       .pathfinder-blog-text-adjust {
         position: relative;
         left: 120px;

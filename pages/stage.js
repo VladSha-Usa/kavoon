@@ -2,46 +2,50 @@ import React from 'react'
 import Head from 'next/head'
 
 const Stage = () => {
-return (<>
+  return (<>
     <Head>
-        <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
     </Head>
-    <div className="shop-text">МАГАЗИН</div>
-    <div className="where-buy-text">МАГАЗИН</div>
-    <style jsx>{`
-      .shop-text {
 
-        position: relative;
-        object-fit: contain;
-        // left: 180px;
-        // top: -210px;
-    //transform: rotate(-90deg);
-        opacity: 0.12;
-        font-family: 'Montserrat', sans-serif;;
-        font-size: 70px;
-        font-weight: 900;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 0.57;
-        letter-spacing: 0.82px;
-        color: #296fdc;
+      <a href="">
+        <div href="#" className="button-field button-field-text">
+          <img style={{ marginLeft: "auto", marginRight: "6px" }} src="img/shop-icon.svg" className="shop-icon" />
+        <div style={{ marginRight: "auto", marginLeft: "6px" }}>Shop</div>
+        </div>
+      </a>
+
+    <style jsx>{`
+      .button-field {
+        align-items: center;
+        display: flex;
+        width: 180px;
+        height: 50px;
+        border-radius: 25px;
+        box-shadow: 0 14px 24px 0 rgba(13, 26, 113, 0.25);
+        background-color: #1831aa; 
       }
-       .where-buy-text {
-        // width: 124px;
-        // height: 22px;
+      .shop-icon {
+        width: 20px;
+        height: 22px;
+        object-fit: contain;
+      }
+      .button-field :hover{
+          background-color: #3653e2;
+      }
+      .button-field-text {
         font-family: Montserrat;
         font-size: 17px;
-        font-weight: 600;
+        font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.29;
+        line-height: normal;
         letter-spacing: 0.79px;
         text-transform: uppercase;
-        color: #061434;
+        color: #ffffff;
       }
     `}</style>
-</>)
+  </>)
 }
 
 

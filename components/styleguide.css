@@ -59,6 +59,7 @@ h2 {
     line-height: normal;
     letter-spacing: 0.79px;
     color: #061434;
+    position: relative;
 }
 
 a:link {
@@ -77,12 +78,53 @@ a:visited {
     color: #061434;
 }
 
+/* h1 {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1:hover::after {
+    width: 100%;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: black;
+} */
+
 .disabled {
     opacity: 0.5;
 }
 
 .nav-menu-title a:hover {
     color: var(--primarycolor);
+}
+
+.nav-menu-title-underline a::after {
+    content: "";
+    display: block;
+    position: relative;
+    bottom: -8px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background: var(--primarycolor);
+}
+
+.nav-menu-title-underline a:hover::after {
+    width: 100%;
+}
+
+.viber {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 /* .Nav-menu-title a:hover {

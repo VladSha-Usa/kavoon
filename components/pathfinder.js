@@ -13,7 +13,7 @@ const objects = [
 const Pathfinder = () => (
     <>
         <div>
-            <div style={{ 'text-align': 'center' }}><h1>Путівник.<br /> Країна очима велосипедистів</h1></div>
+            <div style={{ 'textAlign': 'center' }}><h1>Путівник.<br /> Країна очима велосипедистів</h1></div>
         </div>
         <div>
             На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
