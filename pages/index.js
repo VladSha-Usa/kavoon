@@ -1,9 +1,8 @@
 import '../components/styleguide.css'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
-import Link from 'next/link'
 
 const headerHegith = 100
 
@@ -17,27 +16,37 @@ const setActive = (active, id) => () => {
   }
 }
 
+const setImage = (active, id) => (el1) => {
+  
+  const element = document.getElementById(id);
+  console.log(el1 == element)
+  if (active) {
+    element.src = `img/${id}.svg`
+  } else {
+    element.src = `img/${id}-hover.svg`
+  }
+}
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
-  authDomain: "flowers-way.firebaseapp.com",
-  databaseURL: "https://flowers-way.firebaseio.com",
-  projectId: "flowers-way",
-  storageBucket: "flowers-way.appspot.com",
-  messagingSenderId: "305623494289",
-  appId: "1:305623494289:web:fa6954b42047c910079930",
-  measurementId: "G-PSBJYP7E5X"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-console.log(firebase)
+const onScroll = () => {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("home").classList.add("header-border");
+  } else {
+    document.getElementById("home").classList.remove("header-border");
+  }
+}
 
-
+const preloadImage = (url) => {
+  new Image().src = url
+}
 
 const Home = () => {
-
+  useEffect(() => {
+    document.onscroll = onScroll;
+    
+    preloadImage('img/viber.svg')
+    preloadImage('img/instagram.svg')
+    preloadImage('img/facebook.svg')
+  });
   return (<>
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
@@ -46,12 +55,12 @@ const Home = () => {
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     </Head>
 
-    <div className="map-image" >
+    <div id="home" className="map-image">
       <header className="nav-menu-title">
         <div className="page-content header-page flex">
           <div style={{ width: "220px", justifyContent: "flex-start" }}>
             <nav >
-              <a href="#">
+              <a href="#home">
                 <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x" />
               </a>
             </nav>
@@ -69,24 +78,30 @@ const Home = () => {
           </div>
           <div className="flex" style={{ width: "220px", justifyContent: "flex-end" }}>
 
-            <nav style={{ width: "50px", height: "40px" }}>
-              <a href="#">
-                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+            <nav style={{ width: "50px", height: "40px" }} >
+              <a  href="#" >
+                <img id="viber" src="img/viber.svg" 
+                  onMouseEnter={setImage(false, "viber")}
+                  onMouseLeave={setImage(true, "viber")} 
                   className="TG" />
               </a>
 
             </nav>
 
             <nav style={{ width: "50px", height: "40px" }}>
-              <a href="#">
-                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+              <a href="http://instagram.com/flowers__way/">
+                <img id="instagram" src="img/instagram.svg"
+                  onMouseEnter={setImage(false, "instagram")}
+                  onMouseLeave={setImage(true, "instagram")} 
                   className="TG" />
               </a>
 
             </nav>
             <nav style={{ width: "50px", height: "40px" }}>
-              <a href="#">
-                <img src="img/viber.svg" style={{ fill: "#AB7C94" }}
+              <a href="https://www.facebook.com/ovchynnikova.nadiia/">
+                <img id="facebook" src="img/facebook.svg"
+                  onMouseEnter={setImage(false, "facebook")}
+                  onMouseLeave={setImage(true, "facebook")} 
                   className="TG" />
               </a>
 
@@ -152,7 +167,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="page-content text"><Pathfinder /> </div>
+      <div id="pathfinder" className="page-content text"><Pathfinder /> </div>
 
     </div>
 
@@ -165,7 +180,6 @@ const Home = () => {
         left: 0;
         width: 100%;
       }
-      
       .header-page {
         align-items: center;
         height: 100%;
