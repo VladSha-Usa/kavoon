@@ -39,7 +39,7 @@
     color: var(--transparency);
 }
 
-h2 {
+.text-style-caption {
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 600;
@@ -48,6 +48,13 @@ h2 {
     line-height: normal;
     letter-spacing: 0.84px;
     color: var(--texticonscolor);
+    text-transform: uppercase;
+}
+
+.caption-adjust {
+    position: relative;
+    top: -90px;
+    left: 20px;
 }
 
 .nav-menu-title {

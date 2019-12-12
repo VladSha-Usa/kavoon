@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
 
-const headerHegith = 100
+const headerHegith = 80
 
 
 const setActive = (active, id) => () => {
@@ -47,19 +47,19 @@ const Home = () => {
     preloadImage('img/instagram.svg')
     preloadImage('img/facebook.svg')
 
-    var firebaseConfig = {
-      apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
-      authDomain: "flowers-way.firebaseapp.com",
-      databaseURL: "https://flowers-way.firebaseio.com",
-      projectId: "flowers-way",
-      storageBucket: "flowers-way.appspot.com",
-      messagingSenderId: "305623494289",
-      appId: "1:305623494289:web:fa6954b42047c910079930",
-      measurementId: "G-PSBJYP7E5X"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig)
-    firebase.analytics()
+    // var firebaseConfig = {
+    //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
+    //   authDomain: "flowers-way.firebaseapp.com",
+    //   databaseURL: "https://flowers-way.firebaseio.com",
+    //   projectId: "flowers-way",
+    //   storageBucket: "flowers-way.appspot.com",
+    //   messagingSenderId: "305623494289",
+    //   appId: "1:305623494289:web:fa6954b42047c910079930",
+    //   measurementId: "G-PSBJYP7E5X"
+    // };
+    // // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig)
+    // firebase.analytics()
 
   });
   return (<>
@@ -132,32 +132,33 @@ const Home = () => {
         <div id="left">
           <span className="flowers-way">FLOWERS</span><br />
           <span className="flowers-way text-style-sss">WAY</span>
-          <div className="flex pathfinder-blog-margin-adjust">
+          <span className="text-style-caption caption-adjust">Країна очима велосипедистів</span>
+          <div className="pathfinder-blog-margin-adjust flex">
             <div className="pathfinder-blog-item disabled">
               <img src="img/blog.jpg" srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x" className="pathfinder-blog-image" />
               <div className="blog-vertical-text-style pathfinder-blog-text-adjust">BLOG</div>
-              <div className="flex pathfinder-blog-text-margin-adjust">
+              <div className="flex center-vertically pathfinder-blog-text-margin-adjust">
                 <div className="shape-left" />
                 <div className="text">BLOG</div>
                 <div className="shape-right" />
               </div>
             </div>
-            <div className="pathfinder-blog-item" onMouseEnter={setActive(true, "pathfinder-img")} onMouseLeave={setActive(false, "pathfinder-img")}>
+            <div className="pathfinder-blog-item " onMouseEnter={setActive(true, "pathfinder-img")} onMouseLeave={setActive(false, "pathfinder-img")}>
               <a href="#">
                 <img id="pathfinder-img" src="img/image.jpg" srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x" className="pathfinder-blog-image" />
                 <div className="pathfinder-vertical-text-style pathfinder-blog-text-adjust">ПУТІВНИК</div>
-                <div className="flex pathfinder-blog-text-margin-adjust">
+                <div className="flex center-vertically pathfinder-blog-text-margin-adjust">
                   <div className="shape-left" />
                   <div className="text">ПУТІВНИК</div>
                   <div className="shape-right" />
                 </div>
               </a>
             </div>
-            {/* <div className="">
+            <div className="scroll-down">
               <a href="#">
-                <img src="img/scroll-down.svg" class="scroll-down"/>
+                <img src="img/scroll-down.svg"  />
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
         <div id="right">
@@ -171,10 +172,10 @@ const Home = () => {
             <div className="shape-right" />
 
           </div>
-          <div className="flex where-buy-area" >
+          <div className="flex center-vertically where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
             <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">
-              <div className="button-field button-field-text flex">
+              <div className="button-field button-field-text center-vertically flex">
                 <img style={{ marginLeft: "auto", marginRight: "6px" }} src="img/shop-icon.svg" className="shop-icon" />
                 <div style={{ marginRight: "auto", marginLeft: "6px" }}>Shop</div>
               </div>
@@ -182,11 +183,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div id="pathfinder" className="page-content text"><Pathfinder /> </div>
-
     </div>
-
+    {/* <div id="pathfinder" className="page-content text"><Pathfinder /> </div> */}
     <style jsx>{`
       header {
         height: ${headerHegith}px;
@@ -207,11 +205,10 @@ const Home = () => {
         width: 100%;
       }
       .main {
-        height: 100vh;
         display: flex;
         position: relative;
         padding-top: ${headerHegith + 40}px;
-        background-color: transparent;
+        margin-bottom: auto;
       }
       
       .flowers-way {
@@ -223,14 +220,6 @@ const Home = () => {
         line-height: 1.18;
         letter-spacing: 5.98px;
         color: #040f2a;
-      }
-      @media only screen and (max-width: 1166px) {
-        .flowers-way {
-          font-size: 100px;
-        }
-      }
-      .text-style-sss {
-        color: #1831aa;
       }
       .background-text {
         position: absolute;
@@ -245,13 +234,53 @@ const Home = () => {
         line-height: 0.88;
         letter-spacing: 8.6px;
         color: #296fdc;
-
-        //background-color: rgba(0,0, 255, 0.1);
       }
+      .pathfinder-blog-item {
+        margin-right: 45px;
+        width: 280px;
+        height: 244px;
+      }
+      .pathfinder-item-adjust {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+      .blog-item-adjust {
+        position: absolute;
+        left: 327px;
+        top: 0px;
+      }
+      @media only screen and (max-width: 1166px) {
+        .flowers-way {
+          font-size: 100px;
+        }
+        .background-text {
+          font-size: 140px;
+        }
+        .text-style-caption {
+            font-size: 14px;
+        }
+
+        .caption-adjust {
+            position: relative;
+            top: -60px;
+            left: 20px;
+        }
+        .pathfinder-blog-item {
+          margin-right: 25px;
+          width: 260px;
+          height: 244px;
+        }
+      }
+      .text-style-sss {
+        color: #1831aa;
+      }
+     
       #left {
         position: relative;
         justify-content: flex-start;
         margin-right: auto;
+        margin-bottom: auto;
       }
       #right {
         position: relative;
@@ -324,9 +353,11 @@ const Home = () => {
        }
       .flex {
         display: flex;
+      }
+      .center-vertically {
         align-items: center;
-       }
-       .center {
+      }
+      .center {
         display: flex;
         margins: auto;
         align-items: center;
@@ -411,24 +442,20 @@ const Home = () => {
         z-index: 1;
       }
       .pathfinder-blog-item-hover {
-        width: 250px;
-        height: 200px;
         margin: -1px;
         border: solid 1px var(--primarycolor);
       }
 
       .pathfinder-blog-margin-adjust {
-        margin-top: 70px;
+        top: 55px;
+        height: 100%;
+        position: relative;
       }
       .pathfinder-blog-text-margin-adjust {
         margin-top: -30px;
         width: 250px;
        }
-      .pathfinder-blog-item {
-        margin-right: 45px;
-        width: 280px;
-        height: 244px;
-      }
+      
      
       .pathfinder-blog-text-adjust {
         position: relative;
@@ -463,9 +490,12 @@ const Home = () => {
       }
 
       .scroll-down {
-        width: 45px;
-        height: 160px;
+        width: 61px;
+        height: 176px;
         object-fit: contain;
+        position: absolute;
+        bottom: 20px;
+        left: 650px;
       }
     `}
     </style>
