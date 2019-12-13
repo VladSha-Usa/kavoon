@@ -3,9 +3,9 @@ import '../components/styleguide.css'
 import React, { useEffect } from 'react'
 import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
+import Header from '../components/mainPage/header'
 
 const headerHegith = 80
-
 
 const setActive = (active, id) => () => {
   const element = document.getElementById(id);
@@ -13,17 +13,6 @@ const setActive = (active, id) => () => {
     element.classList.add("pathfinder-blog-item-hover");
   } else {
     element.classList.remove("pathfinder-blog-item-hover")
-  }
-}
-
-const setImage = (active, id) => (el1) => {
-  
-  const element = document.getElementById(id);
-  console.log(el1 == element)
-  if (active) {
-    element.src = `img/${id}.svg`
-  } else {
-    element.src = `img/${id}-hover.svg`
   }
 }
 
@@ -65,68 +54,14 @@ const Home = () => {
   return (<>
     <Head>
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
 
     </Head>
 
     <div id="home" className="map-image">
-      <header className="nav-menu-title">
-        <div className="page-content header-page flex">
-          <div style={{ width: "220px", justifyContent: "flex-start" }}>
-            <nav >
-              <a href="#home">
-                <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x" />
-              </a>
-            </nav>
-          </div>
-          <div className="flex" style={{ position: "relative", margin: "auto" }}>
-            <nav style={{ margin: "20px" }} className="nav-menu-title-underline" >
-              <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
-            </nav>
-            <nav style={{ margin: "20px" }} className="nav-menu-title-underline">
-              <a href="#">Путівник</a>
-            </nav>
-            <nav style={{ margin: "20px" }} >
-              <span className="disabled">Блог</span>
-            </nav>
-          </div>
-          <div className="flex" style={{ width: "220px", justifyContent: "flex-end" }}>
-
-            <nav style={{ width: "50px", height: "40px" }} >
-              <a  href="#" >
-                <img id="viber" src="img/viber.svg" 
-                  onMouseEnter={setImage(false, "viber")}
-                  onMouseLeave={setImage(true, "viber")} 
-                  className="TG" />
-              </a>
-
-            </nav>
-
-            <nav style={{ width: "50px", height: "40px" }}>
-              <a href="http://instagram.com/flowers__way/">
-                <img id="instagram" src="img/instagram.svg"
-                  onMouseEnter={setImage(false, "instagram")}
-                  onMouseLeave={setImage(true, "instagram")} 
-                  className="TG" />
-              </a>
-
-            </nav>
-            <nav style={{ width: "50px", height: "40px" }}>
-              <a href="https://www.facebook.com/ovchynnikova.nadiia/">
-                <img id="facebook" src="img/facebook.svg"
-                  onMouseEnter={setImage(false, "facebook")}
-                  onMouseLeave={setImage(true, "facebook")} 
-                  className="TG" />
-              </a>
-
-            </nav>
-          </div>
-
-        </div>
-      </header>
-
+      <Header />
       <div className="main page-content">
         <span className="background-text">FLOWERS<br /> WAY</span>
         <div id="left">
