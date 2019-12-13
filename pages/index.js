@@ -154,11 +154,11 @@ const Home = () => {
                 </div>
               </a>
             </div>
-            <div className="scroll-down">
+            {/* <div className="scroll-down">
               <a href="#">
                 <img src="img/scroll-down.svg"  />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         <div id="right">
@@ -184,7 +184,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-    {/* <div id="pathfinder" className="page-content text"><Pathfinder /> </div> */}
+    <div id="pathfinder" className="page-content"><Pathfinder /> </div>
     <style jsx>{`
       header {
         height: ${headerHegith}px;
@@ -240,16 +240,39 @@ const Home = () => {
         width: 280px;
         height: 244px;
       }
-      .pathfinder-item-adjust {
-        position: absolute;
-        left: 0px;
-        top: 0px;
+      .pathfinder-blog-text-adjust {
+        position: relative;
+        left: 120px;
+        top: -160px;
       }
-      .blog-item-adjust {
-        position: absolute;
-        left: 327px;
-        top: 0px;
+
+      .pathfinder-vertical-text-style {
+        object-fit: contain;
+        transform: rotate(-90deg);
+        opacity: 0.12;
+        font-family: Montserrat;
+        font-size: 33px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.21;
+        letter-spacing: 1.54px;
+        color: #296fdc;
       }
+      .blog-vertical-text-style {
+        object-fit: contain;
+        transform: rotate(-90deg);
+        opacity: 0.12;
+        font-family: Montserrat;
+        font-size: 36px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.11;
+        letter-spacing: 1.68px;
+        color: #296fdc;
+      }
+
       @media only screen and (max-width: 1166px) {
         .flowers-way {
           font-size: 100px;
@@ -260,7 +283,7 @@ const Home = () => {
         .text-style-caption {
             font-size: 14px;
         }
-
+       
         .caption-adjust {
             position: relative;
             top: -60px;
@@ -270,6 +293,17 @@ const Home = () => {
           margin-right: 25px;
           width: 260px;
           height: 244px;
+        }
+        .pathfinder-vertical-text-style {
+          font-size: 30px;
+        }
+        .blog-vertical-text-style {
+          font-size: 32px;
+        }
+         .pathfinder-blog-text-adjust {
+          position: relative;
+          left: 131px;
+          top: -150px;
         }
       }
       .text-style-sss {
@@ -457,37 +491,8 @@ const Home = () => {
        }
       
      
-      .pathfinder-blog-text-adjust {
-        position: relative;
-        left: 120px;
-        top: -160px;
-      }
-      .pathfinder-vertical-text-style {
-        object-fit: contain;
-        transform: rotate(-90deg);
-        opacity: 0.12;
-        font-family: Montserrat;
-        font-size: 33px;
-        font-weight: 900;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.21;
-        letter-spacing: 1.54px;
-        color: #296fdc;
-      }
-      .blog-vertical-text-style {
-        object-fit: contain;
-        transform: rotate(-90deg);
-        opacity: 0.12;
-        font-family: Montserrat;
-        font-size: 36px;
-        font-weight: 900;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.11;
-        letter-spacing: 1.68px;
-        color: #296fdc;
-      }
+     
+      
 
       .scroll-down {
         width: 61px;
