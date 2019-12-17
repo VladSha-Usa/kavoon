@@ -33,7 +33,7 @@ const Header = () => {
           <nav >
             <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
           </nav>
-          <nav >
+        <nav style={{ marginLeft: "40px", marginRight: "40px" }}>
             <a href="#">Путівник</a>
           </nav>
           <nav >
@@ -42,18 +42,18 @@ const Header = () => {
         </div>
         <div className={socialClass} >
 
-          <nav style={{ width: "50px", height: "40px" }} >
+          <nav style={{marginRight:"5px"}} >
             <ImageLink href="#" className="TG"
               src="img/viber.svg"
               hoverSrc="img/viber-hover.svg" />
           </nav>
 
-          <nav style={{ width: "50px", height: "40px" }}>
+        <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
             <ImageLink href="http://instagram.com/flowers__way/" className="TG"
               src="img/instagram.svg"
               hoverSrc="img/instagram-hover.svg" />
           </nav>
-          <nav style={{ width: "50px", height: "40px" }}>
+        <nav style={{ marginLeft: "5px" }}>
             <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
               src="img/facebook.svg"
               hoverSrc="img/facebook-hover.svg" />
@@ -84,13 +84,12 @@ const Header = () => {
       margin-left: auto;
     }
     .${socialClass} {
+      align-items: center;
       display: flex;
+      margin-left: auto;
     }
     .${menuClass} {
       display: flex;
-    }
-
-    .nav-menu-title {
       font-family: Montserrat;
       font-size: 17px;
       font-weight: 500;
@@ -100,33 +99,28 @@ const Header = () => {
       letter-spacing: 0.79px;
       color: #061434;
       position: relative;
+      justify-content: center;
     }
 
     a:link {
       text-decoration: none;
+      color: #061434;
     }
 
     a:visited {
       text-decoration: none;
-    }
-
-    .nav-menu-title a:link {
-      color: #061434;
-    }
-
-    .nav-menu-title a:visited {
-      color: #061434;
+       color: #061434;
     }
 
     .disabled {
       opacity: 0.5;
     }
 
-    .nav-menu-title a:hover {
+    a:hover {
       color: var(--primarycolor);
     }
 
-    .nav-menu-title-underline a::after {
+    a::after {
       content: "";
       display: block;
       position: relative;
@@ -137,7 +131,7 @@ const Header = () => {
       background: var(--primarycolor);
     }
 
-    .nav-menu-title-underline a:hover::after {
+    a:hover::after {
       width: 100%;
     }
 

@@ -47,7 +47,7 @@ const Home = () => {
 
     <div id="home" className="map-image">
       <div className="header">
-        <div className="page-content">
+        <div className="page-content" style={{ height: "100%" }}>
           <Header />
         </div>
       </div>

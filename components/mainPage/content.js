@@ -164,13 +164,13 @@ const Content = ({ classPrefix }) => {
             backText="МАГАЗИН"
             backStyle={{
               fontSize: "70px" ,
-              offsetLeft: "160px",
+              offsetLeft: "158px",
               offsetTop: "-223px"
             }}
             sizeStyle={{
               imageWidth: "320px",
               imageHeight: "400px",
-              width: "360px",
+              width: "363px",
               height: "468px"
             }}>Велоспорядження<br />для легких подорожей </BlockItem>
 
