@@ -12,29 +12,35 @@ const setImage = (active, id) => (el1) => {
   }
 }
 
+
 const Header = () => {
+  const prefix = "header"
+  const navbarClass = `${prefix}-navbar`
+  const bannerClass = `${prefix}-banner`
+  const menuClass = `${prefix}-menu`
+  const socialClass = `${prefix}-social`
+  const hamburgerClass = `${prefix}-hamburger`
   return (<>
-    <header className="nav-menu-title">
-      <div className="page-content header-page flex">
-        <div style={{ width: "220px", justifyContent: "flex-start" }}>
+    <header className={ navbarClass }>
+      <div className={ bannerClass }>
           <nav >
             <a href="#home">
               <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x" />
             </a>
           </nav>
         </div>
-        <div className="flex">
-          <nav style={{ margin: "20px" }} className="nav-menu-title-underline" >
+        <div className={ menuClass }>
+          <nav >
             <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
           </nav>
-          <nav style={{ margin: "20px" }} className="nav-menu-title-underline">
+          <nav >
             <a href="#">Путівник</a>
           </nav>
-          <nav style={{ margin: "20px" }} >
+          <nav >
             <span className="disabled">Блог</span>
           </nav>
         </div>
-        <div className="flex" style={{ width: "220px", justifyContent: "flex-end" }}>
+        <div className={socialClass} >
 
           <nav style={{ width: "50px", height: "40px" }} >
             <ImageLink href="#" className="TG"
@@ -53,23 +59,36 @@ const Header = () => {
               hoverSrc="img/facebook-hover.svg" />
           </nav>
         </div>
-        <div style={{ justifyContent: "flex-end" }}>
+        <div className={hamburgerClass}>
           <nav >
             <a href="#home">
               <img src="img/menu.png" srcSet="img/menu@2x.png 2x, img/menu@3x.png 3x" />
             </a>
           </nav>
         </div>
-      </div>
     </header>
     <style jsx>{`
-    .header-left {
-
+    
+    .${navbarClass} {
+      align-items: center;
+      display: flex;
+      height: 100%
     }
-    .header-center {
 
+    .${bannerClass} {
+      justify-content: start;
+      margin-right: auto;
     }
-    .header-
+    .${hamburgerClass} {
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+    .${socialClass} {
+      display: flex;
+    }
+    .${menuClass} {
+      display: flex;
+    }
 
     .nav-menu-title {
       font-family: Montserrat;
@@ -121,6 +140,22 @@ const Header = () => {
     .nav-menu-title-underline a:hover::after {
       width: 100%;
     }
+
+    @media only screen and (max-width: 1023px) {
+      .${menuClass} {
+        display: none;
+      }
+      .${socialClass} {
+        display: none;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .${hamburgerClass} {
+        display: none;
+      }
+    }
+
     `}</style>
   </>)
 }

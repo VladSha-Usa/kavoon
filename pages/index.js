@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Header from '../components/mainPage/header'
 import Content from '../components/mainPage/content'
 
-const headerHegith = 80
+const headerHeight = 80
 
 const onScroll = () => {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -16,18 +16,11 @@ const onScroll = () => {
   }
 }
 
-const preloadImage = (url) => {
-  new Image().src = url
-}
 
 const Home = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     
-    preloadImage('img/viber.svg')
-    preloadImage('img/instagram.svg')
-    preloadImage('img/facebook.svg')
-
     // var firebaseConfig = {
     //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
     //   authDomain: "flowers-way.firebaseapp.com",
@@ -53,60 +46,43 @@ const Home = () => {
     </Head>
 
     <div id="home" className="map-image">
-      <Header />
-      {/* <Content /> */}
+      <div className="header">
+        <div className="page-content">
+          <Header />
+        </div>
+      </div>
+      <div className="page-content content">
+        <Content />
+      </div>
     </div>
     {/* <div id="pathfinder" className="page-content"><Pathfinder /> </div> */}
     <style jsx>{`
-      header {
-        height: ${headerHegith}px;
+
+      .header {
+        height: ${headerHeight}px;
         position: fixed;
         z-index: 999;
         top: 0;
         left: 0;
         width: 100%;
       }
+
       .header-page {
         align-items: center;
         height: 100%;
       }
       .page-content {
-
         max-width: 1166px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
         width: 100%;
       }
-      .main {
-        display: flex;
+      .content {
         position: relative;
-        padding-top: ${headerHegith + 40}px;
+        padding-top: ${headerHeight + 40}px;
         margin-bottom: auto;
       }
       
-      .flowers-way {
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 128px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.18;
-        letter-spacing: 5.98px;
-        color: #040f2a;
-      }
-      .background-text {
-        position: absolute;
-        left: -150px;
-        object-fit: contain;
-        opacity: 0.08;
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 184px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 0.88;
-        letter-spacing: 8.6px;
-        color: #296fdc;
-      }
       .pathfinder-blog-item {
         margin-right: 45px;
         width: 280px;
@@ -177,9 +153,6 @@ const Home = () => {
           left: 131px;
           top: -150px;
         }
-      }
-      .text-style-sss {
-        color: #1831aa;
       }
      
       #left {
@@ -277,21 +250,6 @@ const Home = () => {
         margin-left: 10px;
         margin-right: auto;
       }
-       
-      .shape-left {
-        margin-left: auto;
-        margin-right: 10px;
-        width: 15px;
-        height: 2px;
-        background-color: #1831aa;
-      }
-      .shape-right {
-        margin-left: 10px;
-        margin-right: auto;
-        width: 15px;
-        height: 2px;
-        background-color: #1831aa;
-      }
       .shop-icon {
         margin-right: 12px;
         width: 20px;
@@ -352,11 +310,6 @@ const Home = () => {
         border: solid 1px var(--primarycolor);
       }
 
-      .pathfinder-blog-margin-adjust {
-        top: 55px;
-        height: 100%;
-        position: relative;
-      }
       .pathfinder-blog-text-margin-adjust {
         margin-top: -30px;
         width: 250px;

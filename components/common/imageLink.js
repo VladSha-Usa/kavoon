@@ -1,21 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-// const setImage = (active, id) => (el1) => {
 
-//   const element = document.getElementById(id);
-//   console.log(el1 == element)
-//   if (active) {
-//     element.src = `img/${id}.svg`
-//   } else {
-//     element.src = `img/${id}-hover.svg`
-//   }
-// }
-
+const preloadImage = (url) => {
+  new Image().src = url
+}
 
 const ImageLink = ({ href, src, hoverSrc, className}) => {
-  console.log(src, hoverSrc)
+
   const [image, setImage] = useState(src)
 
+  useEffect(() => {
+    preloadImage(hoverSrc)
+  })
   return (<a className={className} href={href} >
     <img src={image}
       onMouseEnter={ () => setImage(hoverSrc) }
