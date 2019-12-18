@@ -116,8 +116,6 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
 const Content = ({ classPrefix }) => {
 
   const prefix = `${classPrefix ? classPrefix + '-' : ""}content`
-
-  const backgroundClass = `${prefix}-background`
   const layoutClass = `${prefix}-layout`
 
   const bannerClass = `${prefix}-banner`
@@ -127,7 +125,6 @@ const Content = ({ classPrefix }) => {
 
   return (<>
     <div >
-      <span className={backgroundClass}>FLOWERS<br /> WAY</span>
       <Title classPrefix={prefix} />
       <div className={layoutClass}>
 
@@ -157,7 +154,7 @@ const Content = ({ classPrefix }) => {
             width: "280px",
             height: "244px"
           }}>ПУТІВНИК</BlockItem>
-        <div style={{alignContent: "flex-end", height: "600px", marginLeft: "auto"}}>
+        <div style={{ height: "600px", marginLeft: "auto"}}>
 
           <BlockItem src="img/shop-image.jpg"
             srcSet="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
@@ -202,27 +199,6 @@ const Content = ({ classPrefix }) => {
         display: flex;
         flex-wrap: wrap-reverse;
       }
-      .${backgroundClass} {
-        position: absolute;
-        left: -150px;
-        object-fit: contain;
-        opacity: 0.08;
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 184px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 0.88;
-        letter-spacing: 8.6px;
-        color: #296fdc;
-      }
-      @media only screen and (max-width: 1023px) {
-        .${backgroundClass} {
-          left: 0;
-          font-size: 72px;
-          line-height: 60px;
-        }
-      }
       .where-buy-area {
 
         height: 155px;
@@ -242,13 +218,7 @@ const Content = ({ classPrefix }) => {
         text-transform: uppercase;
         color: #061434;
       }
-      .pathfinder-blog-margin-adjust {
-        top: 55px;
-        height: 100%;
-        position: relative;
-        display: flex;
-      }
-       .shop-icon {
+      .shop-icon {
         margin-right: 12px;
         width: 20px;
         height: 20px;
@@ -279,6 +249,11 @@ const Content = ({ classPrefix }) => {
         letter-spacing: 0.79px;
         text-transform: uppercase;
         color: #ffffff;
+      }
+      @media only screen and (max-width: 1023px) {
+        .${layoutClass} {
+          height: inherit;
+        }
       }
     `}</style>
   </>)
