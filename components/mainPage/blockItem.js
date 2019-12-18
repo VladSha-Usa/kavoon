@@ -8,6 +8,8 @@ const setActive = (active, id) => () => {
 }
 
 
+
+
 const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
@@ -17,14 +19,22 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
   const vertBackgroundClass = `${prefix}-background`
   const blockClass = `${prefix}-block`
 
+
   const shop = {
-    backStyle: {
+    small: {
+      fontSize: "58px",
+      offsetLeft: "125px",
+      offsetTop: "-175px",
+      letterSpacing: "0.68px",
+      imageWidth: "250px",
+      imageHeight: "320px",
+      width: "280px",
+      height: "380px"
+    },
+    normal: {
       fontSize: "70px",
       offsetLeft: "158px",
-      offsetTop: "-223px"
-    },
-
-    sizeStyle: {
+      offsetTop: "-223px",
       imageWidth: "320px",
       imageHeight: "400px",
       width: "363px",
@@ -32,12 +42,21 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
     }
   }
   const pathfinder = {
-    backStyle: {
+    small: {
       fontSize: "28px",
       offsetLeft: "120px",
-      offsetTop: "-160px"
+      offsetTop: "-160px",
+      letterSpacing: "1.68px",
+      imageWidth: "250px",
+      imageHeight: "200px",
+      width: "280px",
+      height: "244px"
     },
-    sizeStyle: {
+    normal: {
+      fontSize: "28px",
+      offsetLeft: "120px",
+      offsetTop: "-160px",
+      letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
@@ -45,12 +64,21 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
     }
   }
   const blog = {
-    backStyle: {
+    small: {
       fontSize: "36px",
       offsetLeft: "120px",
-      offsetTop: "-160px"
+      offsetTop: "-160px",
+      letterSpacing: "1.68px",
+      imageWidth: "250px",
+      imageHeight: "200px",
+      width: "280px",
+      height: "244px"
     },
-    sizeStyle: {
+    normal: {
+      fontSize: "36px",
+      offsetLeft: "120px",
+      offsetTop: "-160px",
+      letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
@@ -95,29 +123,29 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         background-color: #1831aa;
       }
       .${titleClass} {
-        width: ${style.sizeStyle.imageWidth};
+        width: ${style.normal.imageWidth};
         align-items: center;
         display: flex;
         position: relative;
        
-        top: -${style.backStyle.fontSize};
+        top: -${style.normal.fontSize};
       }
       .${vertBackgroundClass} {
         object-fit: contain;
         transform: rotate(-90deg);
         opacity: 0.12;
         font-family: Montserrat;
-        font-size: ${style.backStyle.fontSize};
+        font-size: ${style.normal.fontSize};
         font-weight: 900;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.11;
-        letter-spacing: 1.68px;
+        letter-spacing: ${style.normal.letterSpacing};
         color: #296fdc;
 
         position: relative;
-        left: ${style.backStyle.offsetLeft};
-        top: ${style.backStyle.offsetTop};
+        left: ${style.normal.offsetLeft};
+        top: ${style.normal.offsetTop};
       }
 
       a:link {
@@ -131,8 +159,8 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       .pathfinder-blog-image {
         border-radius: 10px;
         position: relative;
-        width: ${style.sizeStyle.imageWidth};
-        height: ${style.sizeStyle.imageHeight};
+        width: ${style.normal.imageWidth};
+        height: ${style.normal.imageHeight};
         object-fit: contain;
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
         z-index: 1;
@@ -152,9 +180,44 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       }
 
       .${blockClass} {
-        width: ${style.sizeStyle.width};
-        height: ${style.sizeStyle.height};
+        width: ${style.normal.width};
+        height: ${style.normal.height};
       }
+      @media only screen and (max-width: 1023px) {
+        
+        .${titleClass} {
+          width: ${style.small.width};
+          top: -${style.small.fontSize};
+        }
+        .${vertBackgroundClass} {
+          font-size: ${style.small.fontSize};
+          letter-spacing: ${style.small.letterSpacing};
+          left: ${style.small.offsetLeft};
+          top: ${style.small.offsetTop};
+        }
+
+        a:link {
+          text-decoration: none;
+        }
+
+        a:visited {
+          text-decoration: none;
+        }
+
+        .pathfinder-blog-image {
+
+          width: ${style.small.imageWidth};
+          height: ${style.small.imageHeight};
+        }
+
+        
+
+        .${blockClass} {
+          width: ${style.small.width};
+          height: ${style.small.height};
+        }
+      }
+
   `}</style>
   </>)
 }
