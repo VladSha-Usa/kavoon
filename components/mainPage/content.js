@@ -17,45 +17,17 @@ const Content = ({ classPrefix }) => {
         <BlockItem
           src="img/blog.jpg"
           srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
-          backStyle={{
-            fontSize: "36px", 
-            offsetLeft: "120px",
-            offsetTop: "-160px" }}
-          sizeStyle={{
-            imageWidth: "250px",
-            imageHeight: "200px",
-            width: "280px",
-            height: "244px"
-          }}>BLOG</BlockItem>
+          type='blog'>BLOG</BlockItem>
 
         <BlockItem src="img/image.jpg"
           srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x"
-          backStyle={{
-            fontSize: "28px", 
-            offsetLeft: "120px",
-            offsetTop: "-160px" }}
-          sizeStyle={{
-            imageWidth: "250px",
-            imageHeight: "200px",
-            width: "280px",
-            height: "244px"
-          }}>ПУТІВНИК</BlockItem>
+          type='pathfinder'>ПУТІВНИК</BlockItem>
         <div className={layoutShopClass}>
 
           <BlockItem src="img/shop-image.jpg"
             srcSet="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
             backText="МАГАЗИН"
-            backStyle={{
-              fontSize: "70px" ,
-              offsetLeft: "158px",
-              offsetTop: "-223px"
-            }}
-            sizeStyle={{
-              imageWidth: "320px",
-              imageHeight: "400px",
-              width: "363px",
-              height: "468px"
-            }}>Велоспорядження<br />для легких подорожей </BlockItem>
+            type='shop'>Велоспорядження<br />для легких подорожей </BlockItem>
 
           <div className="where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>

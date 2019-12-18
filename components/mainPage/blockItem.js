@@ -8,7 +8,7 @@ const setActive = (active, id) => () => {
 }
 
 
-const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, backStyle, sizeStyle }) => {
+const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -16,6 +16,55 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
 
   const vertBackgroundClass = `${prefix}-background`
   const blockClass = `${prefix}-block`
+
+  const shop = {
+    backStyle: {
+      fontSize: "70px",
+      offsetLeft: "158px",
+      offsetTop: "-223px"
+    },
+
+    sizeStyle: {
+      imageWidth: "320px",
+      imageHeight: "400px",
+      width: "363px",
+      height: "468px"
+    }
+  }
+  const pathfinder = {
+    backStyle: {
+      fontSize: "28px",
+      offsetLeft: "120px",
+      offsetTop: "-160px"
+    },
+    sizeStyle: {
+      imageWidth: "250px",
+      imageHeight: "200px",
+      width: "280px",
+      height: "244px"
+    }
+  }
+  const blog = {
+    backStyle: {
+      fontSize: "36px",
+      offsetLeft: "120px",
+      offsetTop: "-160px"
+    },
+    sizeStyle: {
+      imageWidth: "250px",
+      imageHeight: "200px",
+      width: "280px",
+      height: "244px"
+    }
+  }
+
+  var style
+  switch (type) {
+    case 'blog': style = blog; break;
+    case 'shop': style = shop; break;
+    case 'pathfinder': style = pathfinder; break;
+  }
+
 
   return (<>
     <div className={blockClass}>
@@ -46,19 +95,19 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
         background-color: #1831aa;
       }
       .${titleClass} {
-        width: ${sizeStyle.imageWidth};
+        width: ${style.sizeStyle.imageWidth};
         align-items: center;
         display: flex;
         position: relative;
        
-        top: -${backStyle.fontSize};
+        top: -${style.backStyle.fontSize};
       }
       .${vertBackgroundClass} {
         object-fit: contain;
         transform: rotate(-90deg);
         opacity: 0.12;
         font-family: Montserrat;
-        font-size: ${backStyle.fontSize};
+        font-size: ${style.backStyle.fontSize};
         font-weight: 900;
         font-stretch: normal;
         font-style: normal;
@@ -67,8 +116,8 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
         color: #296fdc;
 
         position: relative;
-        left: ${backStyle.offsetLeft};
-        top: ${backStyle.offsetTop};
+        left: ${style.backStyle.offsetLeft};
+        top: ${style.backStyle.offsetTop};
       }
 
       a:link {
@@ -82,8 +131,8 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
       .pathfinder-blog-image {
         border-radius: 10px;
         position: relative;
-        width: ${sizeStyle.imageWidth};
-        height: ${sizeStyle.imageHeight};
+        width: ${style.sizeStyle.imageWidth};
+        height: ${style.sizeStyle.imageHeight};
         object-fit: contain;
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
         z-index: 1;
@@ -103,8 +152,8 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, back
       }
 
       .${blockClass} {
-        width: ${sizeStyle.width};
-        height: ${sizeStyle.height};
+        width: ${style.sizeStyle.width};
+        height: ${style.sizeStyle.height};
       }
   `}</style>
   </>)

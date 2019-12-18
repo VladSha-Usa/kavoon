@@ -9,6 +9,7 @@ import Content from '../components/mainPage/content'
 const headerHeight = 80
 
 const onScroll = () => {
+  console.log("Scroll")
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("home").classList.add("header-border");
   } else {
@@ -45,8 +46,8 @@ const Home = () => {
 
     </Head>
 
-    <div id="home" className="map-image">
-      <div className="header">
+    <div className="map-image">
+      <div id="home" className="header">
         <div className="page-content" style={{ height: "100%" }}>
           <Header />
         </div>
@@ -98,6 +99,20 @@ const Home = () => {
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -3%, rgba(255, 255, 255, 0.68) 117%), url(img/map-image.png);
       }
 
+      .header-border ::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--light-blue-grey);
+      }
+
+      .header-border {
+          background-color: #ffffff;
+      }
       .content {
         position: relative;
         padding-top: ${headerHeight + 40}px;
