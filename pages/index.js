@@ -86,7 +86,7 @@ const Home = () => {
       }
       .map-image {
         /* Set a specific height */
-        height: 100vh; 
+        //height: 100vh; 
       
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -101,7 +101,7 @@ const Home = () => {
       .content {
         position: relative;
         padding-top: ${headerHeight + 40}px;
-        
+      
         //overflow:hidden;
         margin-bottom: auto;
         //width: 100vw;

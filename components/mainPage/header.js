@@ -1,16 +1,15 @@
-
+import { useEffect } from 'react'
 import ImageLink from '../common/imageLink'
 
-const setImage = (active, id) => (el1) => {
+// const onScroll = () => {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     document.getElementById("home").classList.add("header-border");
+//   } else {
+//     document.getElementById("home").classList.remove("header-border");
+//   }
+// }
 
-  const element = document.getElementById(id);
-  console.log(el1 == element)
-  if (active) {
-    element.src = `img/${id}.svg`
-  } else {
-    element.src = `img/${id}-hover.svg`
-  }
-}
+
 
 
 const Header = () => {
@@ -20,6 +19,25 @@ const Header = () => {
   const menuClass = `${prefix}-menu`
   const socialClass = `${prefix}-social`
   const hamburgerClass = `${prefix}-hamburger`
+
+  useEffect(() => {
+  
+    // var firebaseConfig = {
+    //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
+    //   authDomain: "flowers-way.firebaseapp.com",
+    //   databaseURL: "https://flowers-way.firebaseio.com",
+    //   projectId: "flowers-way",
+    //   storageBucket: "flowers-way.appspot.com",
+    //   messagingSenderId: "305623494289",
+    //   appId: "1:305623494289:web:fa6954b42047c910079930",
+    //   measurementId: "G-PSBJYP7E5X"
+    // };
+    // // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig)
+    // firebase.analytics()
+
+  });
+
   return (<>
     <header className={ navbarClass }>
       <div className={ bannerClass }>
@@ -133,6 +151,21 @@ const Header = () => {
 
     a:hover::after {
       width: 100%;
+    }
+
+    .header-border header::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--light-blue-grey);
+    }
+
+    .header-border header {
+        background-color: #ffffff;
     }
 
     @media only screen and (max-width: 1023px) {
