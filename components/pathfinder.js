@@ -10,37 +10,85 @@ const objects = [
   }
 ]
 
-const PathfinderObject = () => {
-  return (
-    <div style={{paddingTop: "95px"}}>
+const PathfinderObject = ({ direct }) => {
+  const flexDirection = direct ? "row" : "row-reverse"
+  return (<>
+    <article style={{ paddingTop: "95px" }}>
 
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "35%", height: "350px", overflow: "hidden" }}>
-          <img src="Swirg_300*400.jpg"></img>
+      <div style={{ display: "flex", flexDirection: flexDirection, flexWrap: "no-wrap", width: "100%", height: "320px" }}>
+        <div style={{ flex: "0 0 450px", height: "100%", overflow: "hidden" }}>
+          <img src="Swirg_300*400.jpg" className="image" />
         </div>
-        <div style={{ width: "65%" }}>
-          <div style={{ textAlign: 'center' }}><h3>Мальвоничий Свірж</h3><h4>та навколо</h4></div>
-          Якщо я б будував замок, я б збудував його на тому самому місці. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
+        <div style={{ flex: "auto", overflow: "hidden" }}>
+
+          <div className="pathfinder-object-text" style={{ marginLeft: "105px" }}>
+            <p className = "header" >Мальовничий Свірж</p>
+            <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
+           </p>
+          </div>
         </div>
+
+
       </div>
-    </div>)
+    </article>
+    <style jsx>{`
+      .header  {
+        font-family: Montserrat;
+        font-size: 32px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 1.5px;
+        color: var(--primarycolor);
+        margin: 5px;
+      }
+      h4 {
+        color: var(--texticonscolor);
+      }
+
+      .image {
+        width: 450px;
+        height: 320px;
+        object-fill: contain;
+        border-radius: 25px;
+        box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+      }
+      .pathfinder-object-text {
+        //text-align: justify;
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: 0.79px;
+        color: #061434;
+
+      }
+      `}
+    </style>
+  </>)
 }
 
 const Pathfinder = () => (
   <>
 
-    <div> 
+    <div>
       <div className="pathfinder-caption-background-text">Путівник</div>
       <div className="pathfinder-caption-text">Путівник</div>
     </div>
-    <div className="pathfinder-story-text">
+    <div style={{ height: "1px" }}>
+      <img style={{ position: "relative", left: "481px", top: "-42px" }} src="img/vector-background.svg"
+        className="vector-background" />
+    </div>
+    <div className="pathfinder-story-text" style={{paddingBottom: "16px"}}>
       На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
     </div>
-    <div>
-      <img style={{ position: "relative", left: "477px", top: "-24px" }} src="img/vector-background.svg"
-        class="vector-background" />
-    </div>
-    <PathfinderObject />
+
+    <PathfinderObject direct={true} />
+    {/* <PathfinderObject direct={false} /> */}
+    {/* <PathfinderObject direct={true} /> */}
 
     {/* Бібрка начало блока */}
     {/* <div>
@@ -93,8 +141,8 @@ const Pathfinder = () => (
     {/* Вовків конец блока */}
     <style jsx>{`
           .vector-background {
-            // width: 484px;
-            // height: 1118px;
+            width: 484px;
+            //height: 1118px;
             object-fit: contain;
           }
           .pathfinder-caption-background-text {
@@ -128,7 +176,6 @@ const Pathfinder = () => (
               top: -18px;
           }
           .pathfinder-story-text {
-              text-align: center;
               font-family: Montserrat;
               font-size: 17px;
               font-weight: 500;
