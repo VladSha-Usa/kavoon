@@ -12,26 +12,31 @@ const objects = [
 
 const PathfinderObject = ({ direct }) => {
   const flexDirection = direct ? "row" : "row-reverse"
+  const textMarginStyle = direct ? { marginLeft: "105px" } : { marginRight: "105px" }
   return (<>
-    <article style={{ paddingTop: "95px" }}>
+    <article>
 
-      <div style={{ display: "flex", flexDirection: flexDirection, flexWrap: "no-wrap", width: "100%", height: "320px" }}>
-        <div style={{ flex: "0 0 450px", height: "100%", overflow: "hidden" }}>
-          <img src="Swirg_300*400.jpg" className="image" />
-        </div>
-        <div style={{ flex: "auto", overflow: "hidden" }}>
+      <div style={{ flex: "0 0 450px", height: "100%", overflow: "hidden" }}>
+        <img src="Swirg_300*400.jpg" className="image" />
+      </div>
+      <div style={{ flex: "auto", overflow: "hidden" }}>
 
-          <div className="pathfinder-object-text" style={{ marginLeft: "105px" }}>
-            <p className = "header" >Мальовничий Свірж</p>
-            <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
+        <div className="pathfinder-object-text" style={textMarginStyle}>
+          <p className="header" >Мальовничий Свірж</p>
+          <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
            </p>
-          </div>
         </div>
-
-
       </div>
     </article>
     <style jsx>{`
+      article {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: ${flexDirection};
+        flex-wrap: no-wrap;
+        width: 100%;
+        height: 320px;
+      }
       .header  {
         font-family: Montserrat;
         font-size: 32px;
@@ -78,17 +83,18 @@ const Pathfinder = () => (
       <div className="pathfinder-caption-background-text">Путівник</div>
       <div className="pathfinder-caption-text">Путівник</div>
     </div>
-    <div style={{ height: "1px" }}>
-      <img style={{ position: "relative", left: "481px", top: "-42px" }} src="img/vector-background.svg"
-        className="vector-background" />
-    </div>
-    <div className="pathfinder-story-text" style={{paddingBottom: "16px"}}>
+   
+    <div className="pathfinder-story-text" >
       На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
+    </div>
+    <div style={{ height: "1px", paddingBottom: "31px"  }}>
+      <img style={{ position: "relative", left: "477px", top: "-67px" }} src="img/vector-background.svg"
+        className="vector-background" />
     </div>
 
     <PathfinderObject direct={true} />
-    {/* <PathfinderObject direct={false} /> */}
-    {/* <PathfinderObject direct={true} /> */}
+    <PathfinderObject direct={false} />
+    <PathfinderObject direct={true} />
 
     {/* Бібрка начало блока */}
     {/* <div>
