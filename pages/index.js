@@ -9,7 +9,7 @@ import Content from '../components/mainPage/content'
 const headerHeight = 80
 
 const onScroll = () => {
-  console.log("Scroll")
+  //  console.log("Scroll")
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("home").classList.add("header-border");
   } else {
@@ -21,7 +21,7 @@ const onScroll = () => {
 const Home = () => {
   useEffect(() => {
     document.onscroll = onScroll;
-    
+
     // var firebaseConfig = {
     //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
     //   authDomain: "flowers-way.firebaseapp.com",
@@ -56,7 +56,9 @@ const Home = () => {
         <Content />
       </div>
     </div>
-     <div id="pathfinder" className="page-content"><Pathfinder /> </div>
+    <div className="bg-block-2">
+      <div id="pathfinder" className="page-content bg-block-2" style={{paddingTop: "50px"}}><Pathfinder /> </div>
+    </div>
     <style jsx>{`
 
       .header {
@@ -66,7 +68,6 @@ const Home = () => {
         top: 0;
         left: 0;
         width: 100vw;
-        //overflow:hidden;
       }
 
       .header-page {
@@ -78,24 +79,16 @@ const Home = () => {
         margin-left: auto;
         margin-right: auto;
       }
-      @media only screen and (max-width: 1023px) {
-        .page-content {
-          max-width: 375px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
+    
       .map-image {
         /* Set a specific height */
-        //height: 100vh; 
-      
+        height: 100vh; 
+       
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -3%, rgba(255, 255, 255, 0.68) 117%), url(img/map-image.png);
       }
 
@@ -113,13 +106,25 @@ const Home = () => {
       .header-border {
           background-color: #ffffff;
       }
+
       .content {
         position: relative;
         padding-top: ${headerHeight + 40}px;
-      
-        //overflow:hidden;
         margin-bottom: auto;
-        //width: 100vw;
+      }
+
+      .bg-block-2 {
+        background-color: #f6faff;
+      }
+      @media only screen and (max-width: 1023px) {
+        .page-content {
+          max-width: 375px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .map-image {
+          height: initial;
+        }
       }
     `}
     </style>

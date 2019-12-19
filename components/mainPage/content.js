@@ -118,6 +118,7 @@ const Content = ({ classPrefix }) => {
         }
         .${layoutShopClass} {
           margin-right: auto;
+          height: inherit;
           bottom: 0;
         }
       }

@@ -40,7 +40,7 @@ const Title = ({ classPrefix }) => {
         color: var(--texticonscolor);
 
         text-transform: uppercase;
-
+        max-width: 380px;
         position: relative;
         top: -148px;
         left: 340px;

@@ -1,44 +1,49 @@
 
 const objects = [
-    {
-        title: `Мальвоничий Свірж`,
-        subtitle: `та навколо`,
-        text: `Якщо я б будував замок, я б збудував його на тому самому місці. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа.
+  {
+    title: `Мальвоничий Свірж`,
+    subtitle: `та навколо`,
+    text: `Якщо я б будував замок, я б збудував його на тому самому місці. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа.
      
       Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...`
 
-    }
+  }
 ]
 
+const PathfinderObject = () => {
+  return (
+    <div style={{paddingTop: "95px"}}>
+
+      <div style={{ display: "flex" }}>
+        <div style={{ width: "35%", height: "350px", overflow: "hidden" }}>
+          <img src="Swirg_300*400.jpg"></img>
+        </div>
+        <div style={{ width: "65%" }}>
+          <div style={{ textAlign: 'center' }}><h3>Мальвоничий Свірж</h3><h4>та навколо</h4></div>
+          Якщо я б будував замок, я б збудував його на тому самому місці. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
+        </div>
+      </div>
+    </div>)
+}
+
 const Pathfinder = () => (
-    <>
-        <div>
-            <div className="pathfinder-caption-background-text">Путівник</div> 
-            <div className="pathfinder-caption-text">Путівник</div>
-        </div>
-        <div className="pathfinder-story-text">
-            На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
-        </div>
-        <br /><br /><br /><br /><br /><br />
-        {/* Свірж начало блока */}
-        <div>
-            <div style={{ 'text-align': 'center' }}><h3>Мальвоничий Свірж</h3><h4>та навколо</h4></div>
+  <>
 
-            <div>
-                <div>
-                    <img src="Swirg_300*400.jpg"></img>
-                </div>
-                <div>
-                    Якщо я б будував замок, я б збудував його на тому самому місці. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа.
-     
-      Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
-           </div>
-            </div>
-        </div>
-        {/* Свірж конец блока */}
+    <div> 
+      <div className="pathfinder-caption-background-text">Путівник</div>
+      <div className="pathfinder-caption-text">Путівник</div>
+    </div>
+    <div className="pathfinder-story-text">
+      На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
+    </div>
+    <div>
+      <img style={{ position: "relative", left: "477px", top: "-24px" }} src="img/vector-background.svg"
+        class="vector-background" />
+    </div>
+    <PathfinderObject />
 
-         {/* Бібрка начало блока */}
-         {/* <div>
+    {/* Бібрка начало блока */}
+    {/* <div>
             <div style={{ 'text-align': 'center' }}><h3>Цікава Бібрка, </h3><h4>яку ви ще не бачили</h4></div>
 
             <div>
@@ -51,10 +56,10 @@ const Pathfinder = () => (
            </div>
             </div>
         </div> */}
-        {/* Бібрка конец блока */}
+    {/* Бібрка конец блока */}
 
-        {/* Гавареччина начало блока */}
-        {/* <div>
+    {/* Гавареччина начало блока */}
+    {/* <div>
             <div style={{ 'text-align': 'center' }}><h3>Між Гавареччиною  </h3><h4>та Красним</h4></div>
 
             <div>
@@ -68,9 +73,9 @@ const Pathfinder = () => (
            </div>
             </div>
         </div> */}
-        {/* Гавареччина конец блока */}
-        {/* Вовків начало блока */}
-        {/* <div>
+    {/* Гавареччина конец блока */}
+    {/* Вовків начало блока */}
+    {/* <div>
             <div style={{ 'text-align': 'center' }}><h3>Руйнівна сила часу  </h3><h4></h4></div>
 
             <div>
@@ -85,53 +90,67 @@ const Pathfinder = () => (
            </div>
             </div>
         </div> */}
-        {/* Вовків конец блока */}
-        <style jsx>{`
-            .pathfinder-caption-background-text {
-                object-fit: contain;
-                opacity: 0.12;
-                font-family: Montserrat;
-                font-size: 38px;
-                font-weight: 900;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.05;
-                letter-spacing: 1.78px;
-                color: var(--transparency);
-            }
-            .pathfinder-caption-text  {
-                font-family: Montserrat;
-                font-size: 28px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: 1.31px;
-                color: var(--texticonscolor);
-            }
-            .pathfinder-story-text {
-                font-family: Montserrat;
-                font-size: 17px;
-                font-weight: 500;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.53;
-                letter-spacing: 0.79px;
-                text-align: center;
-                color: #061434;
-            }
-            .pathfinder-object-text {
-                font-family: Montserrat;
-                font-size: 17px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.53;
-                letter-spacing: 0.79px;
-                color: var(--texticonscolor);
-            }
+    {/* Вовків конец блока */}
+    <style jsx>{`
+          .vector-background {
+            // width: 484px;
+            // height: 1118px;
+            object-fit: contain;
+          }
+          .pathfinder-caption-background-text {
+              object-fit: contain;
+              opacity: 0.12;
+              font-family: Montserrat;
+              font-size: 38px;
+              font-weight: 900;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.05;
+              letter-spacing: 1.78px;
+              color: var(--transparency);
+              
+              text-transform: uppercase;
+              text-align: center;
+              position: relative;
+          }
+          .pathfinder-caption-text  {
+              font-family: Montserrat;
+              font-size: 28px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: 1.31px;
+              color: var(--texticonscolor);
+              text-transform: uppercase;
+              text-align: center;
+              position: relative;
+              top: -18px;
+          }
+          .pathfinder-story-text {
+              text-align: center;
+              font-family: Montserrat;
+              font-size: 17px;
+              font-weight: 500;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.53;
+              letter-spacing: 0.79px;
+              text-align: center;
+              color: #061434;
+          }
+          .pathfinder-object-text {
+              font-family: Montserrat;
+              font-size: 17px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.53;
+              letter-spacing: 0.79px;
+              color: var(--texticonscolor);
+          }
         `}</style>
-    </>
+  </>
 )
 
 

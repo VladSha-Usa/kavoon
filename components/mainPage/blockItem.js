@@ -93,7 +93,6 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
     case 'pathfinder': style = pathfinder; break;
   }
 
-
   return (<>
     <div className={blockClass}>
       <a href="#">
@@ -168,12 +167,12 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
 
       .text {
         font-family: Montserrat;
-        font-size: 17px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 300;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.65;
-        letter-spacing: 0.79px;
+        letter-spacing: 0.75px;
         text-align: center;
         color: #061434;
         text-transform: uppercase;
@@ -205,14 +204,14 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         }
 
         .pathfinder-blog-image {
-
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};
         }
 
-        
-
         .${blockClass} {
+          margin-right: auto;
+          margin-left: auto;
+          margin-top: 40px;
           width: ${style.small.width};
           height: ${style.small.height};
         }

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="475" height="1106" viewBox="0 0 475 1106">
+    <defs>
+        <linearGradient id="a" x1="60.504%" x2="39.803%" y1="-1.236%" y2="100%">
+            <stop offset="0%" stop-color="#4E3CE1"/>
+            <stop offset="50.399%" stop-color="#1831AA"/>
+            <stop offset="100%" stop-color="#4E3CE1"/>
+        </linearGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="1.431%" y2="100%">
+            <stop offset="0%" stop-color="#2A37C1"/>
+            <stop offset="59.51%" stop-color="#6D6CFB" stop-opacity=".148"/>
+            <stop offset="80.089%" stop-color="#9B9AF4" stop-opacity=".059"/>
+            <stop offset="100%" stop-color="#B5B4FF" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="url(#a)" stroke-dasharray="15,15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M443.52 38c40 72.667 30.666 115-28 127-88 18-318-79-393 78-50 104.667-16.74 219 99.782 343 34.79 20.064 63.53 66.397 86.218 139 15 48 14 95-30 160s-154.756 49.746-144 189" opacity=".746" transform="translate(1 -10)"/>
+        <g transform="rotate(-29 236.26 -775.214)">
+            <path fill="url(#b)" d="M44 64L33 32H22L9 64"/>
+            <circle cx="27.5" cy="27.5" r="17.5" fill="#1831AA" fill-opacity=".158" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="27.5" fill="#1831AA" fill-opacity=".097" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="7.5" fill="#1831AA" stroke="#FFF"/>
+        </g>
+        <g transform="rotate(-41 816.118 169.062)">
+            <path fill="url(#b)" d="M44 64L33 32H22L9 64"/>
+            <circle cx="27.5" cy="27.5" r="17.5" fill="#1831AA" fill-opacity=".158" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="27.5" fill="#1831AA" fill-opacity=".097" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="7.5" fill="#1831AA" stroke="#FFF"/>
+        </g>
+        <g transform="rotate(9 -6576.726 590.119)">
+            <path fill="url(#b)" d="M44 64L33 32H22L9 64"/>
+            <circle cx="27.5" cy="27.5" r="17.5" fill="#1831AA" fill-opacity=".158" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="27.5" fill="#1831AA" fill-opacity=".097" stroke="#1831AA" stroke-width=".2"/>
+            <circle cx="27.5" cy="27.5" r="7.5" fill="#1831AA" stroke="#FFF"/>
+        </g>
+    </g>
+</svg>
