@@ -16,7 +16,7 @@ const PathfinderObject = ({ direct }) => {
   return (<>
     <article>
 
-      <div style={{ flex: "0 0 450px", height: "100%", overflow: "hidden" }}>
+      <div className="image-list">
         <img src="Swirg_300*400.jpg" className="image" />
       </div>
       <div style={{ flex: "auto", overflow: "hidden" }}>
@@ -36,6 +36,11 @@ const PathfinderObject = ({ direct }) => {
         flex-wrap: no-wrap;
         width: 100%;
         height: 320px;
+      }
+      .image-list {
+        flex: 0 0 450px;
+        height: 100%;
+        overflow: "hidden"
       }
       .header  {
         font-family: Montserrat;
@@ -146,6 +151,9 @@ const Pathfinder = () => (
         </div> */}
     {/* Вовків конец блока */}
     <style jsx>{`
+          .background-path {
+
+          }
           .vector-background {
             width: 484px;
             //height: 1118px;

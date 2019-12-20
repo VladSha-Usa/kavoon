@@ -39,6 +39,16 @@ const Home = () => {
   });
   return (<>
     <Head>
+      <title>Flower's Way. Країна очима велосипедистів</title>
+      <meta property="og:locale" content="uk_UA"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Flower's Way. Країна очима велосипедистів. Сумки, баули, спорядження" />
+      <meta property="og:description" content="Велосумки для легких подорожей. власне виробництво. просте монтування" />
+      <meta property="og:url" content="https://flowersway.com.ua" />
+      <meta property="og:image" content="https://flowersway.com.ua/img/shop-image.jpg" />
+      <meta property="og:site_name" content="Спорядження для легких подорожей" />
+
+
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
