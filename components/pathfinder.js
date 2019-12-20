@@ -21,7 +21,7 @@ const PathfinderObject = ({ direct }) => {
       </div>
       <div style={{ flex: "auto", overflow: "hidden" }}>
 
-        <div className="pathfinder-object-text" style={textMarginStyle}>
+        <div className="pathfinder-object-text" >
           <p className="header" >Мальовничий Свірж</p>
           <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
            </p>
@@ -75,6 +75,31 @@ const PathfinderObject = ({ direct }) => {
         letter-spacing: 0.79px;
         color: #061434;
 
+      }
+      @media only screen and (max-width: 1023px) {
+        .image-list {
+          flex: auto;
+          margins-left: auto;
+          //height: 100%;
+          //overflow: "hidden"
+        }
+        .image {
+          width: 335px;
+          height: 280px;
+          object-fill: contain;
+          border-radius: 25px;
+          box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+        }
+        article {
+          width: 343px;
+          padding-top: 0px;
+          margins-left: auto;
+          //display: flex;
+          //flex-direction: ${flexDirection};
+          flex-wrap: wrap;
+          //width: 100%;
+          height: inherit;
+        }
       }
       `}
     </style>
@@ -209,6 +234,11 @@ const Pathfinder = () => (
               line-height: 1.53;
               letter-spacing: 0.79px;
               color: var(--texticonscolor);
+          }
+          @media only screen and (max-width: 1023px) {
+            .vector-background {
+              display: none;
+            }
           }
         `}</style>
   </>

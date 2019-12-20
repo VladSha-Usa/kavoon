@@ -115,6 +115,7 @@ const Content = ({ classPrefix }) => {
       }
       @media only screen and (max-width: 1023px) {
         .${layoutClass} {
+          padding-top: 40px;
           height: inherit;
         }
         .${layoutShopClass} {

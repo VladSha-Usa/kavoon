@@ -29,7 +29,9 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       imageWidth: "250px",
       imageHeight: "320px",
       width: "280px",
-      height: "380px"
+      height: "380px",
+      marginRight: "0px",
+      marginTop: "0px"
     },
     normal: {
       fontSize: "70px",
@@ -38,29 +40,35 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       imageWidth: "320px",
       imageHeight: "400px",
       width: "363px",
-      height: "468px"
+      height: "468px",
+      marginRight: "0px",
+      marginTop: "0px"
     }
   }
   const pathfinder = {
     small: {
-      fontSize: "28px",
+      fontSize: "33px",
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
-      height: "244px"
+      height: "244px",
+      marginRight: "0px",
+      marginTop: "0px"
     },
     normal: {
-      fontSize: "28px",
+      fontSize: "33px",
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
-      height: "244px"
+      height: "244px",
+      marginRight: "0px",
+      marginTop: "0px"
     }
   }
   const blog = {
@@ -72,7 +80,9 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
-      height: "244px"
+      height: "244px",
+      marginRight: "0px",
+      marginTop: "40px"
     },
     normal: {
       fontSize: "36px",
@@ -82,7 +92,9 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       imageWidth: "250px",
       imageHeight: "200px",
       width: "280px",
-      height: "244px"
+      height: "244px",
+      marginRight: "40px",
+      marginTop: "0px"
     }
   }
 
@@ -181,6 +193,8 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
       .${blockClass} {
         width: ${style.normal.width};
         height: ${style.normal.height};
+        margin-right: ${style.normal.marginRight};
+        margin-top: ${style.normal.marginTop};
       }
       @media only screen and (max-width: 1165px) { 
        .pathfinder-blog-image {
@@ -191,6 +205,7 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         .${blockClass} {
           width: ${style.small.width};
           height: ${style.small.height};
+          margin-right: ${style.small.marginRight};
         }
          .${vertBackgroundClass} {
           font-size: ${style.small.fontSize};
@@ -233,9 +248,10 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         .${blockClass} {
           margin-right: auto;
           margin-left: auto;
-          margin-top: 40px;
+          //margin-top: 40px;
           width: ${style.small.width};
           height: ${style.small.height};
+          margin-top: ${style.small.marginTop};
         }
       }
 

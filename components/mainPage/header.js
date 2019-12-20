@@ -10,13 +10,12 @@ import ImageLink from '../common/imageLink'
 // }
 
 
-
-
 const Header = () => {
   const prefix = "header"
   const navbarClass = `${prefix}-navbar`
   const bannerClass = `${prefix}-banner`
   const menuClass = `${prefix}-menu`
+  const bannerImgClass = `${prefix}-banner-img`
   const socialClass = `${prefix}-social`
   const hamburgerClass = `${prefix}-hamburger`
 
@@ -43,7 +42,8 @@ const Header = () => {
       <div className={ bannerClass }>
           <nav >
             <a href="#home">
-              <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x" />
+              <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x"  
+              className={ bannerImgClass }/>
             </a>
           </nav>
         </div>
@@ -92,12 +92,17 @@ const Header = () => {
       display: flex;
       height: 100%
     }
-
+    .${bannerImgClass} {
+      width: 218px;
+      height: 40px;
+      object-fit: contain;
+    }
     .${bannerClass} {
       justify-content: start;
       margin-right: auto;
     }
     .${hamburgerClass} {
+      align-items: center;
       justify-content: flex-end;
       margin-left: auto;
     }
@@ -174,6 +179,10 @@ const Header = () => {
       }
       .${socialClass} {
         display: none;
+      }
+      .${bannerImgClass} {
+        width: 238px;
+        object-fit: contain;
       }
     }
 

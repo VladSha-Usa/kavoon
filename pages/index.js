@@ -137,12 +137,16 @@ const Home = () => {
 
       @media only screen and (max-width: 1023px) {
         .page-content {
-          max-width: 375px;
+          max-width: 343px;
           margin-left: auto;
           margin-right: auto;
+          owerflow: hidden;
         }
         .map-image {
           height: initial;
+        }
+        .content {
+          padding-top: ${headerHeight }px;
         }
       }
     `}

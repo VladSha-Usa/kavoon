@@ -59,23 +59,22 @@ const Title = ({ classPrefix }) => {
       }
 
       @media only screen and (max-width: 1165px) {
-
         .${backgroundClass} {
           font-size: 138px;
-          left: -50px;
+          left: -50px;     
         }
         .${titleFirstClass} {
-          //text-align: center;
           font-size: 104px;
-          //line-height: 62px;
         }
-         .${titleSecondClass} {
-           font-size: 104px;
-        //   line-height: 62px;
-         }
-        // .${titleThirdClass} {
-        //   font-size: 16px;
-        // } 
+        .${titleSecondClass} {
+          font-size: 104px;
+        }
+        .${titleThirdClass} {
+          font-size: 15px;
+          letter-spacing: 0.54px;
+          top: -138px;
+          left: 310px;
+        } 
       }
 
       @media only screen and (max-width: 1023px) {
