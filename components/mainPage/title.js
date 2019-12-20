@@ -5,14 +5,11 @@ const Title = ({ classPrefix }) => {
   const titleSecondClass = `${prefix}-second`
   const titleThirdClass = `${prefix}-third`
   const backgroundClass = `${prefix}-background`
-  const backgroundWrapperClass = `${prefix}-background-wrapper`
   
   const mainFontSize = 128;
   const thirdFontSize = 18;
   return (<>
-    {/* <div className={backgroundWrapperClass}> */}
-      <div className={backgroundClass}>FLOWERS<br /> WAY</div>
-    {/* </div> */}
+    <div className={backgroundClass}>FLOWERS<br /> WAY</div>
     <div className={titleFirstClass}>FLOWERS</div>
     <div className={titleSecondClass}>WAY</div>
     <div className={titleThirdClass}>Країна очима велосипедистів</div>
@@ -24,6 +21,7 @@ const Title = ({ classPrefix }) => {
         line-height: 1.18;
         letter-spacing: 5.98px;
         color: #040f2a;
+        padding-top: 10px;
       }
       .${titleSecondClass} {
         font-family: 'Archivo Black', sans-serif;
@@ -42,12 +40,8 @@ const Title = ({ classPrefix }) => {
         text-transform: uppercase;
         max-width: 380px;
         position: relative;
-        top: -148px;
-        left: 340px;
-      }
-      .${backgroundWrapperClass}{
-        position: absolute;
-        left: -150px;
+        top: -158px;
+        left: 360px;
       }
       .${backgroundClass} {
         object-fit: contain;
@@ -60,13 +54,32 @@ const Title = ({ classPrefix }) => {
         line-height: 0.88;
         letter-spacing: 8.6px;
         color: #296fdc;
-         position: absolute;
-        left: -150px;
+        position: absolute;
+        left: -130px;
       }
-      @media only screen and (max-width: 1023px) {
-        .${backgroundWrapperClass} {
-          left: 0;
+
+      @media only screen and (max-width: 1165px) {
+
+        .${backgroundClass} {
+          font-size: 138px;
+          left: -50px;
         }
+        .${titleFirstClass} {
+          //text-align: center;
+          font-size: 104px;
+          //line-height: 62px;
+        }
+         .${titleSecondClass} {
+           font-size: 104px;
+        //   line-height: 62px;
+         }
+        // .${titleThirdClass} {
+        //   font-size: 16px;
+        // } 
+      }
+
+      @media only screen and (max-width: 1023px) {
+  
         .${backgroundClass} {
           //text-align: center;
           letter-spacing: 3.37px;
@@ -74,23 +87,25 @@ const Title = ({ classPrefix }) => {
           line-height: 60px;
           left: -20px;
         }
-      .${titleFirstClass} {
-        //text-align: center;
-        font-size: 58px;
-        line-height: 62px;
+        .${titleFirstClass} {
+          //text-align: center;
+          font-size: 58px;
+          line-height: 62px;
+          //padding-top: 0;
+        }
+        .${titleSecondClass} {
+          //text-align: center;
+          font-size: 58px;
+          line-height: 62px;
+        }
+        .${titleThirdClass} {
+          //text-align: center;
+          font-size: 16px;
+          top: 0px;
+          left: 0px;
+        } 
       }
-      .${titleSecondClass} {
-        //text-align: center;
-        font-size: 58px;
-        line-height: 62px;
-      }
-      .${titleThirdClass} {
-        //text-align: center;
-        font-size: 16px;
-        top: 0px;
-        left: 0px;
-      } 
-    }
+
     `}</style>
   </>)
 }

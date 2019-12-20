@@ -17,10 +17,10 @@ const onScroll = () => {
   }
 }
 
-
 const Home = () => {
   useEffect(() => {
     document.onscroll = onScroll;
+    onScroll()
 
     // var firebaseConfig = {
     //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
@@ -42,7 +42,7 @@ const Home = () => {
       <title>Flower's Way. Країна очима велосипедистів</title>
       <meta property="og:locale" content="uk_UA"/>
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Flower's Way. Країна очима велосипедистів. Сумки, баули, спорядження" />
+      <meta property="og:title" content="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження" />
       <meta property="og:description" content="Велосумки для легких подорожей. власне виробництво. просте монтування" />
       <meta property="og:url" content="https://flowersway.com.ua" />
       <meta property="og:image" content="https://flowersway.com.ua/img/shop-image.jpg" />
@@ -119,13 +119,22 @@ const Home = () => {
 
       .content {
         position: relative;
-        padding-top: ${headerHeight + 40}px;
+        padding-top: ${headerHeight + 27}px;
         margin-bottom: auto;
       }
 
       .bg-block-2 {
         background-color: #f6faff;
       }
+
+      @media only screen and (max-width: 1165px) {
+        .page-content {
+          max-width: 960px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
       @media only screen and (max-width: 1023px) {
         .page-content {
           max-width: 375px;

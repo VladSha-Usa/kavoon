@@ -15,6 +15,7 @@ const Content = ({ classPrefix }) => {
       <div className={layoutClass}>
 
         <BlockItem
+          rightMargin={true}
           src="img/blog.jpg"
           srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
           type='blog'>BLOG</BlockItem>
@@ -54,13 +55,13 @@ const Content = ({ classPrefix }) => {
 
       .${layoutClass} {
         position: relative;
-        height: 304px;
+        height: 280px;
         display: flex;
         flex-wrap: wrap-reverse;
       }
       .${layoutShopClass} {
         //position: relative;
-        height: 600px;
+        height: 540px;
         margin-left: auto;
       }
       .where-buy-area {

@@ -182,6 +182,28 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         width: ${style.normal.width};
         height: ${style.normal.height};
       }
+      @media only screen and (max-width: 1165px) { 
+       .pathfinder-blog-image {
+          width: ${style.small.imageWidth};
+          height: ${style.small.imageHeight};
+        }
+
+        .${blockClass} {
+          width: ${style.small.width};
+          height: ${style.small.height};
+        }
+         .${vertBackgroundClass} {
+          font-size: ${style.small.fontSize};
+          letter-spacing: ${style.small.letterSpacing};
+          left: ${style.small.offsetLeft};
+          top: ${style.small.offsetTop};
+        }
+         .${titleClass} {
+          width: ${style.small.imageWidth};
+          top: -${style.small.fontSize};
+        }
+      }
+
       @media only screen and (max-width: 1023px) {
         
         .${titleClass} {
