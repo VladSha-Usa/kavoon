@@ -80,11 +80,12 @@ const Title = ({ classPrefix }) => {
       @media only screen and (max-width: 1023px) {
   
         .${backgroundClass} {
-          //text-align: center;
           letter-spacing: 3.37px;
           font-size: 72px;
           line-height: 60px;
           left: -20px;
+          width: 100vw;
+          overflow: hidden;
         }
         .${titleFirstClass} {
           //text-align: center;

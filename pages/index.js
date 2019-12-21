@@ -9,8 +9,12 @@ import Content from '../components/mainPage/content'
 const headerHeight = 80
 
 const onScroll = () => {
-  //  console.log("Scroll")
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  var scrollThreshold = 40
+  var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  if (width <= 1023) {
+    scrollThreshold=3
+  }
+  if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
     document.getElementById("home").classList.add("header-border");
   } else {
     document.getElementById("home").classList.remove("header-border");
@@ -137,10 +141,9 @@ const Home = () => {
 
       @media only screen and (max-width: 1023px) {
         .page-content {
-          max-width: 343px;
+          width: 343px;
           margin-left: auto;
           margin-right: auto;
-          owerflow: hidden;
         }
         .map-image {
           height: initial;

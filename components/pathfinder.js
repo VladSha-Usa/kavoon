@@ -12,37 +12,49 @@ const objects = [
 
 const PathfinderObject = ({ direct }) => {
   const flexDirection = direct ? "row" : "row-reverse"
-  const textMarginStyle = direct ? { marginLeft: "105px" } : { marginRight: "105px" }
+  const textMarginStyle = direct ? 'margin-left: 105px' :  'margin-right: 105px' 
   return (<>
     <article>
-
+      <p className="title small" >Мальовничий Свірж</p>
       <div className="image-list">
         <img src="Swirg_300*400.jpg" className="image" />
+        <img src="img/switcher.svg"
+          className="switcher"/>
       </div>
       <div style={{ flex: "auto", overflow: "hidden" }}>
 
         <div className="pathfinder-object-text" >
-          <p className="header" >Мальовничий Свірж</p>
+          <p className="title large" >Мальовничий Свірж</p> 
           <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
            </p>
         </div>
       </div>
     </article>
     <style jsx>{`
+      .switcher {
+        margin-top: 15px;
+        width: 63px;
+        height: 15px;
+        object-fit: contain;
+      }
+      .small {
+        display: none;
+      }
       article {
         padding-top: 80px;
         display: flex;
         flex-direction: ${flexDirection};
         flex-wrap: no-wrap;
         width: 100%;
-        height: 320px;
+        height: 350px;
       }
       .image-list {
+        text-align: center;
         flex: 0 0 450px;
         height: 100%;
         overflow: "hidden"
       }
-      .header  {
+      .title  {
         font-family: Montserrat;
         font-size: 32px;
         font-weight: 600;
@@ -53,10 +65,7 @@ const PathfinderObject = ({ direct }) => {
         color: var(--primarycolor);
         margin: 5px;
       }
-      h4 {
-        color: var(--texticonscolor);
-      }
-
+    
       .image {
         width: 450px;
         height: 320px;
@@ -66,6 +75,7 @@ const PathfinderObject = ({ direct }) => {
       }
       .pathfinder-object-text {
         //text-align: justify;
+        ${textMarginStyle};
         font-family: Montserrat;
         font-size: 17px;
         font-weight: 500;
@@ -74,7 +84,11 @@ const PathfinderObject = ({ direct }) => {
         line-height: 1.53;
         letter-spacing: 0.79px;
         color: #061434;
-
+      }
+      @media only screen and (max-width: 1165px) { 
+         .pathfinder-object-text {
+          font-size: 16px;
+         }
       }
       @media only screen and (max-width: 1023px) {
         .image-list {
@@ -92,13 +106,32 @@ const PathfinderObject = ({ direct }) => {
         }
         article {
           width: 343px;
-          padding-top: 0px;
+          padding-top: 30px;
           margins-left: auto;
-          //display: flex;
-          //flex-direction: ${flexDirection};
           flex-wrap: wrap;
-          //width: 100%;
           height: inherit;
+        }
+        .pathfinder-object-text {
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: 0.65px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        .title {
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+          //margin-top: 20px;
+          margin-bottom: 20px;
+          font-weight: 500;
+          color: var(--texticonscolor);
+        }
+        .small {
+          display: block;
+        }
+        .large {
+          display: none;
         }
       }
       `}
@@ -234,6 +267,11 @@ const Pathfinder = () => (
               line-height: 1.53;
               letter-spacing: 0.79px;
               color: var(--texticonscolor);
+          }
+          @media only screen and (max-width: 1165px) { 
+            .vector-background {
+              display: none;
+            }
           }
           @media only screen and (max-width: 1023px) {
             .vector-background {

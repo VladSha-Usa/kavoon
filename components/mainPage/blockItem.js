@@ -205,7 +205,7 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
         .${blockClass} {
           width: ${style.small.width};
           height: ${style.small.height};
-          margin-right: ${style.small.marginRight};
+          margin-right: ${style.normal.marginRight};
         }
          .${vertBackgroundClass} {
           font-size: ${style.small.fontSize};
