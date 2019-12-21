@@ -44,15 +44,14 @@ const PathfinderObject = ({ direct }) => {
         padding-top: 80px;
         display: flex;
         flex-direction: ${flexDirection};
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
         width: 100%;
-        height: 350px;
+        height: 360px;
       }
       .image-list {
         text-align: center;
         flex: 0 0 450px;
         height: 100%;
-        overflow: "hidden"
       }
       .title  {
         font-family: Montserrat;
@@ -94,8 +93,6 @@ const PathfinderObject = ({ direct }) => {
         .image-list {
           flex: auto;
           margins-left: auto;
-          //height: 100%;
-          //overflow: "hidden"
         }
         .image {
           width: 335px;

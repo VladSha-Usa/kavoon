@@ -5,6 +5,7 @@ import Pathfinder from '../components/pathfinder'
 import Head from 'next/head'
 import Header from '../components/mainPage/header'
 import Content from '../components/mainPage/content'
+import Footer from '../components/mainPage/footer'
 
 const headerHeight = 80
 
@@ -71,7 +72,10 @@ const Home = () => {
       </div>
     </div>
     <div className="bg-block-2">
-      <div id="pathfinder" className="page-content bg-block-2" style={{paddingTop: "50px"}}><Pathfinder /> </div>
+      <div id="pathfinder" className="page-content" ><Pathfinder /> </div>
+    </div>
+    <div className="footer-background">
+      <div id="footer" className="page-content" ><Footer /> </div>
     </div>
     <style jsx>{`
 
@@ -129,6 +133,13 @@ const Home = () => {
 
       .bg-block-2 {
         background-color: #f6faff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      .footer-background {
+        width: 100%;
+        height: 180px;
+        background-color: var(--footer-back);
       }
 
       @media only screen and (max-width: 1165px) {
