@@ -10,7 +10,7 @@ const Footer = () => {
   const hamburgerClass = `${prefix}-hamburger`
   return (<>
     <footer >
-      <div style={{ paddingTop: "40px", display: 'flex' }}>
+      <div className="footer-navbar">
         <div className="footer-banner">
           <nav>
             <a href="#">
@@ -21,7 +21,7 @@ const Footer = () => {
           </nav>
         </div>
         <div className="footer-social">
-          <div style={{ marginRight: "20px" }}>Шукайте нас тут: </div>
+          <div className="find-us-here">Шукайте нас тут: </div>
           <nav style={{ marginRight: "5px" }} >
             <ImageLink href="#" className="footer-icon"
               src="img/viber-footer-icon.svg"
@@ -45,6 +45,13 @@ const Footer = () => {
     </footer>
 
     <style jsx>{`
+    .find-us-here{
+      margin-right: 20px;
+    }
+    .footer-navbar {
+      padding-top: 40px;
+      display: flex;
+    }
     .footer-copyright {
       font-family: Montserrat;
       font-size: 15px;
@@ -66,7 +73,7 @@ const Footer = () => {
       
       margin-left: auto;
     }
-    .footer-social div {
+    .find-us-here {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: normal;
@@ -85,6 +92,37 @@ const Footer = () => {
       width: 210px;
       height: 55px;
       object-fit: contain;
+    }
+    @media only screen and (max-width: 1024px) {
+       .footer-icon {
+          width: 30px;
+          height: 30px;
+          object-fit: contain;
+        }
+      .footer-navbar{
+        display: block;
+        padding-top: 26px;
+        text-align: center;
+      }
+      .footer-social {
+        padding-top: 30px;
+      }
+      .footer-copyright {
+        padding-top: 35px;
+      }
+      .find-us-here {
+        font-size: 16px;
+        margin-right: auto;
+      }
+      .footer-copyright {
+     
+      font-size: 14px;
+      }
+      .logo-footer {
+      width: 180px;
+      height: 45px;
+      object-fit: contain;
+    }
     }
   `}</style>
   </>)

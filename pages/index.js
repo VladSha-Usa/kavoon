@@ -162,6 +162,11 @@ const Home = () => {
         .content {
           padding-top: ${headerHeight }px;
         }
+         .footer-background {
+        
+        height: 215px;
+        
+      }
       }
     `}
     </style>
