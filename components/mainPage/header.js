@@ -20,7 +20,7 @@ const Header = () => {
   const hamburgerClass = `${prefix}-hamburger`
 
   useEffect(() => {
-  
+
     // var firebaseConfig = {
     //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
     //   authDomain: "flowers-way.firebaseapp.com",
@@ -38,52 +38,52 @@ const Header = () => {
   });
 
   return (<>
-    <header className={ navbarClass }>
-      <div className={ bannerClass }>
-          <nav >
-            <a href="#home">
-              <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x"  
-              className={ bannerImgClass }/>
-            </a>
-          </nav>
-        </div>
-        <div className={ menuClass }>
-          <nav >
-            <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
-          </nav>
+    <header className={navbarClass}>
+      <div className={bannerClass}>
+        <nav >
+          <a href="#home">
+            <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x"
+              className={bannerImgClass} />
+          </a>
+        </nav>
+      </div>
+      <div className={menuClass}>
+        <nav >
+          <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
+        </nav>
         <nav style={{ marginLeft: "40px", marginRight: "40px" }}>
-            <a href="#">Путівник</a>
-          </nav>
-          <nav >
-            <span className="disabled">Блог</span>
-          </nav>
-        </div>
-        <div className={socialClass} >
+          <a href="#">Путівник</a>
+        </nav>
+        <nav >
+          <span className="disabled">Блог</span>
+        </nav>
+      </div>
+      <div className={socialClass} >
 
-          <nav style={{marginRight:"5px"}} >
-            <ImageLink href="#" className="TG"
-              src="img/viber.svg"
-              hoverSrc="img/viber-hover.svg" />
-          </nav>
+        <nav style={{ marginRight: "5px" }} >
+          <ImageLink href="#" className="TG"
+            src="img/viber.svg"
+            hoverSrc="img/viber-hover.svg" />
+        </nav>
 
         <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
-            <ImageLink href="http://instagram.com/flowers__way/" className="TG"
-              src="img/instagram.svg"
-              hoverSrc="img/instagram-hover.svg" />
-          </nav>
+          <ImageLink href="http://instagram.com/flowers__way/" className="TG"
+            src="img/instagram.svg"
+            hoverSrc="img/instagram-hover.svg" />
+        </nav>
         <nav style={{ marginLeft: "5px" }}>
-            <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
-              src="img/facebook.svg"
-              hoverSrc="img/facebook-hover.svg" />
-          </nav>
-        </div>
-        <div className={hamburgerClass}>
-          <nav >
-            <a href="#home">
-              <img src="img/menu.png" srcSet="img/menu@2x.png 2x, img/menu@3x.png 3x" />
-            </a>
-          </nav>
-        </div>
+          <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
+            src="img/facebook.svg"
+            hoverSrc="img/facebook-hover.svg" />
+        </nav>
+      </div>
+      <div className={hamburgerClass}>
+        <nav >
+          <a href="#home">
+            <img src="img/menu.png" srcSet="img/menu@2x.png 2x, img/menu@3x.png 3x" />
+          </a>
+        </nav>
+      </div>
     </header>
     <style jsx>{`
     
