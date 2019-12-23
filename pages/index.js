@@ -1,4 +1,5 @@
-import '../components/styleguide.scss'
+import '../components/styleguide.css'
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import React, { useEffect } from 'react'
 import Pathfinder from '../components/pathfinder'
