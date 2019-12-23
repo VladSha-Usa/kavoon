@@ -15,7 +15,7 @@ const Footer = () => {
           <nav>
             <a href="#">
               <img src="img/logo-footer.png"
-                srcset="img/logo-footer@2x.png 2x, img/logo-footer@3x.png 3x"
+                srcSet="img/logo-footer@2x.png 2x, img/logo-footer@3x.png 3x"
                 className="logo-footer" />
             </a>
           </nav>
