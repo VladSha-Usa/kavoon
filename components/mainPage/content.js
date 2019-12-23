@@ -61,8 +61,8 @@ const Content = ({ classPrefix }) => {
       }
       .${layoutShopClass} {
         //position: relative;
-        height: 540px;
-        margin-left: auto;
+        height: 580px;
+        //margin-left: auto;
       }
       .where-buy-area {
 
@@ -112,6 +112,11 @@ const Content = ({ classPrefix }) => {
         letter-spacing: 0.79px;
         text-transform: uppercase;
         color: #ffffff;
+      }
+      @media only screen and (max-width: 1165px) {
+        .${layoutShopClass} {
+          height: 530px;
+        }
       }
       @media only screen and (max-width: 1023px) {
         .${layoutClass} {
