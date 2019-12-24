@@ -1,8 +1,7 @@
 import '../components/styleguide.css'
-import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import React, { useEffect } from 'react'
-import Pathfinder from '../components/pathfinder'
+import Pathfinder from '../components/mainPage/pathfinder'
 import Head from 'next/head'
 import Header from '../components/mainPage/header'
 import Content from '../components/mainPage/content'
@@ -59,7 +58,8 @@ const Home = () => {
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-
+      <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     </Head>
 
     <div className="map-image">
