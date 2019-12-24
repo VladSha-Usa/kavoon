@@ -1,3 +1,4 @@
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image, ImageWithZoom } from 'pure-react-carousel';
 
 const objects = [
   {
@@ -12,24 +13,66 @@ const objects = [
 
 const PathfinderObject = ({ direct }) => {
   const flexDirection = direct ? "row" : "row-reverse"
-  const textMarginStyle = direct ? 'margin-left: 105px' :  'margin-right: 105px' 
+  const textMarginStyle = direct ? 'margin-left: 105px' : 'margin-right: 105px'
   return (<>
     <article>
       <p className="title small" >Мальовничий Свірж</p>
       <div className="image-list">
-        <img src="Swirg_300*400.jpg" className="image" />
+        {/* <img src="Swirg_300*400.jpg" className="image" /> */}
+        < CarouselProvider
+          naturalSlideWidth={450}
+          naturalSlideHeight={320}
+          totalSlides={2}
+        >
+          <Slider className="pathfinder-image-gallery">
+            <Slide index={0}>
+              <Image src="Swirg_300*400.jpg" className="pathfinder-image"/>
+            </Slide>
+            <Slide index={1}><Image src="Swirg_300*400.jpg" className="pathfinder-image" />
+            </Slide>
+          </Slider>
+        </CarouselProvider >
+
+
+
         <img src="img/switcher.svg"
-          className="switcher"/>
+          className="switcher" />
       </div>
       <div style={{ flex: "auto", overflow: "hidden" }}>
 
         <div className="pathfinder-object-text" >
-          <p className="title large" >Мальовничий Свірж</p> 
+          <p className="title large" >Мальовничий Свірж</p>
           <p>Якщо б я будував замок, я б збудував його на тому <b>самому місці</b>. Замок розташован в дійсно мальновничому місці серед невеличких холмів та шикарної  природа. Також в цьому регіоні просто безліч добре і не дуже збережених памятників давнини: костел в перемишлянах, старий млин, 2 каплички в місті Бібрка, да і сама Бібрка, яка старіща за Львів, варта того щоб приділити ій якщо не цілий день, то пів дня точно...
            </p>
         </div>
       </div>
     </article>
+    <style>{`
+      .pathfinder-image-gallery {
+        width: 450px;
+        height: 320px;
+      }
+      .pathfinder-image {
+          width: 450px;
+          height: 320px;
+          object-fit: cover;
+          overflow: hidden;
+      }
+      .pathfinder-image-gallery {
+        border-radius: 25px;
+        box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+      }
+      @media only screen and (max-width: 1023px) {
+        .pathfinder-image-gallery {
+          width: 335px;
+          height: 280px;
+        }
+       .pathfinder-image {
+          width: 335px;
+          height: 280px;
+        }
+      }
+    `}</style>
     <style jsx>{`
       .switcher {
         margin-top: 15px;
@@ -65,13 +108,13 @@ const PathfinderObject = ({ direct }) => {
         margin: 5px;
       }
     
-      .image {
-        width: 450px;
-        height: 320px;
-        object-fill: contain;
-        border-radius: 25px;
-        box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
-      }
+      // .image {
+      //   width: 450px;
+      //   height: 320px;
+      //   object-fill: contain;
+      //   border-radius: 25px;
+      //   box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+      // }
       .pathfinder-object-text {
         //text-align: justify;
         ${textMarginStyle};
@@ -143,11 +186,11 @@ const Pathfinder = () => (
       <div className="pathfinder-caption-background-text">Путівник</div>
       <div className="pathfinder-caption-text">Путівник</div>
     </div>
-   
+
     <div className="pathfinder-story-text" >
       На цій сторіннці ми зібрали об'єкти лвівської області які варті вашої уваги.
     </div>
-    <div style={{ height: "1px", paddingBottom: "31px"  }}>
+    <div style={{ height: "1px", paddingBottom: "31px" }}>
       <img style={{ position: "relative", left: "477px", top: "-67px" }} src="img/vector-background.svg"
         className="vector-background" />
     </div>

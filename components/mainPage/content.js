@@ -60,9 +60,8 @@ const Content = ({ classPrefix }) => {
         flex-wrap: wrap-reverse;
       }
       .${layoutShopClass} {
-        //position: relative;
         height: 580px;
-        //margin-left: auto;
+        margin-left: auto;
       }
       .where-buy-area {
 

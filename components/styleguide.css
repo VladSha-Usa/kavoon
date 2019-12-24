@@ -68,6 +68,8 @@
 }
 body {
   margin: 0px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 /* .Nav-menu-title a:hover {
   color: var(--primarycolor);
