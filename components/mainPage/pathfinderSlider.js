@@ -15,15 +15,15 @@ const PathfinderSlider = ({images}) => {
   return (<>
     <div className="pathfinder-image-gallery">
       <Slider {...settings}>
-        {images.map(image => (
-          <div>
+        {images.map((image, index)=> (
+          <div key={index}>
             <img src={image} className="pathfinder-image" />
         </div>))}
       </Slider>
     </div>
    
     <div style={{ display: 'flex', justifyContent: "center" }} className="switcher">
-      {images.map((image, index) => (<div key={index} className={idx == index ? "switcher-item-active" : "switcher-item"} />)) }
+      {images.map((_, index) => (<div key={index} className={idx == index ? "switcher-item-active" : "switcher-item"} />)) }
     </div>
     <style>{`
      
@@ -49,8 +49,10 @@ const PathfinderSlider = ({images}) => {
         border-radius: 10px;
         margin:  0px 5px;
         height: 15px; 
-        width: 15px; 
-        background: rgb(24, 49, 170, 1);
+        width: 15px;
+        background: rgba(24, 49, 170, 1);
+        border: 1px;
+        box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);
       }
       .switcher-item {
        border-radius: 10px;
@@ -58,6 +60,8 @@ const PathfinderSlider = ({images}) => {
         height: 10px; 
         width: 10px; 
         background: rgb(24, 49, 170, 0.25);
+        border: 1px;
+        box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);
       }
      .pathfinder-image-gallery {
         width: 450px;
