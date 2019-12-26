@@ -16,7 +16,7 @@ const Pathfinder = () => (
       <img style={{ position: "relative", left: "477px", top: "-67px" }} src="img/vector-background.svg"
         className="vector-background" />
     </div>
-    {objects.map((object, index) => (<PathfinderObject jsx object={object} direct={ index % 2 == 0} />))}
+    {objects.map((object, index) => (<PathfinderObject key={index} object={object} direct={ index % 2 == 0} />))}
     
     {/* Бібрка начало блока */}
     {/* <div>
