@@ -2,7 +2,7 @@ import PathfinderSlider from './pathfinderSlider'
 
 const PathfinderObject = ({object, direct }) => {
   const flexDirection = direct ? "row" : "row-reverse"
-  const textMarginStyle = direct ? 'margin-left: 105px' : 'margin-right: 105px'
+  const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px'
 
   return (<>
     <article>
@@ -56,7 +56,7 @@ const PathfinderObject = ({object, direct }) => {
         flex-direction: ${flexDirection};
         flex-wrap: nowrap;
         width: 100%;
-        height: 360px;
+        min-height: 360px;
       }
       .image-list {
         text-align: center;
@@ -76,14 +76,14 @@ const PathfinderObject = ({object, direct }) => {
       }
     
       .pathfinder-object-text {
-        //text-align: justify;
-        ${textMarginStyle};
+        text-align: justify;
+        ${ direct ? 'margin-left: 105px' : 'margin-right: 105px' };
         font-family: Montserrat;
         font-size: 17px;
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.53;
+        line-height: 1.50;
         letter-spacing: 0.79px;
         color: #061434;
       }

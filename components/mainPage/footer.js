@@ -93,7 +93,7 @@ const Footer = () => {
       height: 55px;
       object-fit: contain;
     }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1023px) {
        .footer-icon {
           width: 30px;
           height: 30px;
