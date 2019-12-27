@@ -48,14 +48,14 @@ const Header = () => {
         </nav>
       </div>
       <div className={menuClass}>
-        <nav >
+        <nav className="menu-link">
           <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
         </nav>
-        <nav style={{ marginLeft: "40px", marginRight: "40px" }}>
-          <a href="#">Путівник</a>
+        <nav className="menu-link" style={{ marginLeft: "40px", marginRight: "40px" }}>
+          <a href="#pathfinder">Путівник</a>
         </nav>
         <nav >
-          <span className="disabled">Блог</span>
+          <span className="menu-link" className="disabled">Блог</span>
         </nav>
       </div>
       <div className={socialClass} >
@@ -124,7 +124,9 @@ const Header = () => {
       position: relative;
       justify-content: center;
     }
+    .menu-link {
 
+    }
     a:link {
       text-decoration: none;
       color: #061434;
@@ -139,11 +141,11 @@ const Header = () => {
       opacity: 0.5;
     }
 
-    a:hover {
+    .menu-link a:hover {
       color: var(--primarycolor);
     }
 
-    a::after {
+    .menu-link a::after {
       content: "";
       display: block;
       position: relative;
@@ -154,7 +156,7 @@ const Header = () => {
       background: var(--primarycolor);
     }
 
-    a:hover::after {
+    .menu-link a:hover::after {
       width: 100%;
     }
 

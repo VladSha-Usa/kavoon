@@ -18,16 +18,21 @@ const Content = ({ classPrefix }) => {
           rightMargin={true}
           src="img/blog.jpg"
           srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
+          enabled={false}
           type='blog'>BLOG</BlockItem>
 
         <BlockItem src="img/image.jpg"
           srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x"
+          href="#pathfinder"
+          enabled={true}
           type='pathfinder'>ПУТІВНИК</BlockItem>
+         
         <div className={layoutShopClass}>
 
           <BlockItem src="img/shop-image.jpg"
             srcSet="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
             backText="МАГАЗИН"
+            enabled={true}
             type='shop'>Велоспорядження<br />для легких подорожей </BlockItem>
 
           <div className="where-buy-area" >

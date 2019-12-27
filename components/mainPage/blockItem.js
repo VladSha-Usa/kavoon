@@ -10,7 +10,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type }) => {
+const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -104,10 +104,14 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
     case 'shop': style = shop; break;
     case 'pathfinder': style = pathfinder; break;
   }
-
+  var opacity1 = 1
+  if (!enabled) {
+    href =  undefined
+    opacity1 = 0.5
+  }
   return (<>
     <div className={blockClass}>
-      <a href="#">
+      <a href={href} style={{ opacity: opacity1 }}>
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
         <div className={vertBackgroundClass}>{backText || children}</div>
 
