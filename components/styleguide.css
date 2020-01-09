@@ -86,3 +86,6 @@ body {
     text-align: center;
     color: #061434;
 }
+.no-scroll {
+  overflow: hidden;
+}

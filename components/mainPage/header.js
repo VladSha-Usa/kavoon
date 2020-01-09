@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ImageLink from '../common/imageLink'
+import MainMenu from '../common/mainMenu'
 
 // const onScroll = () => {
 //   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -18,6 +19,7 @@ const Header = () => {
   const bannerImgClass = `${prefix}-banner-img`
   const socialClass = `${prefix}-social`
   const hamburgerClass = `${prefix}-hamburger`
+  const [popup, setPopup] = useState(false)  
 
   useEffect(() => {
 
@@ -38,6 +40,7 @@ const Header = () => {
   });
 
   return (<>
+    {popup && <MainMenu onClose={() => setPopup(false)} />}
     <header className={navbarClass}>
       <div className={bannerClass}>
         <nav >
@@ -79,9 +82,9 @@ const Header = () => {
       </div>
       <div className={hamburgerClass}>
         <nav >
-          <a href="#home">
+          <div onClick={ () => setPopup(true)}>
             <img src="img/menu.png" srcSet="img/menu@2x.png 2x, img/menu@3x.png 3x" />
-          </a>
+          </div>
         </nav>
       </div>
     </header>
