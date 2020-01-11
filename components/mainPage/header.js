@@ -45,7 +45,7 @@ const Header = () => {
       <div className={bannerClass}>
         <nav >
           <a href="#home">
-            <img src="img/logotype.png" srcSet="img/logotype@2x.png 2x, img/logotype@3x.png 3x"
+            <img src="/img/logotype.png" srcSet="/img/logotype@2x.png 2x, img/logotype@3x.png 3x"
               className={bannerImgClass} />
           </a>
         </nav>
@@ -65,25 +65,25 @@ const Header = () => {
 
         <nav style={{ marginRight: "5px" }} >
           <ImageLink href="#" className="TG"
-            src="img/viber.svg"
-            hoverSrc="img/viber-hover.svg" />
+            src="/img/viber.svg"
+            hoverSrc="/img/viber-hover.svg" />
         </nav>
 
         <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
           <ImageLink href="http://instagram.com/flowers__way/" className="TG"
-            src="img/instagram.svg"
-            hoverSrc="img/instagram-hover.svg" />
+            src="/img/instagram.svg"
+            hoverSrc="/img/instagram-hover.svg" />
         </nav>
         <nav style={{ marginLeft: "5px" }}>
           <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
-            src="img/facebook.svg"
-            hoverSrc="img/facebook-hover.svg" />
+            src="/img/facebook.svg"
+            hoverSrc="/img/facebook-hover.svg" />
         </nav>
       </div>
       <div className={hamburgerClass}>
         <nav >
           <div onClick={ () => setPopup(true)}>
-            <img src="img/menu.png" srcSet="img/menu@2x.png 2x, img/menu@3x.png 3x" />
+            <img src="/img/menu.png" srcSet="/img/menu@2x.png 2x, img/menu@3x.png 3x" />
           </div>
         </nav>
       </div>

@@ -19,34 +19,7 @@ const PathfinderObject = ({object, direct }) => {
       </div>
     </article>
     <style jsx>{`
-     .pathfinder-image-gallery {
-        width: 450px;
-        height: 320px;
-        border-radius: 25px;
-        overflow: hidden;
-        box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
-      }
-      .pathfinder-image {
-        width: 450px;
-        height: 320px;
-        object-fit: cover;
-        overflow: hidden;
-      }
   
-      @media only screen and (max-width: 1023px) {
-        .pathfinder-image-gallery {
-          width: 335px;
-          height: 280px;
-        }
-       .pathfinder-image {
-          width: 335px;
-          height: 280px;
-        }
-      }
-      .switcher {
-        margin-top: 15px;
-        height: 15px;
-      }
       .small {
         display: none;
       }

@@ -14,8 +14,8 @@ const Footer = () => {
         <div className="footer-banner">
           <nav>
             <a href="#">
-              <img src="img/logo-footer.png"
-                srcSet="img/logo-footer@2x.png 2x, img/logo-footer@3x.png 3x"
+              <img src="/img/logo-footer.png"
+                srcSet="/img/logo-footer@2x.png 2x, /img/logo-footer@3x.png 3x"
                 className="logo-footer" />
             </a>
           </nav>
@@ -24,18 +24,18 @@ const Footer = () => {
           <div className="find-us-here">Шукайте нас тут: </div>
           <nav style={{ marginRight: "5px" }} >
             <ImageLink href="#" className="footer-icon"
-              src="img/viber-footer-icon.svg"
-              hoverSrc="img/viber-hover.svg" />
+							src="/img/viber-footer-icon.svg"
+							hoverSrc="/img/viber-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
             <ImageLink href="http://instagram.com/flowers__way/" className="footer-icon"
-              src="img/instagram-footer-icon.svg"
-              hoverSrc="img/instagram-hover.svg" />
+							src="/img/instagram-footer-icon.svg"
+							hoverSrc="/img/instagram-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px" }}>
             <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="footer-icon"
-              src="img/facebook-footer-icon.svg"
-              hoverSrc="img/facebook-hover.svg" />
+              src="/img/facebook-footer-icon.svg"
+              hoverSrc="/img/facebook-hover.svg" />
           </nav>
         </div>
       </div>

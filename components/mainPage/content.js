@@ -16,21 +16,21 @@ const Content = ({ classPrefix }) => {
 
         <BlockItem
           rightMargin={true}
-          src="img/blog.jpg"
-          srcSet="img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
+          src="/img/blog.jpg"
+          srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
           enabled={false}
           type='blog'>BLOG</BlockItem>
 
-        <BlockItem src="img/image.jpg"
-          srcSet="img/image@2x.jpg 2x, img/image@3x.jpg 3x"
+        <BlockItem src="/img/image.jpg"
+          srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
           href="#pathfinder"
           enabled={true}
           type='pathfinder'>ПУТІВНИК</BlockItem>
          
         <div className={layoutShopClass}>
 
-          <BlockItem src="img/shop-image.jpg"
-            srcSet="img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
+          <BlockItem src="/img/shop-image.jpg"
+            srcSet="/img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
             backText="МАГАЗИН"
             enabled={true}
             type='shop'>Велоспорядження<br />для легких подорожей </BlockItem>
@@ -39,7 +39,7 @@ const Content = ({ classPrefix }) => {
             <div className="where-buy-text ">Де купити?</div>
             <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">
               <div className="button-field button-field-text">
-                <img style={{ marginLeft: "auto", marginRight: "6px" }} src="img/shop-icon.svg" className="shop-icon" />
+                <img style={{ marginLeft: "auto", marginRight: "6px" }} src="/img/shop-icon.svg" className="shop-icon" />
                 <div style={{ marginRight: "auto", marginLeft: "6px" }}>Shop</div>
               </div>
             </a>
