@@ -6,6 +6,7 @@ import Header from '../../components/mainPage/header'
 import Footer from '../../components/mainPage/footer'
 import Caption from '../../components/common/pageCaption'
 import PFTextItem from '../../components/pathfinder/pfTextItem'
+import PFMainContent from '../../components/pathfinder/pfMainContent'
 
 const headerHeight = 80
 
@@ -74,7 +75,8 @@ const Swirzh = () => {
 			<div className="page-content content">
 				<Caption caption="Свирж"/>
 				<PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={false}/>
-
+				<PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={true} />
+				<PFMainContent />
 			</div>
 		</div>
 		<div className="footer-background">
@@ -90,10 +92,6 @@ const Swirzh = () => {
         width: 100vw;
       }
 
-      .header-page {
-        align-items: center;
-        height: 100%;
-      }
       .page-content {
         max-width: 1166px;
         margin-left: auto;
@@ -102,7 +100,7 @@ const Swirzh = () => {
     
       .map-image {
         /* Set a specific height */
-        height: 100vh; 
+        //height: 1000vh; 
        
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -112,7 +110,7 @@ const Swirzh = () => {
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -3%, rgba(255, 255, 255, 0.68) 117%), url(/img/map-image.png);
       }
 
-      .header-border ::after {
+      .header-border ::after { 
           content: "";
           display: block;
           position: absolute;

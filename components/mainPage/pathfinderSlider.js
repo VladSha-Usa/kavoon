@@ -46,7 +46,7 @@ const PathfinderSlider = ({images}) => {
     </style>
     <style jsx>{`
      .switcher-item-active {
-        border-radius: 10px;
+        border-radius: 7.5px;
         margin:  0px 5px;
         height: 15px; 
         width: 15px;
@@ -55,10 +55,10 @@ const PathfinderSlider = ({images}) => {
         box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);
       }
       .switcher-item {
-       border-radius: 10px;
-        margin: 2.5px 5px ;
-        height: 10px; 
-        width: 10px; 
+       border-radius: 4px;
+        margin: 4px 4px ;
+        height: 8px; 
+        width: 8px; 
         background: rgb(24, 49, 170, 0.25);
         border: 1px;
         box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);

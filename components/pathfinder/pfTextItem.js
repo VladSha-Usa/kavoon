@@ -4,7 +4,7 @@ import PathfinderSlider from '../mainPage/pathfinderSlider'
 const PFTextItem = ({  text, images, direct }) => {
 	const flexDirection = direct ? "row" : "row-reverse"
 	const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px'
-	console.log(text)
+	//console.log(text)
 	return (<>
 		<article>
 			<div className="image-list">
@@ -25,7 +25,7 @@ const PFTextItem = ({  text, images, direct }) => {
         width: 100%;
         min-height: 360px;
       }
-    
+
       .pathfinder-object-text {
         text-align: justify;
         ${ direct ? 'margin-left: 105px' : 'margin-right: 105px'};
@@ -38,7 +38,7 @@ const PFTextItem = ({  text, images, direct }) => {
         letter-spacing: 0.79px;
         color: #061434;
       }
-      @media only screen and (max-width: 1165px) { 
+      @media only screen and (max-width: 1165px) {
          .pathfinder-object-text {
           font-size: 16px;
          }
