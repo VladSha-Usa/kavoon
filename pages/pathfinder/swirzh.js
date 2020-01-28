@@ -11,78 +11,78 @@ import PFMainContent from '../../components/pathfinder/pfMainContent'
 const headerHeight = 80
 
 const onScroll = () => {
-	var scrollThreshold = 40
-	var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-	if (width <= 1023) {
-		scrollThreshold = 3
-	}
-	if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-		document.getElementById("home").classList.add("header-border");
-	} else {
-		document.getElementById("home").classList.remove("header-border");
-	}
+  var scrollThreshold = 40
+  var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  if (width <= 1023) {
+    scrollThreshold = 3
+  }
+  if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+    document.getElementById("home").classList.add("header-border");
+  } else {
+    document.getElementById("home").classList.remove("header-border");
+  }
 }
 
 const Swirzh = () => {
-	useEffect(() => {
-		document.onscroll = onScroll;
-		onScroll()
+  useEffect(() => {
+    document.onscroll = onScroll;
+    onScroll()
 
-		// var firebaseConfig = {
-		//   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
-		//   authDomain: "flowers-way.firebaseapp.com",
-		//   databaseURL: "https://flowers-way.firebaseio.com",
-		//   projectId: "flowers-way",
-		//   storageBucket: "flowers-way.appspot.com",
-		//   messagingSenderId: "305623494289",
-		//   appId: "1:305623494289:web:fa6954b42047c910079930",
-		//   measurementId: "G-PSBJYP7E5X"
-		// };
-		// // Initialize Firebase
-		// firebase.initializeApp(firebaseConfig)
-		// firebase.analytics()
+    // var firebaseConfig = {
+    //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
+    //   authDomain: "flowers-way.firebaseapp.com",
+    //   databaseURL: "https://flowers-way.firebaseio.com",
+    //   projectId: "flowers-way",
+    //   storageBucket: "flowers-way.appspot.com",
+    //   messagingSenderId: "305623494289",
+    //   appId: "1:305623494289:web:fa6954b42047c910079930",
+    //   measurementId: "G-PSBJYP7E5X"
+    // };
+    // // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig)
+    // firebase.analytics()
 
-	});
+  });
 
-	const text = `В 1594 Станіслав Жолкевський(польський державний та військовий діяч, гетьман) почав будівництво свого замку.В 1603 рокі за свої військові перемоги отримав королівський привілей Зигмунта III про надання Магдебурзького права, що дало поштовх розвитку торгівлі.В цей час почали жвавіше розвиватися ремесла та навколишні території.Жовква перетворилася на укріплене місто - фортецю, яке було оточене валами і ровами.`
+  const text = `В 1594 Станіслав Жолкевський(польський державний та військовий діяч, гетьман) почав будівництво свого замку.В 1603 рокі за свої військові перемоги отримав королівський привілей Зигмунта III про надання Магдебурзького права, що дало поштовх розвитку торгівлі.В цей час почали жвавіше розвиватися ремесла та навколишні території.Жовква перетворилася на укріплене місто - фортецю, яке було оточене валами і ровами.`
 
-	return (<>
-		<Head>
-			<title>Flower's Way. Країна очима велосипедистів</title>
-			<meta property="og:locale" content="uk_UA" />
-			<meta property="og:type" content="website" />
-			<meta property="og:title" content="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження" />
-			<meta property="og:description" content="Велосумки для легких подорожей. Власне виробництво. просте монтування" />
-			<meta property="og:url" content="https://flowersway.com.ua" />
-			<meta property="og:image" content="https://flowersway.com.ua/img/shop-image.jpg" />
-			<meta property="og:site_name" content="Спорядження для легких подорожей" />
+  return (<>
+    <Head>
+      <title>Flower's Way. Країна очима велосипедистів</title>
+      <meta property="og:locale" content="uk_UA" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження" />
+      <meta property="og:description" content="Велосумки для легких подорожей. Власне виробництво. просте монтування" />
+      <meta property="og:url" content="https://flowersway.com.ua" />
+      <meta property="og:image" content="https://flowersway.com.ua/img/shop-image.jpg" />
+      <meta property="og:site_name" content="Спорядження для легких подорожей" />
 
 
-			<link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
-			<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
-			<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-		 	<link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-		</Head>
+      <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
+      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+       <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    </Head>
 
-		<div className="map-image">
-			<div id="home" className="header">
-				<div className="page-content" style={{ height: "100%" }}>
-					<Header />
-				</div>
-			</div>
-			<div className="page-content content">
-				<Caption caption="Свирж"/>
-				<PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={false}/>
-				<PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={true} />
-				<PFMainContent />
-			</div>
-		</div>
-		<div className="footer-background">
-			<div id="footer" className="page-content" ><Footer /> </div>
-		</div>
-		<style jsx>{`
+    <div className="map-image">
+      <div id="home" className="header">
+        <div className="page-content" style={{ height: "100%" }}>
+          <Header />
+        </div>
+      </div>
+      <div className="page-content content">
+        <Caption caption="Свирж"/>
+        <PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={false}/>
+        <PFTextItem text={text} images={['/objects/Swirg2_450_320.jpg']} direct={true} />
+        <PFMainContent />
+      </div>
+    </div>
+    <div className="footer-background">
+      <div id="footer" className="page-content" ><Footer /> </div>
+    </div>
+    <style jsx>{`
       .header {
         height: ${headerHeight}px;
         position: fixed;
@@ -97,11 +97,11 @@ const Swirzh = () => {
         margin-left: auto;
         margin-right: auto;
       }
-    
+
       .map-image {
         /* Set a specific height */
-        //height: 1000vh; 
-       
+        //height: 1000vh;
+
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
@@ -110,7 +110,7 @@ const Swirzh = () => {
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0) -3%, rgba(255, 255, 255, 0.68) 117%), url(/img/map-image.png);
       }
 
-      .header-border ::after { 
+      .header-border ::after {
           content: "";
           display: block;
           position: absolute;
@@ -163,12 +163,12 @@ const Swirzh = () => {
           padding-top: ${headerHeight}px;
         }
         .footer-background {
-        	height: 215px;
-      	}
+          height: 215px;
+        }
       }
     `}
-		</style>
-	</>)
+    </style>
+  </>)
 }
 
 export default Swirzh

@@ -2,21 +2,21 @@
 import PathfinderSlider from '../mainPage/pathfinderSlider'
 
 const PFTextItem = ({  text, images, direct }) => {
-	const flexDirection = direct ? "row" : "row-reverse"
-	const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px'
-	//console.log(text)
-	return (<>
-		<article>
-			<div className="image-list">
-				<PathfinderSlider images={images} />
-			</div>
-			<div style={{ flex: "auto", overflow: "hidden" }}>
-				<div className="pathfinder-object-text" >
-					<p dangerouslySetInnerHTML={{ __html: text }} />
-				</div>
-			</div>
-		</article>
-		<style jsx>{`
+  const flexDirection = direct ? "row" : "row-reverse"
+  const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px'
+  //console.log(text)
+  return (<>
+    <article>
+      <div className="image-list">
+        <PathfinderSlider images={images} />
+      </div>
+      <div style={{ flex: "auto", overflow: "hidden" }}>
+        <div className="pathfinder-object-text" >
+          <p dangerouslySetInnerHTML={{ __html: text }} />
+        </div>
+      </div>
+    </article>
+    <style jsx>{`
       article {
         padding-top: 80px;
         display: flex;
@@ -57,11 +57,11 @@ const PFTextItem = ({  text, images, direct }) => {
           letter-spacing: 0.65px;
           margin-right: auto;
           margin-left: auto;
-				}
+        }
       }
       `}
-		</style>
-	</>)
+    </style>
+  </>)
 }
 
 export default PFTextItem;

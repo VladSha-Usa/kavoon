@@ -24,13 +24,13 @@ const Footer = () => {
           <div className="find-us-here">Шукайте нас тут: </div>
           <nav style={{ marginRight: "5px" }} >
             <ImageLink href="#" className="footer-icon"
-							src="/img/viber-footer-icon.svg"
-							hoverSrc="/img/viber-hover.svg" />
+              src="/img/viber-footer-icon.svg"
+              hoverSrc="/img/viber-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
             <ImageLink href="http://instagram.com/flowers__way/" className="footer-icon"
-							src="/img/instagram-footer-icon.svg"
-							hoverSrc="/img/instagram-hover.svg" />
+              src="/img/instagram-footer-icon.svg"
+              hoverSrc="/img/instagram-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px" }}>
             <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="footer-icon"
@@ -61,8 +61,8 @@ const Footer = () => {
       line-height: normal;
       letter-spacing: 0.7px;
       color: #ffffff;
-      
-      
+
+
       width: 100%;
       padding-top: 40px;
       text-align: center;
@@ -70,7 +70,7 @@ const Footer = () => {
     .footer-social {
       align-items: center;
       display: flex;
-      
+
       margin-left: auto;
     }
     .find-us-here {
@@ -115,7 +115,7 @@ const Footer = () => {
         margin-right: auto;
       }
       .footer-copyright {
-     
+
       font-size: 14px;
       }
       .logo-footer {
