@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
+import VisibilitySensor from 'react-visibility-sensor'
 const DynamicMap = dynamic(
   () => import('./map'),
   { ssr: false }
@@ -151,23 +151,41 @@ const PFSmallObject = ({ object }) => {
     `}</style>
   </>)
 }
-const smallObjects = {
-
-
-}
+const smallObjects = [
+  {
+    id: 1,
+    type: 'building',
+    location: {lat: 49.719827, lng: 24.503354}
+  },
+  {
+    id: 2,
+    type: 'building',
+    location: {lat: 49.729227, lng: 24.513854}
+  },
+  {
+    id: 3,
+    type: 'building',
+    location: {lat: 49.729427, lng: 24.523254}
+  },
+]
 const pfMainContent = () => {
-
+  const [selected, setSelected] = useState(smallObjects[0])
   return (<>
     <div className="content">
 
       <div style={{ marginRight: "auto" }}>
-        <PFSmallObject />
-        <PFSmallObject />
-        <PFSmallObject />
-        <PFSmallObject />
+      {smallObjects.map(object=>
+        <VisibilitySensor key={object.id} scrollCheck="true" onChange={ isVisible => isVisible && setSelected(object)}>
+          <PFSmallObject  />
+        </VisibilitySensor>
+      )}
       </div>
       <div className="map">
-        <DynamicMap />
+        <DynamicMap
+        selected={selected}
+        objects={smallObjects}
+        select={setSelected}
+        />
       </div>
     </div>
     <style jsx>{`
