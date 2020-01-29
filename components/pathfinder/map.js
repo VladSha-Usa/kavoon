@@ -19,25 +19,7 @@ const MapGL = ReactMapboxGl({
 
 const icons = ["building", "castle", "church", "kostel", "tower"]
 
-const layers = icons.map(icon => {
-  return {
-    type: icon,
-    layoutLayer: { 'icon-image': `${icon}-id` },
-    images: { type: `${icon}-id`, img: `/img/map-icons/${icon}.png` },
-    layoutLayerSelected: { 'icon-image': `${icon}-selected` },
-    imagesSelected: { type: `${icon}-selected`, img: `/img/map-icons/${icon}-active.png` }
-  }
-})
-console.log(layers)
-
-const circlePaint = {
-  'circle-radius': 12,
-  'circle-color': '#E54E52',
-  'circle-opacity': 0.8
-}
-
 const Map = ({ objects, selected, select }) => {
-  console.log(objects)
   return (<>
     <MapGL
       style="mapbox://styles/mapbox/streets-v9"

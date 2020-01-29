@@ -4,7 +4,6 @@ import PathfinderSlider from '../mainPage/pathfinderSlider'
 const PFTextItem = ({  text, images, direct }) => {
   const flexDirection = direct ? "row" : "row-reverse"
   const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px'
-  //console.log(text)
   return (<>
     <article>
       <div className="image-list">

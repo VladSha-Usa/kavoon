@@ -7,7 +7,7 @@ const DynamicMap = dynamic(
   { ssr: false }
 )
 
-const PFSmallObject = ({ object }) => {
+const PFSmallObject = ({ object, last }) => {
   const [details, showDetails] = useState(false)
   return (<>
     <div className="ctn">
@@ -48,30 +48,11 @@ const PFSmallObject = ({ object }) => {
     </div>
     <style jsx>{`
 
-      .example-enter {
-        height: 0;
-      }
-
-      .example-enter.example-enter-active {
-        height: 100%;
-        transition: height 500ms ease-in;
-      }
-
-      .example-leave {
-        opacity: 0;
-      }
-
-      .example-leave.example-leave-active {
-        opacity: 1;
-        transition: opacity 300ms ease-in;
-      }
 
       .ctn {
-        margin: 0 0 50px 0;
+        margin: 0 0 ${last ? 0: 50}px 0;
         text-align: center;
-        //background-color: #ffff00;
         width: 585px;
-        //height: 700px;
       }
       .image {
         width: 550px;
@@ -174,9 +155,9 @@ const pfMainContent = () => {
     <div className="content">
 
       <div style={{ marginRight: "auto" }}>
-      {smallObjects.map(object=>
+      {smallObjects.map( (object, index)=>
         <VisibilitySensor key={object.id} scrollCheck="true" onChange={ isVisible => isVisible && setSelected(object)}>
-          <PFSmallObject  />
+          <PFSmallObject  object={object} last={index == smallObjects.length - 1} />
         </VisibilitySensor>
       )}
       </div>
@@ -192,6 +173,7 @@ const pfMainContent = () => {
     .content {
       margin-top: 25px;
       display: flex;
+      margin-bottom: 50px;
     }
     .map {
       position: sticky;
@@ -199,7 +181,7 @@ const pfMainContent = () => {
       top: 100px;
       width: 550px;
       height: 700px;
-      overlap: hidden;
+      overflow: hidden;
       border-radius: 15px;
       box-shadow: 2px 10px 30px 0 rgba(9, 21, 85, 0.24);
       background-color: #ffffff;
