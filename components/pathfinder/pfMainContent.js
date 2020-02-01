@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import useCollapse from 'react-collapsed';
 import VisibilitySensor from 'react-visibility-sensor'
 const DynamicMap = dynamic(
   () => import('./map'),
@@ -8,7 +8,11 @@ const DynamicMap = dynamic(
 )
 
 const PFSmallObject = ({ object, last }) => {
-  const [details, showDetails] = useState(false)
+  const { getCollapseProps, toggleOpen, isOpen, mountChildren } = useCollapse(
+    {
+      defaultOpen: false,
+    }
+  );
   return (<>
     <div className="ctn">
       {/* <div className="image"> */}
@@ -22,26 +26,19 @@ const PFSmallObject = ({ object, last }) => {
             Невеличке село Лагодів на Львівщині має досить рідкісну дерев`яну церкву святого архангела Михаїла. Церква п`ятикупольна. Документи 1742 року свідчать, що збудована вона десятьма роками раніше на кошти священника й громади.
           </p>
         </div>
-        {/* <ReactCSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}> */}
-        {details && <div>
+        <div {...getCollapseProps()}>
+          <img className="image" src="/objects/Swirg2_450_320.jpg" />
           <div>
-            <img className="image" src="/objects/Swirg2_450_320.jpg" />
-            <div>
-              <p>
-                Невеличке село Лагодів на Львівщині має досить рідкісну дерев`яну церкву святого архангела Михаїла. Церква п`ятикупольна. Документи 1742 року свідчать, що збудована вона десятьма роками раніше на кошти священника й громади.
+            <p>
+              Невеличке село Лагодів на Львівщині має досить рідкісну дерев`яну церкву святого архангела Михаїла. Церква п`ятикупольна. Документи 1742 року свідчать, що збудована вона десятьма роками раніше на кошти священника й громади.
               </p>
-            </div>
           </div>
-        </div>}
-        {/* </ReactCSSTransitionGroup> */}
+        </div>
         <div className="more">
-          <a onClick={() => showDetails(!details)}
-            style={{ top: "35px", position: "relative" }}>{details ? "Згорнути" : "Більше інформаціі"}
+          <a onClick={() => toggleOpen()}
+            style={{ top: "35px", position: "relative" }}>{isOpen ? "Згорнути" : "Більше інформаціі"}
             <img style={{ top: "2px", height: "16px", width: "15px", position: "relative" }}
-              src={details ? "/img/arrow-up.svg" : "/img/arrow-down.svg"} />
+              src={isOpen ? "/img/arrow-up.svg" : "/img/arrow-down.svg"} />
           </a>
         </div>
       </div>
@@ -50,7 +47,7 @@ const PFSmallObject = ({ object, last }) => {
 
 
       .ctn {
-        margin: 0 0 ${last ? 0: 50}px 0;
+        margin: 0 0 ${last ? 0 : 50}px 0;
         text-align: center;
         width: 585px;
       }
@@ -136,17 +133,17 @@ const smallObjects = [
   {
     id: 1,
     type: 'building',
-    location: {lat: 49.719827, lng: 24.503354}
+    location: { lat: 49.719827, lng: 24.503354 }
   },
   {
     id: 2,
     type: 'building',
-    location: {lat: 49.729227, lng: 24.513854}
+    location: { lat: 49.729227, lng: 24.513854 }
   },
   {
     id: 3,
     type: 'building',
-    location: {lat: 49.729427, lng: 24.523254}
+    location: { lat: 49.729427, lng: 24.523254 }
   },
 ]
 const pfMainContent = () => {
@@ -155,17 +152,17 @@ const pfMainContent = () => {
     <div className="content">
 
       <div style={{ marginRight: "auto" }}>
-      {smallObjects.map( (object, index)=>
-        <VisibilitySensor key={object.id} scrollCheck="true" onChange={ isVisible => isVisible && setSelected(object)}>
-          <PFSmallObject  object={object} last={index == smallObjects.length - 1} />
-        </VisibilitySensor>
-      )}
+        {smallObjects.map((object, index) =>
+          <VisibilitySensor key={object.id} scrollCheck="true" onChange={isVisible => isVisible && setSelected(object)}>
+            <PFSmallObject object={object} last={index == smallObjects.length - 1} />
+          </VisibilitySensor>
+        )}
       </div>
       <div className="map">
         <DynamicMap
-        selected={selected}
-        objects={smallObjects}
-        select={setSelected}
+          selected={selected}
+          objects={smallObjects}
+          select={setSelected}
         />
       </div>
     </div>
@@ -180,7 +177,7 @@ const pfMainContent = () => {
 
       top: 100px;
       width: 550px;
-      height: 700px;
+      max-height: calc(100vh - 120px);
       overflow: hidden;
       border-radius: 15px;
       box-shadow: 2px 10px 30px 0 rgba(9, 21, 85, 0.24);

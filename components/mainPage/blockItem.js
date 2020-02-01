@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 const setActive = (active, id) => () => {
   const element = document.getElementById(id);
   if (active) {
@@ -22,7 +24,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
 
   const shop = {
     small: {
-      fontSize: "58px",
+      fontSize: 58,
       offsetLeft: "125px",
       offsetTop: "-175px",
       letterSpacing: "0.68px",
@@ -34,7 +36,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       marginTop: "0px"
     },
     normal: {
-      fontSize: "70px",
+      fontSize: 70,
       offsetLeft: "158px",
       offsetTop: "-223px",
       imageWidth: "320px",
@@ -47,7 +49,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
   }
   const pathfinder = {
     small: {
-      fontSize: "33px",
+      fontSize: 33,
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
@@ -59,7 +61,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       marginTop: "0px"
     },
     normal: {
-      fontSize: "33px",
+      fontSize: 33,
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
@@ -73,7 +75,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
   }
   const blog = {
     small: {
-      fontSize: "36px",
+      fontSize: 36,
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
@@ -85,7 +87,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       marginTop: "40px"
     },
     normal: {
-      fontSize: "36px",
+      fontSize: 36,
       offsetLeft: "120px",
       offsetTop: "-160px",
       letterSpacing: "1.68px",
@@ -104,14 +106,19 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     case 'shop': style = shop; break;
     case 'pathfinder': style = pathfinder; break;
   }
-  var opacity1 = 1
+  var opacity = 1
   if (!enabled) {
-    href =  undefined
-    opacity1 = 0.5
+    opacity = 0.5
   }
+
+  const [ hover, itemHover ] = useState(false)
+
   return (<>
-    <div className={blockClass}>
-      <a href={href} style={{ opacity: opacity1 }}>
+    <div style={{ opacity }} className={blockClass}
+    onMouseEnter={ ()=> itemHover(true)}
+    onMouseLeave={ ()=> itemHover(false)} >
+      <a href={href} >
+        {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
         <div className={vertBackgroundClass}>{backText || children}</div>
 
@@ -138,19 +145,19 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         background-color: #1831aa;
       }
       .${titleClass} {
-        width: ${style.normal.imageWidth};
+        width: ${style.normal.imageWidth}px;
         align-items: center;
         display: flex;
         position: relative;
-       
-        top: -${style.normal.fontSize};
+        left: -10px;
+        top: -${style.normal.fontSize * 0.75}px;
       }
       .${vertBackgroundClass} {
         object-fit: contain;
         transform: rotate(-90deg);
         opacity: 0.12;
         font-family: Montserrat;
-        font-size: ${style.normal.fontSize};
+        font-size: ${style.normal.fontSize}px;
         font-weight: 900;
         font-stretch: normal;
         font-style: normal;
@@ -159,6 +166,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         color: #296fdc;
 
         position: relative;
+        z-index: 0;
         left: ${style.normal.offsetLeft};
         top: ${style.normal.offsetTop};
       }
@@ -177,8 +185,9 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         width: ${style.normal.imageWidth};
         height: ${style.normal.imageHeight};
         object-fit: contain;
+        overflow: hidden;
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
-        z-index: 1;
+        z-index: 10;
       }
 
       .text {
@@ -200,7 +209,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         margin-right: ${style.normal.marginRight};
         margin-top: ${style.normal.marginTop};
       }
-      @media only screen and (max-width: 1165px) { 
+      @media only screen and (max-width: 1165px) {
        .pathfinder-blog-image {
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};
@@ -212,38 +221,35 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
           margin-right: ${style.normal.marginRight};
         }
          .${vertBackgroundClass} {
-          font-size: ${style.small.fontSize};
+          font-size: ${style.small.fontSize}px;
           letter-spacing: ${style.small.letterSpacing};
           left: ${style.small.offsetLeft};
           top: ${style.small.offsetTop};
         }
          .${titleClass} {
           width: ${style.small.imageWidth};
-          top: -${style.small.fontSize};
+          top: -${style.small.fontSize}px;
         }
       }
 
+
+      // .pathfinder-blog-image {
+      //   ${ href ? 'border: solid 2px var(--primarycolor);' : '' }
+      // }
+
+
       @media only screen and (max-width: 1023px) {
-        
+
         .${titleClass} {
           width: ${style.small.width};
-          top: -${style.small.fontSize};
+          top: -${style.small.fontSize}px;
         }
         .${vertBackgroundClass} {
-          font-size: ${style.small.fontSize};
+          font-size: ${style.small.fontSize}px;
           letter-spacing: ${style.small.letterSpacing};
           left: ${style.small.offsetLeft};
           top: ${style.small.offsetTop};
         }
-
-        a:link {
-          text-decoration: none;
-        }
-
-        a:visited {
-          text-decoration: none;
-        }
-
         .pathfinder-blog-image {
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};

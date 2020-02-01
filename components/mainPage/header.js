@@ -19,7 +19,7 @@ const Header = () => {
   const bannerImgClass = `${prefix}-banner-img`
   const socialClass = `${prefix}-social`
   const hamburgerClass = `${prefix}-hamburger`
-  const [popup, setPopup] = useState(false)  
+  const [popup, setPopup] = useState(false)
 
   useEffect(() => {
 
@@ -51,14 +51,14 @@ const Header = () => {
         </nav>
       </div>
       <div className={menuClass}>
-        <nav className="menu-link">
+        <nav className="menu-link" style={{ marginLeft: "auto" }} >
           <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">Магазин</a>
         </nav>
         <nav className="menu-link" style={{ marginLeft: "40px", marginRight: "40px" }}>
           <a href="#pathfinder">Путівник</a>
         </nav>
-        <nav >
-          <span className="menu-link" className="disabled">Блог</span>
+        <nav className="menu-link" style={{ marginRight: "auto" }} >
+          <span  className="disabled">Блог</span>
         </nav>
       </div>
       <div className={socialClass} >
@@ -89,7 +89,7 @@ const Header = () => {
       </div>
     </header>
     <style jsx>{`
-    
+
     .${navbarClass} {
       align-items: center;
       display: flex;
@@ -124,8 +124,6 @@ const Header = () => {
       line-height: normal;
       letter-spacing: 0.79px;
       color: #061434;
-      position: relative;
-      justify-content: center;
     }
     .menu-link {
 

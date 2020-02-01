@@ -38,7 +38,6 @@ const Map = ({ objects, selected, select }) => {
           coordinates={place.location}
           anchor="bottom"
           onClick={() => select(place)}>
-            <div>Super Text</div>
           <img src={ place === selected ? '/img/map-icons/building-active.svg' :  '/img/map-icons/building.svg'} />
         </Marker>
         )}

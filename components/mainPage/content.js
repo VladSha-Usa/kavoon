@@ -26,7 +26,7 @@ const Content = ({ classPrefix }) => {
           href="#pathfinder"
           enabled={true}
           type='pathfinder'>ПУТІВНИК</BlockItem>
-         
+
         <div className={layoutShopClass}>
 
           <BlockItem src="/img/shop-image.jpg"
@@ -45,15 +45,13 @@ const Content = ({ classPrefix }) => {
             </a>
           </div>
         </div>
-
-
-
-        {/* <div className="scroll-down">
-              <a href="#">
-                <img src="img/scroll-down.svg"  />
-              </a>
-            </div> */}
       </div>
+      { <div className="scroll-down">
+      <img src="img/scroll-down.svg"  />
+              <a href="#">
+
+              </a>
+            </div> }
     </div>
 
     <style jsx>{`
@@ -67,6 +65,15 @@ const Content = ({ classPrefix }) => {
       .${layoutShopClass} {
         height: 580px;
         margin-left: auto;
+      }
+      .scroll-down {
+        //margin-left: 35px;
+        // width: 45px;
+        // height: 160px;
+        object-fit: contain;
+        bottom: 0px;
+        margin-left: auto;
+        position: absolute;
       }
       .where-buy-area {
 
@@ -84,6 +91,13 @@ const Content = ({ classPrefix }) => {
         letter-spacing: 0.79px;
         text-transform: uppercase;
         color: #061434;
+      }
+      .where-buy-area a:link {
+        text-decoration: none;
+      }
+
+      .where-buy-area a:visited {
+        text-decoration: none;
       }
       .shop-icon {
         margin-right: 12px;
