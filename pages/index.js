@@ -60,6 +60,8 @@ const Home = () => {
       <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
       <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+
     </Head>
 
     <div className="map-image">
@@ -71,6 +73,11 @@ const Home = () => {
       <div className="page-content content">
         <Content />
       </div>
+      <div className="animated infinite bounce delay-2s scroll-down">
+        <img src="img/scroll-down.svg" />
+        <a href="#">
+        </a>
+      </div>
     </div>
     <div id="pathfinder" className="bg-block-2">
       <div className="page-content" ><Pathfinder /> </div>
@@ -80,6 +87,18 @@ const Home = () => {
     </div>
     <style jsx>{`
 
+      .scroll-down {
+        animation-duration: 3s;
+        //margin-left: 35px;
+        width: 45px;
+        height: 160px;
+        object-fit: contain;
+
+        margin-left: auto;
+        position: absolute;
+        bottom: 25px;
+        left: calc(100vw/2 + 45px);
+      }
       .header {
         height: ${headerHeight}px;
         position: fixed;
@@ -98,11 +117,11 @@ const Home = () => {
         margin-left: auto;
         margin-right: auto;
       }
-    
+
       .map-image {
         /* Set a specific height */
-        height: 100vh; 
-       
+        height: 100vh;
+
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
@@ -163,12 +182,20 @@ const Home = () => {
         .content {
           padding-top: ${headerHeight }px;
         }
-         .footer-background {
-        
+      .footer-background {
         height: 215px;
-        
+        }
       }
+
+      @media only screen and (max-width: 1165px) {
+
       }
+      @media only screen and (max-width: 1023px) {
+        .scroll-down {
+          display: none;
+        }
+      }
+
     `}
     </style>
   </>)

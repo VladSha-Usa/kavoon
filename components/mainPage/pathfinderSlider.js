@@ -97,6 +97,7 @@ const PathfinderSlider = ({ images }) => {
       .switcher {
         margin-top: 15px;
         height: 15px;
+        position: relative;
       }
       `}</style>
   </>)

@@ -19,7 +19,7 @@ const PathfinderObject = ({object, direct }) => {
       </div>
     </article>
     <style jsx>{`
-  
+
       .small {
         display: none;
       }
@@ -46,8 +46,9 @@ const PathfinderObject = ({object, direct }) => {
         letter-spacing: 1.5px;
         color: var(--primarycolor);
         margin: 5px;
+        position: relative;
       }
-    
+
       .pathfinder-object-text {
         text-align: justify;
         ${ direct ? 'margin-left: 105px' : 'margin-right: 105px' };
@@ -59,8 +60,10 @@ const PathfinderObject = ({object, direct }) => {
         line-height: 1.50;
         letter-spacing: 0.79px;
         color: #061434;
+        position: relative;
+        z-index: 100;
       }
-      @media only screen and (max-width: 1165px) { 
+      @media only screen and (max-width: 1165px) {
          .pathfinder-object-text {
           font-size: 16px;
          }

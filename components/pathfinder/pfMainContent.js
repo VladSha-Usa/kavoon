@@ -8,7 +8,7 @@ const DynamicMap = dynamic(
 )
 
 const PFSmallObject = ({ object, last }) => {
-  const { getCollapseProps, toggleOpen, isOpen, mountChildren } = useCollapse(
+  const { getCollapseProps, toggleOpen, isOpen } = useCollapse(
     {
       defaultOpen: false,
     }

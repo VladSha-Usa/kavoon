@@ -46,12 +46,6 @@ const Content = ({ classPrefix }) => {
           </div>
         </div>
       </div>
-      { <div className="scroll-down">
-      <img src="img/scroll-down.svg"  />
-              <a href="#">
-
-              </a>
-            </div> }
     </div>
 
     <style jsx>{`
@@ -65,15 +59,6 @@ const Content = ({ classPrefix }) => {
       .${layoutShopClass} {
         height: 580px;
         margin-left: auto;
-      }
-      .scroll-down {
-        //margin-left: 35px;
-        // width: 45px;
-        // height: 160px;
-        object-fit: contain;
-        bottom: 0px;
-        margin-left: auto;
-        position: absolute;
       }
       .where-buy-area {
 
