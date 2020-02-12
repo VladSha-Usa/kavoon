@@ -34,11 +34,25 @@ const PFSmallObject = ({ object, last }) => {
               </p>
           </div>
         </div>
+
         <div className="more">
-          <a onClick={() => toggleOpen()}
-            style={{ top: "35px", position: "relative" }}>{isOpen ? "Згорнути" : "Більше інформаціі"}
-            <img style={{ top: "2px", height: "16px", width: "15px", position: "relative" }}
-              src={isOpen ? "/img/arrow-up.svg" : "/img/arrow-down.svg"} />
+          <a href="javascript:void(0)" className="more-info" onClick={() => toggleOpen()}>
+            <div className="more-button" >
+              <div style={{ padding: "10px 15px" }}>
+                {isOpen ? "Згорнути " : "Більше інфо "}
+                {<img style={{ top: "3px", height: "16px", width: "15px", position: "relative" }}
+                  src={isOpen ? "/img/above-icon.svg" : "/img/below-icon.svg"} />}
+              </div>
+            </div>
+          </a>
+          <a href="javascript:void(0)" className="map">
+            <div className="more-button" >
+              <div style={{ padding: "10px 15px" }}>
+                {"Мапа "}
+                {<img style={{ top: "3px", height: "16px", width: "12px", position: "relative" }}
+                  src="/img/map.svg" />}
+              </div>
+            </div>
           </a>
         </div>
       </div>
@@ -109,12 +123,21 @@ const PFSmallObject = ({ object, last }) => {
         letter-spacing: 0.94px;
         color: var(--texticonscolor);
       }
+
       .more {
+        align-items: center;
+        display: flex;
         height: 80px;
+        width: 100%
       }
-      .more a {
+      .more-button {
+        position: relative;
+        height: 45px;
+        border-radius: 22.5px;
+        background-color: #ecefff;
+
         font-family: Montserrat;
-        font-size: 17px;
+        font-size: 19px;
         font-weight: 600;
         font-stretch: normal;
         font-style: normal;
@@ -125,6 +148,48 @@ const PFSmallObject = ({ object, last }) => {
       .more a:link {
         text-decoration: none;
         color: #061434;
+      }
+      .map {
+        display: none;
+      }
+      .more-info {
+        margin: 0 auto;
+      }
+      @media only screen and (max-width: 1165px) {
+      }
+      @media only screen and (max-width: 1023px) {
+
+        .map {
+          display: block;
+          margin: 0 15px 0 auto;
+        }
+        .more-info {
+          margin: 0 auto 0 15px;
+        }
+        .field h1 {
+          font-size: 24px;
+        }
+        .field h2 {
+          font-size: 14px;
+          letter-spacing: 0.65px;
+          font-weight: 500;
+        }
+        .field p {
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: 0.65px;
+        }
+        .more-button {
+          font-family: Montserrat;
+          font-size: 16px;
+        }
+        .image {
+          width: 330px;
+          height: 255px;
+        }
+        .ctn {
+          width: 343px;
+        }
       }
     `}</style>
   </>)
@@ -151,7 +216,7 @@ const pfMainContent = () => {
   return (<>
     <div className="content">
 
-      <div style={{ marginRight: "auto" }}>
+      <div className="places">
         {smallObjects.map((object, index) =>
           <VisibilitySensor key={object.id} scrollCheck="true" onChange={isVisible => isVisible && setSelected(object)}>
             <PFSmallObject object={object} last={index == smallObjects.length - 1} />
@@ -167,6 +232,9 @@ const pfMainContent = () => {
       </div>
     </div>
     <style jsx>{`
+    .places {
+      margin-right: auto;
+    }
     .content {
       margin-top: 25px;
       display: flex;
@@ -183,7 +251,18 @@ const pfMainContent = () => {
       box-shadow: 2px 10px 30px 0 rgba(9, 21, 85, 0.24);
       background-color: #ffffff;
     }
-
+    @media only screen and (max-width: 1165px) {
+    }
+    @media only screen and (max-width: 1023px) {
+      .map {
+        left: 0;
+        display: block;
+        position: fixed;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
     `}</style>
   </>)
 

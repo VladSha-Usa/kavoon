@@ -19,8 +19,8 @@ const Map = ({ objects, selected, select }) => {
       containerStyle={{
         height: '100%',
         width: '100%',
-        overflow: 'hidden',
-        borderRadius: '15px'
+        //overflow: 'hidden',
+        //borderRadius: '15px'
       }}
       center={selected.location}
       onError={(error) => console.log(error)}
