@@ -5,9 +5,6 @@ const Content = ({ classPrefix }) => {
 
   const prefix = `${classPrefix ? classPrefix + '-' : ""}content`
   const layoutClass = `${prefix}-layout`
-  const layoutShopClass = `${prefix}-layout-shop`
-
-
 
   return (<>
     <div >
@@ -27,7 +24,7 @@ const Content = ({ classPrefix }) => {
           enabled={true}
           type='pathfinder'>ПУТІВНИК</BlockItem>
 
-        <div className={layoutShopClass}>
+        <div className="content-layout-shop">
 
           <BlockItem src="/img/shop-image.jpg"
             srcSet="/img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
@@ -56,7 +53,7 @@ const Content = ({ classPrefix }) => {
         display: flex;
         flex-wrap: wrap-reverse;
       }
-      .${layoutShopClass} {
+      .content-layout-shop {
         height: 580px;
         margin-left: auto;
       }
@@ -117,7 +114,7 @@ const Content = ({ classPrefix }) => {
         color: #ffffff;
       }
       @media only screen and (max-width: 1165px) {
-        .${layoutShopClass} {
+        .content-layout-shop {
           height: 530px;
         }
       }
@@ -126,7 +123,7 @@ const Content = ({ classPrefix }) => {
           padding-top: 40px;
           height: inherit;
         }
-        .${layoutShopClass} {
+        .content-layout-shop {
           margin-right: auto;
           height: inherit;
           bottom: 0;
