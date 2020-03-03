@@ -16,7 +16,7 @@ const Content = ({ classPrefix }) => {
           src="/img/blog.jpg"
           srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
           enabled={false}
-          type='blog'>BLOG</BlockItem>
+          type='blog'>БЛОГ</BlockItem>
 
         <BlockItem src="/img/image.jpg"
           srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
