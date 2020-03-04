@@ -252,7 +252,12 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
 
 
       @media only screen and (max-width: 1023px) {
-
+        .titlePointer{
+          font-size: 17px;
+          text-align: center;
+          width: 257px;
+          margin-top: -25px;
+        }
         .${titleClass} {
           width: ${style.small.width};
           top: -${style.small.fontSize}px;
