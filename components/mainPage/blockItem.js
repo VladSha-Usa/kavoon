@@ -12,7 +12,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type }) => {
+const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type, titlePointer }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -117,6 +117,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     <div style={{ opacity }} className={blockClass}
     onMouseEnter={ ()=> itemHover(true)}
     onMouseLeave={ ()=> itemHover(false)} >
+      <div className="titlePointer">{titlePointer}</div>
       <a href={href} >
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
@@ -130,6 +131,18 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       </a>
     </div>
     <style jsx>{`
+     .titlePointer{
+       position: absolute;
+       margin-top: -34px;
+       margin-left: calc(6% - 19.5px);
+       font-family: Montserrat;
+       font-size: 17px;
+       font-weight: 600;
+       font-stretch: normal;
+       font-style: normal;
+       letter-spacing: 0.75px;
+       color: #061434;
+     }
      .${shapeLeftClass} {
         margin-left: auto;
         margin-right: 10px;

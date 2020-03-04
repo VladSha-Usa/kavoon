@@ -10,19 +10,20 @@ const Content = ({ classPrefix }) => {
     <div >
       <Title classPrefix={prefix} />
       <div className={layoutClass}>
-
         <BlockItem
           rightMargin={true}
           src="/img/blog.jpg"
           srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
           enabled={false}
-          type='blog'>БЛОГ</BlockItem>
+          type='blog'
+          titlePointer='ЩО ПОЧИТАТИ?'>БЛОГ</BlockItem>
 
         <BlockItem src="/img/image.jpg"
           srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
           href="#pathfinder"
           enabled={true}
-          type='pathfinder'>ПУТІВНИК</BlockItem>
+          type='pathfinder'
+          titlePointer='КУДИ ПОЇХАТИ?'>ПУТІВНИК</BlockItem>
 
         <div className="content-layout-shop">
 
@@ -30,7 +31,8 @@ const Content = ({ classPrefix }) => {
             srcSet="/img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
             backText="МАГАЗИН"
             enabled={true}
-            type='shop'>Велоспорядження<br />для легких подорожей </BlockItem>
+            type='shop'
+            titlePointer='ЯКЕ СПОРЯДЖЕННЯ?'>Велоспорядження<br />для легких подорожей </BlockItem>
 
           <div className="where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
