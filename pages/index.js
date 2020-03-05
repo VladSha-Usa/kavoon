@@ -73,11 +73,6 @@ const Home = () => {
       <div className="page-content content">
         <Content />
       </div>
-      <div className="animated infinite bounce delay-2s scroll-down">
-        <img src="img/scroll-down.svg" />
-        <a href="#">
-        </a>
-      </div>
     </div>
     <div id="pathfinder" className="bg-block-2">
       <div className="page-content" ><Pathfinder /> </div>
@@ -86,19 +81,6 @@ const Home = () => {
       <div id="footer" className="page-content" ><Footer /> </div>
     </div>
     <style jsx>{`
-
-      .scroll-down {
-        animation-duration: 3s;
-        //margin-left: 35px;
-        width: 45px;
-        height: 160px;
-        object-fit: contain;
-
-        margin-left: auto;
-        position: absolute;
-        bottom: 25px;
-        left: calc(100vw/2 + 45px);
-      }
       .header {
         height: ${headerHeight}px;
         position: fixed;
@@ -190,12 +172,6 @@ const Home = () => {
       @media only screen and (max-width: 1165px) {
 
       }
-      @media only screen and (max-width: 1023px) {
-        .scroll-down {
-          display: none;
-        }
-      }
-
     `}
     </style>
   </>)
