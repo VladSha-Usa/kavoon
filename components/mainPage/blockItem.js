@@ -132,9 +132,9 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     </div>
     <style jsx>{`
      .block-title {
-       position: absolute;
-       margin-top: -34px;
-       margin-left: calc(6% - 19.5px);
+       text-align: center;
+       margin-bottom: 14px;
+       margin-left: -34px;
        font-family: Montserrat;
        font-size: 17px;
        font-weight: 600;
@@ -254,9 +254,6 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       @media only screen and (max-width: 1023px) {
         .block-title {
           font-size: 17px;
-          text-align: center;
-          width: 257px;
-          margin-top: -25px;
         }
         .${titleClass} {
           width: ${style.small.width};
