@@ -134,7 +134,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
      .block-title {
        text-align: center;
        margin-bottom: 14px;
-       margin-left: -34px;
+       width: ${style.normal.imageWidth};
        font-family: Montserrat;
        font-size: 17px;
        font-weight: 600;
