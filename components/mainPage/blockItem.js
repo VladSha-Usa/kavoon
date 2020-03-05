@@ -117,7 +117,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     <div style={{ opacity }} className={blockClass}
     onMouseEnter={ ()=> itemHover(true)}
     onMouseLeave={ ()=> itemHover(false)} >
-      <div className="title">{title}</div>
+      <div className="block-title">{title}</div>
       <a href={href} >
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
@@ -131,7 +131,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       </a>
     </div>
     <style jsx>{`
-     .title{
+     .block-title {
        position: absolute;
        margin-top: -34px;
        margin-left: calc(6% - 19.5px);
@@ -252,7 +252,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
 
 
       @media only screen and (max-width: 1023px) {
-        .title {
+        .block-title {
           font-size: 17px;
           text-align: center;
           width: 257px;
