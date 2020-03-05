@@ -12,7 +12,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type }) => {
+const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type, title }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -117,6 +117,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     <div style={{ opacity }} className={blockClass}
     onMouseEnter={ ()=> itemHover(true)}
     onMouseLeave={ ()=> itemHover(false)} >
+      <div className="block-title">{title}</div>
       <a href={href} >
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
@@ -130,6 +131,18 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       </a>
     </div>
     <style jsx>{`
+     .block-title {
+       text-align: center;
+       margin-bottom: 14px;
+       width: ${style.normal.imageWidth};
+       font-family: Montserrat;
+       font-size: 17px;
+       font-weight: 600;
+       font-stretch: normal;
+       font-style: normal;
+       letter-spacing: 0.79px;
+       color: #040f2a;
+     }
      .${shapeLeftClass} {
         margin-left: auto;
         margin-right: 10px;
@@ -239,7 +252,10 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
 
 
       @media only screen and (max-width: 1023px) {
-
+        .block-title {
+          font-size: 17px;
+          width: ${style.small.imageWidth};
+        }
         .${titleClass} {
           width: ${style.small.width};
           top: -${style.small.fontSize}px;
