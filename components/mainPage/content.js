@@ -16,14 +16,14 @@ const Content = ({ classPrefix }) => {
           srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
           enabled={false}
           type='blog'
-          titlePointer='ЩО ПОЧИТАТИ?'>БЛОГ</BlockItem>
+          title='ЩО ПОЧИТАТИ?'>БЛОГ</BlockItem>
 
         <BlockItem src="/img/image.jpg"
           srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
           href="#pathfinder"
           enabled={true}
           type='pathfinder'
-          titlePointer='КУДИ ПОЇХАТИ?'>ПУТІВНИК</BlockItem>
+          title='КУДИ ПОЇХАТИ?'>ПУТІВНИК</BlockItem>
 
         <div className="content-layout-shop">
 
@@ -32,7 +32,7 @@ const Content = ({ classPrefix }) => {
             backText="МАГАЗИН"
             enabled={true}
             type='shop'
-            titlePointer='ЯКЕ СПОРЯДЖЕННЯ?'>Велоспорядження<br />для легких подорожей </BlockItem>
+            title='ЯКЕ СПОРЯДЖЕННЯ?'>Велоспорядження<br />для легких подорожей </BlockItem>
 
           <div className="where-buy-area" >
             <div className="where-buy-text ">Де купити?</div>
