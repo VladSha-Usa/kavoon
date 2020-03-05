@@ -254,6 +254,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
       @media only screen and (max-width: 1023px) {
         .block-title {
           font-size: 17px;
+          width: ${style.small.imageWidth};
         }
         .${titleClass} {
           width: ${style.small.width};
