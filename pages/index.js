@@ -81,7 +81,6 @@ const Home = () => {
       <div id="footer" className="page-content" ><Footer /> </div>
     </div>
     <style jsx>{`
-
       .header {
         height: ${headerHeight}px;
         position: fixed;
@@ -173,7 +172,6 @@ const Home = () => {
       @media only screen and (max-width: 1165px) {
 
       }
-
     `}
     </style>
   </>)
