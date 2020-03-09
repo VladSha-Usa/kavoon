@@ -12,7 +12,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type, title }) => {
+const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type, title }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
