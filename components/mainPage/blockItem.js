@@ -118,7 +118,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     onMouseEnter={ ()=> itemHover(true)}
     onMouseLeave={ ()=> itemHover(false)} >
       <div className="block-title">{title}</div>
-      <a href={href} >
+      <div>
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
         <div className={vertBackgroundClass}>{backText || children}</div>
@@ -128,7 +128,7 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
           <div className="text">{children}</div>
           <div className={shapeRightClass} />
         </div>
-      </a>
+      </div>
     </div>
     <style jsx>{`
      .block-title {
@@ -183,15 +183,6 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         left: ${style.normal.offsetLeft};
         top: ${style.normal.offsetTop};
       }
-
-      a:link {
-        text-decoration: none;
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
       .pathfinder-blog-image {
         border-radius: 10px;
         position: relative;
