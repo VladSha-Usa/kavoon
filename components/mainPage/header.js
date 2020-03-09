@@ -96,7 +96,7 @@ const Header = () => {
       height: 100%
     }
     .${bannerImgClass} {
-      width: 213px;
+      width: 212px;
       height: 35px;
       object-fit: contain;
     }
