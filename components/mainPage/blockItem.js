@@ -12,7 +12,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type, title }) => {
+const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, type, title }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -106,17 +106,10 @@ const BlockItem = ({ classPrefix, src, srcSet, children, backText, enabled, type
     case 'shop': style = shop; break;
     case 'pathfinder': style = pathfinder; break;
   }
-  var opacity = 1
-  if (!enabled) {
-    opacity = 0.5
-  }
 
-  const [ hover, itemHover ] = useState(false)
 
   return (<>
-    <div style={{ opacity }} className={blockClass}
-    onMouseEnter={ ()=> itemHover(true)}
-    onMouseLeave={ ()=> itemHover(false)} >
+    <div className={blockClass}>
       <div className="block-title">{title}</div>
       <div>
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
