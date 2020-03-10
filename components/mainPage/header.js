@@ -63,18 +63,18 @@ const Header = () => {
       </div>
       <div className={socialClass} >
 
-        <nav style={{ marginRight: "5px" }} >
+        <nav>
           <ImageLink href="#" className="TG"
             src="/img/viber.svg"
             hoverSrc="/img/viber-hover.svg" />
         </nav>
 
-        <nav style={{ marginLeft: "11px" }}>
+        <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
             src="/img/facebook.svg"
             hoverSrc="/img/facebook-hover.svg" />
         </nav>
-        <nav style={{ marginLeft: "14px", marginRight: "10px" }}>
+        <nav style={{ marginLeft: "14px", marginRight: "7px" }}>
           <ImageLink href="http://instagram.com/flowers__way/" className="TG"
             src="/img/instagram.svg"
             hoverSrc="/img/instagram-hover.svg" />
@@ -103,6 +103,7 @@ const Header = () => {
     .${bannerClass} {
       justify-content: start;
       margin-right: auto;
+      width: 225px;
     }
     .${hamburgerClass} {
       align-items: center;
@@ -199,6 +200,9 @@ const Header = () => {
 
     @media only screen and (max-width: 1166px) {
       .${socialClass} {
+        width: auto;
+      }
+      .${bannerClass} {
         width: auto;
       }
     }
