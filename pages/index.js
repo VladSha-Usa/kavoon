@@ -7,7 +7,7 @@ import Header from '../components/mainPage/header'
 import Content from '../components/mainPage/content'
 import Footer from '../components/mainPage/footer'
 
-const headerHeight = 80
+const headerHeight = 84
 
 const onScroll = () => {
   var scrollThreshold = 40
@@ -95,7 +95,7 @@ const Home = () => {
         height: 100%;
       }
       .page-content {
-        max-width: 1166px;
+        max-width: 1172px;
         margin-left: auto;
         margin-right: auto;
       }

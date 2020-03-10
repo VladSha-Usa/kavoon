@@ -69,15 +69,15 @@ const Header = () => {
             hoverSrc="/img/viber-hover.svg" />
         </nav>
 
-        <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
-          <ImageLink href="http://instagram.com/flowers__way/" className="TG"
-            src="/img/instagram.svg"
-            hoverSrc="/img/instagram-hover.svg" />
-        </nav>
-        <nav style={{ marginLeft: "5px" }}>
+        <nav style={{ marginLeft: "11px" }}>
           <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
             src="/img/facebook.svg"
             hoverSrc="/img/facebook-hover.svg" />
+        </nav>
+        <nav style={{ marginLeft: "14px", marginRight: "10px" }}>
+          <ImageLink href="http://instagram.com/flowers__way/" className="TG"
+            src="/img/instagram.svg"
+            hoverSrc="/img/instagram-hover.svg" />
         </nav>
       </div>
       <div className={hamburgerClass}>
@@ -113,6 +113,8 @@ const Header = () => {
       align-items: center;
       display: flex;
       margin-left: auto;
+      width: 225px;
+      justify-content: flex-end;
     }
     .${menuClass} {
       display: flex;
@@ -192,6 +194,12 @@ const Header = () => {
     @media only screen and (min-width: 1024px) {
       .${hamburgerClass} {
         display: none;
+      }
+    }
+
+    @media only screen and (max-width: 1166px) {
+      .${socialClass} {
+        width: auto;
       }
     }
 
