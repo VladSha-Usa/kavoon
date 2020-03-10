@@ -1,15 +1,5 @@
 import { useState, useEffect } from 'react'
 
-const setActive = (active, id) => () => {
-  const element = document.getElementById(id);
-  if (active) {
-    element.classList.add("pathfinder-blog-item-hover");
-  } else {
-    element.classList.remove("pathfinder-blog-item-hover")
-  }
-}
-
-
 
 
 const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title }) => {
