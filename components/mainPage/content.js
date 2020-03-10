@@ -14,11 +14,13 @@ const Content = ({ classPrefix }) => {
           rightMargin={true}
           src="/img/blog.jpg"
           srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
+          enabled={false}
           type='blog'
           title='ЩО ПОЧИТАТИ?'>БЛОГ</BlockItem>
 
         <BlockItem src="/img/image.jpg"
           srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
+          enabled={true}
           type='pathfinder'
           title='КУДИ ПОЇХАТИ?'>ПУТІВНИК</BlockItem>
 
@@ -27,6 +29,7 @@ const Content = ({ classPrefix }) => {
           <BlockItem src="/img/shop-image.jpg"
             srcSet="/img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
             backText="МАГАЗИН"
+            enabled={true}
             type='shop'
             title='ЯКЕ СПОРЯДЖЕННЯ?'>Велоспорядження<br />для легких подорожей </BlockItem>
 
