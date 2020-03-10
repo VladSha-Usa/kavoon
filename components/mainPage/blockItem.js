@@ -1,7 +1,3 @@
-import { useState, useEffect } from 'react'
-
-
-
 const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
@@ -10,7 +6,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
 
   const vertBackgroundClass = `${prefix}-background`
   const blockClass = `${prefix}-block`
-
 
   const shop = {
     small: {
