@@ -12,7 +12,7 @@ const setActive = (active, id) => () => {
 
 
 
-const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled, type, title }) => {
+const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -111,24 +111,19 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
     opacity = 0.5
   }
 
-  const [ hover, itemHover ] = useState(false)
 
   return (<>
-    <div style={{ opacity }} className={blockClass}
-    onMouseEnter={ ()=> itemHover(true)}
-    onMouseLeave={ ()=> itemHover(false)} >
+    <div  style={{ opacity }} className={blockClass}>
       <div className="block-title">{title}</div>
-      <a href={href} >
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
-        <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
-        <div className={vertBackgroundClass}>{backText || children}</div>
+      <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
+      <div className={vertBackgroundClass}>{backText || children}</div>
 
-        <div className={titleClass}>
-          <div className={shapeLeftClass} />
-          <div className="text">{children}</div>
-          <div className={shapeRightClass} />
-        </div>
-      </a>
+      <div className={titleClass}>
+        <div className={shapeLeftClass} />
+        <div className="text">{children}</div>
+        <div className={shapeRightClass} />
+      </div>
     </div>
     <style jsx>{`
      .block-title {
@@ -183,15 +178,6 @@ const BlockItem = ({ classPrefix, href, src, srcSet, children, backText, enabled
         left: ${style.normal.offsetLeft};
         top: ${style.normal.offsetTop};
       }
-
-      a:link {
-        text-decoration: none;
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
       .pathfinder-blog-image {
         border-radius: 10px;
         position: relative;

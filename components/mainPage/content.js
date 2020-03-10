@@ -20,7 +20,6 @@ const Content = ({ classPrefix }) => {
 
         <BlockItem src="/img/image.jpg"
           srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
-          href="#pathfinder"
           enabled={true}
           type='pathfinder'
           title='КУДИ ПОЇХАТИ?'>ПУТІВНИК</BlockItem>
