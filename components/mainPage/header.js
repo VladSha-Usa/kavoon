@@ -74,7 +74,7 @@ const Header = () => {
             src="/img/facebook.svg"
             hoverSrc="/img/facebook-hover.svg" />
         </nav>
-        <nav style={{ marginLeft: "14px", marginRight: "7px" }}>
+        <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="http://instagram.com/flowers__way/" className="TG"
             src="/img/instagram.svg"
             hoverSrc="/img/instagram-hover.svg" />
