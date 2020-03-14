@@ -165,15 +165,17 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
      .${shapeLeftClass} {
         margin-left: auto;
         margin-right: 10px;
-        width: 15px;
-        height: 2px;
+        width: 10px;
+        height: 3px;
+        border-radius: 1.5px;
         background-color: #1831aa;
       }
       .${shapeRightClass}{
         margin-left: 10px;
         margin-right: auto;
-        width: 15px;
-        height: 2px;
+        width: 8px;
+        height: 3px;
+        border-radius: 1.5px;
         background-color: #1831aa;
       }
       .${titleClass} {
@@ -215,12 +217,12 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
 
       .text {
         font-family: Montserrat;
-        font-size: 16px;
-        font-weight: 300;
+        font-size: 17px;
+        font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.65;
-        letter-spacing: 0.75px;
+        line-height: 1.88;
+        letter-spacing: 0.79px;
         text-align: center;
         color: #061434;
         text-transform: uppercase;

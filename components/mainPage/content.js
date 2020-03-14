@@ -63,12 +63,13 @@ const Content = ({ classPrefix }) => {
           flex-wrap: wrap-reverse;
         }
         .content-layout-shop {
-          height: 580px;
+          position: relative;
+          bottom: 15px;
           margin-left: auto;
         }
         @media only screen and (max-width: 1165px) {
           .content-layout-shop {
-            height: 530px;
+            //height: 530px;
           }
         }
         @media only screen and (max-width: 1023px) {
