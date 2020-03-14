@@ -104,12 +104,10 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <div className="img-wrapper">
           <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
-          <div className="button-img-wrapper">
-            <a href="#">
-              <button className="button-img">{button}</button>
-              <img src={icoButton} className="ico-button" />
+            <a href={href} className="button-img-wrapper">
+              <div>{button}</div>
+              <img src={icoButton}/>
             </a>
-          </div>
         </div>
         <div className={vertBackgroundClass}>{backText || children}</div>
 
@@ -136,18 +134,14 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
        position: relative;
        width: fit-content;
      }
+
      .button-img-wrapper {
        position: absolute;
        z-index: 10;
        bottom: 4px;
        right: 0;
-     }
-     .button-img-wrapper a {
-       text-decoration: none;
        display: flex;
-     }
-     .button-img-wrapper .button-img {
-       cursor: pointer;
+
        font-family: Montserrat;
        font-size: 16px;
        letter-spacing: 0.75px;
@@ -158,16 +152,14 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
        line-height: normal;
        background-color: #1831aa;
        border: none;
-       padding: 15px 51px 15px 16px;
+       padding: 15px 15px 15px;
        border-bottom-right-radius: 10px;
        border-bottom-left-radius: 30px;
        border-top-left-radius: 30px;
        outline: none;
      }
-     .button-img-wrapper .ico-button {
-      position: absolute;
-      right: 19px;
-      align-self: center;
+     .button-img-wrapper div{
+       margin-right: 20px;
      }
 
      .${shapeLeftClass} {
@@ -271,12 +263,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         }
       }
 
-
-      // .pathfinder-blog-image {
-      //   ${href ? "border: solid 2px var(--primarycolor);" : ""}
-      // }
-
-
       @media only screen and (max-width: 1023px) {
         .block-title {
           font-size: 17px;
@@ -300,7 +286,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         .${blockClass} {
           margin-right: auto;
           margin-left: auto;
-          //margin-top: 40px;
           width: ${style.small.width};
           height: ${style.small.height};
           margin-top: ${style.small.marginTop};
