@@ -38,7 +38,7 @@ const PathfinderSlider = ({ images }) => {
           height: 320px;
       }
       .slick-list {
-        border-radius: 25px;
+        border-radius: 12px;
         overflow: hidden;
       }
       .slick-list div {
@@ -73,7 +73,7 @@ const PathfinderSlider = ({ images }) => {
      .pathfinder-image-gallery {
         width: 450px;
         height: 320px;
-        border-radius: 25px;
+        border-radius: 12px;
         overflow: hidden;
         box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
       }
