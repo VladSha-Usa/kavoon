@@ -1,4 +1,4 @@
-const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title }) => {
+const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title, button, icoButton }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
   const shapeRightClass = `${prefix}-shape-right`
   const shapeLeftClass = `${prefix}-shape-left`
@@ -97,20 +97,27 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
   }
 
 
-  return (<>
-    <div  style={{ opacity }} className={blockClass}>
-      <div className="block-title">{title}</div>
+  return (
+    <>
+      <div style={{ opacity }} className={blockClass}>
+        <div className="block-title">{title}</div>
         {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
-      <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
-      <div className={vertBackgroundClass}>{backText || children}</div>
+        <div className="img-wrapper">
+          <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
+            <a href={href} className="button-img-wrapper">
+              <div>{button}</div>
+              <img src={icoButton}/>
+            </a>
+        </div>
+        <div className={vertBackgroundClass}>{backText || children}</div>
 
-      <div className={titleClass}>
-        <div className={shapeLeftClass} />
-        <div className="text">{children}</div>
-        <div className={shapeRightClass} />
+        <div className={titleClass}>
+          <div className={shapeLeftClass} />
+          <div className="text">{children}</div>
+          <div className={shapeRightClass} />
+        </div>
       </div>
-    </div>
-    <style jsx>{`
+      <style jsx>{`
      .block-title {
        text-align: center;
        margin-bottom: 14px;
@@ -123,6 +130,38 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
        letter-spacing: 0.79px;
        color: #040f2a;
      }
+     .img-wrapper {
+       position: relative;
+       width: fit-content;
+     }
+
+     .button-img-wrapper {
+       position: absolute;
+       z-index: 10;
+       bottom: 4px;
+       right: 0;
+       display: flex;
+
+       font-family: Montserrat;
+       font-size: 16px;
+       letter-spacing: 0.75px;
+       font-weight: 600;
+       color: #ffffff;
+       font-stretch: normal;
+       font-style: normal;
+       line-height: normal;
+       background-color: #1831aa;
+       border: none;
+       padding: 15px 15px 15px;
+       border-bottom-right-radius: 10px;
+       border-bottom-left-radius: 30px;
+       border-top-left-radius: 30px;
+       outline: none;
+     }
+     .button-img-wrapper div{
+       margin-right: 20px;
+     }
+
      .${shapeLeftClass} {
         margin-left: auto;
         margin-right: 10px;
@@ -198,7 +237,15 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};
         }
-
+       .button-img-wrapper .button-img {
+          padding: 7px 35px 7px 10px;
+          font-size: 13px;
+        }
+        .button-img-wrapper .ico-button {
+          height: 14px;
+          width: 15px;
+          right: 12px;
+        }
         .${blockClass} {
           width: ${style.small.width};
           height: ${style.small.height};
@@ -215,12 +262,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
           top: -${style.small.fontSize}px;
         }
       }
-
-
-      // .pathfinder-blog-image {
-      //   ${ href ? 'border: solid 2px var(--primarycolor);' : '' }
-      // }
-
 
       @media only screen and (max-width: 1023px) {
         .block-title {
@@ -245,7 +286,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         .${blockClass} {
           margin-right: auto;
           margin-left: auto;
-          //margin-top: 40px;
           width: ${style.small.width};
           height: ${style.small.height};
           margin-top: ${style.small.marginTop};
@@ -253,7 +293,8 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
       }
 
   `}</style>
-  </>)
+    </>
+  );
 }
 
 export default BlockItem;
