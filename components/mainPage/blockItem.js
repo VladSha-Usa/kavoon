@@ -101,7 +101,6 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
     <>
       <div style={{ opacity }} className={blockClass}>
         <div className="block-title">{title}</div>
-        {/* style={ hover ? { margin: "-2px", border: "solid 2px var(--primarycolor)" } : { border: "solid 0px var(--primarycolor)"} }  */}
         <div className="img-wrapper">
           <img src={src} srcSet={srcSet} className="pathfinder-blog-image" />
             <a href={href} className="button-img-wrapper">
@@ -141,7 +140,8 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
        bottom: 4px;
        right: 0;
        display: flex;
-
+       cursor: pointer;
+       text-decoration: none;
        font-family: Montserrat;
        font-size: 16px;
        letter-spacing: 0.75px;

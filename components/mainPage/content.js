@@ -31,6 +31,7 @@ const Content = ({ classPrefix }) => {
             type="pathfinder"
             title="КУДИ ПОЇХАТИ?"
             button="СЮДИ"
+            href="#pathfinder"
             icoButton="/img/arrow-button-ico.svg"
           >
             ПУТІВНИК
@@ -45,6 +46,7 @@ const Content = ({ classPrefix }) => {
               type="shop"
               title="ЯКЕ СПОРЯДЖЕННЯ?"
               button="ТУТ МОЖНА ПРИДБАТИ"
+              href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua"
               icoButton="/img/shop-button-ico.svg"
             >
               Велоспорядження
