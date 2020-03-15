@@ -38,7 +38,7 @@ const PathfinderSlider = ({ images }) => {
           height: 320px;
       }
       .slick-list {
-        border-radius: 25px;
+        border-radius: 12px;
         overflow: hidden;
       }
       .slick-list div {
@@ -53,27 +53,21 @@ const PathfinderSlider = ({ images }) => {
     </style>
     <style jsx>{`
      .switcher-item-active {
-        border-radius: 8px;
-        margin:  0px 2px;
-        height: 16px;
-        width: 16px;
-        background: rgba(24, 49, 170, 1);
-        border: 1px;
-        box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);
+        margin: 0px 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url('/img/bulletSelected.svg');
       }
       .switcher-item {
-       border-radius: 4px;
-        margin: 4px 6px ;
-        height: 8px;
+        margin: 4px 6px;
         width: 8px;
-        background: rgb(24, 49, 170, 0.25);
-        border: 1px;
-        box-shadow: 0px 0px 1px 1px rgba(24, 49, 170, 0.2);
+        height: 8px;
+        background-image: url('/img/bulletRegular.svg');
       }
      .pathfinder-image-gallery {
         width: 450px;
         height: 320px;
-        border-radius: 25px;
+        border-radius: 12px;
         overflow: hidden;
         box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
       }
