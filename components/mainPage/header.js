@@ -64,18 +64,18 @@ const Header = () => {
       <div className={socialClass} >
 
         <nav>
-          <ImageLink href="#" className="TG"
+          <ImageLink href="#"
             src="/img/viber.svg"
             hoverSrc="/img/viber-hover.svg" />
         </nav>
 
         <nav style={{ marginLeft: "15px" }}>
-          <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="TG"
+          <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/"
             src="/img/facebook.svg"
             hoverSrc="/img/facebook-hover.svg" />
         </nav>
         <nav style={{ marginLeft: "15px" }}>
-          <ImageLink href="http://instagram.com/flowers__way/" className="TG"
+          <ImageLink href="http://instagram.com/flowers__way/"
             src="/img/instagram.svg"
             hoverSrc="/img/instagram-hover.svg" />
         </nav>
