@@ -65,10 +65,11 @@ const Content = ({ classPrefix }) => {
           position: relative;
           bottom: 20px;
           margin-left: auto;
+          height: 488px;
         }
         @media only screen and (max-width: 1165px) {
           .content-layout-shop {
-            //height: 530px;
+            height: 530px;
           }
         }
         @media only screen and (max-width: 1023px) {
