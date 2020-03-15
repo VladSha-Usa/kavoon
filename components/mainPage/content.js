@@ -75,8 +75,8 @@ const Content = ({ classPrefix }) => {
             padding-top: 40px;
           }
           .content-layout-shop {
-            margin-right: inherit;
-            margin-left: inherit;
+            margin-right: auto;
+            margin-left: auto;
             top: 0px;
           }
         }

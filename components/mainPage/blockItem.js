@@ -39,7 +39,7 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
       imageWidth: "320px",
       imageHeight: "250px",
       marginRight: "0px",
-      marginTop: "0px"
+      marginTop: "20px"
     },
     normal: {
       fontSize: 32,
@@ -55,13 +55,13 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
   const blog = {
     small: {
       fontSize: 36,
-      offsetLeft: "200px",
+      offsetLeft: "170px",
       offsetTop: "-180px",
       letterSpacing: "1.68px",
       imageWidth: "320px",
       imageHeight: "250px",
       marginRight: "0px",
-      marginTop: "0px"
+      marginTop: "20px"
     },
     normal: {
       fontSize: 36,
@@ -242,7 +242,6 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
         }
          .${titleClass} {
           width: ${style.small.imageWidth};
-          top: -${style.small.fontSize}px;
         }
       }
 
@@ -253,7 +252,6 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
         }
         .${titleClass} {
           width: ${style.small.width};
-          top: -${style.small.fontSize}px;
         }
         .${vertBackgroundClass} {
           font-size: ${style.small.fontSize}px;
@@ -266,7 +264,7 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
           height: ${style.small.imageHeight};
         }
         .${blockClass} {
-          //margin-right: auto;
+          margin-right: auto;
           margin-left: auto;
           width: ${style.small.imageWidth};
           margin-top: ${style.small.marginTop};
