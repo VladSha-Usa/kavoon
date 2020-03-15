@@ -1,5 +1,5 @@
-const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title, button, icoButton }) => {
-  const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
+const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title, button, icoButton }) => {
+
   const shapeRightClass = 'block-shape-right'
   const shapeLeftClass = 'block-shape-left'
   const titleClass = 'block-shape-title'
@@ -9,51 +9,45 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
 
   const shop = {
     small: {
-      fontSize: 58,
-      offsetLeft: "125px",
-      offsetTop: "-175px",
+      fontSize: 76,
+      offsetLeft: "178px",
+      offsetTop: "-200px",
       letterSpacing: "0.68px",
-      imageWidth: "250px",
-      imageHeight: "320px",
-      width: "280px",
-      height: "380px",
+      imageWidth: "320px",
+      imageHeight: "430px",
       marginRight: "0px",
       marginTop: "0px"
     },
     normal: {
       fontSize: 76,
-      offsetLeft: "158px",
-      offsetTop: "-228px",
+      offsetLeft: "178px",
+      offsetTop: "-200px",
+
       imageWidth: "320px",
       imageHeight: "425px",
-      width: "365px",
-      height: "497px",
-      marginRight: "0px",
-      marginTop: "-10px"
+
+      marginRight: "50px",
+      marginTop: "0px"
     }
   }
   const pathfinder = {
     small: {
       fontSize: 33,
-      offsetLeft: "120px",
-      offsetTop: "-160px",
+      offsetLeft: "170px",
+      offsetTop: "-180px",
       letterSpacing: "1.68px",
-      imageWidth: "250px",
-      imageHeight: "200px",
-      width: "280px",
-      height: "244px",
+      imageWidth: "320px",
+      imageHeight: "250px",
       marginRight: "0px",
       marginTop: "0px"
     },
     normal: {
-      fontSize: 33,
-      offsetLeft: "120px",
-      offsetTop: "-160px",
+      fontSize: 32,
+      offsetLeft: "100px",
+      offsetTop: "-180px",
       letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
-      width: "280px",
-      height: "244px",
       marginRight: "0px",
       marginTop: "0px"
     }
@@ -61,26 +55,22 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
   const blog = {
     small: {
       fontSize: 36,
-      offsetLeft: "120px",
-      offsetTop: "-160px",
+      offsetLeft: "200px",
+      offsetTop: "-180px",
       letterSpacing: "1.68px",
-      imageWidth: "250px",
-      imageHeight: "200px",
-      width: "280px",
-      height: "244px",
+      imageWidth: "320px",
+      imageHeight: "250px",
       marginRight: "0px",
-      marginTop: "40px"
+      marginTop: "0px"
     },
     normal: {
       fontSize: 36,
-      offsetLeft: "120px",
-      offsetTop: "-160px",
+      offsetLeft: "100px",
+      offsetTop: "-180px",
       letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
-      width: "283px",
-      height: "244px",
-      marginRight: "40px",
+      marginRight: "0px",
       marginTop: "0px"
     }
   }
@@ -183,7 +173,7 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         background-color: #1831aa;
       }
       .${titleClass} {
-        width: ${style.normal.imageWidth}px;
+        width: ${style.normal.imageWidth};
         align-items: center;
         display: flex;
         position: relative;
@@ -214,7 +204,7 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         width: 100%;
         border-radius: 10px;
         position: relative;
-        object-fit: contain;
+        object-fit: cover;
         overflow: hidden;
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
         z-index: 10;
@@ -234,20 +224,14 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
       }
 
       .${blockClass} {
-        width: ${style.normal.width};
-        height: ${style.normal.height};
+        width: ${style.small.imageWidth};
+        position: relative;
         margin-right: ${style.normal.marginRight};
         margin-top: ${style.normal.marginTop};
-        //z-index: 10;
       }
       @media only screen and (max-width: 1165px) {
-       .pathfinder-blog-image {
-          width: ${style.small.imageWidth};
-          height: ${style.small.imageHeight};
-        }
         .${blockClass} {
-          width: ${style.small.width};
-          height: ${style.small.height};
+          width: ${style.small.imageWidth};
           margin-right: ${style.normal.marginRight};
         }
          .${vertBackgroundClass} {
@@ -277,16 +261,14 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
           left: ${style.small.offsetLeft};
           top: ${style.small.offsetTop};
         }
-        .pathfinder-blog-image {
+        .img-wrapper {
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};
         }
-
         .${blockClass} {
-          margin-right: auto;
+          //margin-right: auto;
           margin-left: auto;
-          width: ${style.small.width};
-          height: ${style.small.height};
+          width: ${style.small.imageWidth};
           margin-top: ${style.small.marginTop};
         }
       }

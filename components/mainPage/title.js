@@ -69,19 +69,22 @@ const Title = () => {
           font-size: 72px;
           line-height: 60px;
           left: -20px;
-          width: 100vw;
-          overflow: hidden;
+          //width: 100vw+20px;
+          //overflow: hidden;
         }
         .${titleFirstClass} {
           //text-align: center;
           font-size: 58px;
           line-height: 62px;
-          //padding-top: 0;
+          left: 0px;
+          top: 0px;
         }
         .${titleSecondClass} {
           //text-align: center;
           font-size: 58px;
           line-height: 62px;
+          left: 0px;
+          top: 0px;
         }
       }
 
