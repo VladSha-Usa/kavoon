@@ -1,10 +1,9 @@
-const Title = ({ classPrefix }) => {
+const Title = () => {
 
-  const prefix = `${classPrefix ? classPrefix + '-' : ""}title`
-  const titleFirstClass = `${prefix}-first`
-  const titleSecondClass = `${prefix}-second`
-  const backgroundClass = `${prefix}-background`
-  
+  const titleFirstClass = 'title-first'
+  const titleSecondClass = 'title-second'
+  const backgroundClass = 'title-background'
+
   const mainFontSize = 134;
   return (<>
     <div className={backgroundClass}>FLOWERS<br /> WAY</div>
@@ -18,7 +17,10 @@ const Title = ({ classPrefix }) => {
         line-height: 1.12;
         letter-spacing: 5px;
         color: #040f2a;
-        padding-top: 10px;
+
+        position: relative;
+        padding-top: 30px;
+        left: -7px;
       }
       .${titleSecondClass} {
         font-family: 'Archivo Black', sans-serif;
@@ -26,6 +28,10 @@ const Title = ({ classPrefix }) => {
         line-height: 1.18;
         letter-spacing: 5.98px;
         color: #1831aa;
+
+        position: relative;
+        left: -8px;
+        top: -4px;
       }
       .${backgroundClass} {
         object-fit: contain;
@@ -40,13 +46,13 @@ const Title = ({ classPrefix }) => {
         color: #296fdc;
         position: absolute;
         left: -130px;
-        margin-top: 9px;
+        margin-top: 30px;
       }
 
       @media only screen and (max-width: 1165px) {
         .${backgroundClass} {
           font-size: 138px;
-          left: -50px;     
+          left: -50px;
         }
         .${titleFirstClass} {
           font-size: 104px;
@@ -57,7 +63,7 @@ const Title = ({ classPrefix }) => {
       }
 
       @media only screen and (max-width: 1023px) {
-  
+
         .${backgroundClass} {
           letter-spacing: 3.37px;
           font-size: 72px;
@@ -76,7 +82,7 @@ const Title = ({ classPrefix }) => {
           //text-align: center;
           font-size: 58px;
           line-height: 62px;
-        } 
+        }
       }
 
     `}</style>
