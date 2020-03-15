@@ -1,11 +1,11 @@
 const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled, type, title, button, icoButton }) => {
   const prefix = `${classPrefix ? classPrefix + '-' : ""}block`
-  const shapeRightClass = `${prefix}-shape-right`
-  const shapeLeftClass = `${prefix}-shape-left`
-  const titleClass = `${prefix}-shape-title`
+  const shapeRightClass = 'block-shape-right'
+  const shapeLeftClass = 'block-shape-left'
+  const titleClass = 'block-shape-title'
 
-  const vertBackgroundClass = `${prefix}-background`
-  const blockClass = `${prefix}-block`
+  const vertBackgroundClass = 'block-background'
+  const blockClass = 'block-block'
 
   const shop = {
     small: {
@@ -21,15 +21,15 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
       marginTop: "0px"
     },
     normal: {
-      fontSize: 70,
+      fontSize: 76,
       offsetLeft: "158px",
-      offsetTop: "-223px",
+      offsetTop: "-228px",
       imageWidth: "320px",
-      imageHeight: "400px",
-      width: "363px",
-      height: "468px",
+      imageHeight: "425px",
+      width: "365px",
+      height: "497px",
       marginRight: "0px",
-      marginTop: "0px"
+      marginTop: "-10px"
     }
   }
   const pathfinder = {
@@ -78,7 +78,7 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
       letterSpacing: "1.68px",
       imageWidth: "250px",
       imageHeight: "200px",
-      width: "280px",
+      width: "283px",
       height: "244px",
       marginRight: "40px",
       marginTop: "0px"
@@ -118,26 +118,30 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
       </div>
       <style jsx>{`
      .block-title {
-       text-align: center;
-       margin-bottom: 14px;
-       width: ${style.normal.imageWidth};
-       font-family: Montserrat;
-       font-size: 17px;
-       font-weight: 600;
-       font-stretch: normal;
-       font-style: normal;
-       letter-spacing: 0.79px;
-       color: #040f2a;
-     }
-     .img-wrapper {
-       position: relative;
-       width: fit-content;
-     }
+        text-align: center;
+        margin-bottom: 14px;
+        width: ${style.normal.imageWidth};
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: 0.79px;
+        color: #040f2a;
+      }
+      .img-wrapper {
+        width: ${style.normal.imageWidth};
+        height: ${style.normal.imageHeight};
+        padding-top: 5px;
+        position: relative;
+        z-index: 10;
+        width: fit-content;
+      }
 
      .button-img-wrapper {
        position: absolute;
        z-index: 10;
-       bottom: 4px;
+       bottom: 0px;
        right: 0;
        display: flex;
        cursor: pointer;
@@ -205,10 +209,11 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         top: ${style.normal.offsetTop};
       }
       .pathfinder-blog-image {
+        background-color: #ffffff;
+        height: 100%;
+        width: 100%;
         border-radius: 10px;
         position: relative;
-        width: ${style.normal.imageWidth};
-        height: ${style.normal.imageHeight};
         object-fit: contain;
         overflow: hidden;
         box-shadow: 14px 25px 46px 0 rgba(9, 21, 85, 0.2);
@@ -221,7 +226,7 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.88;
+        line-height: 1.65;
         letter-spacing: 0.79px;
         text-align: center;
         color: #061434;
@@ -233,20 +238,12 @@ const BlockItem = ({ classPrefix, src, srcSet, href, children, backText, enabled
         height: ${style.normal.height};
         margin-right: ${style.normal.marginRight};
         margin-top: ${style.normal.marginTop};
+        //z-index: 10;
       }
       @media only screen and (max-width: 1165px) {
        .pathfinder-blog-image {
           width: ${style.small.imageWidth};
           height: ${style.small.imageHeight};
-        }
-       .button-img-wrapper .button-img {
-          padding: 7px 35px 7px 10px;
-          font-size: 13px;
-        }
-        .button-img-wrapper .ico-button {
-          height: 14px;
-          width: 15px;
-          right: 12px;
         }
         .${blockClass} {
           width: ${style.small.width};

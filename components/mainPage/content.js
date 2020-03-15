@@ -2,17 +2,14 @@ import Title from './title'
 import BlockItem from './blockItem'
 
 const Content = ({ classPrefix }) => {
-
   const prefix = `${classPrefix ? classPrefix + '-' : ""}content`
-  const layoutClass = `${prefix}-layout`
 
   return (
     <>
       <div>
         <Title classPrefix={prefix} />
-        <div className={layoutClass}>
+        <div className="content-layout">
           <BlockItem
-            rightMargin={true}
             src="/img/blog.jpg"
             srcSet="/img/blog@2x.jpg 2x, img/blog@3x.jpg 3x"
             enabled={false}
@@ -51,22 +48,22 @@ const Content = ({ classPrefix }) => {
             >
               Велоспорядження
               <br />
-              для легких подорожей{" "}
+              для легких подорожей
             </BlockItem>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .${layoutClass} {
+        .content-layout {
           position: relative;
-          height: 280px;
+          height: 285px;
           display: flex;
           flex-wrap: wrap-reverse;
         }
         .content-layout-shop {
           position: relative;
-          bottom: 15px;
+          bottom: 20px;
           margin-left: auto;
         }
         @media only screen and (max-width: 1165px) {
@@ -75,7 +72,7 @@ const Content = ({ classPrefix }) => {
           }
         }
         @media only screen and (max-width: 1023px) {
-          .${layoutClass} {
+          .content-layout {
             padding-top: 40px;
             height: inherit;
           }
