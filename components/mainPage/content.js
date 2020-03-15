@@ -57,30 +57,27 @@ const Content = ({ classPrefix }) => {
       <style jsx>{`
         .content-layout {
           position: relative;
-          height: 285px;
+          padding-top: 40px;
           display: flex;
           flex-wrap: wrap-reverse;
         }
         .content-layout-shop {
           position: relative;
-          bottom: 20px;
+          top: -270px;
           margin-left: auto;
-          height: 488px;
         }
         @media only screen and (max-width: 1165px) {
           .content-layout-shop {
-            height: 530px;
           }
         }
         @media only screen and (max-width: 1023px) {
           .content-layout {
             padding-top: 40px;
-            height: inherit;
           }
           .content-layout-shop {
             margin-right: auto;
-            height: inherit;
-            bottom: 0;
+            margin-left: auto;
+            top: 0px;
           }
         }
       `}</style>
