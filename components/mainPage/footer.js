@@ -23,17 +23,17 @@ const Footer = () => {
         <div className="footer-social">
           <div className="find-us-here">Шукайте нас тут: </div>
           <nav style={{ marginRight: "5px" }} >
-            <ImageLink href="#" className="footer-icon"
+            <ImageLink href="#"
               src="/img/viber-footer-icon.svg"
               hoverSrc="/img/viber-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
-            <ImageLink href="http://instagram.com/flowers__way/" className="footer-icon"
+            <ImageLink href="http://instagram.com/flowers__way/"
               src="/img/instagram-footer-icon.svg"
               hoverSrc="/img/instagram-hover.svg" />
           </nav>
           <nav style={{ marginLeft: "5px" }}>
-            <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/" className="footer-icon"
+            <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/"
               src="/img/facebook-footer-icon.svg"
               hoverSrc="/img/facebook-hover.svg" />
           </nav>
