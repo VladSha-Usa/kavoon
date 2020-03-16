@@ -81,7 +81,7 @@ const PathfinderObject = ({object, direct }) => {
           box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
         }
         article {
-          width: 343px;
+          width: 335px;
           padding-top: 30px;
           margins-left: auto;
           flex-wrap: wrap;
