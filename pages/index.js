@@ -194,7 +194,7 @@ const Home = () => {
 
           @media only screen and (max-width: 1023px) {
             .page-content {
-              width: 343px;
+              width: 335px;
               margin-left: auto;
               margin-right: auto;
             }
