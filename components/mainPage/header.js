@@ -60,7 +60,7 @@ const Header = () => {
           <a href="#pathfinder">Путівник</a>
         </nav>
         <nav className="menu-link" style={{ marginRight: "auto" }} >
-          <span  className="disabled">Блог</span>
+          <span className="disabled">Блог</span>
         </nav>
       </div>
       <div className={changeLangClass}>
@@ -88,7 +88,7 @@ const Header = () => {
       </div>
       <div className={hamburgerClass}>
         <nav >
-          <div onClick={ () => setPopup(true)}>
+          <div onClick={() => setPopup(true)}>
             <img src="/img/menu.png" srcSet="/img/menu@2x.png 2x, img/menu@3x.png 3x" />
           </div>
         </nav>
@@ -115,10 +115,6 @@ const Header = () => {
       align-items: center;
       justify-content: flex-end;
       margin-left: auto;
-    }
-    .${changeLangClass} {
-      align-items: center;
-      margin-left: 7.5%;
     }
     .${socialClass} {
       align-items: center;
