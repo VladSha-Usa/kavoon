@@ -59,44 +59,42 @@ const Header = () => {
           <a href="#pathfinder">Путівник</a>
         </nav>
         <nav className="menu-link" style={{ marginRight: "auto" }} >
-          <span  className="disabled">Блог</span>
+          <span className="disabled">Блог</span>
         </nav>
       </div>
-        <div className={changeLangClass}>
-          <nav>
-            <div className="lang-wrapper">
-              <span className="choosen-lang">
-                <img
-                  src="/img/country-flag-ua.png"
-                  srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-                />
+      <div className={socialClass}>
+      <nav>
+          <div className="lang-wrapper">
+            <span className="choosen-lang">
+              <img
+                src="/img/country-flag-ua.png"
+                srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+              />
                 Українська
               </span>
-              <ul className="available__list-lang">
-                <li>
-                  <span className="available-lang">
-                    <img
-                      src="/img/country-flag-ua.png"
-                      srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-                    />
+            <ul className="available__list-lang">
+              <li>
+                <span className="available-lang">
+                  <img
+                    src="/img/country-flag-ua.png"
+                    srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+                  />
                     Українська
                   </span>
-                </li>
-                <li>
-                  <span className="available-lang">
-                    <img
-                      src="/img/country-flag-en.png"
-                      srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
-                    />
+              </li>
+              <li>
+                <span className="available-lang">
+                  <img
+                    src="/img/country-flag-en.png"
+                    srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
+                  />
                     English
                   </span>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div className={socialClass}>
-        <nav>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav style={{ marginLeft: "10px" }} >
           <ImageLink href="#"
             src="/img/viber.svg"
             hoverSrc="/img/viber-hover.svg" />
@@ -115,7 +113,7 @@ const Header = () => {
       </div>
       <div className={hamburgerClass}>
         <nav >
-          <div onClick={ () => setPopup(true)}>
+          <div onClick={() => setPopup(true)}>
             <img src="/img/menu.png" srcSet="/img/menu@2x.png 2x, img/menu@3x.png 3x" />
           </div>
         </nav>
@@ -142,10 +140,6 @@ const Header = () => {
       align-items: center;
       justify-content: flex-end;
       margin-left: auto;
-    }
-    .${changeLangClass} {
-      align-items: center;
-      margin-left: 7.5%;
     }
     .${socialClass} {
       align-items: center;
