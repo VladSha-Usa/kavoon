@@ -116,6 +116,10 @@ const Header = () => {
       justify-content: flex-end;
       margin-left: auto;
     }
+    .${changeLangClass} {
+      align-items: center;
+      margin-left: 7.5%;
+    }
     .${socialClass} {
       align-items: center;
       display: flex;
