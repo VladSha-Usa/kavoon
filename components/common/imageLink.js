@@ -1,4 +1,4 @@
-const ImageLink = ({ href, src, hoverSrc }) => {
+const ImageLink = ({ href, src, hoverSrc, imgWidth, imgHeight }) => {
   return (
     <>
       <a href={href}>
@@ -7,13 +7,13 @@ const ImageLink = ({ href, src, hoverSrc }) => {
       <style jsx>{`
       .hover-link {
         background-image: url('${src}');
-        width: 40px;
-        height: 40px;
+        width: ${imgWidth};
+        height: ${imgHeight};
       }
       .hover-link:hover {
         background-image: url('${hoverSrc}');
-        width: 40px;
-        height: 40px;
+        width: ${imgWidth};
+        height: ${imgHeight};
       }
       `}</style>
     </>
