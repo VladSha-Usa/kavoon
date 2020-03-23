@@ -17,7 +17,6 @@ const Header = () => {
   const navbarClass = `${prefix}-navbar`
   const bannerClass = `${prefix}-banner`
   const menuClass = `${prefix}-menu`
-  const changeLangClass = `${prefix}-lang`;
   const bannerImgClass = `${prefix}-banner-img`
   const socialClass = `${prefix}-social`
   const hamburgerClass = `${prefix}-hamburger`
@@ -64,11 +63,9 @@ const Header = () => {
         </nav>
       </div>
       <div className={socialClass}>
-        <div className={changeLangClass}>
-          <nav>
-            <LanguagePopup/>
-          </nav>
-        </div>
+        <nav style={{ marginRight: "10px" }}>
+          <LanguagePopup/>
+        </nav>
         <nav>
           <ImageLink href="#"
             src="/img/viber.svg"
