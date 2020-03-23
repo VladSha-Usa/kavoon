@@ -63,12 +63,12 @@ const Header = () => {
           <span className="disabled">Блог</span>
         </nav>
       </div>
-      <div className={changeLangClass}>
-        <nav>
-          <LanguagePopup/>
-        </nav>
-      </div>
       <div className={socialClass}>
+        <div className={changeLangClass}>
+          <nav>
+            <LanguagePopup/>
+          </nav>
+        </div>
         <nav>
           <ImageLink href="#"
             src="/img/viber.svg"
@@ -115,10 +115,6 @@ const Header = () => {
       align-items: center;
       justify-content: flex-end;
       margin-left: auto;
-    }
-    .${changeLangClass} {
-      align-items: center;
-      margin-left: 7.5%;
     }
     .${socialClass} {
       align-items: center;
