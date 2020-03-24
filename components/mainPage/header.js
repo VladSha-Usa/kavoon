@@ -69,18 +69,21 @@ const Header = () => {
         <nav>
           <ImageLink href="#"
             src="/img/viber.svg"
-            hoverSrc="/img/viber-hover.svg" />
+            hoverSrc="/img/viber-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
 
         <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/"
             src="/img/facebook.svg"
-            hoverSrc="/img/facebook-hover.svg" />
+            hoverSrc="/img/facebook-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
         <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="http://instagram.com/flowers__way/"
             src="/img/instagram.svg"
-            hoverSrc="/img/instagram-hover.svg" />
+            hoverSrc="/img/instagram-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
       </div>
       <div className={hamburgerClass}>
