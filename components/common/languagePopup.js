@@ -35,7 +35,6 @@ const LanguagePopup = () => {
           width: 170px;
           height: 45px;
           border-radius: 22.5px;
-          background-color: #ecefff;
         }
 
         .choosen-lang,
