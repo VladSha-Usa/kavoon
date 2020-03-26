@@ -174,7 +174,7 @@ const Home = () => {
           }
 
           .bg-block-2 {
-            background-color: #fafbff;
+            background-color: #fff;
             padding-top: 30px;
             padding-bottom: 30px;
           }
