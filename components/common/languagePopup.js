@@ -36,6 +36,9 @@ const LanguagePopup = () => {
           height: 45px;
           border-radius: 22.5px;
         }
+        .lang-wrapper:hover {
+          background-color: #ecefff;
+        }
 
         .choosen-lang,
         .available__list-lang .available-lang {
