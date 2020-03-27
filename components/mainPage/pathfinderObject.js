@@ -38,13 +38,13 @@ const PathfinderObject = ({object, direct }) => {
       }
       .title  {
         font-family: Montserrat;
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 600;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1;
-        letter-spacing: 1.5px;
-        color: var(--primarycolor);
+        line-height: 1.57;
+        letter-spacing: 1.31px;
+        color: #020e2c;
         margin: 5px;
         position: relative;
       }
@@ -57,9 +57,9 @@ const PathfinderObject = ({object, direct }) => {
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.50;
+        line-height: 1.53;
         letter-spacing: 0.79px;
-        color: #061434;
+        color: #040f2a;
         position: relative;
         z-index: 100;
       }
