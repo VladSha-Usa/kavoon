@@ -152,6 +152,10 @@ const BlockItem = ({ src, srcSet, href, children, backText, enabled, type, title
        border-top-left-radius: 30px;
        outline: none;
      }
+     .button-img-wrapper:hover {
+       box-shadow: 0 14px 24px 0 rgba(13, 26, 113, 0.25);
+       background-color: #3653e2;
+     }
      .button-img-wrapper div{
        margin-right: 20px;
      }
