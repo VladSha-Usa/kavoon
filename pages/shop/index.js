@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
+import TitleSection from "./titleSection";
 
 const headerHeight = 80;
 
@@ -79,11 +80,14 @@ const Shop = () => {
         />
       </Head>
 
-      <div className="map-image">
-        <div id="home" className="header">
-          <div className="page-content" style={{ height: "100%" }}>
-            <Header />
-          </div>
+      <div id="home" className="header">
+        <div className="page-content" style={{ height: "100%" }}>
+          <Header />
+        </div>
+      </div>
+      <div className="title-section">
+        <div className="page-content">
+          <TitleSection />
         </div>
       </div>
       <div className="footer-background">
@@ -110,22 +114,6 @@ const Shop = () => {
             margin-left: auto;
             margin-right: auto;
           }
-          .map-image {
-            /* Set a specific height */
-            height: 100vh;
-
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0) -3%,
-                rgba(255, 255, 255, 0.68) 117%
-              ),
-              url(/img/map-image.png);
-          }
 
           .header-border ::after {
             content: "";
@@ -141,7 +129,9 @@ const Shop = () => {
           .header-border {
             background-color: #ffffff;
           }
-
+          .title-section {
+            margin-top: 150px;
+          }
           .footer-background {
             width: 100%;
             height: 180px;
