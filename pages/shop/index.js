@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import TitleSection from "./titleSection";
+import ShopStatus from "./shopStatus";
 
 const headerHeight = 80;
 
@@ -90,6 +91,11 @@ const Shop = () => {
           <TitleSection />
         </div>
       </div>
+      <div className="shop-status">
+        <div className="page-content">
+          <ShopStatus />
+        </div>
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -131,6 +137,10 @@ const Shop = () => {
           }
           .title-section {
             margin-top: 150px;
+            margin-bottom: 50px;
+          }
+          .shop-status {
+            margin-bottom: 300px;
           }
           .footer-background {
             width: 100%;
