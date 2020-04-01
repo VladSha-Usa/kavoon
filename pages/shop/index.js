@@ -6,6 +6,7 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import TitleSection from "./titleSection";
 import ShopStatus from "./shopStatus";
+import MainMetaInfo from "../../components/common/mainMetaInfo";
 
 const headerHeight = 80;
 
