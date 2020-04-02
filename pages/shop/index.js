@@ -1,53 +1,45 @@
-import '../components/styleguide.css'
+import "../../components/styleguide.css";
 
-import React, { useEffect } from 'react'
-import Pathfinder from '../components/mainPage/pathfinder'
-import Head from 'next/head'
-import Header from '../components/mainPage/header'
-import Content from '../components/mainPage/content'
-import Footer from '../components/mainPage/footer'
-import MainMetaInfo from "../components/common/mainMetaInfo";
+import React, { useEffect } from "react";
+import Head from "next/head";
+import Header from "../../components/mainPage/header";
+import Footer from "../../components/mainPage/footer";
+import TitleSection from "./titleSection";
+import ShopStatus from "./shopStatus";
+import MainMetaInfo from "../../components/common/mainMetaInfo";
 
-const headerHeight = 80
+const headerHeight = 80;
 
 const onScroll = () => {
-  var scrollThreshold = 40
-  var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+  var scrollThreshold = 40;
+  var width = Math.max(
+    document.documentElement.clientWidth,
+    window.innerWidth || 0
+  );
   if (width <= 1023) {
-    scrollThreshold=3
+    scrollThreshold = 3;
   }
-  if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+  if (
+    document.body.scrollTop > scrollThreshold ||
+    document.documentElement.scrollTop > scrollThreshold
+  ) {
     document.getElementById("home").classList.add("header-border");
   } else {
     document.getElementById("home").classList.remove("header-border");
   }
-}
+};
 
-const Home = () => {
+const Shop = () => {
   useEffect(() => {
     document.onscroll = onScroll;
-    onScroll()
-
-    // var firebaseConfig = {
-    //   apiKey: "AIzaSyC8mAIUcvd7bqw46bajWEbRrHcDTnd1qTw",
-    //   authDomain: "flowers-way.firebaseapp.com",
-    //   databaseURL: "https://flowers-way.firebaseio.com",
-    //   projectId: "flowers-way",
-    //   storageBucket: "flowers-way.appspot.com",
-    //   messagingSenderId: "305623494289",
-    //   appId: "1:305623494289:web:fa6954b42047c910079930",
-    //   measurementId: "G-PSBJYP7E5X"
-    // };
-    // // Initialize Firebase
-    // firebase.initializeApp(firebaseConfig)
-    // firebase.analytics()
-
+    onScroll();
   });
   return (
     <>
       <Head>
         <title>Flower's Way. Країна очима велосипедистів</title>
         <MainMetaInfo />
+
         <link
           href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap"
           rel="stylesheet"
@@ -76,19 +68,19 @@ const Home = () => {
         />
       </Head>
 
-      <div className="map-image">
-        <div id="home" className="header">
-          <div className="page-content" style={{ height: "100%" }}>
-            <Header />
-          </div>
-        </div>
-        <div className="page-content content">
-          <Content />
+      <div id="home" className="header">
+        <div className="page-content" style={{ height: "100%" }}>
+          <Header />
         </div>
       </div>
-      <div id="pathfinder" className="bg-block-2">
+      <div className="title-section">
         <div className="page-content">
-          <Pathfinder />{" "}
+          <TitleSection />
+        </div>
+      </div>
+      <div className="shop-status">
+        <div className="page-content">
+          <ShopStatus />
         </div>
       </div>
       <div className="footer-background">
@@ -106,7 +98,6 @@ const Home = () => {
             left: 0;
             width: 100vw;
           }
-
           .header-page {
             align-items: center;
             height: 100%;
@@ -115,23 +106,6 @@ const Home = () => {
             max-width: 1166px;
             margin-left: auto;
             margin-right: auto;
-          }
-
-          .map-image {
-            /* Set a specific height */
-            height: 100vh;
-
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0) -3%,
-                rgba(255, 255, 255, 0.68) 117%
-              ),
-              url(/img/map-image.png);
           }
 
           .header-border ::after {
@@ -148,17 +122,12 @@ const Home = () => {
           .header-border {
             background-color: #ffffff;
           }
-
-          .content {
-            position: relative;
-            padding-top: ${headerHeight + 27}px;
-            margin-bottom: auto;
+          .title-section {
+            margin-top: 150px;
+            margin-bottom: 50px;
           }
-
-          .bg-block-2 {
-            background-color: #fff;
-            padding-top: 30px;
-            padding-bottom: 30px;
+          .shop-status {
+            margin-bottom: 300px;
           }
           .footer-background {
             width: 100%;
@@ -183,20 +152,14 @@ const Home = () => {
             .map-image {
               height: initial;
             }
-            .content {
-              padding-top: ${headerHeight}px;
-            }
             .footer-background {
               height: 215px;
             }
-          }
-
-          @media only screen and (max-width: 1165px) {
           }
         `}
       </style>
     </>
   );
-}
+};
 
-export default Home
+export default Shop;

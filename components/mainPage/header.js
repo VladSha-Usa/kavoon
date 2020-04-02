@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import ImageLink from '../common/imageLink'
 import MainMenu from '../common/mainMenu'
+import LanguagePopup from '../common/languagePopup'
 
 // const onScroll = () => {
 //   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -58,31 +59,36 @@ const Header = () => {
           <a href="#pathfinder">Путівник</a>
         </nav>
         <nav className="menu-link" style={{ marginRight: "auto" }} >
-          <span  className="disabled">Блог</span>
+          <span className="disabled">Блог</span>
         </nav>
       </div>
-      <div className={socialClass} >
-
+      <div className={socialClass}>
+        <nav style={{ marginRight: "10px" }}>
+          <LanguagePopup/>
+        </nav>
         <nav>
           <ImageLink href="#"
             src="/img/viber.svg"
-            hoverSrc="/img/viber-hover.svg" />
+            hoverSrc="/img/viber-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
 
         <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="https://www.facebook.com/ovchynnikova.nadiia/"
             src="/img/facebook.svg"
-            hoverSrc="/img/facebook-hover.svg" />
+            hoverSrc="/img/facebook-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
         <nav style={{ marginLeft: "15px" }}>
           <ImageLink href="http://instagram.com/flowers__way/"
             src="/img/instagram.svg"
-            hoverSrc="/img/instagram-hover.svg" />
+            hoverSrc="/img/instagram-hover.svg"
+            imgWidth="40px" imgHeight="40px" />
         </nav>
       </div>
       <div className={hamburgerClass}>
         <nav >
-          <div onClick={ () => setPopup(true)}>
+          <div onClick={() => setPopup(true)}>
             <img src="/img/menu.png" srcSet="/img/menu@2x.png 2x, img/menu@3x.png 3x" />
           </div>
         </nav>
