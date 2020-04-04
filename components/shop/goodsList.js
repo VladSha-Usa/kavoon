@@ -1,4 +1,4 @@
-const GoodsListItem = () => {
+const GoodsList = () => {
   const caseField = "case-field";
   const contentWrapper = "goods-list__content-wrapper";
 
@@ -39,4 +39,4 @@ const GoodsListItem = () => {
   );
 };
 
-export default GoodsListItem;
+export default GoodsList;

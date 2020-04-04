@@ -7,7 +7,7 @@ import Footer from "../../components/mainPage/footer";
 import TitleSection from "./titleSection";
 import ShopStatus from "./shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
-import GoodsListItem from "../../components/shop/goodsListItem";
+import GoodsList from "../../components/shop/goodsList";
 
 const headerHeight = 80;
 
@@ -86,7 +86,7 @@ const Shop = () => {
       </div>
       <div className="goods-list">
         <div className="page-content">
-          <GoodsListItem />
+          <GoodsList />
         </div>
       </div>
       <div className="footer-background">
