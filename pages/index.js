@@ -47,7 +47,11 @@ const Home = () => {
     <>
       <Head>
         <title>Flower's Way. Країна очима велосипедистів</title>
-        <MainMetaInfo />
+        <MainMetaInfo
+          title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
+          description="Велосумки для легких подорожей. Власне виробництво. просте монтування"
+          img="https://flowersway.com.ua/img/objects/Swirg2_450_320.jpg"
+        ></MainMetaInfo>
         <link
           href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap"
           rel="stylesheet"
