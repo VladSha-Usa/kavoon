@@ -7,7 +7,7 @@ import Footer from "../../components/mainPage/footer";
 import TitleSection from "./titleSection";
 import ShopStatus from "./shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
-import GoodsListItem from "./goodsListItem";
+import GoodsListItem from "../../components/shop/goodsListItem";
 
 const headerHeight = 80;
 
