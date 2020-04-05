@@ -1,5 +1,6 @@
-const GoodItem = ({ src, srcSet, contentTitle, capacity, price }) => {
+const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
   const imgWrapper = "item__img-wrapper";
+  const caseField = "case-field";
   const title = "item__title";
   const description = "item__description";
   const descriptionCapacity = "item__description-capacity";
@@ -10,22 +11,34 @@ const GoodItem = ({ src, srcSet, contentTitle, capacity, price }) => {
 
   return (
     <>
-      <div className={imgWrapper}>
-        <img src={src} srcSet={srcSet} />
-      </div>
-      <div className={title}>{contentTitle}</div>
-      <div className={description}>
-        <div className={descriptionCapacity}>
-          <span className={descriptionCapacityIntro}>Об'єм:</span>
-          {capacity}
-          <span className={descriptionCapacityLitres}>л</span>
+      <div className={caseField}>
+        <div className={imgWrapper}>
+          <img src={src} srcSet={srcSet} />
         </div>
-        <div className={descriptionPrice}>
-          {price}
-          <span className={descriptionPriceCurrency}>грн</span>
+        <div className={title}>{contentTitle}</div>
+        <div className={description}>
+          <div className={descriptionCapacity}>
+            <span className={descriptionCapacityIntro}>Об'єм:</span>
+            {capacity}
+            <span className={descriptionCapacityLitres}>л</span>
+          </div>
+          <div className={descriptionPrice}>
+            {price}
+            <span className={descriptionPriceCurrency}>грн</span>
+          </div>
         </div>
       </div>
       <style jsx>{`
+        .${caseField} {
+          width: 275px;
+          height: 380px;
+          border-radius: 12px;
+          box-shadow: 2px 2px 42px -2px rgba(12, 32, 60, 0.12);
+          background-color: var(--white);
+          display: inline-block;
+          margin-bottom: 20px;
+          position: relative;
+        }
         .${imgWrapper} {
           margin-top: 10px;
           margin-bottom: 15px;
@@ -81,4 +94,4 @@ const GoodItem = ({ src, srcSet, contentTitle, capacity, price }) => {
   );
 };
 
-export default GoodItem;
+export default GoodListItem ;
