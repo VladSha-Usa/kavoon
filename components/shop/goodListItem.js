@@ -111,7 +111,7 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
           letter-spacing: 0.89px;
           text-align: center;
           color: var(--texticonscolor);
-          margin: 0 28px 15px 28px;
+          white-space: pre-wrap;
         }
         .${description} {
           display: flex;
