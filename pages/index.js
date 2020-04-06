@@ -1,5 +1,3 @@
-import '../components/styleguide.css'
-
 import React, { useEffect } from 'react'
 import Pathfinder from '../components/mainPage/pathfinder'
 import Head from 'next/head'

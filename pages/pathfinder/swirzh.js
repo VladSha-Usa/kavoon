@@ -1,6 +1,3 @@
-import '../../components/styleguide.css'
-
-
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../../components/mainPage/header'
