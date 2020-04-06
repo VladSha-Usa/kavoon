@@ -4,7 +4,7 @@
 * yarn should be installed globbally. You can find the instructions https://
 ## Installation
 * run `yarn install` on the root of the project
-* open node_modules/react-mapbox-gl/lib-esm/map.js:38
+* open node_modules/react-mapbox-gl/lib-esm/map.js:38 and comment `// require('mapbox-gl/dist/mapbox-gl.css'); `
     ```javascript
     if (injectCSS) {
         // require('mapbox-gl/dist/mapbox-gl.css');
