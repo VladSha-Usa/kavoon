@@ -28,11 +28,22 @@ const onScroll = () => {
   }
 };
 
+const removeHoverItem = () => {
+  const itemMainClass = document.querySelectorAll(".case-field");
+  const width = window.innerWidth;
+  if (width <= 1023) {
+    itemMainClass.forEach((item) => {
+      item.classList.remove("case-field__hover");
+    });
+  }
+};
 const Shop = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
+    removeHoverItem();
   });
+  
   return (
     <>
       <Head>
@@ -154,6 +165,16 @@ const Shop = () => {
             }
             .footer-background {
               height: 215px;
+            }
+            .shop-status {
+              margin-bottom: 46px;
+            }
+            .title-section {
+              margin-top: 104px;
+              margin-bottom: 24px;
+            }
+            .goods-list {
+              margin-bottom: 41px;
             }
           }
         `}
