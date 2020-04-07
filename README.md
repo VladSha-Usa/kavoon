@@ -1,10 +1,10 @@
 # Getting Started
 ## Prerequisites
 * Both node.js and npm should be installed globbally. You can find the instructions https://nodejs.org/en/download/
-* yarn should be installed globbally. You can find the instructions https://
+* yarn should be installed globbally. You can find the instructions https://yarnpkg.com/
 ## Installation
 * run `yarn install` on the root of the project
-* open node_modules/react-mapbox-gl/lib-esm/map.js:38 and comment `// require('mapbox-gl/dist/mapbox-gl.css'); `
+* open node_modules/react-mapbox-gl/lib-esm/map.js:38 and comment the line: `// require('mapbox-gl/dist/mapbox-gl.css'); `
     ```javascript
     if (injectCSS) {
         // require('mapbox-gl/dist/mapbox-gl.css');
