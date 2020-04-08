@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
-import Header from "../../../components/mainPage/header";
-import Footer from "../../../components/mainPage/footer";
-import MainMetaInfo from "../../../components/common/mainMetaInfo";
+import Header from "../../components/mainPage/header";
+import Footer from "../../components/mainPage/footer";
+import MainMetaInfo from "../../components/common/mainMetaInfo";
 
 const headerHeight = 80;
 
