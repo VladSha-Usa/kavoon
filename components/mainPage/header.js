@@ -115,6 +115,7 @@ const Header = () => {
       align-items: center;
       justify-content: flex-end;
       margin-left: auto;
+      margin-top: 15px;
     }
     .${socialClass} {
       align-items: center;

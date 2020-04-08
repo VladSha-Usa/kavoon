@@ -56,18 +56,16 @@ const ShopStatus = () => {
           align-items: center;
           margin: 0 30px 0 30px;
         }
-        .${showedGoods} {
-        }
         .${showedGoodsText} {
           margin-right: 5px;
         }
         .${showedGoodsAmountText} {
           margin-left: 5px;
         }
-        .${addedGoodsText}{
+        .${addedGoodsText} {
           margin-right: 17px;
         }
-        
+
         .${addedGoodsAmountWrapper} {
           margin-right: 23px;
         }
@@ -89,6 +87,35 @@ const ShopStatus = () => {
           letter-spacing: 0.65px;
           text-align: center;
           color: #fff;
+        }
+        @media only screen and (max-width: 1023px) {
+          .${statusWrapper} {
+            box-shadow: none;
+            margin: 0 10px 0 -12px;
+          }
+          .${addedGoodsText} {
+            display: none;
+          }
+          .${showedGoods} {
+            margin: 0;
+          }
+          .${addedGoods} {
+            box-shadow: 0px 8px 12px 0px rgba(9, 21, 85, 0.2);
+            background-color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin: 0px;
+            justify-content: center;
+          }
+          .${addedGoodsAmountWrapper} {
+            margin-right: 0;
+          }
+          .${addedGoodsAmountNumber} {
+            margin-top: -2px;
+            margin-left: 0px;
+          }
         }
       `}</style>
     </>
