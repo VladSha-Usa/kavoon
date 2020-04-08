@@ -28,20 +28,10 @@ const onScroll = () => {
   }
 };
 
-const removeHoverItem = () => {
-  const itemMainClass = document.querySelectorAll(".case-field");
-  const width = window.innerWidth;
-  if (width <= 1023) {
-    itemMainClass.forEach((item) => {
-      item.classList.remove("case-field__hover");
-    });
-  }
-};
 const Shop = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
-    removeHoverItem();
   });
   
   return (
