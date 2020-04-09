@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
+import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 
 const headerHeight = 80;
 
@@ -62,6 +63,11 @@ const Good1 = () => {
           <Header />
         </div>
       </div>
+      <div className="good-details-status">
+        <div className="page-content">
+          <GoodDetailsStatus />
+        </div>
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -86,7 +92,9 @@ const Good1 = () => {
             margin-left: auto;
             margin-right: auto;
           }
-
+          .good-details-status {
+            margin-top: 130px;
+          }
           .header-border ::after {
             content: "";
             display: block;
