@@ -4,7 +4,7 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
-
+import GoodDetailsChoose from "../../components/shop/goodDetailsChoose"
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -66,6 +66,11 @@ const Good1 = () => {
       <div className="good-details-status">
         <div className="page-content">
           <GoodDetailsStatus />
+        </div>
+      </div>
+      <div className="good-details-status">
+        <div className="page-content">
+          <GoodDetailsChoose />
         </div>
       </div>
       <div className="footer-background">
