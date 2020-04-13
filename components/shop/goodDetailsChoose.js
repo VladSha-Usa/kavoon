@@ -1,14 +1,13 @@
-const goodDetailsChoose = () => {
+import GoodDetailsPrevSlider from "./goodDetailsPrevSlider";
+const GoodDetailsChoose = () => {
   const contentWrapper = "good-details__content-wrapper";
 
   return (
     <>
-      <div className={contentWrapper}></div>
-      <style jsx>{`
-        
-      `}</style>
+      <GoodDetailsPrevSlider />
+      <style jsx>{``}</style>
     </>
   );
 };
 
-export default goodDetailsChoose;
+export default GoodDetailsChoose;
