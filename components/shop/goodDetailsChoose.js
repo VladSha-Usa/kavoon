@@ -1,10 +1,12 @@
 import GoodDetailsPrevSlider from "./goodDetailsPrevSlider";
+import GoodDetailsWizard from "./goodDetailsWizard";
+
 const GoodDetailsChoose = () => {
-  const contentWrapper = "good-details__content-wrapper";
 
   return (
     <>
       <GoodDetailsPrevSlider />
+      <GoodDetailsWizard />
       <style jsx>{``}</style>
     </>
   );
