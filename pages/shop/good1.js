@@ -4,7 +4,8 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
-import GoodDetailsChoose from "../../components/shop/goodDetailsChoose"
+import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
+
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -56,6 +57,17 @@ const Good1 = () => {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
         />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
       </Head>
 
       <div id="home" className="header">
@@ -68,7 +80,7 @@ const Good1 = () => {
           <GoodDetailsStatus />
         </div>
       </div>
-      <div className="good-details-status">
+      <div className="good-details-choose">
         <div className="page-content">
           <GoodDetailsChoose />
         </div>
@@ -99,6 +111,7 @@ const Good1 = () => {
           }
           .good-details-status {
             margin-top: 130px;
+            margin-bottom: 50px;
           }
           .header-border ::after {
             content: "";
@@ -109,6 +122,9 @@ const Good1 = () => {
             width: 100%;
             height: 2px;
             background-color: var(--light-blue-grey);
+          }
+          .header-border {
+            background-color: #ffffff;
           }
           .footer-background {
             width: 100%;
