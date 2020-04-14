@@ -1,40 +1,344 @@
-import React, { useEffect } from "react";
-let isOpened = false;
-const conroleListFromButton = () => {
-  isOpened = !isOpened;
-  if (isOpened) {
-    document.querySelector(".list").style.display = "block";
-  } else {
-    document.querySelector(".list").style.display = "none";
-  }
-};
-const closeList = () => {
-  const target = event.target;
-  if (target.id !== "button") {
-    isOpened = !isOpened;
-    return (document.querySelector(".list").style.display = "none");
-  }
-};
+import React, { useEffect, useState } from "react";
+
 const GoodDetailsWizardPicker = () => {
+  const picker = "good-wizard__picker-wrapper";
+  const parameters = "good-wizard__picker-param";
+  const whatChoose = "good-wizard__picker-param__general-title";
+  const statusOfChoose = "good-wizard__picker-param__status";
+  const titleOfChoose = "good-wizard__picker-param__status-choose__title";
+  const moreVariant = "good-wizard__picker-param__status-more";
+  const imgOfTextile = "good-wizard__picker-param__status-img";
+  const listOfVariants = "good-wizard__picker-param__status-list";
+  const imgVariant = "good-wizard__picker-param__status-list__img";
+  const titleVariant = "good-wizard__picker-param__status-list__title";
+  const statusOfChooseMain = "good-wizard__picker-param__status-main";
+  let [isOpened] = useState(false);
+  const conroleListFromButton = () => {
+    isOpened = !isOpened;
+    const target = event.target;
+    if (isOpened) {
+      target
+        .closest(`.${statusOfChoose}`)
+        .classList.add("active__status-choose");
+    } else {
+      target
+        .closest(`.${statusOfChoose}`)
+        .classList.remove("active__status-choose");
+    }
+  };
+  const closeList = () => {
+    isOpened = !isOpened;
+    document
+      .querySelector(".active__status-choose")
+      .classList.remove("active__status-choose");
+  };
   useEffect(() => {
-    document.addEventListener("click", closeList);
+    document.addEventListener("click", () => {
+      const target = event.target;
+      if (
+        target.id !== `${moreVariant}` &&
+        document.querySelector(".active__status-choose")
+      ) {
+        closeList();
+      }
+    });
   });
   return (
     <>
-      <div>
-        <span onClick={conroleListFromButton} id="button">
-          But
-        </span>
-        <ul className="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
+      <div className={picker}>
+        <div className={parameters}>
+          <span className={whatChoose}>Основна тканина</span>
+          <div className={statusOfChoose}>
+            <div className={statusOfChooseMain}>
+              <img
+                className={imgOfTextile}
+                src="/img/wizard-picker/material-oksford.png"
+                srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+              />
+              <span className={titleOfChoose}>Оксфорд тканина</span>
+              <button id={moreVariant} onClick={conroleListFromButton}></button>
+            </div>
+            <ul className={listOfVariants}>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/field.svg"
+                />
+                <span className={titleVariant}>Прінт 1- Назва Прінта</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>
+                  Прінт 2 -т Довга назва прінта
+                </span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Прінт 3</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>синій колір</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={parameters}>
+          <span className={whatChoose}>Основний колір</span>
+          <div className={statusOfChoose}>
+            <div className={statusOfChooseMain}>
+              <img
+                className={imgOfTextile}
+                src="/img/wizard-picker/material-oksford.png"
+                srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+              />
+              <span className={titleOfChoose}>Червоний</span>
+              <button id={moreVariant} onClick={conroleListFromButton}></button>
+            </div>
+            <ul className={listOfVariants}>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Прінт 1- Назва Прінта</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>
+                  Прінт 2 -т Довга назва прінта
+                </span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Прінт 3</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>синій колір</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+              <li>
+                <img
+                  className={imgVariant}
+                  src="/img/wizard-picker/material-oksford.png"
+                  srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
+                />
+                <span className={titleVariant}>Червоний</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <style jsx>
         {`
-          .list {
+          .${parameters} {
+            position: absolute;
+            width: 380px;
+            z-index: 20;
+          }
+          .${parameters}:nth-child(2) {
+            margin-top: 100px;
+            z-index: 19;
+          }
+          .${statusOfChoose} {
+            height: 50px;
+            border-radius: 25px;
+            box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
+            background-color: white;
+            display: flex;
+            align-items: flex-start;
+            transition: 0.5s ease;
+          }
+          .active__status-choose {
+            height: 325px;
+          }
+          .${picker} {
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.74px;
+            color: var(--texticonscolor);
+          }
+          .${statusOfChooseMain} {
+            display: flex;
+            align-items: center;
+            width: -webkit-fill-available;
+            height: 50px;
+          }
+          .${whatChoose} {
+            display: block;
+            letter-spacing: 0.84px;
+            margin-bottom: 10px;
+          }
+          .${imgOfTextile} {
+            margin: 0 15px 0 20px;
+          }
+          .${titleOfChoose} {
+            margin-right: auto;
+          }
+          #${moreVariant} {
+            padding: 0;
+            border-width: 0;
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+            background: transparent;
+            outline: none;
+            margin-right: 10px;
+          }
+          #${moreVariant}:before {
+            content: "";
+            position: absolute;
+            height: 9px;
+            width: 16px;
+            background-image: url("/img/wizard-picker/more-icon.svg");
+            margin-left: 0px;
+            margin: -4.5px 0 0 -8px;
+          }
+          .active__status-choose .${listOfVariants} {
+            height: 250px;
+          }
+          .${listOfVariants} {
+            position: absolute;
+            list-style: none;
+            height: 0px;
+            width: 360px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 20px;
+            margin-top: 50px;
+            overflow: auto;
+            transition: 0.5s ease;
+            border-radius: 25px;
+          }
+          .${listOfVariants}::-webkit-scrollbar-button {
+            background-image: url("");
+            background-repeat: no-repeat;
+            width: 5px;
+            height: 0px;
             display: none;
+          }
+
+          .${listOfVariants}::-webkit-scrollbar-track {
+            background-color: tarnsparent;
+          }
+
+          .${listOfVariants}::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 2, 5px;
+            border-radius: 2.5px;
+            background-color: #ced5e1;
+          }
+
+          .${listOfVariants}::-webkit-scrollbar-thumb:hover {
+            background-color: #ced5e1;
+          }
+
+          .${listOfVariants}::-webkit-resizer {
+            background-image: url("");
+            background-repeat: no-repeat;
+            width: 5px;
+            height: 0px;
+          }
+
+          .${listOfVariants}::-webkit-scrollbar {
+            width: 5px;
+          }
+          .${listOfVariants} li {
+            font-size: 16px;
+            letter-spacing: 0.84px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+          }
+          .${listOfVariants} li:first-child {
+            margin-top: 8px;
+          }
+          .${titleVariant} {
+            margin-left: 10px;
           }
         `}
       </style>
