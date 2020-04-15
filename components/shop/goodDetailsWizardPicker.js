@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import useOutsideClick from "./useOutsideClick";
 
 const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
   const picker = "good-wizard__picker-wrapper";
@@ -13,7 +14,22 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
   const titleVariant = "good-wizard__picker-param__status-list__title";
   const statusOfChooseMain = "good-wizard__picker-param__status-main";
   let [isOpened, setOpened] = useState(false);
-
+  const putZindex = () => {
+    Array.from(
+      document.querySelectorAll(`.${statusOfChoose}, .${listOfVariants}`)
+    )
+      .reverse()
+      .forEach((el, ind) => {
+        el.style.zIndex = `${ind + 3}`;
+      });
+  };
+  useEffect(() => {
+    putZindex();
+  });
+  const ref = useRef();
+  useOutsideClick(ref, () => {
+    setOpened(!isOpened);
+  });
   return (
     <>
       <div className={parameters}>
@@ -22,6 +38,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
           className={
             statusOfChoose + (isOpened ? " active__status-choose" : "")
           }
+          ref={ref}
         >
           <div className={statusOfChooseMain}>
             <img className={imgOfTextile} src={src} srcSet={srcSet} />
@@ -107,7 +124,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
             background-color: white;
             display: flex;
             align-items: flex-start;
-            transition: 0.5s ease;
+            transition: 0.3s ease;
           }
           .active__status-choose {
             height: 350px;
@@ -169,9 +186,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
             padding-inline-start: 20px;
             margin-top: 50px;
             overflow: auto;
-            transition: 0.5s ease;
+            transition: 0.3s ease;
             border-radius: 25px;
-            z-index: 10;
             background-color: white;
           }
           .${listOfVariants}::-webkit-scrollbar-button {
