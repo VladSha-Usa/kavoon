@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
   const picker = "good-wizard__picker-wrapper";
@@ -12,123 +12,95 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
   const imgVariant = "good-wizard__picker-param__status-list__img";
   const titleVariant = "good-wizard__picker-param__status-list__title";
   const statusOfChooseMain = "good-wizard__picker-param__status-main";
-  let [isOpened] = useState(false);
-  const conroleListFromButton = () => {
-    isOpened = !isOpened;
-    const target = event.target;
-    if (isOpened) {
-      target
-        .closest(`.${statusOfChoose}`)
-        .classList.add("active__status-choose");
-    } else {
-      target
-        .closest(`.${statusOfChoose}`)
-        .classList.remove("active__status-choose");
-    }
-  };
-  const closeList = () => {
-    isOpened = !isOpened;
-    document
-      .querySelector(".active__status-choose")
-      .classList.remove("active__status-choose");
-  };
-  useEffect(() => {
-    document.addEventListener("click", () => {
-      const target = event.target;
-      if (
-        target.id !== `${moreVariant}` &&
-        document.querySelector(".active__status-choose")
-      ) {
-        closeList();
-      }
-    });
-  });
+  let [isOpened, setOpened] = useState(false);
+
   return (
     <>
-      <div className={picker}>
-        <div className={parameters}>
-          <span className={whatChoose}>{mainTheme}</span>
-          <div className={statusOfChoose}>
-            <div className={statusOfChooseMain}>
-              <img className={imgOfTextile} src={src} srcSet={srcSet} />
-              <span className={titleOfChoose}>{nameOfChoose}</span>
-              <button id={moreVariant} onClick={conroleListFromButton}></button>
-            </div>
-            <ul className={listOfVariants}>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/field.svg"
-                />
-                <span className={titleVariant}>Червоний</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/printcolor1.svg"
-                />
-                <span className={titleVariant}>Прінт 1- Назва Прінта</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/printcolor2.svg"
-                />
-                <span className={titleVariant}>
-                  Прінт 2 -т Довга назва прінта
-                </span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/printcolor3.svg"
-                />
-                <span className={titleVariant}>Прінт 3</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/field5.svg"
-                />
-                <span className={titleVariant}>синій колір</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/field2.svg"
-                />
-                <span className={titleVariant}>Червоний</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/printcolor3.svg"
-                />
-                <span className={titleVariant}>Червоний</span>
-              </li>
-              <li>
-                <img
-                  className={imgVariant}
-                  src="/img/wizard-picker/printcolor3.svg"
-                />
-                <span className={titleVariant}>Червоний</span>
-              </li>
-            </ul>
+      <div className={parameters}>
+        <span className={whatChoose}>{mainTheme}</span>
+        <div
+          className={
+            statusOfChoose + (isOpened ? " active__status-choose" : "")
+          }
+        >
+          <div className={statusOfChooseMain}>
+            <img className={imgOfTextile} src={src} srcSet={srcSet} />
+            <span className={titleOfChoose}>{nameOfChoose}</span>
+            <button
+              id={moreVariant}
+              onClick={() => setOpened(!isOpened)}
+            ></button>
           </div>
+          <ul className={listOfVariants}>
+            <li>
+              <img className={imgVariant} src="/img/wizard-picker/field.svg" />
+              <span className={titleVariant}>Червоний</span>
+            </li>
+            <li>
+              <img
+                className={imgVariant}
+                src="/img/wizard-picker/printcolor1.svg"
+              />
+              <span className={titleVariant}>Прінт 1- Назва Прінта</span>
+            </li>
+            <li>
+              <img
+                className={imgVariant}
+                src="/img/wizard-picker/printcolor2.svg"
+              />
+              <span className={titleVariant}>
+                Прінт 2 -т Довга назва прінта
+              </span>
+            </li>
+            <li>
+              <img
+                className={imgVariant}
+                src="/img/wizard-picker/printcolor3.svg"
+              />
+              <span className={titleVariant}>Прінт 3</span>
+            </li>
+            <li>
+              <img className={imgVariant} src="/img/wizard-picker/field5.svg" />
+              <span className={titleVariant}>синій колір</span>
+            </li>
+            <li>
+              <img className={imgVariant} src="/img/wizard-picker/field2.svg" />
+              <span className={titleVariant}>Червоний</span>
+            </li>
+            <li>
+              <img
+                className={imgVariant}
+                src="/img/wizard-picker/printcolor3.svg"
+              />
+              <span className={titleVariant}>Червоний</span>
+            </li>
+            <li>
+              <img
+                className={imgVariant}
+                src="/img/wizard-picker/printcolor3.svg"
+              />
+              <span className={titleVariant}>Червоний</span>
+            </li>
+          </ul>
         </div>
       </div>
       <style jsx>
         {`
           .${parameters} {
-            position: absolute;
             width: 380px;
-            z-index: 20;
-          }
-          .${parameters}:nth-child(2) {
-            margin-top: 100px;
-            z-index: 19;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.85px;
+            color: var(--texticonscolor);
+            margin-bottom: 75px;
           }
           .${statusOfChoose} {
+            position: absolute;
+            width: 380px;
             height: 50px;
             border-radius: 25px;
             box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
@@ -141,14 +113,6 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
             height: 350px;
           }
           .${picker} {
-            font-family: Montserrat;
-            font-size: 16px;
-            font-weight: 500;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: 0.85px;
-            color: var(--texticonscolor);
           }
           .${statusOfChooseMain} {
             display: flex;
@@ -207,6 +171,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
             overflow: auto;
             transition: 0.5s ease;
             border-radius: 25px;
+            z-index: 10;
+            background-color: white;
           }
           .${listOfVariants}::-webkit-scrollbar-button {
             background-image: url("");
