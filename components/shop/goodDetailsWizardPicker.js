@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
 
-const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
+const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex }) => {
   const picker = "good-wizard__picker-wrapper";
   const parameters = "good-wizard__picker-param";
   const whatChoose = "good-wizard__picker-param__general-title";
@@ -14,21 +14,10 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
   const titleVariant = "good-wizard__picker-param__status-list__title";
   const statusOfChooseMain = "good-wizard__picker-param__status-main";
   let [isOpened, setOpened] = useState(false);
-  const putZindex = () => {
-    Array.from(
-      document.querySelectorAll(`.${statusOfChoose}, .${listOfVariants}`)
-    )
-      .reverse()
-      .forEach((el, ind) => {
-        el.style.zIndex = `${ind + 3}`;
-      });
-  };
-  useEffect(() => {
-    putZindex();
-  });
+
   const ref = useRef();
   useOutsideClick(ref, () => {
-    setOpened(!isOpened);
+    setOpened(false);
   });
   return (
     <>
@@ -125,6 +114,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose }) => {
             display: flex;
             align-items: flex-start;
             transition: 0.3s ease;
+            z-index: ${ zIndex ?? 10 };
           }
           .active__status-choose {
             height: 350px;
