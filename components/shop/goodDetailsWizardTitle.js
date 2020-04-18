@@ -20,6 +20,7 @@ const GoodDetailsWizardTitle = () => {
           color: var(--texticonscolor);
           display: flex;
           flex-direction: column;
+          margin-bottom: 36px;
         }
         .${nameCapacity} {
           margin-bottom: 15px;
