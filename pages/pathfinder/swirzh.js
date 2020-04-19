@@ -56,8 +56,6 @@ const Swirzh = () => {
 
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
       <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     </Head>

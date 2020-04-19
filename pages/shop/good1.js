@@ -5,7 +5,7 @@ import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
-
+import Analytics from "../../components/common/analytics"
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -14,9 +14,6 @@ const onScroll = () => {
     document.documentElement.clientWidth,
     window.innerWidth || 0
   );
-  if (width <= 1023) {
-    scrollThreshold = 3;
-  }
   if (
     document.body.scrollTop > scrollThreshold ||
     document.documentElement.scrollTop > scrollThreshold
@@ -35,6 +32,7 @@ const Good1 = () => {
   return (
     <>
       <Head>
+        <Analytics/>
         <title>Flower's Way. Країна очима велосипедистів</title>
         <MainMetaInfo
           title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
@@ -50,8 +48,6 @@ const Good1 = () => {
           href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap"
           rel="stylesheet"
         />
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
         <link
           rel="stylesheet"
           type="text/css"
