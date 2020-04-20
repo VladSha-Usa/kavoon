@@ -20,7 +20,7 @@ const LanguagePopup = () => {
             </span>
           </li>
           <li>
-            <span className="available-lang">
+            <span className="available-lang disabled">
               <img
                 src="/img/country-flag-en.png"
                 srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
@@ -120,6 +120,10 @@ const LanguagePopup = () => {
           left: 19px;
           border: 7px solid transparent;
           border-bottom: 15px solid #fff;
+        }
+        .available__list-lang li .disabled {
+          opacity: 0.5;
+          cursor: default;
         }
       `}</style>
     </>
