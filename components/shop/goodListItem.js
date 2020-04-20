@@ -18,7 +18,7 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
               <img src="img/img-shop-item/more-button.svg" />
             </a>
           </span>
-          <img src={src} srcSet={srcSet} />
+          <img style={{width: "200px", height: "225px"}}  src={src} srcSet={srcSet} />
         </div>
         <div className={title}>{contentTitle}</div>
         <div className={description}>

@@ -6,6 +6,7 @@ import TitleSection from "../../components/shop/titleSection";
 import ShopStatus from "../../components/shop/shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodsList from "../../components/shop/goodsList";
+import Analytics from "../../components/common/analytics"
 
 const headerHeight = 80;
 
@@ -52,8 +53,6 @@ const Shop = () => {
           href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap"
           rel="stylesheet"
         />
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
         <link
           rel="stylesheet"
           type="text/css"

@@ -25,7 +25,7 @@ const ShopStatus = () => {
           <div className={addedGoodsAmountWrapper}>
             <img
               src="img/shop-icon.png"
-              srcset="img/shop-icon@2x.png 2x,
+              srcSet="img/shop-icon@2x.png 2x,
              img/shop-icon@3x.png 3x"
               className={addedGoodsAmountImg}
             />
