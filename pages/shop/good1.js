@@ -106,8 +106,8 @@ const Good1 = () => {
             margin-right: auto;
           }
           .good-details-status {
-            margin-top: 130px;
-            margin-bottom: 50px;
+            margin-top: 115px;
+            margin-bottom: 36px;
           }
           .header-border ::after {
             content: "";
