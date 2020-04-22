@@ -83,7 +83,10 @@ const LanguagePopup = () => {
         }
 
         .choosen-lang {
-          padding-bottom: 17px;
+          padding-bottom: 29px;
+          padding-top: 12px;
+          height: 0;
+          min-height: 20px;
         }
 
         .lang-wrapper:hover > .choosen-lang {
