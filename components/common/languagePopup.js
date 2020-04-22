@@ -11,22 +11,22 @@ const LanguagePopup = () => {
         </span>
         <ul className="available__list-lang">
           <li>
-            <span className="available-lang">
+            <div className="available-lang">
               <img
                 src="/img/country-flag-ua.png"
                 srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
               />
               Українська
-            </span>
+            </div>
           </li>
           <li>
-            <span className="available-lang disabled">
+            <div className="available-lang disabled">
               <img
                 src="/img/country-flag-en.png"
                 srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
               />
               English
-            </span>
+            </div>
           </li>
         </ul>
       </div>
