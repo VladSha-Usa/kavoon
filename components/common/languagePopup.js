@@ -2,31 +2,31 @@ const LanguagePopup = () => {
   return (
     <>
       <div className="lang-wrapper">
-        <span className="choosen-lang">
+        <div className="choosen-lang">
           <img
             src="/img/country-flag-ua.png"
             srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
           />
           Українська
-        </span>
+        </div>
         <ul className="available__list-lang">
           <li>
-            <span className="available-lang">
+            <div className="available-lang">
               <img
                 src="/img/country-flag-ua.png"
                 srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
               />
               Українська
-            </span>
+            </div>
           </li>
           <li>
-            <span className="available-lang">
+            <div className="available-lang">
               <img
                 src="/img/country-flag-en.png"
                 srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
               />
               English
-            </span>
+            </div>
           </li>
         </ul>
       </div>
@@ -35,6 +35,7 @@ const LanguagePopup = () => {
           width: 170px;
           height: 45px;
           border-radius: 22.5px;
+
         }
         .lang-wrapper:hover {
           background-color: #ecefff;
@@ -44,9 +45,8 @@ const LanguagePopup = () => {
         .available__list-lang .available-lang {
           display: flex;
           align-items: center;
-          justify-content: center;
-          margin-left: 47px;
-          width: fit-content;
+          justify-content: left;
+          margin-left: 17px;
           height: 45px;
           cursor: pointer;
           font-family: Montserrat;
@@ -58,28 +58,17 @@ const LanguagePopup = () => {
           letter-spacing: 0.79px;
           color: #061434;
         }
-
+        .choosen-lang img,
+        .available__list-lang .available-lang img {
+          padding-right: 10px;
+        }
         .choosen-lang,
         .available__list-lang .available-lang:focus {
           outline: none;
         }
 
-        .choosen-lang img,
-        .available__list-lang .available-lang img {
-          position: absolute;
-          margin-left: -73px;
-        }
-
         .available__list-lang li:first-child {
           padding-top: 14px;
-        }
-
-        .available__list-lang li:nth-child(2) {
-          padding-top: 4px;
-        }
-
-        .available__list-lang li:nth-child(2) .available-lang img {
-          margin-left: -55px;
         }
 
         .choosen-lang {
@@ -98,7 +87,7 @@ const LanguagePopup = () => {
         }
 
         .lang-wrapper:hover > .available__list-lang {
-          display: flex;
+          display: block;
         }
 
         .available__list-lang {
