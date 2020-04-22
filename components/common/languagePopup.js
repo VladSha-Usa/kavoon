@@ -103,6 +103,7 @@ const LanguagePopup = () => {
           border-radius: 10px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
           background-color: #fff;
+          z-index: 100;
         }
 
         .available__list-lang:after {

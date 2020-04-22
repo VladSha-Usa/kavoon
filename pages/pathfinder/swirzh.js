@@ -113,7 +113,6 @@ const Swirzh = () => {
           width: 100%;
           height: 2px;
           background-color: var(--light-blue-grey);
-          z-index: -1;
       }
 
       .header-border {
