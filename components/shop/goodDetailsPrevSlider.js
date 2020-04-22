@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Slider from "react-slick";
 
-const GoodDetailsPrevSlider = () => {
+const GoodDetailsPrevSlider = ({ images }) => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
   const sliderWrapper = "good-prev__slider-wrapper";
@@ -17,38 +17,16 @@ const GoodDetailsPrevSlider = () => {
             asNavFor={slider2}
             ref={(slider) => setSlider1(slider)}
             dots={true}
-            infinite={false}
           >
-            <img
-              src="/img/good-details-prev-slider/photo-main1.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main1@2x.jpg img/good-details-prev-slider/photo-main1@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main2.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main2@2x.jpg img/good-details-prev-slider/photo-main2@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main3.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main3@2x.jpg img/good-details-prev-slider/photo-main3@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main4.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main4@2x.jpg img/good-details-prev-slider/photo-main4@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main5.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main5@2x.jpg img/good-details-prev-slider/photo-main5@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main6.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main6@2x.jpg img/good-details-prev-slider/photo-main6@3x.jpg"
-              className={img}
-            />
+            {images.prevSliderImg.map((image, index) => (
+              <div key={index}>
+                <img
+                  src={image}
+                  onClick={() => slider1.slickGoTo(index + 1)}
+                  className={img}
+                />
+              </div>
+            ))}
           </Slider>
         </div>
         <div className={sliderSecond}>
@@ -60,36 +38,11 @@ const GoodDetailsPrevSlider = () => {
             focusOnSelect={true}
             arrows={false}
           >
-            <img
-              src="/img/good-details-prev-slider/photo-main1.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main1@2x.jpg img/good-details-prev-slider/photo-main1@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main2.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main2@2x.jpg img/good-details-prev-slider/photo-main2@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main3.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main3@2x.jpg img/good-details-prev-slider/photo-main3@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main4.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main4@2x.jpg img/good-details-prev-slider/photo-main4@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main5.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main5@2x.jpg img/good-details-prev-slider/photo-main5@3x.jpg"
-              className={img}
-            />
-            <img
-              src="/img/good-details-prev-slider/photo-main6.jpg"
-              srcSet="/img/good-details-prev-slider/photo-main6@2x.jpg img/good-details-prev-slider/photo-main6@3x.jpg"
-              className={img}
-            />
+            {images.prevSliderImg.map((image, index) => (
+              <div key={index}>
+                <img src={image} className={img} />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>

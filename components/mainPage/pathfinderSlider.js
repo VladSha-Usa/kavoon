@@ -21,7 +21,7 @@ const PathfinderSlider = ({ images }) => {
         {images.map((image, index) => (
           <div key={index}>
             <img src={image} 
-            onClick={() => slider.slickGoTo(index)}
+            onClick={() => slider.slickGoTo(index + 1)}
             className="pathfinder-image" />
           </div>))}
       </Slider>
