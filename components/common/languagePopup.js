@@ -20,7 +20,7 @@ const LanguagePopup = () => {
             </div>
           </li>
           <li>
-            <div className="available-lang">
+            <div className="available-lang disabled">
               <img
                 src="/img/country-flag-en.png"
                 srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
@@ -103,6 +103,7 @@ const LanguagePopup = () => {
           border-radius: 10px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
           background-color: #fff;
+          z-index: 100;
         }
 
         .available__list-lang:after {
@@ -112,6 +113,10 @@ const LanguagePopup = () => {
           left: 19px;
           border: 7px solid transparent;
           border-bottom: 15px solid #fff;
+        }
+        .available__list-lang li .disabled {
+          opacity: 0.5;
+          cursor: default;
         }
       `}</style>
     </>
