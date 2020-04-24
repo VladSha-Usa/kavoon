@@ -1,5 +1,5 @@
 import GoodListItem from "./goodListItem";
-import GoodListData from "../../data/shop/adapters/goods";
+import GoodListData from "../../data/shop/adapters/goods"
 
 const GoodsList = () => {
   const contentWrapper = "goods-list__content-wrapper";

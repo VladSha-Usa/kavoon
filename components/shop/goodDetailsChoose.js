@@ -1,6 +1,6 @@
 import GoodDetailsPrevSlider from "./goodDetailsPrevSlider";
 import GoodDetailsWizard from "./goodDetailsWizard";
-import dataGood1 from "../../data/shop/good1/slider";
+import dataGood1 from "../../data/shop/adapters/good1";
 
 const GoodDetailsChoose = () => {
   const content = "good-details-choose__content-wrapper";
