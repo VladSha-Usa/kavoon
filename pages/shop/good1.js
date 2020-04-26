@@ -7,7 +7,7 @@ import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
 import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
 import Analytics from "../../components/common/analytics";
-import GoodsSpecification from "../../data/shop/adapters/goodsSpecification";
+import Good1Data from "../../data/shop/adapters/good1";
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -85,14 +85,8 @@ const Good1 = () => {
       </div>
       <div className="good-details-specification">
         <div className="page-content">
-          {GoodsSpecification.map((dataForGood) => (
-            <GoodDetailsSpecification
-              capacity={dataForGood.capacity}
-              height={dataForGood.height}
-              materials={dataForGood.materials}
-              description={dataForGood.description}
-              addContent={dataForGood.inAddition}
-            />
+          {Good1Data.map((object) => (
+            <GoodDetailsSpecification object={object} />
           ))}
         </div>
       </div>

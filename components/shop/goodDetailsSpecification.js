@@ -1,11 +1,45 @@
-const GoodDetailsSpecification = ({
-  capacity,
-  height,
-  materials,
-  description,
-  addContent,
-}) => {
-  const availabilOfHeight = typeof(height) === "undefined" ? "none" : "block";
+const GoodDetailsSpecification = ({ object }) => {
+  let fields = [
+    {
+      name: "Об’єм",
+      field: "volume",
+    },
+    {
+      name: "Висота",
+      field: "height",
+    },
+    {
+      name: "Матеріали",
+      field: "materials",
+    },
+    {
+      name: "Опис",
+      field: "description",
+    },
+    {
+      name: "Додатково",
+      field: "inAddition",
+    },
+  ];
+  const properties = fields
+    .map((field) => {
+      return (
+        object.specification[field.field] && (
+          <div className="specification-parametr" style={{}}>
+            {field.name}:{" "}
+            <span className="specification-parametr-main">
+              {object.specification[field.field]}
+            </span>
+          </div>
+        )
+      );
+    })
+    .filter((field) => field !== undefined);
+  properties[properties.length - 3].props.style.marginBottom = "28px";
+  for (let i = properties.length - 2; i < properties.length; i++) {
+    properties[i].props.style.display = "flex";
+    properties[i].props.style.flexDirection = "column";
+  }
 
   return (
     <>
@@ -13,53 +47,10 @@ const GoodDetailsSpecification = ({
         <div className="specification-title">Характеристика даного товару:</div>
         <div className="specification">
           <div className=" characteristic">
-            <div className="specification-parametr">
-              Об’єм:{" "}
-              <span className="specification-parametr-main">{capacity}</span>
-            </div>
-            <div
-              className="specification-parametr"
-              style={{ display: `${availabilOfHeight}` }}
-            >
-              Висота:{" "}
-              <span className="specification-parametr-main">{height}</span>
-            </div>
-            <div className="specification-parametr">
-              Матеріали:{" "}
-              <span className="specification-parametr-main">{materials}</span>
-            </div>
-            <div
-              className="specification-parametr"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginTop: "28px",
-              }}
-            >
-              Опис:
-              <span
-                className="specification-parametr-main"
-                style={{
-                  marginTop: "4px",
-                }}
-              >
-                {description}
-              </span>
-            </div>
+            {properties.slice(0, properties.length - 1)}
           </div>
           <div className="addition">
-            <div
-              className="specification-parametr"
-              style={{ display: "flex", flexDirection: "column" }}
-            >
-              Додатково:
-              <span
-                className="specification-parametr-main"
-                style={{ marginTop: "8px" }}
-              >
-                {addContent}
-              </span>
-            </div>
+            {properties.slice(properties.length - 1, properties.length)}
           </div>
         </div>
       </div>
@@ -82,6 +73,11 @@ const GoodDetailsSpecification = ({
           letter-spacing: 1px;
           margin-bottom: 37px;
         }
+        .addition {
+          margin-left: 186px;
+        }
+      `}</style>
+      <style>{`
         .specification-parametr {
           font-size: 16px;
           font-weight: 600;
@@ -92,10 +88,7 @@ const GoodDetailsSpecification = ({
         .specification-parametr-main {
           font-weight: 500;
         }
-        .addition {
-          margin-left: 186px;
-        }
-      `}</style>
+        `}</style>
     </>
   );
 };
