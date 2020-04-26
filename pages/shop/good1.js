@@ -5,7 +5,9 @@ import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
-import Analytics from "../../components/common/analytics"
+import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
+import Analytics from "../../components/common/analytics";
+import Good1Data from "../../data/shop/adapters/good1";
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -32,7 +34,7 @@ const Good1 = () => {
   return (
     <>
       <Head>
-        <Analytics/>
+        <Analytics />
         <title>Flower's Way. Країна очима велосипедистів</title>
         <MainMetaInfo
           title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
@@ -81,6 +83,13 @@ const Good1 = () => {
           <GoodDetailsChoose />
         </div>
       </div>
+      <div className="good-details-specification">
+        <div className="page-content">
+          {Good1Data.map((object) => (
+            <GoodDetailsSpecification object={object} />
+          ))}
+        </div>
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -108,6 +117,9 @@ const Good1 = () => {
           .good-details-status {
             margin-top: 115px;
             margin-bottom: 36px;
+          }
+          .good-details-choose {
+            margin-bottom: 247px;
           }
           .header-border ::after {
             content: "";
