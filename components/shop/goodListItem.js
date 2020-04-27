@@ -53,12 +53,13 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
         .${moreInfItemWrap} {
           display: none;
           position: absolute;
-          right: 11px;
+          right: 13px;
           top: 13px;
           object-fit: contain;
         }
         .${moreInfItemWrap} img {
-          height: 39px;
+          height: 38.8px;
+          width: 36.3px;
         }
         * {
           font-family: Montserrat;

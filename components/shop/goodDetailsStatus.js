@@ -15,19 +15,14 @@ const GoodDetailsStatus = () => {
       <div className={statusWrapper}>
         <div className={choosenGood}>
           <a href="#" className={choosenGoodBack}>
-            Назад
+            Список товарів
           </a>
           <span className={choosenGoodName}>Сумка-тубус на вилку 10л</span>
         </div>
         <div className={addedGoods}>
-          <span className={addedGoodsText}>Додані:</span>
+          <span className={addedGoodsText}>Додані товари:</span>
           <div className={addedGoodsAmountWrapper}>
-            <img
-              src="/img/shop-icon.png"
-              srcSet="/img/shop-icon@2x.png 2x,
-             img/shop-icon@3x.png 3x"
-              className={addedGoodsAmountImg}
-            />
+            <img src="/img/shop-icon.svg" className={addedGoodsAmountImg} />
             <span className={addedGoodsAmountNumber}>2</span>
           </div>
         </div>
@@ -41,55 +36,60 @@ const GoodDetailsStatus = () => {
           font-weight: 600;
           color: #040f2a;
           height: 60px;
-          border-radius: 30px;
-          box-shadow: 1px 12px 32px -2px rgba(12, 32, 60, 0.12);
           font-stretch: normal;
           font-style: normal;
           line-height: 1.53;
           letter-spacing: 0.89px;
-          background-color: var(--white);
         }
         .${choosenGood}, .${addedGoods} {
           display: flex;
           align-items: center;
-          margin: 0 30px 0 30px;
         }
         .${choosenGoodBack} {
           letter-spacing: 0.79px;
-          color: #1831aa;
           text-decoration: none;
-          padding-left: 20px;
-          margin: 0 15px 0 -3px;
+          color: var(--texticonscolor);
+          margin-right: 21px;
         }
-        .${choosenGoodBack}:before {
+        .${choosenGoodBack}:after {
           content: "";
           position: absolute;
-          background-image: url("/img/arrow-left-back-good-details.svg");
-          object-fit: contain;
-          height: 14px;
-          width: 8px;
-          margin: 6px 0 0 -18px;
+          width: 2px;
+          height: 16px;
+          border-radius: 1.5px;
+          background-color: var(--primarycolor);
+          margin: 6px 0 0 10px;
         }
         .${choosenGoodName} {
-          color: var(--texticonscolor);
+          color: #1831aa;
         }
         .${addedGoodsText} {
           margin-right: 17px;
         }
 
         .${addedGoodsAmountWrapper} {
-          margin-right: 23px;
+          width: 50px;
+          height: 50px;
+          box-shadow: 0 8px 12px 0 rgba(9, 21, 85, 0.12);
+          background-color: var(--white);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 6px;
         }
         .${addedGoodsAmountImg} {
           position: relative;
-          margin-top: 3px;
         }
         .${addedGoodsAmountNumber} {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           position: absolute;
           width: 20px;
           height: 20px;
-          margin-top: -3px;
-          margin-left: 2px;
+          margin-top: -17px;
+          margin-left: 20px;
           border-radius: 50%;
           background-color: var(--primarycolor);
           font-size: 14px;
