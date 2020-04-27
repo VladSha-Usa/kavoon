@@ -7,13 +7,15 @@ const GoodsList = () => {
   return (
     <>
       <div className={contentWrapper}>
-{GoodListData.map(goodListItem=> (<GoodListItem
-          src={goodListItem.image}
-          // srcSet="img/img-shop-item/photo-1@2x.jpg 2x, img/img-shop-item/photo-1@3x.jpg 3x,"
-          contentTitle={goodListItem.name}
-          capacity={goodListItem.volume}
-          price={goodListItem.price}
-        />) )}
+        {GoodListData.map((goodListItem) => (
+          <GoodListItem
+            src={goodListItem.image}
+            // srcSet="img/img-shop-item/photo-1@2x.jpg 2x, img/img-shop-item/photo-1@3x.jpg 3x,"
+            contentTitle={goodListItem.name}
+            capacity={goodListItem.volume}
+            price={goodListItem.price}
+          />
+        ))}
       </div>
       <style jsx>{`
         .${contentWrapper} {
