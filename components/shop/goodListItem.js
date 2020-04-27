@@ -113,6 +113,8 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
             background-color: rgba(255, 255, 255, 1);
             z-index: 5;
             cursor: pointer;
+            transition-duration: 0.7s;
+            transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
           }
           .case-field__hover:hover .${title} {
             line-height: 1.5;
@@ -126,6 +128,9 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
             letter-spacing: 0.89px;
             font-size: 14px;
             margin-left: 16px;
+          }
+          .case-field__hover:hover .${descriptionCapacityLitres} {
+            font-size: 14px;
           }
           .case-field__hover:hover .${descriptionCapacityIntro} {
             line-height: 1.53;
