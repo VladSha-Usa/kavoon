@@ -1,14 +1,15 @@
 import GoodDetailsPrevSlider from "./goodDetailsPrevSlider";
 import GoodDetailsWizard from "./goodDetailsWizard";
-import dataGood1 from "../../data/shop/adapters/good1";
+import DataGood1 from "../../data/shop/adapters/good1";
 
 const GoodDetailsChoose = () => {
   const content = "good-details-choose__content-wrapper";
+  console.log(DataGood1.gallery);
   return (
     <>
       <div className={content}>
-        {dataGood1.map((images) => (
-          <GoodDetailsPrevSlider images={images} />
+        {DataGood1.map((object) => (
+          <GoodDetailsPrevSlider images={object.gallery} />
         ))}
         <GoodDetailsWizard />
       </div>

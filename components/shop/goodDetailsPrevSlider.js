@@ -18,10 +18,11 @@ const GoodDetailsPrevSlider = ({ images }) => {
             ref={(slider) => setSlider1(slider)}
             dots={true}
           >
-            {images.prevSliderImg.map((image, index) => (
+            {images.map((image, index) => (
               <div key={index}>
                 <img
-                  src={image}
+                  src={image.src}
+                  srcSet={image.srcSet}
                   onClick={() => slider1.slickGoTo(index + 1)}
                   className={img}
                 />
@@ -38,9 +39,9 @@ const GoodDetailsPrevSlider = ({ images }) => {
             focusOnSelect={true}
             arrows={false}
           >
-            {images.prevSliderImg.map((image, index) => (
+            {images.map((image, index) => (
               <div key={index}>
-                <img src={image} className={img} />
+                <img src={image.src} srcSet={image.srcSet} className={img} />
               </div>
             ))}
           </Slider>
