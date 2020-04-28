@@ -4,7 +4,6 @@ import DataGood1 from "../../data/shop/adapters/good1";
 
 const GoodDetailsChoose = () => {
   const content = "good-details-choose__content-wrapper";
-  console.log(DataGood1.gallery);
   return (
     <>
       <div className={content}>

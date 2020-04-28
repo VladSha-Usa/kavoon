@@ -35,7 +35,8 @@ const LanguagePopup = () => {
           width: 170px;
           height: 45px;
           border-radius: 22.5px;
-
+          transition: all 0.5s;
+          animation-duration: 3s;
         }
         .lang-wrapper:hover {
           background-color: #ecefff;
@@ -58,6 +59,9 @@ const LanguagePopup = () => {
           letter-spacing: 0.79px;
           color: #061434;
         }
+        .lang-wrapper li {
+          opacity: 1;
+        }
         .choosen-lang img,
         .available__list-lang .available-lang img {
           padding-right: 10px;
@@ -70,7 +74,6 @@ const LanguagePopup = () => {
         .available__list-lang li:first-child {
           padding-top: 14px;
         }
-
         .choosen-lang {
           padding-bottom: 29px;
           padding-top: 12px;
@@ -81,15 +84,32 @@ const LanguagePopup = () => {
         .lang-wrapper:hover > .choosen-lang {
           color: var(--primarycolor);
         }
-
+        .lang-wrapper:hover li {
+          animation: opacity 1.2s ease-in-out;
+        }
+        @keyframes opacity {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
         .available__list-lang .available-lang:hover {
           color: var(--primarycolor);
         }
-
         .lang-wrapper:hover > .available__list-lang {
           display: block;
+          animation: display 0.4s ease-in-out;
         }
-
+        @keyframes display {
+          from {
+            height: 0;
+          }
+          to {
+            height: 125px;
+          }
+        }
         .available__list-lang {
           display: none;
           flex-direction: column;
