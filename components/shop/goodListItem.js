@@ -1,4 +1,4 @@
-const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
+const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
   const imgWrapper = "item__img-wrapper";
   const title = "item__title";
   const description = "item__description";
@@ -7,7 +7,7 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
   const descriptionPriceCurrency = "item__description-price__currency";
   const descriptionCapacityLitres = "item__description-capacity__litres";
   const descriptionCapacityIntro = "item__description-capacity__intro";
-  const moreInfItemWrap = "item__more-wrapper"
+  const moreInfItemWrap = "item__more-wrapper";
 
   return (
     <>
@@ -18,7 +18,11 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
               <img src="img/img-shop-item/more-button.svg" />
             </a>
           </span>
-          <img style={{width: "200px", height: "225px"}}  src={src} srcSet={srcSet} />
+          <img
+            style={{ width: "200px", height: "225px" }}
+            src={src}
+            srcSet={srcSet}
+          />
         </div>
         <div className={title}>{contentTitle}</div>
         <div className={description}>
@@ -43,6 +47,7 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
           display: inline-block;
           margin-bottom: 20px;
           position: relative;
+          transition: all 0.3s;
         }
 
         .${imgWrapper} {
@@ -113,8 +118,6 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
             background-color: rgba(255, 255, 255, 1);
             z-index: 5;
             cursor: pointer;
-            transition-duration: 0.7s;
-            transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
           }
           .case-field__hover:hover .${title} {
             line-height: 1.5;
@@ -162,4 +165,4 @@ const GoodListItem  = ({ src, srcSet, contentTitle, capacity, price }) => {
   );
 };
 
-export default GoodListItem ;
+export default GoodListItem;
