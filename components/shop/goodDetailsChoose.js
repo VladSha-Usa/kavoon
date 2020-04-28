@@ -7,8 +7,8 @@ const GoodDetailsChoose = () => {
   return (
     <>
       <div className={content}>
-        {DataGood1.map((object) => (
-          <GoodDetailsPrevSlider images={object.gallery} />
+        {DataGood1.map((object, i) => (
+          <GoodDetailsPrevSlider key={i} images={object.gallery} />
         ))}
         <GoodDetailsWizard />
       </div>
