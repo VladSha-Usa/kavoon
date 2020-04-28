@@ -35,8 +35,7 @@ const LanguagePopup = () => {
           width: 170px;
           height: 45px;
           border-radius: 22.5px;
-          transition: all 0.5s;
-          animation-duration: 3s;
+          transition: all 0.3s;
         }
         .lang-wrapper:hover {
           background-color: #ecefff;
@@ -60,8 +59,9 @@ const LanguagePopup = () => {
           color: #061434;
         }
         .lang-wrapper li {
-          opacity: 1;
-        }
+          opacity: 0;
+          display: none;
+        } 
         .choosen-lang img,
         .available__list-lang .available-lang img {
           padding-right: 10px;
@@ -85,7 +85,9 @@ const LanguagePopup = () => {
           color: var(--primarycolor);
         }
         .lang-wrapper:hover li {
-          animation: opacity 1.2s ease-in-out;
+          animation: opacity 0.9s ease-in-out;
+          opacity: 1;
+          display: flex;
         }
         @keyframes opacity {
           from {
@@ -99,8 +101,8 @@ const LanguagePopup = () => {
           color: var(--primarycolor);
         }
         .lang-wrapper:hover > .available__list-lang {
-          display: block;
-          animation: display 0.4s ease-in-out;
+          animation: display 0.3s ease-in-out;
+          height: 125px;
         }
         @keyframes display {
           from {
@@ -111,7 +113,7 @@ const LanguagePopup = () => {
           }
         }
         .available__list-lang {
-          display: none;
+          transition: 0.3s;
           flex-direction: column;
           margin-block-start: 0;
           margin-block-end: 0;
@@ -119,7 +121,7 @@ const LanguagePopup = () => {
           position: absolute;
           list-style: none;
           width: 170px;
-          height: 125px;
+          height: 0;
           border-radius: 10px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
           background-color: #fff;
@@ -137,6 +139,7 @@ const LanguagePopup = () => {
         .available__list-lang li .disabled {
           opacity: 0.5;
           cursor: default;
+          color: #061434;
         }
       `}</style>
     </>
