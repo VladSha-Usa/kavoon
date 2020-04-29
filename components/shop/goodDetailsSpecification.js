@@ -22,10 +22,10 @@ const GoodDetailsSpecification = ({ object }) => {
     },
   ];
   const properties = fields
-    .map((field) => {
+    .map((field, index) => {
       return (
         object.specification[field.field] && (
-          <div className="specification-parametr" style={{}}>
+          <div key={index} className="specification-parametr" style={{}}>
             {field.name}:{" "}
             <span className="specification-parametr-main">
               {object.specification[field.field]}

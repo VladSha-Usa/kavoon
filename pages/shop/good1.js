@@ -85,9 +85,7 @@ const Good1 = () => {
       </div>
       <div className="good-details-specification">
         <div className="page-content">
-          {Good1Data.map((object) => (
-            <GoodDetailsSpecification object={object} />
-          ))}
+          <GoodDetailsSpecification object={Good1Data} />
         </div>
       </div>
       <div className="footer-background">

@@ -47,7 +47,7 @@ const GoodDetailsPrevSlider = ({ images }) => {
           </Slider>
         </div>
       </div>
-      <style>
+      <style jsx global>
         {`
           .${sliderFirst} {
             margin-bottom: 50px;
