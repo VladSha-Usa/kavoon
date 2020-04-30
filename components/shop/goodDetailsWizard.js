@@ -1,6 +1,7 @@
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAdd from "./goodDetailsWizardAdd";
+import DataGood1 from "../../data/shop/adapters/good1";
 const GoodDetailsWizard = () => {
   const wizardWrap = "good-wizard-wrapper";
   return (
@@ -20,7 +21,9 @@ const GoodDetailsWizard = () => {
           nameOfChoose="Оксфорд тканина"
           zIndex="19"
         ></GoodDetailsWizardPicker>
-        <GoodDetailsWizardAdd />
+        <GoodDetailsWizardAdd
+          additionGoodData={DataGood1.additionGoodToCompl}
+        />
       </div>
       <style jsx>{`
         .${wizardWrap} {
