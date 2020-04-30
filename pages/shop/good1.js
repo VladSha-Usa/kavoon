@@ -85,7 +85,7 @@ const Good1 = () => {
       </div>
       <div className="good-details-specification">
         <div className="page-content">
-          <GoodDetailsSpecification object={Good1Data} />
+          <GoodDetailsSpecification specification={Good1Data.specification} />
         </div>
       </div>
       <div className="footer-background">
@@ -117,7 +117,7 @@ const Good1 = () => {
             margin-bottom: 36px;
           }
           .good-details-choose {
-            margin-bottom: 247px;
+            margin-bottom: 60px;
           }
           .header-border ::after {
             content: "";
