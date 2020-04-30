@@ -1,57 +1,85 @@
-const GoodDetailsSpecification = ({ object }) => {
+const GoodDetailsSpecification = ({ specification }) => {
   let fields = [
     {
       name: "Об’єм",
       field: "volume",
+      column: false,
+      left: true,
     },
     {
       name: "Висота",
       field: "height",
+      column: false,
+      left: true,
     },
     {
       name: "Матеріали",
       field: "materials",
+      column: false,
+      left: true,
     },
     {
       name: "Опис",
       field: "description",
+      column: true,
+      left: true,
+      margTop: true,
     },
     {
       name: "Додатково",
       field: "inAddition",
+      column: true,
+      left: false,
     },
   ];
-  const properties = fields
-    .map((field, i) => {
+  const specificationLeft = fields
+    .filter((field) => field.left)
+    .filter((field) => specification[field.field])
+    .map((field, index) => {
       return (
-        object.specification[field.field] && (
-          <div key={i} className="specification-parametr" style={{}}>
-            {field.name}:{" "}
-            <span className="specification-parametr-main">
-              {object.specification[field.field]}
-            </span>
-          </div>
-        )
+        <div
+          key={index}
+          className="specification-parametr"
+          style={
+            field.column || field.margTop
+              ? { display: "flex", flexDirection: "column", marginTop: "28px" }
+              : {}
+          }
+        >
+          {field.name}:{" "}
+          <span className="specification-parametr-main">
+            {specification[field.field]}
+          </span>
+        </div>
       );
-    })
-    .filter((field) => field !== undefined);
-  properties[properties.length - 3].props.style.marginBottom = "28px";
-  for (let i = properties.length - 2; i < properties.length; i++) {
-    properties[i].props.style.display = "flex";
-    properties[i].props.style.flexDirection = "column";
-  }
+    });
+  const specificationRight = fields
+    .filter((field) => !field.left)
+    .filter((field) => specification[field.field])
+    .map((field, index) => {
+      return (
+        <div
+          key={index}
+          className="specification-parametr"
+          style={
+            field.column ? { display: "flex", flexDirection: "column" } : {}
+          }
+        >
+          {field.name}:{" "}
+          <span className="specification-parametr-main">
+            {specification[field.field]}
+          </span>
+        </div>
+      );
+    });
 
   return (
     <>
       <div className="specification-wrapper">
         <div className="specification-title">Характеристика даного товару:</div>
-        <div className="specification">
-          <div className=" characteristic">
-            {properties.slice(0, properties.length - 1)}
-          </div>
-          <div className="addition">
-            {properties.slice(properties.length - 1, properties.length)}
-          </div>
+        <div className="specification-main-content">
+          <div className="specification-left">{specificationLeft}</div>
+          <div className="specification-right">{specificationRight}</div>
         </div>
       </div>
       <style jsx>{`
@@ -64,7 +92,7 @@ const GoodDetailsSpecification = ({ object }) => {
           white-space: pre-wrap;
           margin-left: 46px;
         }
-        .specification {
+        .specification-main-content {
           display: flex;
         }
         .specification-title {
@@ -73,7 +101,7 @@ const GoodDetailsSpecification = ({ object }) => {
           letter-spacing: 1px;
           margin-bottom: 37px;
         }
-        .addition {
+        .specification-right {
           margin-left: 186px;
         }
       `}</style>
