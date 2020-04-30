@@ -36,7 +36,7 @@ const Goods = [
     image: "shop/Sumka_pidsedilna.jpg"
   },
   {
-    name: "Трикутна внутрірамна сумка",
+    name: "Трикутна внутрірамна\nсумка",
     volume: "5",
     price: 700,
     image: "shop/Sumka_trykutna_vnytriramna.jpeg"
