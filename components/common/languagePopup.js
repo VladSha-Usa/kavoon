@@ -35,7 +35,7 @@ const LanguagePopup = () => {
           width: 170px;
           height: 45px;
           border-radius: 22.5px;
-
+          transition: all 0.3s;
         }
         .lang-wrapper:hover {
           background-color: #ecefff;
@@ -58,6 +58,10 @@ const LanguagePopup = () => {
           letter-spacing: 0.79px;
           color: #061434;
         }
+        .lang-wrapper li {
+          opacity: 0;
+          display: none;
+        } 
         .choosen-lang img,
         .available__list-lang .available-lang img {
           padding-right: 10px;
@@ -70,7 +74,6 @@ const LanguagePopup = () => {
         .available__list-lang li:first-child {
           padding-top: 14px;
         }
-
         .choosen-lang {
           padding-bottom: 29px;
           padding-top: 12px;
@@ -81,17 +84,36 @@ const LanguagePopup = () => {
         .lang-wrapper:hover > .choosen-lang {
           color: var(--primarycolor);
         }
-
+        .lang-wrapper:hover li {
+          animation: opacity 0.9s ease-in-out;
+          opacity: 1;
+          display: flex;
+        }
+        @keyframes opacity {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
         .available__list-lang .available-lang:hover {
           color: var(--primarycolor);
         }
-
         .lang-wrapper:hover > .available__list-lang {
-          display: block;
+          animation: display 0.3s ease-in-out;
+          height: 125px;
         }
-
+        @keyframes display {
+          from {
+            height: 0;
+          }
+          to {
+            height: 125px;
+          }
+        }
         .available__list-lang {
-          display: none;
+          transition: 0.3s;
           flex-direction: column;
           margin-block-start: 0;
           margin-block-end: 0;
@@ -99,7 +121,7 @@ const LanguagePopup = () => {
           position: absolute;
           list-style: none;
           width: 170px;
-          height: 125px;
+          height: 0;
           border-radius: 10px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
           background-color: #fff;
@@ -117,6 +139,7 @@ const LanguagePopup = () => {
         .available__list-lang li .disabled {
           opacity: 0.5;
           cursor: default;
+          color: #061434;
         }
       `}</style>
     </>
