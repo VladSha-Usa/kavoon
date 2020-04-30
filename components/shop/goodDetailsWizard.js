@@ -1,5 +1,6 @@
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
+import GoodDetailsWizardAdd from "./goodDetailsWizardAdd";
 const GoodDetailsWizard = () => {
   const wizardWrap = "good-wizard-wrapper";
   return (
@@ -19,6 +20,7 @@ const GoodDetailsWizard = () => {
           nameOfChoose="Оксфорд тканина"
           zIndex="19"
         ></GoodDetailsWizardPicker>
+        <GoodDetailsWizardAdd />
       </div>
       <style jsx>{`
         .${wizardWrap} {

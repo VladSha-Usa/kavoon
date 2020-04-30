@@ -45,6 +45,12 @@ const Good1 = {
         "/img/good-details-prev-slider/photo-main6@2x.jpg img/good-details-prev-slider/photo-main6@3x.jpg",
     },
   ],
-}
+  additionGoodToCompl: {
+    picture: {
+      src: "/img/good-to-complect-img/flash-light-petzl-tikkid.jpg",
+      srcSet: "/img/good-to-complect-img/flash-light-petzl-tikkid@2x.jpg",
+    },
+  },
+};
 
 export default Good1;
