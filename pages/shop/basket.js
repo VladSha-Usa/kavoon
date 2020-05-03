@@ -4,7 +4,7 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
-import BasketStatus from "../../components/common/basketStatus";
+import BasketStatus from "../../components/shop/basketStatus";
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -111,6 +111,9 @@ const Basket = () => {
           }
           .header-border {
             background-color: #ffffff;
+          }
+          .basket-status {
+            margin-top: 123px;
           }
           .footer-background {
             width: 100%;
