@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const GoodDetailsWizardAdd = ({ additionGoodData }) => {
+const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
   const [amount, setAmount] = useState(0);
   const displayChooseRes = amount > 0 ? "flex" : "none";
 
@@ -137,4 +137,4 @@ const GoodDetailsWizardAdd = ({ additionGoodData }) => {
   );
 };
 
-export default GoodDetailsWizardAdd;
+export default GoodDetailsWizardAddOther;
