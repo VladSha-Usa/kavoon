@@ -1,4 +1,4 @@
-const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
+const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
   const imgWrapper = "item__img-wrapper";
   const title = "item__title";
   const description = "item__description";
@@ -11,32 +11,34 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
 
   return (
     <>
-      <div className="case-field">
-        <div className={imgWrapper}>
-          <span className={moreInfItemWrap}>
-            <a href="#">
-              <img src="img/img-shop-item/more-button.svg" />
-            </a>
-          </span>
-          <img
-            style={{ width: "200px", height: "225px" }}
-            src={src}
-            srcSet={srcSet}
-          />
-        </div>
-        <div className={title}>{contentTitle}</div>
-        <div className={description}>
-          <div className={descriptionCapacity}>
-            <span className={descriptionCapacityIntro}>Об'єм:</span>
-            {capacity}
-            <span className={descriptionCapacityLitres}>л</span>
+      <a href={href} target="_blank" className="case-field-link">
+        <div className="case-field">
+          <div className={imgWrapper}>
+            <span className={moreInfItemWrap}>
+              <a href="#">
+                <img src="img/img-shop-item/more-button.svg" />
+              </a>
+            </span>
+            <img
+              style={{ width: "200px", height: "225px" }}
+              src={src}
+              srcSet={srcSet}
+            />
           </div>
-          <div className={descriptionPrice}>
-            {price}
-            <span className={descriptionPriceCurrency}>грн</span>
+          <div className={title}>{contentTitle}</div>
+          <div className={description}>
+            <div className={descriptionCapacity}>
+              <span className={descriptionCapacityIntro}>Об'єм:</span>
+              {capacity}
+              <span className={descriptionCapacityLitres}>л</span>
+            </div>
+            <div className={descriptionPrice}>
+              {price}
+              <span className={descriptionPriceCurrency}>грн</span>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
       <style jsx>{`
         .case-field {
           width: 275px;
