@@ -42,7 +42,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
           width: 275px;
           height: 380px;
           border-radius: 12px;
-          box-shadow: 2px 2px 42px -2px rgba(12, 32, 60, 0.12);
+          box-shadow: 2px 2px 25px -2px rgba(12, 32, 60, 0.12);
           background-color: #fff;
           display: inline-block;
           margin-bottom: 20px;
@@ -115,7 +115,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
           .case-field:hover {
             animation-delay: 2s;
             transform: matrix(1.24, 0, 0, 1.16, 0, -22);
-            box-shadow: 2px 2px 52px 2px rgba(12, 32, 60, 0.2);
+            box-shadow: 2px 2px 5px 2px rgba(12, 32, 60, 0.2);
             background-color: #fff;
             z-index: 5;
             cursor: pointer;
