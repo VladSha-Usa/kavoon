@@ -8,23 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "firebase": "^7.5.2",
-    "mapbox-gl": "^1.6.1",
-    "next": "9.1.4",
+    "mapbox-gl": "^1.9.1",
+    "next": "9.3.4",
     "node-sass": "^4.13.1",
-    "react": "16.12.0",
-    "react-addons-css-transition-group": "^15.6.2",
+    "react": "16.13.1",
     "react-collapsed": "^2.2.3",
-    "react-dom": "16.12.0",
-    "react-mapbox-gl": "^4.8.2",
+    "react-dom": "16.13.1",
+    "react-mapbox-gl": "^4.8.3",
     "react-slick": "^0.25.2",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "serverless": "^1.58.0",
-    "serverless-next.js": "^1.6.0"
+    "serverless": "^1.67.0",
+    "serverless-next.js": "^1.9.7"
   }
 }

@@ -1,20 +1,20 @@
-const MainMetaInfo = () => {
+const MainMetaInfo = ({ title, description, img }) => {
   return (
     <>
       <meta property="og:locale" content="uk_UA" />
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
-        content="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
+        content={title}
       />
       <meta
         property="og:description"
-        content="Велосумки для легких подорожей. Власне виробництво. просте монтування"
+        content={description}
       />
       <meta property="og:url" content="https://flowersway.com.ua" />
       <meta
         property="og:image"
-        content="https://flowersway.com.ua/img/objects/Swirg2_450_320.jpg"
+        content={img}
       />
       <meta
         property="og:site_name"

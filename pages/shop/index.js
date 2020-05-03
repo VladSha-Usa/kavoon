@@ -1,12 +1,12 @@
-import "../../components/styleguide.css";
-
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
-import TitleSection from "./titleSection";
-import ShopStatus from "./shopStatus";
+import TitleSection from "../../components/shop/titleSection";
+import ShopStatus from "../../components/shop/shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
+import GoodsList from "../../components/shop/goodsList";
+import Analytics from "../../components/common/analytics"
 
 const headerHeight = 80;
 
@@ -34,11 +34,16 @@ const Shop = () => {
     document.onscroll = onScroll;
     onScroll();
   });
+  
   return (
     <>
       <Head>
         <title>Flower's Way. Країна очима велосипедистів</title>
-        <MainMetaInfo />
+        <MainMetaInfo
+          title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
+          description="Велосумки для легких подорожей. Власне виробництво. просте монтування"
+          img="https://flowersway.com.ua/img/objects/Swirg2_450_320.jpg"
+        ></MainMetaInfo>
 
         <link
           href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap"
@@ -47,19 +52,6 @@ const Shop = () => {
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap"
           rel="stylesheet"
-        />
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charSet="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
         <link
           rel="stylesheet"
@@ -81,6 +73,11 @@ const Shop = () => {
       <div className="shop-status">
         <div className="page-content">
           <ShopStatus />
+        </div>
+      </div>
+      <div className="goods-list">
+        <div className="page-content">
+          <GoodsList />
         </div>
       </div>
       <div className="footer-background">
@@ -127,7 +124,10 @@ const Shop = () => {
             margin-bottom: 50px;
           }
           .shop-status {
-            margin-bottom: 300px;
+            margin-bottom: 51px;
+          }
+          .goods-list {
+            margin-bottom: 58px;
           }
           .footer-background {
             width: 100%;
@@ -154,6 +154,16 @@ const Shop = () => {
             }
             .footer-background {
               height: 215px;
+            }
+            .shop-status {
+              margin-bottom: 46px;
+            }
+            .title-section {
+              margin-top: 104px;
+              margin-bottom: 24px;
+            }
+            .goods-list {
+              margin-bottom: 41px;
             }
           }
         `}

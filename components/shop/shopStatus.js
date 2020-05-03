@@ -23,12 +23,7 @@ const ShopStatus = () => {
         <div className={addedGoods}>
           <span className={addedGoodsText}>Додані:</span>
           <div className={addedGoodsAmountWrapper}>
-            <img
-              src="img/shop-icon.png"
-              srcset="img/shop-icon@2x.png 2x,
-             img/shop-icon@3x.png 3x"
-              className={addedGoodsAmountImg}
-            />
+            <img src="img/shop-icon.svg" className={addedGoodsAmountImg} />
             <span className={addedGoodsAmountNumber}>2</span>
           </div>
         </div>
@@ -42,21 +37,16 @@ const ShopStatus = () => {
           font-weight: 600;
           color: #040f2a;
           height: 60px;
-          border-radius: 30px;
-          box-shadow: 1px 12px 32px -2px rgba(12, 32, 60, 0.12);
           font-stretch: normal;
           font-style: normal;
           line-height: 1.53;
           letter-spacing: 0.89px;
-          background-color: var(--white);
           margin: 0 7px 0 -7px;
         }
         .${showedGoods}, .${addedGoods} {
           display: flex;
           align-items: center;
-          margin: 0 30px 0 30px;
-        }
-        .${showedGoods} {
+          margin: 0 15px 0 30px;
         }
         .${showedGoodsText} {
           margin-right: 5px;
@@ -64,31 +54,58 @@ const ShopStatus = () => {
         .${showedGoodsAmountText} {
           margin-left: 5px;
         }
-        .${addedGoodsText}{
-          margin-right: 17px;
+        .${addedGoodsText} {
+          margin-right: 8px;
         }
-        
+
         .${addedGoodsAmountWrapper} {
           margin-right: 23px;
+          box-shadow: 0 8px 12px 0 rgba(9, 21, 85, 0.12);
+          background-color: var(--white);
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .${addedGoodsAmountImg} {
           position: relative;
-          margin-top: 3px;
         }
         .${addedGoodsAmountNumber} {
           position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 20px;
           height: 20px;
-          margin-top: -5px;
-          margin-left: 2px;
+          margin-top: -13px;
+          margin-left: 21px;
           border-radius: 50%;
           background-color: var(--primarycolor);
           font-size: 14px;
           font-weight: 500;
           line-height: normal;
           letter-spacing: 0.65px;
-          text-align: center;
           color: #fff;
+        }
+        @media only screen and (max-width: 1023px) {
+          .${statusWrapper} {
+            box-shadow: none;
+            margin: 0 10px 0 -12px;
+          }
+          .${addedGoodsText} {
+            display: none;
+          }
+          .${showedGoods} {
+            margin: 0;
+          }
+          .${addedGoodsAmountWrapper} {
+            margin-right: 0;
+          }
+          .${addedGoods} {
+            margin: 0;
+          }
         }
       `}</style>
     </>

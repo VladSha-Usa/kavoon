@@ -8,7 +8,9 @@ const TitleSection = () => {
   return (
     <>
       <div className={titleWrapper}>
-        <div className={backgroundClass}>Магазин велоспорядження</div>
+        <div className={backgroundClass}>
+          Магазин <br /> велоспорядження
+        </div>
         <div className={titleClass}>Магазин велоспорядження</div>
         <div className={subTitle}>
           Велоспорядження для легких подорожей, мандруй сміливо, безпечно, а
@@ -61,6 +63,30 @@ const TitleSection = () => {
           text-align: center;
           color: var(--texticonscolor);
           width: 501px;
+        }
+        .${backgroundClass} br {
+          display: none;
+        }
+        @media only screen and (max-width: 1023px) {
+          .${backgroundClass} br {
+            display: block;
+          }
+          .${titleWrapper} .${titleClass} {
+            font-size: 20px;
+            line-height: 1.55;
+            letter-apacing: 0.94px;
+            text-align: center;
+          }
+          .${titleWrapper} .${backgroundClass} {
+            font-size: 22px;
+            line-height: 1.51;
+            letter-apacing: 1.03px;
+            text-align: center;
+            margin-top: -9px;
+          }
+          .${subTitle} {
+            display: none;
+          }
         }
       `}</style>
     </>

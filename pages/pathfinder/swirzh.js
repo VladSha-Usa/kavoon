@@ -1,6 +1,3 @@
-import '../../components/styleguide.css'
-
-
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../../components/mainPage/header'
@@ -51,12 +48,14 @@ const Swirzh = () => {
   return (<>
     <Head>
       <title>Свірж. Країна очима велосипедистів</title>
-      <MainMetaInfo />
+      <MainMetaInfo
+          title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
+          description="Велосумки для легких подорожей. Власне виробництво. просте монтування"
+          img="https://flowersway.com.ua/img/objects/Swirg2_450_320.jpg"
+        ></MainMetaInfo>
 
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,900&display=swap" rel="stylesheet" />
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
       <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     </Head>
