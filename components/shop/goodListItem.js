@@ -13,11 +13,6 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
     <>
       <div className="case-field">
         <div className={imgWrapper}>
-          <span className={moreInfItemWrap}>
-            <a href="#">
-              <img src="img/img-shop-item/more-button.svg" />
-            </a>
-          </span>
           <img
             style={{ width: "200px", height: "225px" }}
             src={src}
@@ -54,17 +49,6 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
           margin-top: 10px;
           margin-bottom: 15px;
           text-align: center;
-        }
-        .${moreInfItemWrap} {
-          display: none;
-          position: absolute;
-          right: 13px;
-          top: 13px;
-          object-fit: contain;
-        }
-        .${moreInfItemWrap} img {
-          height: 38.8px;
-          width: 36.3px;
         }
         * {
           font-family: Montserrat;
@@ -119,9 +103,6 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
             background-color: #fff;
             z-index: 5;
             cursor: pointer;
-          }
-          .case-field:hover .${moreInfItemWrap} {
-            display: inline-block;
           }
         }
         @media only screen and (max-width: 1023px) {
