@@ -57,17 +57,6 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
           margin-bottom: 15px;
           text-align: center;
         }
-        .${moreInfItemWrap} {
-          display: none;
-          position: absolute;
-          right: 13px;
-          top: 13px;
-          object-fit: contain;
-        }
-        .${moreInfItemWrap} img {
-          height: 38.8px;
-          width: 36.3px;
-        }
         * {
           font-family: Montserrat;
           font-size: 17px;
@@ -121,9 +110,6 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             background-color: #fff;
             z-index: 5;
             cursor: pointer;
-          }
-          .case-field:hover .${moreInfItemWrap} {
-            display: inline-block;
           }
         }
         @media only screen and (max-width: 1023px) {
