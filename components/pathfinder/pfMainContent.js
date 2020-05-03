@@ -254,13 +254,24 @@ const pfMainContent = () => {
     @media only screen and (max-width: 1165px) {
     }
     @media only screen and (max-width: 1023px) {
+
+      .content {
+        margin-top: 0;
+        display: flex;
+        margin-bottom: 0;
+      }
+
       .map {
         left: 0;
-        display: block;
+        top: 80px;
         position: fixed;
         z-index: 100;
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - 80px);
+        border-radius: 0;
+        box-shadow: 0;
+        max-height: 100vh;
+        background-color: #ffffff;
       }
     }
     `}</style>
