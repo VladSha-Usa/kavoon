@@ -61,7 +61,7 @@ const LanguagePopup = () => {
         .lang-wrapper li {
           opacity: 0;
           display: none;
-        } 
+        }
         .choosen-lang img,
         .available__list-lang .available-lang img {
           padding-right: 10px;
@@ -104,6 +104,9 @@ const LanguagePopup = () => {
           animation: display 0.3s ease-in-out;
           height: 125px;
         }
+        .lang-wrapper:hover > .available__list-lang:after {
+          display: block;
+        }
         @keyframes display {
           from {
             height: 0;
@@ -135,6 +138,7 @@ const LanguagePopup = () => {
           left: 19px;
           border: 7px solid transparent;
           border-bottom: 15px solid #fff;
+          display: none;
         }
         .available__list-lang li .disabled {
           opacity: 0.5;
