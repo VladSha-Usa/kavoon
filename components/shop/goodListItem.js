@@ -11,7 +11,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
 
   return (
     <>
-      <div className="case-field case-field__hover">
+      <div className="case-field">
         <div className={imgWrapper}>
           <span className={moreInfItemWrap}>
             <a href="#">
@@ -42,14 +42,14 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
           width: 275px;
           height: 380px;
           border-radius: 12px;
-          box-shadow: 2px 2px 42px -2px rgba(12, 32, 60, 0.12);
-          background-color: var(--white);
+          box-shadow: 2px 2px 25px -2px rgba(12, 32, 60, 0.12);
+          background-color: #fff;
           display: inline-block;
           margin-bottom: 20px;
           position: relative;
-          transition: all 0.3s;
+          transition: 0.2s ease-out;
+          z-index: 1;
         }
-
         .${imgWrapper} {
           margin-top: 10px;
           margin-bottom: 15px;
@@ -112,46 +112,15 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price }) => {
           margin-left: 10px;
         }
         @media only screen and (min-width: 1023px) {
-          .case-field__hover:hover {
+          .case-field:hover {
+            animation-delay: 2s;
             transform: matrix(1.24, 0, 0, 1.16, 0, -22);
-            box-shadow: 2px 2px 52px 2px rgba(12, 32, 60, 0.2);
-            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 2px 2px 5px 2px rgba(12, 32, 60, 0.2);
+            background-color: #fff;
             z-index: 5;
             cursor: pointer;
           }
-          .case-field__hover:hover .${title} {
-            line-height: 1.5;
-            letter-spacing: 0.05px;
-          }
-          .case-field__hover:hover .${description} {
-            bottom: 23px;
-          }
-          .case-field__hover:hover .${descriptionCapacity} {
-            line-height: 1.53;
-            letter-spacing: 0.89px;
-            font-size: 14px;
-            margin-left: 16px;
-          }
-          .case-field__hover:hover .${descriptionCapacityLitres} {
-            font-size: 14px;
-          }
-          .case-field__hover:hover .${descriptionCapacityIntro} {
-            line-height: 1.53;
-            letter-spacing: 0.89px;
-            font-size: 14px;
-            margin-left: 4px;
-            margin-right: 3px;
-          }
-          .case-field__hover:hover .${descriptionPrice} {
-            line-height: 1.65;
-            letter-spacing: 0.79px;
-            font-size: 14px;
-            margin-right: 20px;
-          }
-          .case-field__hover:hover .${descriptionPriceCurrency} {
-            font-size: 14px;
-          }
-          .case-field__hover:hover .${moreInfItemWrap} {
+          .case-field:hover .${moreInfItemWrap} {
             display: inline-block;
           }
         }
