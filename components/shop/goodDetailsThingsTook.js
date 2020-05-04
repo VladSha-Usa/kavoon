@@ -84,22 +84,21 @@ const GoodDetailsThingsTook = ({ things }) => {
             <span className="small-things-title">
               Ось ці речі ми брали з собою:
             </span>
-            <div className="small-img-wrapper">
-              {things.smallThings.map((image, index) => (
-                <img
-                  className="small-img"
-                  key={index}
-                  src={image.src}
-                  srcSet={image.srcSet}
-                />
+            <ul className="small-content">
+              {things.smallThings.map((goodData, index) => (
+                <li className="small-item">
+                  <a href="#">
+                    <img
+                      className="small-img"
+                      key={index}
+                      src={goodData.src}
+                      srcSet={goodData.srcSet}
+                    />
+                    <span className="small-name">{goodData.name}</span>
+                  </a>
+                </li>
               ))}
-            </div>
-            <div className="img-small-sub-question">
-              Хочеш дізнатись більше?
-            </div>
-            <a className="small-more-inf" href="#">
-              Переходь на нашу статтю в Блог
-            </a>
+            </ul>
           </div>
         </div>
       </div>
@@ -120,15 +119,14 @@ const GoodDetailsThingsTook = ({ things }) => {
           line-height: 1.6;
           letter-spacing: 1.05px;
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 61px;
         }
         .large-img {
-          margin-top: 23px;
-          margin-bottom: 26px;
+          margin-top: 18px;
+          margin-bottom: 41px;
         }
         .img-large-sub-question {
           margin-bottom: 9px;
-          margin-left: 30px;
         }
         .show-complect-btn,
         .small-more-inf {
@@ -150,7 +148,6 @@ const GoodDetailsThingsTook = ({ things }) => {
           justify-content: flex-end;
           align-items: center;
           padding-right: 30px;
-          margin-right: -34px;
         }
         .show-complect-btn:after {
           content: "";
@@ -164,19 +161,35 @@ const GoodDetailsThingsTook = ({ things }) => {
           display: flex;
           justify-content: space-between;
         }
-        .small-img-wrapper {
-          width: 360px;
+        .small-content {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
           margin-bottom: 30px;
-          cursor: pointer;
+          white-space: pre-wrap;
+          text-align: center;
+          list-style: none;
+          padding-inline-start: 0;
         }
-        .small-img {
+        .small-item {
+          display: flex;
+          flex-direction: column;
+          width: 90px;
           margin-bottom: 20px;
         }
+        .small-img {
+          object-fit: contain;
+          margin-bottom: 14px;
+        }
+        .small-item a {
+          text-decoration: none;
+          color: var(--texticonscolor);
+        }
+        .small-item a:hover {
+          color: var(--primarycolor);
+        }
         .small-things-wrapper {
-          margin-right: 24px;
+          width: 449px;
         }
         .small-things-wrapper,
         .large-img-content {
@@ -185,7 +198,8 @@ const GoodDetailsThingsTook = ({ things }) => {
           align-items: center;
         }
         .small-things-title {
-          margin-bottom: 24px;
+          margin-bottom: 37px;
+          font-weight: 600;
         }
         .complect-popup {
           font-weight: 600;
@@ -285,7 +299,7 @@ const GoodDetailsThingsTook = ({ things }) => {
       <style>
         {`
         .popup-content {
-          width: 34.7% !important;
+          width: 576px !important;
           border-radius: 10px;
           padding: 28px 35px !important;
         }
