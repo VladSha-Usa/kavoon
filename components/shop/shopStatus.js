@@ -23,10 +23,7 @@ const ShopStatus = () => {
         <div className={addedGoods}>
           <span className={addedGoodsText}>Додані:</span>
           <div className={addedGoodsAmountWrapper}>
-            <img
-              src="img/shop-icon.svg"
-              className={addedGoodsAmountImg}
-            />
+            <img src="img/shop-icon.svg" className={addedGoodsAmountImg} />
             <span className={addedGoodsAmountNumber}>2</span>
           </div>
         </div>
@@ -49,7 +46,7 @@ const ShopStatus = () => {
         .${showedGoods}, .${addedGoods} {
           display: flex;
           align-items: center;
-          margin: 0 30px 0 30px;
+          margin: 0 15px 0 30px;
         }
         .${showedGoodsText} {
           margin-right: 5px;
@@ -58,7 +55,7 @@ const ShopStatus = () => {
           margin-left: 5px;
         }
         .${addedGoodsText} {
-          margin-right: 17px;
+          margin-right: 8px;
         }
 
         .${addedGoodsAmountWrapper} {
@@ -82,7 +79,7 @@ const ShopStatus = () => {
           align-items: center;
           width: 20px;
           height: 20px;
-          margin-top: -16px;
+          margin-top: -13px;
           margin-left: 21px;
           border-radius: 50%;
           background-color: var(--primarycolor);
@@ -103,22 +100,11 @@ const ShopStatus = () => {
           .${showedGoods} {
             margin: 0;
           }
-          .${addedGoods} {
-            box-shadow: 0px 8px 12px 0px rgba(9, 21, 85, 0.2);
-            background-color: rgb(255, 255, 255);
-            background-color: rgb(255, 255, 255);
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            margin: 0px;
-            justify-content: center;
-          }
           .${addedGoodsAmountWrapper} {
             margin-right: 0;
           }
-          .${addedGoodsAmountNumber} {
-            margin-top: -2px;
-            margin-left: 0px;
+          .${addedGoods} {
+            margin: 0;
           }
         }
       `}</style>

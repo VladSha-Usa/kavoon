@@ -1,3 +1,7 @@
+
+import BasketLogic from '../../data/shop/logic/basket.js'
+import useRx from '../../components/shop/useRx'
+
 const GoodDetailsStatus = () => {
   const statusWrapper = "status-wrapper";
   const choosenGood = "choosen-good";
@@ -10,6 +14,7 @@ const GoodDetailsStatus = () => {
   const addedGoods = "status-added";
 
   const mainFontSize = 17;
+  const countValue = useRx(BasketLogic.count);
   return (
     <>
       <div className={statusWrapper}>
@@ -23,7 +28,7 @@ const GoodDetailsStatus = () => {
           <span className={addedGoodsText}>Додані товари:</span>
           <div className={addedGoodsAmountWrapper}>
             <img src="/img/shop-icon.svg" className={addedGoodsAmountImg} />
-            <span className={addedGoodsAmountNumber}>2</span>
+            <span className={addedGoodsAmountNumber}>{countValue}</span>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ const GoodsList = () => {
             key={i}
             src={goodListItem.image}
             // srcSet="img/img-shop-item/photo-1@2x.jpg 2x, img/img-shop-item/photo-1@3x.jpg 3x"
+            href={goodListItem.href}
             contentTitle={goodListItem.name}
             capacity={goodListItem.volume}
             price={goodListItem.price}

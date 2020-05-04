@@ -3,21 +3,11 @@ import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
-import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
-import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
-import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
 import Analytics from "../../components/common/analytics";
-import Good1Data from "../../data/shop/adapters/good1";
-import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
-import TakenThings from "../../data/shop/adapters/takenThings";
 const headerHeight = 80;
 
 const onScroll = () => {
   var scrollThreshold = 40;
-  var width = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
   if (
     document.body.scrollTop > scrollThreshold ||
     document.documentElement.scrollTop > scrollThreshold
@@ -28,7 +18,7 @@ const onScroll = () => {
   }
 };
 
-const Good1 = () => {
+const Basket = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
@@ -75,26 +65,6 @@ const Good1 = () => {
           <Header />
         </div>
       </div>
-      <div className="good-details-status">
-        <div className="page-content">
-          <GoodDetailsStatus />
-        </div>
-      </div>
-      <div className="good-details-choose">
-        <div className="page-content">
-          <GoodDetailsChoose />
-        </div>
-      </div>
-      <div className="good-details-specification">
-        <div className="page-content">
-          <GoodDetailsSpecification specification={Good1Data.specification} />
-        </div>
-      </div>
-      <div className="good-details-things-took">
-        <div className="page-content">
-          <GoodDetailsThingsTook things={TakenThings} />
-        </div>
-      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -118,16 +88,6 @@ const Good1 = () => {
             max-width: 1166px;
             margin-left: auto;
             margin-right: auto;
-          }
-          .good-details-status {
-            margin-top: 115px;
-            margin-bottom: 36px;
-          }
-          .good-details-choose {
-            margin-bottom: 60px;
-          }
-          .good-details-specification {
-            margin-bottom: 120px;
           }
           .header-border ::after {
             content: "";
@@ -173,4 +133,4 @@ const Good1 = () => {
   );
 };
 
-export default Good1;
+export default Basket;
