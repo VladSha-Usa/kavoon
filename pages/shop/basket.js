@@ -8,10 +8,6 @@ const headerHeight = 80;
 
 const onScroll = () => {
   var scrollThreshold = 40;
-  var width = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
   if (
     document.body.scrollTop > scrollThreshold ||
     document.documentElement.scrollTop > scrollThreshold
@@ -54,7 +50,7 @@ const Basket = () => {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
