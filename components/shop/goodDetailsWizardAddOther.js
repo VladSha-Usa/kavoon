@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
-  const [amount, setAmount] = useState(0);
-  const displayChooseRes = amount > 0 ? "flex" : "none";
-
+  const [status, checkerStatus] = useState(true);
+  const textStatus = status ? "ти" : "но";
+  const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
   return (
     <>
       <div className="addition-wrapper">
@@ -13,21 +13,20 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
             src={additionGoodData.picture.src}
             srcSet={additionGoodData.picture.srcSet}
           />
-          <div className="good-description-amount">
+          <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
             <span className="good-price">{additionGoodData.price}</span>
-            <div className="good-control-amount-wrapper">
-              <div
-                className="control-amount-btn control-amount-btn-minus"
-                onClick={() => (amount > 0 ? setAmount(amount - 1) : {})}
-              ></div>
-              <div className="good-amount">{amount}</div>
-              <div
-                className="control-amount-btn control-amount-btn-plus"
-                onClick={() => setAmount(amount + 1)}
-              ></div>
-              <div className="good-choose-result">Додано в комплект</div>
-            </div>
+            <label className="good-checkcontainer">
+              <input
+                className="good-checkbox"
+                type="checkbox"
+                onChange={() => checkerStatus(!status)}
+              />
+              <span className="good-checkmark"></span>
+              <span className="good-checkcontainer-text">
+                Дода{textStatus} в комплект
+              </span>
+            </label>
           </div>
         </div>
         <button className="btn-submit" type="submit">
@@ -49,6 +48,7 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           border-radius: 4px;
+          object-fit: contain;
         }
         .addition-title {
           margin-bottom: 21px;
@@ -58,7 +58,71 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           padding-bottom: 10px;
         }
         .good-price {
-          padding-bottom: 18px;
+          padding-bottom: 22px;
+        }
+        .good-checkcontainer {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          user-select: none;
+          width: fit-content;
+          color: ${textColor};
+          font-weight: 600;
+        }
+        .good-checkbox {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+        .good-checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 25px;
+          height: 25px;
+          border-radius: 5px;
+          border: solid 1.5px var(--primarycolor);
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: -1.5px;
+          margin-top: 0.5px;
+        }
+        .good-checkcontainer:hover .good-checkbox ~ .good-checkmark {
+          background-color: #eee;
+        }
+        .good-checkcontainer .good-checkbox:checked ~ .good-checkmark {
+          background-color: var(--primarycolor);
+        }
+        .good-checkcontainer .good-checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+          background-image: url("/img/checker-tick.svg");
+          width: 15px;
+          height: 12px;
+          object-fit: contain;
+        }
+        .good-checkcontainer .good-checkbox:checked ~ .good-checkmark:after {
+          display: block;
+        }
+        .good-checkcontainer .good-checkbox:checked ~ .good-checkmark {
+          border: none;
+          margin-top: 2px;
+          margin-left: 0;
+        }
+        .good-checkcontainer-text {
+          color: ${textColor};
+          line-height: normal;
+          letter-spacing: 0.89px;
+          margin-left: 5px;
+          margin-top: 5px;
+          display: block;
         }
         .btn-submit {
           font-family: Montserrat;
@@ -78,59 +142,12 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
         }
         .addition-good-wrapper {
           display: flex;
-          margin-bottom: 39px;
+          margin-bottom: 29px;
         }
-        .good-description-amount {
+        .good-description-checker {
           display: flex;
           flex-direction: column;
           margin-left: 20px;
-        }
-        .good-amount {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 46px;
-        }
-        .good-control-amount-wrapper {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-        }
-        .control-amount-btn {
-          cursor: pointer;
-        }
-        .control-amount-btn-plus {
-          background-image: url("/img/good-to-complect-img/add-button.svg");
-          height: 32px;
-          width: 32px;
-        }
-        .control-amount-btn-plus:hover {
-          background-image: url("/img/good-to-complect-img/add-button-active.svg");
-        }
-        .control-amount-btn-minus {
-          background-image: url("/img/good-to-complect-img/remove-button.svg");
-          height: 32px;
-          width: 32px;
-        }
-        .control-amount-btn-minus:hover {
-          background-image: url("/img/good-to-complect-img/remove-button-active.svg");
-        }
-        .good-choose-result {
-          display: ${displayChooseRes};
-          white-space: nowrap;
-          color: var(--primarycolor);
-          margin-left: 14px;
-          align-items: center;
-          justify-content: flex-end;
-        }
-        .good-choose-result:after {
-          content: "";
-          position: absolute;
-          width: 18px;
-          height: 14px;
-          object-fit: contain;
-          background-image: url("/img/good-to-complect-img/tick-icon.svg");
-          margin-left: 24px;
         }
       `}</style>
     </>
