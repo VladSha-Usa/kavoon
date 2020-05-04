@@ -6,13 +6,9 @@ import {
 const goods = new BehaviorSubject([]);
 
 const count = goods.pipe(map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0)));
-goods.subscribe((goodsList) => {
-  const { localStorage } = window;
-  localStorage.setItem('basket', JSON.stringify(goodsList));
-});
 
 function addGood(good) {
-  const newValue = goods.value;
+  const newValue = goods.value.filter((goodItem) => goodItem.goodId);
   newValue.push(good);
   goods.next(newValue);
 }
