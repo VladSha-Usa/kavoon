@@ -129,6 +129,9 @@ const Good1 = () => {
           .good-details-specification {
             margin-bottom: 120px;
           }
+          .good-details-things-took {
+            margin-bottom: 200px;
+          }
           .header-border ::after {
             content: "";
             display: block;
@@ -146,7 +149,6 @@ const Good1 = () => {
             width: 100%;
             height: 180px;
             background-color: var(--footer-back);
-            margin-top: 1400px;
           }
 
           @media only screen and (max-width: 1165px) {
