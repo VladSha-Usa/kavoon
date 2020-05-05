@@ -7,18 +7,12 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
   const descriptionPriceCurrency = "item__description-price__currency";
   const descriptionCapacityLitres = "item__description-capacity__litres";
   const descriptionCapacityIntro = "item__description-capacity__intro";
-  const moreInfItemWrap = "item__more-wrapper";
 
   return (
     <>
       <a href={href} target="_blank" className="case-field-link">
         <div className="case-field">
           <div className={imgWrapper}>
-            <span className={moreInfItemWrap}>
-              <a href="#">
-                <img src="img/img-shop-item/more-button.svg" />
-              </a>
-            </span>
             <img
               style={{ width: "200px", height: "225px" }}
               src={src}
