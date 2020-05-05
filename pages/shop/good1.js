@@ -8,6 +8,8 @@ import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
 import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
 import Analytics from "../../components/common/analytics";
 import Good1Data from "../../data/shop/adapters/good1";
+import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
+import TakenThings from "../../data/shop/adapters/takenThings";
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -88,6 +90,11 @@ const Good1 = () => {
           <GoodDetailsSpecification specification={Good1Data.specification} />
         </div>
       </div>
+      <div className="good-details-things-took">
+        <div className="page-content">
+          <GoodDetailsThingsTook things={TakenThings} />
+        </div>
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -119,6 +126,12 @@ const Good1 = () => {
           .good-details-choose {
             margin-bottom: 60px;
           }
+          .good-details-specification {
+            margin-bottom: 120px;
+          }
+          .good-details-things-took {
+            margin-bottom: 200px;
+          }
           .header-border ::after {
             content: "";
             display: block;
@@ -136,7 +149,6 @@ const Good1 = () => {
             width: 100%;
             height: 180px;
             background-color: var(--footer-back);
-            margin-top: 1400px;
           }
 
           @media only screen and (max-width: 1165px) {
