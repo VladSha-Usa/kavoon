@@ -45,6 +45,16 @@ const Good1 = {
         '/img/good-details-prev-slider/photo-main6@2x.jpg img/good-details-prev-slider/photo-main6@3x.jpg',
     },
   ],
+  additionGoodToCompl: {
+    picture: {
+      src: '/img/good-to-complect-img/flash-light-petzl-tikkid.jpg',
+      srcSet:
+        '/img/good-to-complect-img/flash-light-petzl-tikkid@2x.jpg 2x, img/good-to-complect-img/flash-light-petzl-tikkid@3x.jpg 3x',
+    },
+    name: 'Ліхтарик Petzl Tikkid',
+    price: '800 грн',
+  },
+
   detailsImgGallery: [
     {
       src: '/img/good-details-img-slider/photo-slider-2.jpg',
