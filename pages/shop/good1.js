@@ -10,6 +10,8 @@ import Analytics from "../../components/common/analytics";
 import Good1Data from "../../data/shop/adapters/good1";
 import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
 import TakenThings from "../../data/shop/adapters/takenThings";
+import GoodDetailsImgGallery from "../../components/shop/goodDetailsImgGallery";
+import GoodDetailsSeeMore from "../../components/shop/goodDetailsSeeMore";
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -95,6 +97,14 @@ const Good1 = () => {
           <GoodDetailsThingsTook things={TakenThings} />
         </div>
       </div>
+      <div className="good-details-img-gallery">
+        <GoodDetailsImgGallery galleryContent={Good1Data.detailsImgGallery} />
+      </div>
+      <div className="good-details-see-more">
+        <div className="page-content">
+          <GoodDetailsSeeMore elseGoods={Good1Data.moreGoods} />
+        </div>
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{" "}
@@ -130,7 +140,13 @@ const Good1 = () => {
             margin-bottom: 120px;
           }
           .good-details-things-took {
-            margin-bottom: 200px;
+            margin-bottom: 70px;
+          }
+          .good-details-img-gallery {
+            margin-bottom: 170px;
+          }
+          .good-details-see-more {
+            margin-bottom: 80px;
           }
           .header-border ::after {
             content: "";

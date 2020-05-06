@@ -54,6 +54,94 @@ const Good1 = {
     name: 'Ліхтарик Petzl Tikkid',
     price: '800 грн',
   },
+  detailsImgGallery: [
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Всі речі які ми брали з собою',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Дорога до водоспаду',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'По дорозі, із запакованими речами',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Зручна сумка на пояс',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Дорога до водоспаду',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Всі речі які ми брали з собою',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Дорога до водоспаду',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'По дорозі, із запакованими речами',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Зручна сумка на пояс',
+    },
+    {
+      src: '/img/good-details-img-slider/photo-slider-2.jpg',
+      srcSet:
+        '/img/good-details-img-slider/photo-slider-2@2x.jpg 2x, img/good-details-img-slider/photo-slider-2@3x.jpg 3x',
+      subText: 'Дорога до водоспаду',
+    },
+  ],
+  moreGoods: [
+    {
+      name: 'Сумка-бананка\nна кермо',
+      volume: 3,
+      price: 1300,
+      image: '/img/img-shop-item/photo-5.jpg',
+    },
+    {
+      name: 'Бананка',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-6.jpg',
+    },
+    {
+      name: 'Внутрірамна сумка',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-7.jpg',
+    },
+    {
+      name: 'Сумка-тубус\nна вилку',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-8.jpg',
+    },
+  ],
 };
 
 export default Good1;
