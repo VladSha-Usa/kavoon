@@ -1,3 +1,4 @@
+import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 const BasketStatus = () => {
   return (
     <>
@@ -15,10 +16,7 @@ const BasketStatus = () => {
         </div>
         <div className="added-goods">
           <span className="added-goods-text">Додані товари:</span>
-          <div className="added-goods-amount">
-            <img src="/img/shop-icon.svg" className="added-goods-amount-img" />
-            <span className="added-goods-amount-num"></span>
-          </div>
+          <ShopBasketAmount />
         </div>
       </div>
       <style jsx>{`
@@ -58,6 +56,9 @@ const BasketStatus = () => {
           top: calc(50% - 8px);
           margin-left: -12.5px;
         }
+        .added-goods-text {
+          margin-right: 16px;
+        }
         .added-goods {
           display: flex;
           align-items: center;
@@ -68,17 +69,7 @@ const BasketStatus = () => {
           line-height: 1.53;
           letter-spacing: 0.89px;
           color: var(--texticonscolor);
-        }
-        .added-goods-amount {
-          width: 50px;
-          height: 50px;
-          box-shadow: 0 8px 12px 0 rgba(9, 21, 85, 0.12);
-          background-color: var(--white);
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-left: 15px;
+          margin: -3px 6px 0 0;
         }
       `}</style>
     </>
