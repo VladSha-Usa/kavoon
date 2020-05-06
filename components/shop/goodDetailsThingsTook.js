@@ -86,7 +86,7 @@ const GoodDetailsThingsTook = ({ things }) => {
             </span>
             <ul className="small-content">
               {things.smallThings.map((goodData, index) => (
-                <li className="small-item">
+                <li className="small-item" key={index}>
                   <a href="#">
                     <img
                       className="small-img"
