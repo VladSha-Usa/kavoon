@@ -54,6 +54,10 @@ const Good1 = {
     name: 'Ліхтарик Petzl Tikkid',
     price: '800 грн',
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5bd7075462c69dc4ea2345b895a6fd047ac7890f
   detailsImgGallery: [
     {
       src: '/img/good-details-img-slider/photo-slider-2.jpg',
