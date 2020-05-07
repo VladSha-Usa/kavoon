@@ -24,13 +24,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
             <span className="popup-subtext">{dataOfCurrentPopUp.subText}</span>
           </div>
         </div>
-        <Slider
-          focusOnSelect={true}
-          infinite={true}
-          slidesToShow={5}
-          slidesToScroll={1}
-          speed={1000}
-        >
+        <Slider infinite={true} slidesToShow={4} slidesToScroll={3} speed={500}>
           {galleryContent.map((slideContent, index) => (
             <div
               key={index}
@@ -153,6 +147,14 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           border-radius: 5px;
         }
       `}</style>
+      <style>
+        {`
+        .gallery-wrapper .slick-slide {
+          width: 300px !important;
+          margin-right: 15px;
+        }
+        `}
+      </style>
     </>
   );
 };
