@@ -116,6 +116,32 @@ const Good1 = {
       subText: 'Дорога до водоспаду',
     },
   ],
+  moreGoods: [
+    {
+      name: 'Сумка-бананка\nна кермо',
+      volume: 3,
+      price: 1300,
+      image: '/img/img-shop-item/photo-5.jpg',
+    },
+    {
+      name: 'Бананка',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-6.jpg',
+    },
+    {
+      name: 'Внутрірамна сумка',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-7.jpg',
+    },
+    {
+      name: 'Сумка-тубус\nна вилку',
+      volume: 10,
+      price: 1300,
+      image: '/img/img-shop-item/photo-8.jpg',
+    },
+  ],
 };
 
 export default Good1;

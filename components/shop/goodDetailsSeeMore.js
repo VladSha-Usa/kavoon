@@ -1,5 +1,5 @@
 import GoodListItem from "../../components/shop/goodListItem";
-const GoodDetailsSpecification = ({ elseGoods }) => {
+const GoodDetailsSeeMore = ({ elseGoods }) => {
   return (
     <>
       <div className="see-more-wrapper">
@@ -41,4 +41,4 @@ const GoodDetailsSpecification = ({ elseGoods }) => {
   );
 };
 
-export default GoodDetailsSpecification;
+export default GoodDetailsSeeMore;
