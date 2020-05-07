@@ -1,20 +1,14 @@
-
-import BasketLogic from '../../data/shop/logic/basket.js'
-import useRx from '../../components/shop/useRx'
+import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 
 const GoodDetailsStatus = () => {
   const statusWrapper = "status-wrapper";
   const choosenGood = "choosen-good";
   const choosenGoodBack = "choosen-good__back";
   const choosenGoodName = "choosen-good__name";
-  const addedGoodsAmountWrapper = "status-added__amount-wrapper";
-  const addedGoodsAmountImg = "status-added__amount-img";
   const addedGoodsText = "status-added__text";
-  const addedGoodsAmountNumber = "status-added__amount-number";
   const addedGoods = "status-added";
 
   const mainFontSize = 17;
-  const countValue = useRx(BasketLogic.count);
   return (
     <>
       <div className={statusWrapper}>
@@ -26,10 +20,7 @@ const GoodDetailsStatus = () => {
         </div>
         <div className={addedGoods}>
           <span className={addedGoodsText}>Додані товари:</span>
-          <div className={addedGoodsAmountWrapper}>
-            <img src="/img/shop-icon.svg" className={addedGoodsAmountImg} />
-            <span className={addedGoodsAmountNumber}>{countValue}</span>
-          </div>
+          <ShopBasketAmount />
         </div>
       </div>
       <style jsx>{`
@@ -49,6 +40,10 @@ const GoodDetailsStatus = () => {
         .${choosenGood}, .${addedGoods} {
           display: flex;
           align-items: center;
+        }
+        .${addedGoods} {
+          margin-top: -6px;
+          margin-right: 6px;
         }
         .${choosenGoodBack} {
           letter-spacing: 0.79px;
@@ -70,39 +65,6 @@ const GoodDetailsStatus = () => {
         }
         .${addedGoodsText} {
           margin-right: 17px;
-        }
-
-        .${addedGoodsAmountWrapper} {
-          width: 50px;
-          height: 50px;
-          box-shadow: 0 8px 12px 0 rgba(9, 21, 85, 0.12);
-          background-color: var(--white);
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-right: 6px;
-        }
-        .${addedGoodsAmountImg} {
-          position: relative;
-        }
-        .${addedGoodsAmountNumber} {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          margin-top: -17px;
-          margin-left: 20px;
-          border-radius: 50%;
-          background-color: var(--primarycolor);
-          font-size: 14px;
-          font-weight: 500;
-          line-height: normal;
-          letter-spacing: 0.65px;
-          text-align: center;
-          color: #fff;
         }
       `}</style>
     </>
