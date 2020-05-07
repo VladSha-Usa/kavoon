@@ -124,6 +124,8 @@ const GoodDetailsThingsTook = ({ things }) => {
         .large-img {
           margin-top: 18px;
           margin-bottom: 41px;
+          width: 614px;
+          height: 377px
         }
         .img-large-sub-question {
           margin-bottom: 9px;
@@ -180,6 +182,8 @@ const GoodDetailsThingsTook = ({ things }) => {
         .small-img {
           object-fit: contain;
           margin-bottom: 14px;
+          width: 70px;
+          height: 70px;
         }
         .small-item a {
           text-decoration: none;
@@ -236,6 +240,8 @@ const GoodDetailsThingsTook = ({ things }) => {
         .complect-popup .good-to-complect img {
           object-fit: contain;
           margin-bottom: 10px;
+          width: 120px;
+          height: 150px;
         }
         .complect-popup .good-to-complect .good-title {
           text-align: center;

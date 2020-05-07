@@ -89,6 +89,10 @@ const GoodDetailsPrevSlider = ({ images }) => {
             margin-bottom: 45px;
             width: 460px;
           }
+          .${sliderFirst} .${img} {
+            width: 460px;
+            height: 580px;
+          }
           .${sliderFirst} .slick-dots li button:before {
             width: 8px;
             height: 8px;

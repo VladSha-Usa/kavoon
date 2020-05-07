@@ -49,6 +49,8 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           border-radius: 4px;
           object-fit: contain;
+          width: 100px;
+          height: 100px;
         }
         .addition-title {
           margin-bottom: 21px;
