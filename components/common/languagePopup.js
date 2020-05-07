@@ -65,6 +65,8 @@ const LanguagePopup = () => {
         .choosen-lang img,
         .available__list-lang .available-lang img {
           padding-right: 10px;
+          width: 20px;
+          height: 20px;
         }
         .choosen-lang,
         .available__list-lang .available-lang:focus {
