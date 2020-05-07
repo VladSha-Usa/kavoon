@@ -37,7 +37,7 @@ const Good1 = {
     {
       src: '/img/good-details-prev-slider/photo-main.jpg',
       srcSet:
-        '/img/good-details-prev-slider/photo-main5@2x.jpg 2x, img/good-details-prev-slider/photo-main@3x.jpg 3x',
+        '/img/good-details-prev-slider/photo-main@2x.jpg 2x, img/good-details-prev-slider/photo-main@3x.jpg 3x',
     },
     {
       src: '/img/good-details-prev-slider/photo-main6.jpg',
