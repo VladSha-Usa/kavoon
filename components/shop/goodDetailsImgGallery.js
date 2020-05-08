@@ -126,6 +126,8 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           outline: none;
           cursor: pointer;
+          width: 300px;
+          height: 220px;
         }
         .img-subtext {
           position: absolute;
