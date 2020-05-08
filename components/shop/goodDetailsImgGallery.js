@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useOutsideClick from "./useOutsideClick";
 
 const GoodDetailsImgGallery = ({ galleryContent }) => {
@@ -9,6 +9,12 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
   const ref = useRef();
   useOutsideClick(ref, () => {
     setStatus(false);
+  });
+  useEffect(() => {
+    document.querySelector(".good-details-img-gallery .slick-track").style
+      .transition
+      ? setStatus(false)
+      : null;
   });
 
   return (
