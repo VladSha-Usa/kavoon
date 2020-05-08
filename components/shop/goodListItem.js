@@ -14,7 +14,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
         <div className="case-field">
           <div className={imgWrapper}>
             <img
-              style={{ width: "200px", height: "225px" }}
+              style={{ width: "255px", height: "230px" }}
               src={src}
               srcSet={srcSet}
             />
