@@ -5,6 +5,8 @@ import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
 import BasketStatus from "../../components/shop/basketStatus";
+import BasketInfoChooseGoods from "../../components/shop/basketInfoChooseGoods";
+
 const headerHeight = 80;
 
 const onScroll = () => {
@@ -69,6 +71,11 @@ const Basket = () => {
       <div id="home" className="basket-status">
         <div className="page-content" style={{ height: "100%" }}>
           <BasketStatus />
+        </div>
+      </div>
+      <div id="home" className="basket-info-choose-goods">
+        <div className="page-content" style={{ height: "100%" }}>
+          <BasketInfoChooseGoods />
         </div>
       </div>
       <div className="footer-background">
