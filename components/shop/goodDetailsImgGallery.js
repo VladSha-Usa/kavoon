@@ -30,17 +30,22 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
             <span className="popup-subtext">{dataOfCurrentPopUp.subText}</span>
           </div>
         </div>
-        <Slider infinite={true} slidesToShow={4} slidesToScroll={3} speed={500}>
+        <Slider
+          infinite={true}
+          slidesToShow={4}
+          touchThreshold={200}
+          // slidesToScroll={1}
+          speed={500}
+        >
           {galleryContent.map((slideContent, index) => (
-            <div
-              key={index}
-              className="slide-wrapper"
-              onClick={() => {
-                setData(slideContent);
-                setStatus(!isOpened);
-              }}
-            >
-              <div className="slide">
+            <div key={index} className="slide-wrapper">
+              <div
+                className="slide"
+                onClick={() => {
+                  setData(slideContent);
+                  setStatus(!isOpened);
+                }}
+              >
                 <img
                   src={slideContent.src}
                   srcSet={slideContent.srcSet}
@@ -126,8 +131,8 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           outline: none;
           cursor: pointer;
-          width: 300px;
-          height: 220px;
+          width: 277px; // if we make agree with decreasing width of slide, I will remove this comment
+          height: 203px;
         }
         .img-subtext {
           position: absolute;
@@ -156,8 +161,8 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
       <style>
         {`
         .gallery-wrapper .slick-slide {
-          width: 300px !important;
-          margin-right: 15px;
+          // width: 300px !important;
+          // margin-right: 15px;
         }
         `}
       </style>
