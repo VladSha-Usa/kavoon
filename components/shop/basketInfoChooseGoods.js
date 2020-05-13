@@ -1,4 +1,4 @@
-import BasketMainGood from "./BasketMainGood";
+import BasketMainGood from "./basketMainGood";
 const BasketInfoChooseGoods = () => {
   return (
     <>
