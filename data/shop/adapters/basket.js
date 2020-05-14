@@ -1,4 +1,9 @@
 const basketData = {
+  breadcrumbs: [
+    { name: "Список товарів", src: "/shop" },
+    { name: "Сумка-тубус на вилку 10 л.", src: "/shop/good1" },
+    { name: "Список товарів", src: "#" },
+  ],
   mainGoods: [
     {
       src: "/img/basket-img/photo-1.jpg",
