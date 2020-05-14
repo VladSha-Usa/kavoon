@@ -9,6 +9,7 @@ const GoodDetailsSeeMore = ({ elseGoods }) => {
             <GoodListItem
               key={i}
               src={goodListItem.image}
+              srcSet={goodListItem.srcSet}
               href={goodListItem.href}
               contentTitle={goodListItem.name}
               capacity={goodListItem.volume}
