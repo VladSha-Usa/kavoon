@@ -1,4 +1,14 @@
 const Good1 = {
+  breadcrumbs: [
+    {
+      name: 'Список товарів',
+      src: '/shop',
+    },
+    {
+      name: 'Сумка-тубус на вилку 10л',
+      src: '#',
+    },
+  ],
   name: 'Сумка-табус маленька\nна вилку',
   price: 1300,
   specification: {
