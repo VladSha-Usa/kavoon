@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
+const GoodDetailsWizardAddOther = ({
+  additionGoodData,
+  basketStyleSettings,
+}) => {
   const [status, checkerStatus] = useState(true);
   const textStatus = status ? "ти" : "но";
   const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
   return (
     <>
       <div className="addition-wrapper">
-        <span className="addition-title">Додати в комплект:</span>
+        <span className="addition-title">
+          Дода{basketStyleSettings ? "но" : "ти"} в комплект:
+        </span>
         <div className="addition-good-wrapper">
           <img
             className="addition-good-img"

@@ -1,4 +1,6 @@
 import BasketMainGood from "./BasketMainGood";
+import BasketData from "../../data/shop/adapters/basket";
+import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 const BasketInfoChooseGoods = () => {
   return (
     <>
@@ -8,13 +10,29 @@ const BasketInfoChooseGoods = () => {
           <span className="info-choose-status-amount">( 1 товар )</span>
         </div>
         <div className="info-choose-goods">
-          <div className="choose-good-wrapper">
-            <BasketMainGood />
-            <img src="" />
-          </div>
+          {BasketData.mainGoods.map((good, index) => (
+            <div className="choose-good-wrapper" key={index}>
+              <BasketMainGood basketMainGoodData={good} />
+              <img src="/img/good-to-complect-img/cancel-icon.svg" />
+            </div>
+          ))}
+          {BasketData.additionGoods.map((good, index) => (
+            <div className="choose-good-wrapper" key={index}>
+              <GoodDetailsWizardAddOther
+                additionGoodData={good}
+                basketStyleSettings={true}
+              />
+              <img src="/img/good-to-complect-img/cancel-icon.svg" />
+            </div>
+          ))}
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
-            <span className="info-choose-sum-num">2100 грн</span>
+            <span className="info-choose-sum-num">
+              {BasketData.mainGoods
+                .map((good) => good.price)
+                .reduce((sum, current) => sum + current, 0)}{" "}
+              грн
+            </span>
           </div>
         </div>
       </div>
@@ -31,15 +49,16 @@ const BasketInfoChooseGoods = () => {
         .info-choose-status {
           font-size: 24px;
           letter-spacing: 1.26px;
+          margin-bottom: 18px;
         }
         .info-choose-status-amount {
           color: #b9c6dc;
         }
         .info-choose-goods {
-          width: 685px;
+          width: 646px;
           border-radius: 10px;
           border: solid 1.5px #b9c6dc;
-          padding: 20px 20px 23px 20px;
+          padding: 20px 18px 23px 18px;
         }
         .info-choose-sum {
           display: flex;
@@ -55,6 +74,14 @@ const BasketInfoChooseGoods = () => {
           line-height: 1.4;
           letter-spacing: 0.94px;
           color: var(--primarycolor);
+        }
+        .choose-good-wrapper {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          border-bottom:1.5px solid #b9c6dc;
+          padding-bottom: 12px;
+          margin-bottom: 20px;
         }
       `}</style>
     </>

@@ -116,7 +116,8 @@ const Basket = () => {
             background-color: #ffffff;
           }
           .basket-status {
-            margin-top: 123px;
+            margin-top: 125px;
+            margin-bottom: 39px;
           }
           .footer-background {
             width: 100%;
