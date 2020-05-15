@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import useRx from "../../components/shop/useRx";
+import BasketLogic from "../../data/shop/logic/basket";
 const BasketMainGood = ({ basketMainGoodData }) => {
-  const [amount, setAmount] = useState(1);
+  const amount = useRx(BasketLogic.countForGood(basketMainGoodData));
   const activeMinus =
     amount <= 1
       ? "/img/remove-button-not-active.svg"
@@ -53,7 +54,7 @@ const BasketMainGood = ({ basketMainGoodData }) => {
           <div className="main-good-control-info">
             <div
               className="conrol-amount-wrapper"
-              onClick={() => (amount > 1 ? setAmount(amount - 1) : null)}
+              onClick={() => amount > 1 ? BasketLogic.decrease(basketMainGoodData) : null}
             >
               <img src={activeMinus} />
             </div>
@@ -61,7 +62,7 @@ const BasketMainGood = ({ basketMainGoodData }) => {
             <div className="conrol-amount-wrapper">
               <img
                 src="/img/add-button.svg"
-                onClick={() => setAmount(amount + 1)}
+                onClick={() => BasketLogic.increase(basketMainGoodData)}
               />
             </div>
             <div className="main-amount">{amount}шт.</div>
@@ -118,6 +119,7 @@ const BasketMainGood = ({ basketMainGoodData }) => {
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
         .good-parametr {
           margin-bottom: 8px;

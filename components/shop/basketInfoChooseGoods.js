@@ -1,16 +1,42 @@
 import BasketMainGood from "./BasketMainGood";
 import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
+import BasketLogic from "../../data/shop/logic/basket";
+import useRx from "../../components/shop/useRx";
 const BasketInfoChooseGoods = () => {
+  const goods = useRx(BasketLogic.goods);
+  const countValue = useRx(BasketLogic.count);
+  const endingOfWord = () => {
+    let amountOfGoods = String(countValue).split("");
+    let lastNumOfAmount = Number(amountOfGoods[amountOfGoods.length - 1]);
+    let penultimateNumOfAmount = Number(
+      amountOfGoods[amountOfGoods.length - 2]
+    );
+    let twoLastNumOfAmount = Number(
+      [penultimateNumOfAmount, lastNumOfAmount].join("")
+    );
+    if (lastNumOfAmount !== 1 || twoLastNumOfAmount === 11) {
+      if ([12, 13, 14].some((el) => twoLastNumOfAmount === el)) {
+        return "ів";
+      }
+      if ([2, 3, 4].some((el) => lastNumOfAmount === el)) {
+        return "и";
+      }
+
+      return "ів";
+    }
+  };
   return (
     <>
       <div className="info-choose-goods-wrapper">
         <div className="info-choose-status">
           Твій кошик{" "}
-          <span className="info-choose-status-amount">( 1 товар )</span>
+          <span className="info-choose-status-amount">
+            ( {countValue} товар{endingOfWord()})
+          </span>
         </div>
         <div className="info-choose-goods">
-          {BasketData.mainGoods.map((good, index) => (
+          {goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
               <BasketMainGood basketMainGoodData={good} />
               <img src="/img/good-to-complect-img/cancel-icon.svg" />
