@@ -32,7 +32,7 @@ const BasketInfoChooseGoods = () => {
         <div className="info-choose-status">
           Твій кошик{" "}
           <span className="info-choose-status-amount">
-            ( {countValue} товар{endingOfWord()})
+            ( {countValue} товар{endingOfWord()} )
           </span>
         </div>
         <div className="info-choose-goods">

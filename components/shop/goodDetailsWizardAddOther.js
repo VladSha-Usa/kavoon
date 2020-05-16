@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
@@ -6,6 +6,14 @@ const GoodDetailsWizardAddOther = ({
   const [status, checkerStatus] = useState(true);
   const textStatus = status ? "ти" : "но";
   const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
+  const statusWhileInBasket = basketStyleSettings ? "none" : "block";
+  useEffect(() => {
+    basketStyleSettings
+      ? document
+          .querySelector(".addition-wrapper")
+          .classList.add("addition-basket-style-wrapper")
+      : "";
+  });
   return (
     <>
       <div className="addition-wrapper">
@@ -20,7 +28,10 @@ const GoodDetailsWizardAddOther = ({
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
-            <span className="good-price">{additionGoodData.price}</span>
+            <span className="good-price">
+              {basketStyleSettings ? "Сума: " : ""}
+              {additionGoodData.price}
+            </span>
             <label className="good-checkcontainer">
               <input
                 className="good-checkbox"
@@ -50,6 +61,9 @@ const GoodDetailsWizardAddOther = ({
           color: var(--texticonscolor);
           margin-top: 95px;
         }
+        .addition-basket-style-wrapper {
+          margin-top: 0px;
+        }
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           border-radius: 4px;
@@ -68,7 +82,7 @@ const GoodDetailsWizardAddOther = ({
           padding-bottom: 22px;
         }
         .good-checkcontainer {
-          display: block;
+          display: ${statusWhileInBasket};
           position: relative;
           padding-left: 35px;
           margin-bottom: 12px;
@@ -146,6 +160,7 @@ const GoodDetailsWizardAddOther = ({
           text-transform: uppercase;
           cursor: pointer;
           outline: none;
+          display: ${statusWhileInBasket};
         }
         .addition-good-wrapper {
           display: flex;
