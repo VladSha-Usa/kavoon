@@ -36,7 +36,7 @@ const BasketInfoChooseGoods = () => {
           color: #b9c6dc;
         }
         .info-choose-goods {
-          width: 685px;
+          width: 651px;
           border-radius: 10px;
           border: solid 1.5px #b9c6dc;
           padding: 20px 20px 23px 20px;
