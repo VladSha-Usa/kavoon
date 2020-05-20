@@ -3,36 +3,17 @@ import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import BasketLogic from "../../data/shop/logic/basket";
 import useRx from "../../components/shop/useRx";
+import HelperFun from "../common/helper";
 const BasketInfoChooseGoods = () => {
   const goods = useRx(BasketLogic.goods);
   const countValue = useRx(BasketLogic.count);
-  const endingOfWord = () => {
-    let amountOfGoods = String(countValue).split("");
-    let lastNumOfAmount = Number(amountOfGoods[amountOfGoods.length - 1]);
-    let penultimateNumOfAmount = Number(
-      amountOfGoods[amountOfGoods.length - 2]
-    );
-    let twoLastNumOfAmount = Number(
-      [penultimateNumOfAmount, lastNumOfAmount].join("")
-    );
-    if (lastNumOfAmount !== 1 || twoLastNumOfAmount === 11) {
-      if ([12, 13, 14].some((el) => twoLastNumOfAmount === el)) {
-        return "ів";
-      }
-      if ([2, 3, 4].some((el) => lastNumOfAmount === el)) {
-        return "и";
-      }
-
-      return "ів";
-    }
-  };
   return (
     <>
       <div className="info-choose-goods-wrapper">
         <div className="info-choose-status">
           Твій кошик{" "}
           <span className="info-choose-status-amount">
-            ( {countValue} товар{endingOfWord()} )
+            ( {countValue} товар{HelperFun.endingOfWord(countValue)} )
           </span>
         </div>
         <div className="info-choose-goods">
