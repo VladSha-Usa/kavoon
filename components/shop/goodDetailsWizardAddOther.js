@@ -28,6 +28,7 @@ const GoodDetailsWizardAddOther = ({
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
+            <span className="good-amount">1шт.</span>
             <span className="good-price">
               {basketStyleSettings ? "Сума: " : ""}
               {additionGoodData.price}
@@ -75,11 +76,18 @@ const GoodDetailsWizardAddOther = ({
           margin-bottom: 21px;
           display: block;
         }
+        .addition-basket-style-wrapper .addition-title {
+          margin-bottom: 14px;
+        }
         .good-title {
           padding-bottom: 10px;
         }
         .good-price {
           padding-bottom: 22px;
+        }
+        .addition-basket-style-wrapper .good-price {
+          letter-spacing: 0.75px;
+          font-size: 16px;
         }
         .good-checkcontainer {
           display: ${statusWhileInBasket};
@@ -166,10 +174,23 @@ const GoodDetailsWizardAddOther = ({
           display: flex;
           margin-bottom: 29px;
         }
+        .addition-basket-style-wrapper .addition-good-wrapper {
+          margin-bottom: 2px;
+        }
         .good-description-checker {
           display: flex;
           flex-direction: column;
           margin-left: 20px;
+        }
+        .addition-basket-style-wrapper .good-description-checker {
+          margin-left: 31px;
+        }
+        .good-amount {
+          display: none;
+        }
+        .addition-basket-style-wrapper .good-amount {
+          display: block;
+          margin-bottom: 27px;
         }
       `}</style>
     </>
