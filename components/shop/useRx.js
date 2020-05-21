@@ -1,13 +1,14 @@
+import { useState, useEffect } from "react";
 
-import { useState, useEffect } from 'react'
-
-function useRx( signal ){
-  const [state, setState] = useState('');
+function useRx(signal) {
+  const [state, setState] = useState([]);
   useEffect(() => {
-    const subscription =signal.subscribe( value => setState(value) )
-    return ()=>{ subscription.unsubscribe() }
+    const subscription = signal.subscribe((value) => setState(value));
+    return () => {
+      subscription.unsubscribe();
+    };
   });
-  return state
+  return state;
 }
 
 export default useRx;
