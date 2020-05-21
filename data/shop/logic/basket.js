@@ -16,13 +16,9 @@ const good = {
   count: 1,
   id: 1,
 };
-
+const goods = new BehaviorSubject([good]);
 const count = goods.pipe(
-  map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0)),
-);
-
-const count = goods.pipe(
-  map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0)),
+  map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0))
 );
 function increase(good) {
   good.count++;
@@ -34,7 +30,11 @@ function decrease(good) {
 }
 function countForGood(good) {
   return goods.pipe(
-    map((goodsList) => goodsList.filter((item) => item.id === good.id).reduce((sum, item) => sum + item.count, 0)),
+    map((goodsList) =>
+      goodsList
+        .filter((item) => item.id === good.id)
+        .reduce((sum, item) => sum + item.count, 0)
+    )
   );
 }
 function addGood(good) {

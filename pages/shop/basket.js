@@ -120,7 +120,7 @@ const Basket = () => {
             margin-top: 119px;
             margin-bottom: 34px;
           }
-          .basket-info-choose-goods {
+          .basket-info-order {
             margin-bottom: 106px;
           }
           .footer-background {

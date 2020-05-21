@@ -133,7 +133,7 @@ const BasketOrderForm = () => {
           font-weight: 600;
           line-height: normal;
           letter-spacing: 1.26px;
-          margin-bottom: -2px;
+          margin-bottom: 2px;
           margin-left: 5px;
         }
         .instruction-title {
@@ -145,7 +145,9 @@ const BasketOrderForm = () => {
         }
         fieldset {
           border: none;
-          padding-inline-start: 7px;
+          padding: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
         }
         .row {
           display: flex;
@@ -180,7 +182,7 @@ const BasketOrderForm = () => {
           color: var(--white);
           text-transform: uppercase;
           font-family: Montserrat;
-          margin-top: 15px;
+          margin-top: 6px;
           margin-left: 7px;
         }
         button:disabled {
