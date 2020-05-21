@@ -1,12 +1,25 @@
-import React, { useState } from "react";
-const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
+import React, { useState, useEffect } from "react";
+const GoodDetailsWizardAddOther = ({
+  additionGoodData,
+  basketStyleSettings,
+}) => {
   const [status, checkerStatus] = useState(true);
   const textStatus = status ? "ти" : "но";
   const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
+  const statusWhileInBasket = basketStyleSettings ? "none" : "block";
+  useEffect(() => {
+    basketStyleSettings
+      ? document
+          .querySelector(".addition-wrapper")
+          .classList.add("addition-basket-style-wrapper")
+      : "";
+  });
   return (
     <>
       <div className="addition-wrapper">
-        <span className="addition-title">Додати в комплект:</span>
+        <span className="addition-title">
+          Дода{basketStyleSettings ? "но" : "ти"} в комплект:
+        </span>
         <div className="addition-good-wrapper">
           <img
             className="addition-good-img"
@@ -15,7 +28,11 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
-            <span className="good-price">{additionGoodData.price}</span>
+            <span className="good-amount">1шт.</span>
+            <span className="good-price">
+              {basketStyleSettings ? "Сума: " : ""}
+              {additionGoodData.price}
+            </span>
             <label className="good-checkcontainer">
               <input
                 className="good-checkbox"
@@ -45,6 +62,9 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           color: var(--texticonscolor);
           margin-top: 95px;
         }
+        .addition-basket-style-wrapper {
+          margin-top: 0px;
+        }
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           border-radius: 4px;
@@ -56,14 +76,21 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           margin-bottom: 21px;
           display: block;
         }
+        .addition-basket-style-wrapper .addition-title {
+          margin-bottom: 14px;
+        }
         .good-title {
           padding-bottom: 10px;
         }
         .good-price {
           padding-bottom: 22px;
         }
+        .addition-basket-style-wrapper .good-price {
+          letter-spacing: 0.75px;
+          font-size: 16px;
+        }
         .good-checkcontainer {
-          display: block;
+          display: ${statusWhileInBasket};
           position: relative;
           padding-left: 35px;
           margin-bottom: 12px;
@@ -141,15 +168,29 @@ const GoodDetailsWizardAddOther = ({ additionGoodData }) => {
           text-transform: uppercase;
           cursor: pointer;
           outline: none;
+          display: ${statusWhileInBasket};
         }
         .addition-good-wrapper {
           display: flex;
           margin-bottom: 29px;
         }
+        .addition-basket-style-wrapper .addition-good-wrapper {
+          margin-bottom: 2px;
+        }
         .good-description-checker {
           display: flex;
           flex-direction: column;
           margin-left: 20px;
+        }
+        .addition-basket-style-wrapper .good-description-checker {
+          margin-left: 31px;
+        }
+        .good-amount {
+          display: none;
+        }
+        .addition-basket-style-wrapper .good-amount {
+          display: block;
+          margin-bottom: 27px;
         }
       `}</style>
     </>

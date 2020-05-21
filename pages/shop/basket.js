@@ -117,13 +117,16 @@ const Basket = () => {
             background-color: #ffffff;
           }
           .basket-status {
-            margin-top: 120px;
+            margin-top: 119px;
+            margin-bottom: 34px;
+          }
+          .basket-info-choose-goods {
+            margin-bottom: 106px;
           }
           .footer-background {
             width: 100%;
             height: 180px;
             background-color: var(--footer-back);
-            margin-top: 1400px;
           }
 
           @media only screen and (max-width: 1165px) {
