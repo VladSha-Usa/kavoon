@@ -52,6 +52,7 @@ const BasketInfoChooseGoods = () => {
           font-style: normal;
           line-height: normal;
           color: var(--texticonscolor);
+          margin-right: 34px;
         }
         .info-choose-status {
           font-size: 24px;

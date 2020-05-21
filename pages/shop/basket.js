@@ -6,7 +6,7 @@ import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
 import BasketData from "../../data/shop/adapters/basket";
 import BasketStatus from "../../components/shop/basketStatus";
-import BasketInfoChooseGoods from "../../components/shop/basketInfoChooseGoods";
+import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
 
 const headerHeight = 80;
 
@@ -74,9 +74,9 @@ const Basket = () => {
           <BasketStatus breadcrumbs={BasketData.breadcrumbs} />
         </div>
       </div>
-      <div id="home" className="basket-info-choose-goods">
+      <div id="home" className="basket-info-order">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketInfoChooseGoods />
+          <BasketInfoOrderWireframe />
         </div>
       </div>
       <div className="footer-background">
@@ -120,7 +120,7 @@ const Basket = () => {
             margin-top: 119px;
             margin-bottom: 34px;
           }
-          .basket-info-choose-goods {
+          .basket-info-order {
             margin-bottom: 106px;
           }
           .footer-background {
