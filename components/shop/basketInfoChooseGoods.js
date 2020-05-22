@@ -1,4 +1,4 @@
-import BasketMainGood from "./BasketMainGood";
+import BasketMainGood from "./basketMainGood";
 import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import BasketLogic from "../../data/shop/logic/basket";
