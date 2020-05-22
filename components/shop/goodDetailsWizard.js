@@ -3,10 +3,10 @@ import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import DataGood1 from "../../data/shop/adapters/good1";
 const GoodDetailsWizard = () => {
-  const wizardWrap = "good-wizard-wrapper";
   return (
     <>
-      <div className={wizardWrap}>
+      <div className="good-wizard-wrapper">
+        <GoodDetailsWizardTitle dataForTitle={DataGood1} />
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
           src="/img/wizard-picker/material-oksford.png"
@@ -26,7 +26,7 @@ const GoodDetailsWizard = () => {
         />
       </div>
       <style jsx>{`
-        .${wizardWrap} {
+        .good-wizard-wrapper {
           width: 380px;
           margin-left: 96px;
         }
