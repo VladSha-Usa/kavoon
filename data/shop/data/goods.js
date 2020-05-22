@@ -8,10 +8,16 @@ const bananaBagSmallFork = {
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
+const bagBigFork = {
+  id: "bag-big-fork",
+  name: "Велика сумка-тубус \nна вилку",
+  price: 1300,
+  volume: "10л",
+  fabrics: [Kordura, Oxford],
+  colors: ["main", "secondary", "additional"],
+};
 
-const Goods = [
-  bananaBagSmallFork,
-];
+const Goods = [bananaBagSmallFork, bagBigFork];
 
 export { bananaBagSmallFork };
 export default Goods;

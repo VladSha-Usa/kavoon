@@ -1,18 +1,20 @@
 const Kordura = {
   name: 'Kordura',
-  prints: [],
+  prints: [{}],
 };
 
 const Oxford = {
-  name: 'Kordura',
+  name: "Oxford",
+  prints: [],
+};
+
+const RainblaBla = {
+  name: "RainblaBla",
   prints: [],
 };
 
 
-const Fabrics = [
-  Kordura,
-  Oxford,
-];
+const Fabrics = [Kordura, Oxford, RainblaBla];
 
-export { Oxford, Kordura };
+export { Oxford, Kordura, RainblaBla };
 export default Fabrics;
