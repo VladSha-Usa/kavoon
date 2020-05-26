@@ -9,13 +9,10 @@ const GoodDetailsWizard = () => {
       <div className={wizardWrap}>
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
-          src="/img/wizard-picker/material-oksford.png"
-          srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
-          nameOfChoose="Оксфорд тканина"
           zIndex="20"
         ></GoodDetailsWizardPicker>
         <GoodDetailsWizardPicker
-          mainTheme="Основна тканина"
+          mainTheme="Основна колір"
           src="/img/wizard-picker/material-oksford.png"
           srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
           nameOfChoose="Оксфорд тканина"

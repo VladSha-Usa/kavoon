@@ -1,20 +1,25 @@
 const Kordura = {
-  name: 'Kordura',
-  prints: [{}],
+  name: "Кордура",
+  src: "/img/wizard-picker/printcolor3.svg",
+  prints: [
+    { src: "/img/wizard-picker/printcolor3.svg", name: "Волошки" },
+    { src: "/img/wizard-picker/printcolor2.svg", name: "Листя папороті" },
+  ],
 };
 
 const Oxford = {
-  name: "Oxford",
-  prints: [],
+  name: "Оксфорд",
+  src: "/img/wizard-picker/material-oksford.png",
+  prints: [
+    { src: "/img/wizard-picker/material-oksford.png", name: "В кліточку" },
+    {
+      src: "/img/wizard-picker/printcolor1.svg",
+      name: "Різнокольорові квіточки",
+    },
+  ],
 };
 
-const RainblaBla = {
-  name: "RainblaBla",
-  prints: [],
-};
+const Fabrics = [Kordura, Oxford];
 
-
-const Fabrics = [Kordura, Oxford, RainblaBla];
-
-export { Oxford, Kordura, RainblaBla };
+export { Oxford, Kordura };
 export default Fabrics;
