@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
 import dataOfGood from "../../data/shop/data/goods";
 const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
@@ -10,14 +10,10 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
       .map((el) => el)
   );
   const [valueForRender, setValueForRender] = useState(true);
-  console.log(contentPicker);
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
   });
-  useEffect(() => {
-    console.log("ok");
-  }, [contentPicker]);
   return (
     <>
       <div className="wizard__picker-param">
@@ -45,14 +41,17 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             {contentPicker.map((el, i) => (
               <li
                 onClick={() => {
-                  contentPicker.splice(i, 1);
+                  // contentPicker.splice(i, 1);
                   contentPicker.splice(0, 0, el);
                   setContentPicker(contentPicker);
                   setValueForRender(!valueForRender);
                 }}
                 key={i}
+                className={i === 0 ? "list-elem-active" : "list-elem"}
               >
-                <img className="status-list__img" src={el.src} />
+                <span className="status-list__img-wrapper">
+                  <img className="status-list__img" src={el.src} />
+                </span>
                 <span className="param__status-list__title">{el.name}</span>
               </li>
             ))}
@@ -100,6 +99,38 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             margin-bottom: 10px;
             font-size: 14px;
           }
+          .list-elem-active {
+            color: var(--primarycolor);
+          }
+          .list-elem-active .status-list__img-wrapper:after {
+            content: "";
+            position: absolute;
+            width: 46px;
+            display: block;
+            height: 46px;
+            object-fit: contain;
+            border: solid 1.5px #e15151;
+            border-radius: 50%;
+            top: 7px;
+            left: 13px;
+          }
+          .status-list__img {
+            height: 35px;
+            width: 35px;
+          }
+          .list-elem {
+            cursor: pointer;
+            height: 39px;
+          }
+          .list-elem .status-list__img-wrapper:hover .status-list__img {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            margin: -27px 0px 0px -10px;
+          }
+          .list-elem .status-list__img-wrapper:hover ~ .param__status-list__title {
+            margin-left: 45px !important;
+          }
           .picker-param__status-img {
             margin: 0 15px 0 20px;
           }
@@ -131,7 +162,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             transition: 0.5s ease;
           }
           .active__status-choose .picker-param__status-list {
-            height: 270px;
+            height: auto;
+            max-height:
           }
           .picker-param__status-list {
             position: absolute;
