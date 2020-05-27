@@ -2,17 +2,22 @@ import React, { useState, useRef, useEffect } from "react";
 import useOutsideClick from "./useOutsideClick";
 import dataOfGood from "../../data/shop/data/goods";
 const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
-  let [isOpened, setOpened] = useState(false);
-  let [contentPicker, setContentPicker] = useState(
+  const [isOpened, setOpened] = useState(false);
+  const [contentPicker, setContentPicker] = useState(
     dataOfGood
       .filter((el) => el.id === "bag-big-fork")
       .map((el) => el.fabrics)[0]
       .map((el) => el)
   );
+  const [valueForRender, setValueForRender] = useState(true);
+  console.log(contentPicker);
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
   });
+  useEffect(() => {
+    console.log("ok");
+  }, [contentPicker]);
   return (
     <>
       <div className="wizard__picker-param">
@@ -40,7 +45,10 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             {contentPicker.map((el, i) => (
               <li
                 onClick={() => {
-                  setContentPicker(contentPicker.unshift(el));
+                  contentPicker.splice(i, 1);
+                  contentPicker.splice(0, 0, el);
+                  setContentPicker(contentPicker);
+                  setValueForRender(!valueForRender);
                 }}
                 key={i}
               >

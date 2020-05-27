@@ -18,8 +18,19 @@ const Oxford = {
     },
   ],
 };
+const RainBlaBla = {
+  name: "РейнБлаБла",
+  src: "/img/wizard-picker/printcolor1.svg",
+  prints: [
+    { src: "/img/wizard-picker/material-oksford.png", name: "В кліточку" },
+    {
+      src: "/img/wizard-picker/printcolor1.svg",
+      name: "Різнокольорові квіточки",
+    },
+  ],
+};
 
-const Fabrics = [Kordura, Oxford];
+const Fabrics = [Kordura, Oxford, RainBlaBla];
 
-export { Oxford, Kordura };
+export { Oxford, Kordura, RainBlaBla};
 export default Fabrics;

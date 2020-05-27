@@ -1,4 +1,4 @@
-import { Kordura, Oxford } from './fabrics';
+import { Kordura, Oxford, RainBlaBla } from './fabrics';
 
 const bananaBagSmallFork = {
   id: 'banana-bag-small-fork',
@@ -9,12 +9,12 @@ const bananaBagSmallFork = {
   colors: ['main', 'secondary', 'additional'],
 };
 const bagBigFork = {
-  id: "bag-big-fork",
-  name: "Велика сумка-тубус \nна вилку",
+  id: 'bag-big-fork',
+  name: 'Велика сумка-тубус \nна вилку',
   price: 1300,
-  volume: "10л",
-  fabrics: [Kordura, Oxford],
-  colors: ["main", "secondary", "additional"],
+  volume: '10л',
+  fabrics: [Kordura, Oxford, RainBlaBla],
+  colors: ['main', 'secondary', 'additional'],
 };
 
 const Goods = [bananaBagSmallFork, bagBigFork];
