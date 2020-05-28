@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useOutsideClick from "./useOutsideClick";
 import dataOfGood from "../../data/shop/data/goods";
 const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
@@ -10,6 +10,15 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
       .map((el) => el)
   );
   const [valueForRender, setValueForRender] = useState(true);
+  const [heightOfParam, setHeightOfParam] = useState();
+  useEffect(() => {
+    setHeightOfParam(
+      document.querySelector(".picker-param__status-list").offsetHeight
+    );
+    // setValueForRender(!valueForRender);
+  });
+  console.log(heightOfParam);
+
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
@@ -41,7 +50,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             {contentPicker.map((el, i) => (
               <li
                 onClick={() => {
-                  // contentPicker.splice(i, 1);
+                  contentPicker.splice(i, 1);
                   contentPicker.splice(0, 0, el);
                   setContentPicker(contentPicker);
                   setValueForRender(!valueForRender);
@@ -81,11 +90,11 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             background-color: white;
             display: flex;
             align-items: flex-start;
-            transition: 0.3s ease;
+            transition: 1.1s ease;
             z-index: ${zIndex ?? 10};
           }
           .active__status-choose {
-            height: 350px;
+            height: ${heightOfParam}px;
           }
           .picker-param__status-main {
             display: flex;
@@ -128,7 +137,9 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             height: 55px;
             margin: -27px 0px 0px -10px;
           }
-          .list-elem .status-list__img-wrapper:hover ~ .param__status-list__title {
+          .list-elem
+            > .status-list__img-wrapper:hover
+            ~ .param__status-list__title {
             margin-left: 45px !important;
           }
           .picker-param__status-img {
@@ -162,52 +173,56 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             transition: 0.5s ease;
           }
           .active__status-choose .picker-param__status-list {
-            height: auto;
-            max-height:
+            max-height: 300px;
+            overflow: auto;
           }
           .picker-param__status-list {
             position: absolute;
             list-style: none;
-            height: 0px;
+            max-height: 0px;
             width: 360px;
             margin-block-start: 0;
             margin-block-end: 0;
             padding-inline-start: 20px;
             margin-top: 50px;
-            overflow: auto;
-            transition: 0.3s ease;
+            overflow: hidden;
+            transition: 0.4s ease;
             border-radius: 25px;
             background-color: white;
           }
-          .picker-param__status-list::-webkit-scrollbar-button {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-button {
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
             display: none;
           }
 
-          .picker-param__status-list::-webkit-scrollbar-track {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-track {
             background-color: tarnsparent;
           }
 
-          .picker-param__status-list::-webkit-scrollbar-thumb {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-thumb {
             -webkit-border-radius: 2, 5px;
             border-radius: 2.5px;
             background-color: #ced5e1;
           }
 
-          .picker-param__status-list::-webkit-scrollbar-thumb:hover {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-thumb:hover {
             background-color: #ced5e1;
           }
 
-          .picker-param__status-list::-webkit-resizer {
+          .active__status-choose .picker-param__status-list::-webkit-resizer {
             background-image: url("");
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
           }
 
-          .picker-param__status-list::-webkit-scrollbar {
+          .active__status-choose .picker-param__status-list::-webkit-scrollbar {
             width: 5px;
           }
           .picker-param__status-list li {
