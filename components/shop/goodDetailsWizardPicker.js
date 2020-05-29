@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
 import dataOfGood from "../../data/shop/data/goods";
 const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
@@ -10,29 +10,19 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
       .map((el) => el)
   );
   const [valueForRender, setValueForRender] = useState(true);
-  const [heightOfParam, setHeightOfParam] = useState();
-  useEffect(() => {
-    setHeightOfParam(
-      document.querySelector(".picker-param__status-list").offsetHeight
-    );
-    // setValueForRender(!valueForRender);
-  });
-  console.log(heightOfParam);
-
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
   });
   return (
     <>
-      <div className="wizard__picker-param">
+      <div
+        className={
+          "wizard__picker-param " + (isOpened ? " active__status-choose" : "")
+        }
+      >
         <span className="param__general-title">{mainTheme}</span>
-        <div
-          className={
-            "picker-param__status" + (isOpened ? " active__status-choose" : "")
-          }
-          ref={ref}
-        >
+        <div className="picker-param__status" ref={ref}>
           <div className="picker-param__status-main">
             <img
               className="picker-param__status-img"
@@ -43,7 +33,9 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             </span>
             <button
               id="picker-param__status-more"
-              onClick={() => setOpened(!isOpened)}
+              onClick={() => {
+                setOpened(!isOpened);
+              }}
             ></button>
           </div>
           <ul className="picker-param__status-list">
@@ -79,28 +71,28 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             line-height: normal;
             letter-spacing: 0.85px;
             color: var(--texticonscolor);
-            margin-bottom: 75px;
           }
           .picker-param__status {
             position: absolute;
             width: 380px;
-            height: 50px;
+            max-height: 50px;
             border-radius: 25px;
             box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
             background-color: white;
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
-            transition: 1.1s ease;
             z-index: ${zIndex ?? 10};
+            transition: 0.3s ease;
           }
-          .active__status-choose {
-            height: ${heightOfParam}px;
+          .active__status-choose .picker-param__status {
+            max-height: 300px;
           }
           .picker-param__status-main {
             display: flex;
             align-items: center;
             width: -webkit-fill-available;
-            height: 50px;
+            margin-top: 7.5px;
           }
           .param__general-title {
             display: block;
@@ -111,17 +103,20 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
           .list-elem-active {
             color: var(--primarycolor);
           }
+          .status-list__img-wrapper {
+            position: relative;
+          }
           .list-elem-active .status-list__img-wrapper:after {
             content: "";
             position: absolute;
-            width: 46px;
+            width: 44px;
             display: block;
-            height: 46px;
+            height: 44px;
             object-fit: contain;
             border: solid 1.5px #e15151;
             border-radius: 50%;
-            top: 7px;
-            left: 13px;
+            margin-top: -45px;
+            margin-left: -6px;
           }
           .status-list__img {
             height: 35px;
@@ -133,17 +128,15 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
           }
           .list-elem .status-list__img-wrapper:hover .status-list__img {
             position: absolute;
-            width: 55px;
-            height: 55px;
-            margin: -27px 0px 0px -10px;
+            width: 65px;
+            height: 65px;
+            margin: -34px 0px 0px -15px;
           }
-          .list-elem
-            > .status-list__img-wrapper:hover
-            ~ .param__status-list__title {
-            margin-left: 45px !important;
+          .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
+            margin-left: 50px;
           }
           .picker-param__status-img {
-            margin: 0 15px 0 20px;
+            margin: 0 15px 0 21px;
           }
           .param__status-choose__title {
             margin-right: auto;
@@ -170,25 +163,19 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
           }
           .active__status-choose #picker-param__status-more:before {
             transform: rotate(180deg);
-            transition: 0.5s ease;
           }
           .active__status-choose .picker-param__status-list {
-            max-height: 300px;
             overflow: auto;
           }
           .picker-param__status-list {
-            position: absolute;
             list-style: none;
-            max-height: 0px;
             width: 360px;
             margin-block-start: 0;
             margin-block-end: 0;
             padding-inline-start: 20px;
-            margin-top: 50px;
             overflow: hidden;
-            transition: 0.4s ease;
             border-radius: 25px;
-            background-color: white;
+            margin-bottom: 18px;
           }
           .active__status-choose
             .picker-param__status-list::-webkit-scrollbar-button {
@@ -200,7 +187,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
 
           .active__status-choose
             .picker-param__status-list::-webkit-scrollbar-track {
-            background-color: tarnsparent;
+            background-color: transparent;
           }
 
           .active__status-choose
@@ -228,15 +215,15 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
           .picker-param__status-list li {
             font-size: 16px;
             letter-spacing: 0.84px;
-            margin-bottom: 19px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
           }
           .picker-param__status-list li:first-child {
-            margin-top: 14px;
+            margin-top: 28px;
           }
           .param__status-list__title {
-            margin-left: 10px;
+            margin-left: 15px;
           }
         `}
       </style>
