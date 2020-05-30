@@ -33,6 +33,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
         <Slider
           infinite={true}
           slidesToShow={4}
+          touchThreshold={200}
           dots={true}
           arrows={false}
           speed={500}

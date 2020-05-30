@@ -9,7 +9,7 @@ const Good1 = {
       src: '#',
     },
   ],
-  name: 'Сумка-табус маленька\nна вилку',
+  name: 'Сумка-тубус на вилку 10л',
   price: 1300,
   specification: {
     volume: '6л',
