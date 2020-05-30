@@ -86,7 +86,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
           .picker-param__status-main {
             display: flex;
             align-items: center;
-            width: -webkit-fill-available;
+            width: 100%;
             margin-top: 7.5px;
           }
           .param__general-title {
