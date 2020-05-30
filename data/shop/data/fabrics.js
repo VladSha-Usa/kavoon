@@ -5,6 +5,10 @@ const Kordura = {
     { src: '/img/wizard-picker/printcolor3.svg', name: 'Волошки' },
     { src: '/img/wizard-picker/printcolor2.svg', name: 'Листя папороті' },
   ],
+  mainColor: [
+    { src: '/img/wizard-picker/field.svg', name: 'Червоний' },
+    { src: '/img/wizard-picker/field2.svg', name: 'Сірий' },
+  ],
 };
 
 const Oxford = {
@@ -17,6 +21,10 @@ const Oxford = {
       name: 'Різнокольорові квіточки',
     },
   ],
+  mainColor: [
+    { src: '/img/wizard-picker/field5.svg', name: 'Голубий' },
+    { src: '/img/wizard-picker/field.svg', name: 'Червоний' },
+  ],
 };
 const RainBlaBla = {
   name: 'РейнБлаБла',
@@ -27,6 +35,10 @@ const RainBlaBla = {
       src: '/img/wizard-picker/printcolor1.svg',
       name: 'Різнокольорові квіточки',
     },
+  ],
+  mainColor: [
+    { src: '/img/wizard-picker/field2.svg', name: 'Сірий' },
+    { src: '/img/wizard-picker/field5.svg', name: 'Голубий' },
   ],
 };
 

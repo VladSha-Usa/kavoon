@@ -1,14 +1,8 @@
 import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
-import dataOfGood from "../../data/shop/data/goods";
-const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
+const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
   const [isOpened, setOpened] = useState(false);
-  const [contentPicker, setContentPicker] = useState(
-    dataOfGood
-      .filter((el) => el.id === "bag-big-fork")
-      .map((el) => el.fabrics)[0]
-      .map((el) => el)
-  );
+  const [contentPicker, setContentPicker] = useState(data);
   const [valueForRender, setValueForRender] = useState(true);
   const ref = useRef();
   useOutsideClick(ref, () => {
@@ -71,6 +65,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex }) => {
             line-height: normal;
             letter-spacing: 0.85px;
             color: var(--texticonscolor);
+            margin-bottom: 70px;
           }
           .picker-param__status {
             position: absolute;
