@@ -19,10 +19,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
         <span className="param__general-title">{mainTheme}</span>
         <div className="picker-param__status" ref={ref}>
           <div className="picker-param__status-main">
-            <img
-              className="picker-param__status-img"
-              src={selectedItem.src}
-            />
+            <img className="picker-param__status-img" src={selectedItem.src} />
             <span className="param__status-choose__title">
               {selectedItem.name}
             </span>
@@ -34,16 +31,16 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             ></button>
           </div>
           <ul className="picker-param__status-list">
-            {items
-              .filter(item => item !== selectedItem)
-              .map((item, i) => (
+            {items.map((item, i) => (
               <li
                 onClick={() => {
                   setSelectedItem(item);
                   setOpened(false);
                 }}
                 key={i}
-                className="list-elem"
+                className={
+                  item === selectedItem ? "list-elem-active" : "list-elem"
+                }
               >
                 <span className="status-list__img-wrapper">
                   <img className="status-list__img" src={item.src} />
@@ -98,6 +95,21 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           }
           .status-list__img-wrapper {
             position: relative;
+          }
+          .list-elem-active {
+            color: var(--primarycolor);
+          }
+          .list-elem-active .status-list__img-wrapper:after {
+            content: "";
+            position: absolute;
+            width: 44px;
+            display: block;
+            height: 44px;
+            object-fit: contain;
+            border: solid 1.5px #e15151;
+            border-radius: 50%;
+            margin-top: -45px;
+            margin-left: -6px;
           }
           .status-list__img {
             height: 35px;
@@ -157,7 +169,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             overflow: hidden;
             margin-bottom: 18px;
           }
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-button {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-button {
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
