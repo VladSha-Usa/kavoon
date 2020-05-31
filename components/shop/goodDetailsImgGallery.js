@@ -34,7 +34,8 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           infinite={true}
           slidesToShow={4}
           touchThreshold={200}
-          // slidesToScroll={1}
+          dots={true}
+          arrows={false}
           speed={500}
         >
           {galleryContent.map((slideContent, index) => (
@@ -131,7 +132,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           outline: none;
           cursor: pointer;
-          width: 277px; // if we make agree with decreasing width of slide, I will remove this comment
+          width: 277px;
           height: 203px;
         }
         .img-subtext {
@@ -158,12 +159,41 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           border-radius: 5px;
         }
       `}</style>
-      <style>
+      <style jsx global>
         {`
-        .gallery-wrapper .slick-slide {
-          // width: 300px !important;
-          // margin-right: 15px;
-        }
+          .gallery-wrapper .slick-list {
+            padding-bottom: 10px;
+          }
+          .gallery-wrapper .slick-dots li button {
+            width: 8px;
+            height: 8px;
+          }
+          .gallery-wrapper .slick-dots li {
+            width: 8px;
+            height: 8px;
+          }
+          .gallery-wrapper .slick-dots li button:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            object-fit: contain;
+            opacity: 0.25;
+            background-color: var(--primarycolor);
+            border-radius: 50%;
+          }
+          .gallery-wrapper .slick-dots .slick-active button {
+            width: 15px;
+            height: 15px;
+          }
+          .gallery-wrapper .slick-dots .slick-active {
+            width: 15px;
+            height: 15px;
+          }
+          .gallery-wrapper .slick-dots .slick-active button:before {
+            opacity: 1;
+            width: 15px;
+            height: 15px;
+          }
         `}
       </style>
     </>

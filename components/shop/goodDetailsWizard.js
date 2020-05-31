@@ -13,7 +13,8 @@ const GoodDetailsWizard = () => {
 
   return (
     <>
-      <div className={wizardWrap}>
+      <div className="good-wizard-wrapper">
+        <GoodDetailsWizardTitle dataForTitle={DataGood1} />
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
           zIndex="20"
@@ -38,7 +39,7 @@ const GoodDetailsWizard = () => {
         />
       </div>
       <style jsx>{`
-        .${wizardWrap} {
+        .good-wizard-wrapper {
           width: 380px;
           margin-left: 96px;
         }
