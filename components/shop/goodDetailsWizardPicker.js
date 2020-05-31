@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
-const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
+
+const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
   const [isOpened, setOpened] = useState(false);
-  const [contentPicker, setContentPicker] = useState(data);
-  const [valueForRender, setValueForRender] = useState(true);
+  const [selectedItem, setSelectedItem] = selected;
+
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
@@ -20,10 +21,10 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
           <div className="picker-param__status-main">
             <img
               className="picker-param__status-img"
-              src={contentPicker[0].src}
+              src={selectedItem.src}
             />
             <span className="param__status-choose__title">
-              {contentPicker[0].name}
+              {selectedItem.name}
             </span>
             <button
               id="picker-param__status-more"
@@ -33,21 +34,21 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
             ></button>
           </div>
           <ul className="picker-param__status-list">
-            {contentPicker.map((el, i) => (
+            {items
+              .filter(item => item !== selectedItem)
+              .map((item, i) => (
               <li
                 onClick={() => {
-                  contentPicker.splice(i, 1);
-                  contentPicker.splice(0, 0, el);
-                  setContentPicker(contentPicker);
-                  setValueForRender(!valueForRender);
+                  setSelectedItem(item);
+                  setOpened(false);
                 }}
                 key={i}
                 className={i === 0 ? "list-elem-active" : "list-elem"}
               >
                 <span className="status-list__img-wrapper">
-                  <img className="status-list__img" src={el.src} />
+                  <img className="status-list__img" src={item.src} />
                 </span>
-                <span className="param__status-list__title">{el.name}</span>
+                <span className="param__status-list__title">{item.name}</span>
               </li>
             ))}
           </ul>
@@ -77,7 +78,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, zIndex, data }) => {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            z-index: ${zIndex ?? 10};
+            z-index: ${isOpened ? 1000 : 10};
             transition: 0.3s ease;
           }
           .active__status-choose .picker-param__status {

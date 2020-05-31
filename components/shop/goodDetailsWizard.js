@@ -1,31 +1,31 @@
+import React, { useState, useRef } from "react";
+
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import DataGood1 from "../../data/shop/adapters/good1";
-import dataOfGoods from "../../data/shop/data/goods";
+
+import { bagBigFork } from "../../data/shop/data/goods";
+
 const GoodDetailsWizard = () => {
+  const fabrics = bagBigFork.fabrics;
+  const [selectedFabric, setSelectedFabric] = useState(fabrics[0]);
+  const [selectedPrint, setSelectedPrint] = useState(selectedFabric.prints[0]);
+
   return (
     <>
       <div className="good-wizard-wrapper">
         <GoodDetailsWizardTitle dataForTitle={DataGood1} />
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
-          zIndex="20"
-          data={
-            dataOfGoods
-              .filter((el) => el.id === "bag-big-fork")
-              .map((el) => el.fabrics)[0]
-          }
+          items={fabrics}
+          selected={[ selectedFabric, setSelectedFabric ]}
+
         ></GoodDetailsWizardPicker>
         <GoodDetailsWizardPicker
           mainTheme="Основний колір"
-          zIndex="19"
-          data={
-            dataOfGoods
-              .filter((el) => el.id === "bag-big-fork")
-              .map((el) => el.fabrics)[0]
-              .map((el) => el.mainColor)[0]
-          }
+          items={selectedFabric.prints}
+          selected={[selectedPrint, setSelectedPrint ]}
         ></GoodDetailsWizardPicker>
         <GoodDetailsWizardAddOther
           additionGoodData={DataGood1.additionGoodToCompl}

@@ -19,5 +19,5 @@ const bagBigFork = {
 
 const Goods = [bananaBagSmallFork, bagBigFork];
 
-export { bananaBagSmallFork };
+export { bananaBagSmallFork, bagBigFork };
 export default Goods;
