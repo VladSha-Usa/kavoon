@@ -1,25 +1,50 @@
+import React, { useReducer } from "react";
+
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import DataGood1 from "../../data/shop/adapters/good1";
+
+import { bagBigFork } from "../../data/shop/data/goods";
+
+function fabricReducer(state, action) {
+  switch (action.type) {
+    case "setFabric":
+      return { fabric: action.payload, print: action.payload.prints[0] };
+    case "setPrint":
+      return { fabric: state.fabric, print: action.payload };
+    default:
+      throw new Error();
+  }
+}
+
+function extractAction(dispatch, actionType) {
+  return (payload) => {
+    dispatch({ type: actionType, payload: payload });
+  };
+}
+
 const GoodDetailsWizard = () => {
+  const fabrics = bagBigFork.fabrics;
+
+  const [state, dispatch] = useReducer(fabricReducer, {
+    fabric: fabrics[0],
+    print: fabrics[0].prints[0],
+  });
+
   return (
     <>
       <div className="good-wizard-wrapper">
         <GoodDetailsWizardTitle dataForTitle={DataGood1} />
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
-          src="/img/wizard-picker/material-oksford.png"
-          srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
-          nameOfChoose="Оксфорд тканина"
-          zIndex="20"
+          items={fabrics}
+          selected={[state.fabric, extractAction(dispatch, "setFabric")]}
         ></GoodDetailsWizardPicker>
         <GoodDetailsWizardPicker
-          mainTheme="Основна тканина"
-          src="/img/wizard-picker/material-oksford.png"
-          srcSet="/img/wizard-picker/material-oksford@2x.png 2x, img/wizard-picker/material-oksford@3x.png 3x"
-          nameOfChoose="Оксфорд тканина"
-          zIndex="19"
+          mainTheme="Основний колір"
+          items={state.fabric.prints}
+          selected={[state.print, extractAction(dispatch, "setPrint")]}
         ></GoodDetailsWizardPicker>
         <GoodDetailsWizardAddOther
           additionGoodData={DataGood1.additionGoodToCompl}

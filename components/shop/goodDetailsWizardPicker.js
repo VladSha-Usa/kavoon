@@ -1,19 +1,9 @@
 import React, { useState, useRef } from "react";
 import useOutsideClick from "./useOutsideClick";
 
-const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex }) => {
-  const picker = "good-wizard__picker-wrapper";
-  const parameters = "good-wizard__picker-param";
-  const whatChoose = "good-wizard__picker-param__general-title";
-  const statusOfChoose = "good-wizard__picker-param__status";
-  const titleOfChoose = "good-wizard__picker-param__status-choose__title";
-  const moreVariant = "good-wizard__picker-param__status-more";
-  const imgOfTextile = "good-wizard__picker-param__status-img";
-  const listOfVariants = "good-wizard__picker-param__status-list";
-  const imgVariant = "good-wizard__picker-param__status-list__img";
-  const titleVariant = "good-wizard__picker-param__status-list__title";
-  const statusOfChooseMain = "good-wizard__picker-param__status-main";
-  let [isOpened, setOpened] = useState(false);
+const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
+  const [isOpened, setOpened] = useState(false);
+  const [selectedItem, setSelectedItem] = selected;
 
   const ref = useRef();
   useOutsideClick(ref, () => {
@@ -21,78 +11,49 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex 
   });
   return (
     <>
-      <div className={parameters}>
-        <span className={whatChoose}>{mainTheme}</span>
-        <div
-          className={
-            statusOfChoose + (isOpened ? " active__status-choose" : "")
-          }
-          ref={ref}
-        >
-          <div className={statusOfChooseMain}>
-            <img className={imgOfTextile} src={src} srcSet={srcSet} />
-            <span className={titleOfChoose}>{nameOfChoose}</span>
+      <div
+        className={
+          "wizard__picker-param " + (isOpened ? " active__status-choose" : "")
+        }
+      >
+        <span className="param__general-title">{mainTheme}</span>
+        <div className="picker-param__status" ref={ref}>
+          <div className="picker-param__status-main">
+            <img className="picker-param__status-img" src={selectedItem.src} />
+            <span className="param__status-choose__title">
+              {selectedItem.name}
+            </span>
             <button
-              id={moreVariant}
-              onClick={() => setOpened(!isOpened)}
+              id="picker-param__status-more"
+              onClick={() => {
+                setOpened(!isOpened);
+              }}
             ></button>
           </div>
-          <ul className={listOfVariants}>
-            <li>
-              <img className={imgVariant} src="/img/wizard-picker/field.svg" />
-              <span className={titleVariant}>Червоний</span>
-            </li>
-            <li>
-              <img
-                className={imgVariant}
-                src="/img/wizard-picker/printcolor1.svg"
-              />
-              <span className={titleVariant}>Прінт 1- Назва Прінта</span>
-            </li>
-            <li>
-              <img
-                className={imgVariant}
-                src="/img/wizard-picker/printcolor2.svg"
-              />
-              <span className={titleVariant}>
-                Прінт 2 -т Довга назва прінта
-              </span>
-            </li>
-            <li>
-              <img
-                className={imgVariant}
-                src="/img/wizard-picker/printcolor3.svg"
-              />
-              <span className={titleVariant}>Прінт 3</span>
-            </li>
-            <li>
-              <img className={imgVariant} src="/img/wizard-picker/field5.svg" />
-              <span className={titleVariant}>синій колір</span>
-            </li>
-            <li>
-              <img className={imgVariant} src="/img/wizard-picker/field2.svg" />
-              <span className={titleVariant}>Червоний</span>
-            </li>
-            <li>
-              <img
-                className={imgVariant}
-                src="/img/wizard-picker/printcolor3.svg"
-              />
-              <span className={titleVariant}>Червоний</span>
-            </li>
-            <li>
-              <img
-                className={imgVariant}
-                src="/img/wizard-picker/printcolor3.svg"
-              />
-              <span className={titleVariant}>Червоний</span>
-            </li>
+          <ul className="picker-param__status-list">
+            {items.map((item, i) => (
+              <li
+                onClick={() => {
+                  setSelectedItem(item);
+                  setOpened(false);
+                }}
+                key={i}
+                className={
+                  item === selectedItem ? "list-elem-active" : "list-elem"
+                }
+              >
+                <span className="status-list__img-wrapper">
+                  <img className="status-list__img" src={item.src} />
+                </span>
+                <span className="param__status-list__title">{item.name}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <style jsx>
         {`
-          .${parameters} {
+          .wizard__picker-param {
             width: 380px;
             font-family: Montserrat;
             font-size: 16px;
@@ -102,44 +63,78 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex 
             line-height: normal;
             letter-spacing: 0.85px;
             color: var(--texticonscolor);
-            margin-bottom: 75px;
+            margin-bottom: 70px;
           }
-          .${statusOfChoose} {
+          .picker-param__status {
             position: absolute;
             width: 380px;
-            height: 50px;
+            max-height: 50px;
             border-radius: 25px;
             box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
             background-color: white;
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
+            z-index: ${isOpened ? 1000 : 10};
             transition: 0.3s ease;
-            z-index: ${ zIndex ?? 10 };
           }
-          .active__status-choose {
-            height: 350px;
+          .active__status-choose .picker-param__status {
+            max-height: 300px;
           }
-          .${picker} {
-          }
-          .${statusOfChooseMain} {
+          .picker-param__status-main {
             display: flex;
             align-items: center;
-            width: -webkit-fill-available;
-            height: 50px;
+            width: 100%;
+            margin-top: 7.5px;
           }
-          .${whatChoose} {
+          .param__general-title {
             display: block;
             letter-spacing: 0.84px;
             margin-bottom: 10px;
             font-size: 14px;
           }
-          .${imgOfTextile} {
-            margin: 0 15px 0 20px;
+          .status-list__img-wrapper {
+            position: relative;
           }
-          .${titleOfChoose} {
+          .list-elem-active {
+            color: var(--primarycolor);
+          }
+          .list-elem-active .status-list__img-wrapper:after {
+            content: "";
+            position: absolute;
+            width: 44px;
+            display: block;
+            height: 44px;
+            object-fit: contain;
+            border: solid 1.5px #e15151;
+            border-radius: 50%;
+            margin-top: -45px;
+            margin-left: -6px;
+          }
+          .status-list__img {
+            height: 35px;
+            width: 35px;
+          }
+          .list-elem {
+            cursor: pointer;
+            height: 39px;
+          }
+          .list-elem .status-list__img-wrapper:hover .status-list__img {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            margin: -34px 0px 0px -15px;
+          }
+          .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
+            margin-left: 50px;
+          }
+          .picker-param__status-img {
+            margin: 0 15px 0 21px;
+          }
+          .param__status-choose__title {
             margin-right: auto;
           }
-          #${moreVariant} {
+          #picker-param__status-more {
             padding: 0;
             border-width: 0;
             height: 20px;
@@ -149,7 +144,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex 
             outline: none;
             margin-right: 18px;
           }
-          #${moreVariant}:before {
+          #picker-param__status-more:before {
             content: "";
             position: absolute;
             height: 9px;
@@ -159,71 +154,65 @@ const GoodDetailsWizardPicker = ({ mainTheme, src, srcSet, nameOfChoose, zIndex 
             margin: -4.5px 0 0 -8px;
             transition: 0.5s ease;
           }
-          .active__status-choose #${moreVariant}:before {
+          .active__status-choose #picker-param__status-more:before {
             transform: rotate(180deg);
-            transition: 0.5s ease;
           }
-          .active__status-choose .${listOfVariants} {
-            height: 270px;
+          .active__status-choose .picker-param__status-list {
+            overflow: auto;
           }
-          .${listOfVariants} {
-            position: absolute;
+          .picker-param__status-list {
             list-style: none;
-            height: 0px;
             width: 360px;
             margin-block-start: 0;
             margin-block-end: 0;
             padding-inline-start: 20px;
-            margin-top: 50px;
-            overflow: auto;
-            transition: 0.3s ease;
-            border-radius: 25px;
-            background-color: white;
+            overflow: hidden;
+            margin-bottom: 18px;
           }
-          .${listOfVariants}::-webkit-scrollbar-button {
-            background-image: url("");
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-button {
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
             display: none;
           }
 
-          .${listOfVariants}::-webkit-scrollbar-track {
-            background-color: tarnsparent;
+          .active__status-choose .picker-param__status-list::-webkit-scrollbar-track {
+            background-color: transparent;
           }
 
-          .${listOfVariants}::-webkit-scrollbar-thumb {
+          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb {
             -webkit-border-radius: 2, 5px;
             border-radius: 2.5px;
             background-color: #ced5e1;
           }
 
-          .${listOfVariants}::-webkit-scrollbar-thumb:hover {
+          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb:hover {
             background-color: #ced5e1;
           }
 
-          .${listOfVariants}::-webkit-resizer {
+          .active__status-choose .picker-param__status-list::-webkit-resizer {
             background-image: url("");
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
           }
 
-          .${listOfVariants}::-webkit-scrollbar {
+          .active__status-choose .picker-param__status-list::-webkit-scrollbar {
             width: 5px;
           }
-          .${listOfVariants} li {
+          .picker-param__status-list li {
             font-size: 16px;
             letter-spacing: 0.84px;
-            margin-bottom: 19px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
           }
-          .${listOfVariants} li:first-child {
-            margin-top: 14px;
+          .picker-param__status-list li:first-child {
+            margin-top: 28px;
           }
-          .${titleVariant} {
-            margin-left: 10px;
+          .param__status-list__title {
+            margin-left: 15px;
           }
         `}
       </style>
