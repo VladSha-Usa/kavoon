@@ -4,13 +4,6 @@ import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import DataGood1 from "../../data/shop/adapters/good1";
 import dataOfGoods from "../../data/shop/data/goods";
 const GoodDetailsWizard = () => {
-  const wizardWrap = "good-wizard-wrapper";
-  console.log(
-    dataOfGoods
-      .filter((el) => el.id === "bag-big-fork")
-      .map((el) => el.fabrics)[0].map(el => el.mainColor)[0]
-  );
-
   return (
     <>
       <div className="good-wizard-wrapper">
