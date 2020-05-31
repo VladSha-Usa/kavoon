@@ -1,15 +1,12 @@
-const GoodDetailsWizardTitle = () => {
-  const title = "good-wizard__title";
-  const nameCapacity = "good-wizard__title-description";
-  const price = "good-wizard__title-price";
+const GoodDetailsWizardTitle = ({ dataForTitle }) => {
   return (
     <>
-      <div className={title}>
-        <span className={nameCapacity}>Сумка-тубус на вилку 10л.</span>
-        <span className={price}>1 300 грн</span>
+      <div className="wizard__title">
+        <span className="wizard__title-description">{dataForTitle.name}.</span>
+        <span className="wizard__title-price">{dataForTitle.price} грн</span>
       </div>
       <style jsx>{`
-        .${title} {
+        .wizard__title {
           font-family: Montserrat;
           font-size: 24px;
           font-weight: 600;
@@ -22,10 +19,10 @@ const GoodDetailsWizardTitle = () => {
           flex-direction: column;
           margin-bottom: 36px;
         }
-        .${nameCapacity} {
+        .wizard__title-description {
           margin-bottom: 15px;
         }
-        .${price} {
+        .wizard__title-price {
           color: var(--primarycolor);
         }
       `}</style>
