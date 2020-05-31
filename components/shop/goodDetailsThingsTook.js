@@ -1,5 +1,6 @@
 import Popup from "reactjs-popup";
-const GoodDetailsThingsTook = ({ things }) => {
+import GoodDiscountInComplect from "./goodDiscountInComplect";
+const GoodDetailsThingsTook = ({ things, сontent }) => {
   return (
     <>
       <div className="taken-things-wrapper">
@@ -28,42 +29,15 @@ const GoodDetailsThingsTook = ({ things }) => {
                     <img src="/img/good-to-complect-img/cancel-icon.svg" />
                   </a>
                   <div className="header">Замов одразу весь комлект</div>
+                  <div className="sub-title-discount">
+                    Якщо замовляти весь комлект разом, ми даємо знижку{" "}
+                    <span className="amount-percent">- 10%</span>
+                  </div>
                   <div className="content">
                     <div className="goods-to-complect-wrapper">
-                      <div className="good-to-complect">
-                        <img
-                          src="/img/good-to-complect-img/photo-1.jpg"
-                          srcSet="/img/good-to-complect-img/photo-1@2x.jpg 2x, img/good-to-complect-img/photo-1@3x.jpg 3x"
-                        />
-                        <span className="good-title">
-                          Сумка-тубус
-                          <br /> на вилку.
-                        </span>
-                      </div>
-                      <div className="good-to-complect">
-                        <img
-                          src="/img/good-to-complect-img/photo-1.jpg"
-                          srcSet="/img/good-to-complect-img/photo-1@2x.jpg 2x, img/good-to-complect-img/photo-1@3x.jpg 3x"
-                        />
-                        <span className="good-title">
-                          Сумка-тубус
-                          <br /> на вилку 2
-                        </span>
-                      </div>
-                      <div className="good-to-complect">
-                        <img
-                          src="/img/good-to-complect-img/photo-1.jpg"
-                          srcSet="/img/good-to-complect-img/photo-1@2x.jpg 2x, img/good-to-complect-img/photo-1@3x.jpg 3x"
-                        />
-                        <span className="good-title">
-                          Сумка-тубус
-                          <br /> на вилку 3
-                        </span>
-                      </div>
-                    </div>
-                    <div className="sub-title-discount">
-                      Якщо замовляти весь комлект разом, ми даємо знижку -{" "}
-                      <span className="amount-percent">10%</span>
+                      {сontent.allKitDiscount.map((good) => (
+                        <GoodDiscountInComplect content={good} />
+                      ))}
                     </div>
                     <div className="price-submit-wrapper">
                       <div className="price-inf">
@@ -125,7 +99,7 @@ const GoodDetailsThingsTook = ({ things }) => {
           margin-top: 18px;
           margin-bottom: 41px;
           width: 614px;
-          height: 377px
+          height: 377px;
         }
         .img-large-sub-question {
           margin-bottom: 9px;
@@ -216,71 +190,43 @@ const GoodDetailsThingsTook = ({ things }) => {
         .complect-popup .header {
           text-align: center;
           margin-left: 12px;
-          margin-bottom: 31px;
+          margin-bottom: 10px;
+          font-size: 20px;
+          padding-top: 8px;
         }
         .complect-popup .goods-to-complect-wrapper {
           display: flex;
-          justify-content: space-between;
-          padding: 0px 28px;
-          margin-bottom: 27px;
-        }
-        .complect-popup .good-to-complect:nth-child(n + 2):after {
-          content: "";
-          position: absolute;
-          background-image: url("/img/good-to-complect-img/plus.svg");
-          height: 18px;
-          width: 18px;
-          margin-top: 66px;
-          margin-left: -49px;
-        }
-        .complect-popup .good-to-complect {
-          display: flex;
           flex-direction: column;
-        }
-        .complect-popup .good-to-complect img {
-          object-fit: contain;
-          margin-bottom: 10px;
-          width: 120px;
-          height: 150px;
-        }
-        .complect-popup .good-to-complect .good-title {
-          text-align: center;
-          font-size: 16px;
-          line-height: 1.63;
+          padding-left: 4px;
+          margin-bottom: 8px;
         }
         .complect-popup .price-submit-wrapper {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 14px;
+          padding: 0 3px;
         }
         .complect-popup .price-inf .price-intro {
-          padding-right: 16px;
+          padding-right: 11px;
         }
         .complect-popup .price-inf .price-prev {
-          padding-right: 16px;
+          padding-right: 10px;
           font-weight: 500;
           position: relative;
-        }
-        .complect-popup .price-inf .price-prev:after {
-          content: "";
-          position: absolute;
-          width: 87px;
-          height: 1px;
-          background-color: var(--texticonscolor);
-          top: calc(50%);
-          right: calc(50% - 36px);
+          text-decoration: line-through;
         }
         .complect-popup .price-inf .price-new {
           color: var(--primarycolor);
+          font-size: 20px;
         }
         .complect-popup .sub-title-discount {
           font-weight: 500;
           letter-spacing: 0.84px;
           font-size: 16px;
-          margin-bottom: 27px;
+          margin-bottom: 12px;
         }
         .complect-popup .sub-title-discount .amount-percent {
+          color: var(--primarycolor);
           font-weight: 600;
         }
         .complect-popup .order-btn {
@@ -293,7 +239,7 @@ const GoodDetailsThingsTook = ({ things }) => {
           letter-spacing: 0.75px;
           color: #fff;
           border: none;
-          width: 170px;
+          width: 200px;
           height: 50px;
           border-radius: 25px;
           box-shadow: 0 10px 32px 0 rgba(13, 26, 113, 0.2);
