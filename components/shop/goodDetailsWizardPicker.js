@@ -35,7 +35,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           </div>
           <ul className="picker-param__status-list">
             {items
-              .filter(item => item !== selectedItem)
+              //.filter(item => item !== selectedItem)
               .map((item, i) => (
               <li
                 onClick={() => {
@@ -43,7 +43,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
                   setOpened(false);
                 }}
                 key={i}
-                className={i === 0 ? "list-elem-active" : "list-elem"}
+                className={ item === selectedItem ? "list-elem-active" : "list-elem"}
               >
                 <span className="status-list__img-wrapper">
                   <img className="status-list__img" src={item.src} />
