@@ -12,10 +12,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
   return (
     <>
       <div
-        className={
-          "wizard__picker-param " + (isOpened ? " active__status-choose" : "")
-        }
-      >
+        className="wizard__picker-param">
         <span className="param__general-title">{mainTheme}</span>
         <div className="picker-param__status" ref={ref}>
           <div className="picker-param__status-main">
@@ -68,24 +65,21 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           .picker-param__status {
             position: absolute;
             width: 380px;
-            max-height: 50px;
+            max-height: ${isOpened ? 300 : 50}px;
             border-radius: 25px;
             box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
             background-color: white;
-            display: flex;
             flex-direction: column;
             align-items: flex-start;
-            z-index: ${isOpened ? 1000 : 10};
+            overflow: hidden;
             transition: 0.3s ease;
-          }
-          .active__status-choose .picker-param__status {
-            max-height: 300px;
+            z-index: ${isOpened ? 1000 : 10};
           }
           .picker-param__status-main {
             display: flex;
             align-items: center;
             width: 100%;
-            margin-top: 7.5px;
+            height: 50px;
           }
           .param__general-title {
             display: block;
@@ -157,17 +151,15 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           .active__status-choose #picker-param__status-more:before {
             transform: rotate(180deg);
           }
-          .active__status-choose .picker-param__status-list {
-            overflow: auto;
-          }
           .picker-param__status-list {
             list-style: none;
             width: 360px;
             margin-block-start: 0;
             margin-block-end: 0;
             padding-inline-start: 20px;
-            overflow: hidden;
-            margin-bottom: 18px;
+            margin-bottom: 5px;
+            max-height: 250px;
+            overflow: scroll;
           }
           .active__status-choose
             .picker-param__status-list::-webkit-scrollbar-button {
