@@ -94,7 +94,7 @@ const Good1 = () => {
       </div>
       <div className="good-details-things-took">
         <div className="page-content">
-          <GoodDetailsThingsTook things={TakenThings} />
+          <GoodDetailsThingsTook things={TakenThings} сontent={Good1Data} />
         </div>
       </div>
       <div className="good-details-img-gallery">
