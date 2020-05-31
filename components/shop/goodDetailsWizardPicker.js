@@ -35,7 +35,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           </div>
           <ul className="picker-param__status-list">
             {items
-              //.filter(item => item !== selectedItem)
+              .filter(item => item !== selectedItem)
               .map((item, i) => (
               <li
                 onClick={() => {
@@ -43,7 +43,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
                   setOpened(false);
                 }}
                 key={i}
-                className={ item === selectedItem ? "list-elem-active" : "list-elem"}
+                className="list-elem"
               >
                 <span className="status-list__img-wrapper">
                   <img className="status-list__img" src={item.src} />
@@ -96,23 +96,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             margin-bottom: 10px;
             font-size: 14px;
           }
-          .list-elem-active {
-            color: var(--primarycolor);
-          }
           .status-list__img-wrapper {
             position: relative;
-          }
-          .list-elem-active .status-list__img-wrapper:after {
-            content: "";
-            position: absolute;
-            width: 44px;
-            display: block;
-            height: 44px;
-            object-fit: contain;
-            border: solid 1.5px #e15151;
-            border-radius: 50%;
-            margin-top: -45px;
-            margin-left: -6px;
           }
           .status-list__img {
             height: 35px;
@@ -170,7 +155,6 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             margin-block-end: 0;
             padding-inline-start: 20px;
             overflow: hidden;
-            border-radius: 25px;
             margin-bottom: 18px;
           }
           .active__status-choose .picker-param__status-list::-webkit-scrollbar-button {
