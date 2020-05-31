@@ -72,9 +72,9 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             border-radius: 25px;
             box-shadow: 0 6px 32px -6px rgb(194, 197, 199);
             background-color: white;
-            display: flex;
             flex-direction: column;
             align-items: flex-start;
+            overflow: hidden;
             z-index: ${isOpened ? 1000 : 10};
             transition: 0.3s ease;
           }
