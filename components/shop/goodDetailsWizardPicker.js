@@ -11,8 +11,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
   });
   return (
     <>
-      <div
-        className="wizard__picker-param">
+      <div className="wizard__picker-param">
         <span className="param__general-title">{mainTheme}</span>
         <div className="picker-param__status" ref={ref}>
           <div className="picker-param__status-main">
@@ -73,7 +72,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             align-items: flex-start;
             overflow: hidden;
             transition: 0.3s ease;
-            z-index: ${isOpened ? 1000 : 10};
+            z-index: ${isOpened ? 800 : 10};
           }
           .picker-param__status-main {
             display: flex;
@@ -148,8 +147,8 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             margin: -4.5px 0 0 -8px;
             transition: 0.5s ease;
           }
-          .active__status-choose #picker-param__status-more:before {
-            transform: rotate(180deg);
+          #picker-param__status-more:before {
+            transform: ${isOpened ? "rotate(180deg)" : ""};
           }
           .picker-param__status-list {
             list-style: none;
@@ -159,38 +158,37 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             padding-inline-start: 20px;
             margin-bottom: 5px;
             max-height: 250px;
-            overflow: scroll;
+            overflow-y: auto;
           }
-          .active__status-choose
-            .picker-param__status-list::-webkit-scrollbar-button {
+          .picker-param__status-list::-webkit-scrollbar-button {
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
             display: none;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-track {
+          .picker-param__status-list::-webkit-scrollbar-track {
             background-color: transparent;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb {
+          .picker-param__status-list::-webkit-scrollbar-thumb {
             -webkit-border-radius: 2, 5px;
             border-radius: 2.5px;
             background-color: #ced5e1;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb:hover {
+          .picker-param__status-list::-webkit-scrollbar-thumb:hover {
             background-color: #ced5e1;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-resizer {
+          .picker-param__status-list::-webkit-resizer {
             background-image: url("");
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar {
+          .picker-param__status-list::-webkit-scrollbar {
             width: 5px;
           }
           .picker-param__status-list li {
@@ -201,7 +199,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             align-items: center;
           }
           .picker-param__status-list li:first-child {
-            margin-top: 28px;
+            margin-top: 20px;
           }
           .param__status-list__title {
             margin-left: 15px;
