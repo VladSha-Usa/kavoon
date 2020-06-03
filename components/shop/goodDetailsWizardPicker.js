@@ -177,17 +177,20 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             display: none;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-track {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-track {
             background-color: transparent;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-thumb {
             -webkit-border-radius: 2, 5px;
             border-radius: 2.5px;
             background-color: #ced5e1;
           }
 
-          .active__status-choose .picker-param__status-list::-webkit-scrollbar-thumb:hover {
+          .active__status-choose
+            .picker-param__status-list::-webkit-scrollbar-thumb:hover {
             background-color: #ced5e1;
           }
 
