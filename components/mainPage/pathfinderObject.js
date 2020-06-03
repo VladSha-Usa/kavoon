@@ -63,12 +63,12 @@ const PathfinderObject = ({object, direct }) => {
         position: relative;
         z-index: 100;
       }
-      @media only screen and (max-width: 1165px) {
+      @media only screen and (max-width: 1220px) {
          .pathfinder-object-text {
           font-size: 16px;
          }
       }
-      @media only screen and (max-width: 1023px) {
+      @media only screen and (max-width: 1065px) {
         .image-list {
           flex: auto;
           margins-left: auto;
@@ -98,7 +98,6 @@ const PathfinderObject = ({object, direct }) => {
           width: 100%;
           text-align: center;
           font-size: 20px;
-          //margin-top: 20px;
           margin-bottom: 20px;
           font-weight: 500;
           color: var(--texticonscolor);

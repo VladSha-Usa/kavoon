@@ -66,13 +66,15 @@ const Content = ({ classPrefix }) => {
           top: -270px;
           margin-left: auto;
         }
-        @media only screen and (max-width: 1165px) {
-          .content-layout-shop {
+        @media only screen and (max-width: 1220px) {
+          .content-layout {
+            flex-wrap: nowrap;
           }
         }
-        @media only screen and (max-width: 1023px) {
+        @media only screen and (max-width: 1065px) {
           .content-layout {
             padding-top: 40px;
+            flex-wrap: wrap-reverse !important;
           }
           .content-layout-shop {
             margin-right: auto;

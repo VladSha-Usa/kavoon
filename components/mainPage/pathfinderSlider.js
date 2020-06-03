@@ -64,6 +64,7 @@ const PathfinderSlider = ({ images }) => {
         margin: 4px 6px;
         width: 8px;
         height: 8px;
+        cursor: pointer;
         background-image: url('/img/bulletRegular.svg');
       }
      .pathfinder-image-gallery {
@@ -80,7 +81,7 @@ const PathfinderSlider = ({ images }) => {
         overflow: hidden;
       }
 
-      @media only screen and (max-width: 1023px) {
+      @media only screen and (max-width: 1065px) {
         .pathfinder-image-gallery {
           width: 335px;
           height: 280px;

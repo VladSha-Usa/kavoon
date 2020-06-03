@@ -18,7 +18,7 @@ const MainMenu = ({ onClose }) => {
           top: 0,
           width: "100vw",
           height: "100vh",
-          background: "#ffffff"
+          background: "#ffffff",
         }}
         className="burger__menu-wrapper"
       >
@@ -29,11 +29,15 @@ const MainMenu = ({ onClose }) => {
             width: "20px",
             height: "20px",
             top: "20px",
-            right: "20px"
+            right: "20px",
           }}
           onClick={() => onClose()}
         >
-          <img style={{ margin: "auto" }} src="/img/cancelIcon.png"></img>
+          <img
+            style={{ margin: "auto" }}
+            src="/img/cancelIcon.png"
+            srcSet="/img/cancelIcon@2x.png 2x, img/cancelIcon@3x.png 3x"
+          ></img>
         </div>
         <div className="burger__menu-banner">
           <nav>

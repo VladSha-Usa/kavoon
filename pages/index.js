@@ -105,10 +105,8 @@ const Home = () => {
           }
 
           .map-image {
-            /* Set a specific height */
             height: 100vh;
-
-            /* Create the parallax scrolling effect */
+            overflow: hidden;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -153,15 +151,15 @@ const Home = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1165px) {
+          @media only screen and (max-width: 1220px) {
             .page-content {
-              max-width: 960px;
+              max-width: 1010px;
               margin-left: auto;
               margin-right: auto;
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: 1065px) {
             .page-content {
               width: 335px;
               margin-left: auto;
@@ -176,9 +174,6 @@ const Home = () => {
             .footer-background {
               height: 215px;
             }
-          }
-
-          @media only screen and (max-width: 1165px) {
           }
         `}
       </style>
