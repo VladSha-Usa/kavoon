@@ -269,7 +269,7 @@ const BlockItem = ({
             width: ${style.small.imageWidth};
           }
           .${titleClass} {
-            width: ${style.small.width};
+            width: ${style.small.imageWidth};
           }
           .${vertBackgroundClass} {
             font-size: ${style.small.fontSize}px;
