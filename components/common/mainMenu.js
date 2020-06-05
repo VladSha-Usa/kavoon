@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import ImageLink from "../common/imageLink";
+import LanguagePopupMobile from "./languagePopupMobile";
 
 const MainMenu = ({ onClose }) => {
   useEffect(() => {
@@ -8,20 +9,11 @@ const MainMenu = ({ onClose }) => {
       document.body.classList.remove("no-scroll");
     };
   });
+  const [popupLang, setPopupLang] = useState(false);
   return (
     <>
-      <div
-        style={{
-          zIndex: 2000,
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100vw",
-          height: "100vh",
-          background: "#ffffff",
-        }}
-        className="burger__menu-wrapper"
-      >
+      {popupLang && <LanguagePopupMobile onClose={() => setPopupLang(false)} />}
+      <div className="burger__menu-wrapper">
         <div
           style={{
             alignItems: "center",
@@ -64,35 +56,13 @@ const MainMenu = ({ onClose }) => {
           </nav>
         </div>
         <div className="burger__menu-language">
-          <nav>
-            <div className="lang-wrapper">
-              <span className="choosen-lang">
-                <img
-                  src="/img/country-flag-ua.png"
-                  srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-                />
-                Українська
-              </span>
-              <ul className="available__list-lang">
-                <li>
-                  <span className="available-lang">
-                    <img
-                      src="/img/country-flag-ua.png"
-                      srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-                    />
-                    Українська
-                  </span>
-                </li>
-                <li>
-                  <span className="available-lang">
-                    <img
-                      src="/img/country-flag-en.png"
-                      srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
-                    />
-                    English
-                  </span>
-                </li>
-              </ul>
+          <nav onClick={() => setPopupLang(true)}>
+            <div className="choosen-lang">
+              <img
+                src="/img/country-flag-ua.png"
+                srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+              />
+              Українська
             </div>
           </nav>
         </div>
@@ -128,21 +98,37 @@ const MainMenu = ({ onClose }) => {
       </div>
       <style jsx>{`
         .burger__menu-wrapper {
+          overflow: auto;
           display: flex;
           flex-direction: column;
           align-items: center;
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0) -3%,
+              rgba(255, 255, 255, 0.68) 117%
+            ),
+            url(/img/map-image.png);
+          z-index: 2000;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: #ffffff;
         }
         .burger__menu-banner {
           margin: 80px 0px 96px;
         }
-
         .burger__menu-navigation {
           display: flex;
           flex-direction: column;
           text-align: center;
           margin-bottom: 40px;
         }
-
         .burger__menu-navigation {
           display: flex;
           font-family: Montserrat;
@@ -158,7 +144,6 @@ const MainMenu = ({ onClose }) => {
           text-decoration: none;
           color: #061434;
         }
-
         a:visited {
           text-decoration: none;
           color: #061434;
@@ -173,7 +158,6 @@ const MainMenu = ({ onClose }) => {
         .menu-link a:hover {
           color: var(--primarycolor);
         }
-
         .menu-link a::after {
           content: "";
           display: block;
@@ -184,16 +168,13 @@ const MainMenu = ({ onClose }) => {
           height: 2px;
           background: var(--primarycolor);
         }
-
         .menu-link a:hover::after {
           width: 100%;
         }
         .burger__menu-language {
           margin-bottom: 32px;
         }
-
-        .choosen-lang,
-        .available__list-lang .available-lang {
+        .choosen-lang {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -204,75 +185,16 @@ const MainMenu = ({ onClose }) => {
           font-family: Montserrat;
           font-size: 20px;
           font-weight: 500;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
           letter-spacing: 0.94px;
-          color: #061434;
+          padding-bottom: 8px;
+          color: var(--primarycolor);
         }
-
-        .choosen-lang,
-        .available__list-lang .available-lang:focus {
+        .choosen-lang:focus {
           outline: none;
         }
-
-        .choosen-lang img,
-        .available__list-lang .available-lang img {
+        .choosen-lang img {
           position: absolute;
           margin-left: -89px;
-        }
-
-        .available__list-lang li:first-child {
-          padding-top: 14px;
-        }
-
-        .available__list-lang li:nth-child(2) {
-          padding-top: 4px;
-        }
-
-        .available__list-lang li:nth-child(2) .available-lang img {
-          margin-left: -66px;
-        }
-
-        .choosen-lang {
-          padding-bottom: 8px;
-        }
-
-        .lang-wrapper:hover > .choosen-lang {
-          color: var(--primarycolor);
-        }
-
-        .available__list-lang .available-lang:hover {
-          color: var(--primarycolor);
-        }
-
-        .lang-wrapper:hover > .available__list-lang {
-          display: flex;
-        }
-
-        .available__list-lang {
-          display: none;
-          flex-direction: column;
-          margin-left: -11px;
-          margin-block-start: 0;
-          margin-block-end: 0;
-          padding-inline-start: 10px;
-          position: absolute;
-          list-style: none;
-          width: 170px;
-          height: 125px;
-          border-radius: 10px;
-          box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
-          background-color: #fff;
-        }
-
-        .available__list-lang:after {
-          content: "";
-          position: absolute;
-          top: -19px;
-          left: 14px;
-          border: 7px solid transparent;
-          border-bottom: 15px solid #fff;
         }
         .burger__menu-socials {
           display: flex;

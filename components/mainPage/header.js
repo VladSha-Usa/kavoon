@@ -113,10 +113,7 @@ const Header = () => {
         <div className={hamburgerClass}>
           <nav>
             <div onClick={() => setPopup(true)}>
-              <img
-                src="/img/menu.png"
-                srcSet="/img/menu@2x.png 2x, img/menu@3x.png 3x"
-              />
+              <img src="/img/menu.svg" />
             </div>
           </nav>
         </div>
@@ -141,7 +138,10 @@ const Header = () => {
           align-items: center;
           justify-content: flex-end;
           margin-left: auto;
-          margin-top: 15px;
+        }
+        .${hamburgerClass} img {
+          box-shadow: 0px 8px 12px 0px rgba(9, 21, 85, 0.2);
+          border-radius: 50%;
         }
         .${socialClass} {
           align-items: center;
