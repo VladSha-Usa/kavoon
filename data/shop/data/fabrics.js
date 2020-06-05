@@ -7,6 +7,34 @@ const Kordura = {
       src: '/img/wizard-picker/printcolor2.svg',
       name: 'Кордура Листя папороті',
     },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті',
+    },
+    {
+      src: '/img/wizard-picker/printcolor2.svg',
+      name: 'Кордура Листя папороті ост',
+    },
   ],
 };
 
@@ -17,6 +45,26 @@ const Oxford = {
     {
       src: '/img/wizard-picker/material-oksford.png',
       name: ' Оксфорд В кліточку',
+    },
+    {
+      src: '/img/wizard-picker/printcolor1.svg',
+      name: 'Оксфорд- Різнокольорові квіточки',
+    },
+    {
+      src: '/img/wizard-picker/printcolor1.svg',
+      name: 'Оксфорд- Різнокольорові квіточки',
+    },
+    {
+      src: '/img/wizard-picker/printcolor1.svg',
+      name: 'Оксфорд- Різнокольорові квіточки',
+    },
+    {
+      src: '/img/wizard-picker/printcolor1.svg',
+      name: 'Оксфорд- Різнокольорові квіточки',
+    },
+    {
+      src: '/img/wizard-picker/printcolor1.svg',
+      name: 'Оксфорд- Різнокольорові квіточки',
     },
     {
       src: '/img/wizard-picker/printcolor1.svg',
