@@ -1,13 +1,6 @@
 import ImageLink from '../common/imageLink'
 
 const Footer = () => {
-  const prefix = "footer"
-  //const navbarClass = `${prefix}-navbar`
-  const bannerClass = `${prefix}-banner`
-  //const menuClass = `${prefix}-menu`
-  //const bannerImgClass = `${prefix}-banner-img`
-  //const socialClass = `${prefix}-social`
-  const hamburgerClass = `${prefix}-hamburger`
   return (<>
     <footer >
       <div className="footer-navbar">
@@ -64,8 +57,6 @@ const Footer = () => {
       line-height: normal;
       letter-spacing: 0.7px;
       color: #ffffff;
-
-
       width: 100%;
       padding-top: 40px;
       text-align: center;
@@ -73,7 +64,6 @@ const Footer = () => {
     .footer-social {
       align-items: center;
       display: flex;
-
       margin-left: auto;
     }
     .find-us-here {
@@ -96,7 +86,7 @@ const Footer = () => {
       height: 55px;
       object-fit: contain;
     }
-    @media only screen and (max-width: 1023px) {
+    @media only screen and (max-width: 1065px) {
        .footer-icon {
           width: 30px;
           height: 30px;
