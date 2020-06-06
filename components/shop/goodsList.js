@@ -25,7 +25,7 @@ const GoodsList = () => {
           flex-wrap: wrap;
           justify-content: space-between;
         }
-        @media only screen and (max-width: 1023px) {
+        @media only screen and (max-width: 1065px) {
           .${contentWrapper} {
             justify-content: center;
           }

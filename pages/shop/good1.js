@@ -120,7 +120,7 @@ const Good1 = () => {
             z-index: 999;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
           }
           .header-page {
             align-items: center;
@@ -169,7 +169,7 @@ const Good1 = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1165px) {
+          @media only screen and (max-width: 1220px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -177,7 +177,7 @@ const Good1 = () => {
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: 1065px) {
             .page-content {
               width: 335px;
               margin-left: auto;

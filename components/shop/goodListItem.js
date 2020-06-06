@@ -96,7 +96,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
         .${descriptionPriceCurrency} {
           margin-left: 10px;
         }
-        @media only screen and (min-width: 1023px) {
+        @media only screen and (min-width: 1065px) {
           .case-field:hover {
             animation-delay: 2s;
             transform: matrix(1.24, 0, 0, 1.16, 0, -22);
@@ -106,7 +106,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             cursor: pointer;
           }
         }
-        @media only screen and (max-width: 1023px) {
+        @media only screen and (max-width: 1065px) {
           .case-field {
             margin-bottom: 31px;
           }

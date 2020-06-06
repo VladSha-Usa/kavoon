@@ -36,7 +36,6 @@ const ShopStatus = () => {
           font-style: normal;
           line-height: 1.53;
           letter-spacing: 0.89px;
-          margin: 0 7px 0 -7px;
         }
         .${showedGoods} {
           display: flex;
@@ -57,10 +56,9 @@ const ShopStatus = () => {
         .${addedGoodsText} {
           margin-right: 8px;
         }
-        @media only screen and (max-width: 1023px) {
+        @media only screen and (max-width: 1065px) {
           .${statusWrapper} {
             box-shadow: none;
-            margin: 0 10px 0 -12px;
           }
           .${addedGoodsText} {
             display: none;

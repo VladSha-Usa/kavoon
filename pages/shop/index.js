@@ -93,7 +93,7 @@ const Shop = () => {
             z-index: 999;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
           }
           .header-page {
             align-items: center;
@@ -135,7 +135,7 @@ const Shop = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1165px) {
+          @media only screen and (max-width: 1220px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -143,7 +143,7 @@ const Shop = () => {
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: 1065px) {
             .page-content {
               width: 335px;
               margin-left: auto;
@@ -156,7 +156,7 @@ const Shop = () => {
               height: 215px;
             }
             .shop-status {
-              margin-bottom: 46px;
+              margin-bottom: 37px;
             }
             .title-section {
               margin-top: 104px;
