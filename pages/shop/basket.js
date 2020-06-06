@@ -27,7 +27,7 @@ const Basket = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
-    BasketLogic.init();
+    return BasketLogic.init();
   });
   return (
     <>

@@ -23,10 +23,12 @@ const count = goods.pipe(
 function increase(good) {
   good.count++;
   goods.next(goods.value);
+  // localStorage.setItem("BasketData", JSON.stringify(goods.value));
 }
 function decrease(good) {
   good.count--;
   goods.next(goods.value);
+  // localStorage.setItem("BasketData", JSON.stringify(goods.value));
 }
 function countForGood(good) {
   return goods.pipe(
@@ -40,12 +42,20 @@ function countForGood(good) {
 function init() {
   const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
   goods.next(data);
-  console.log(data);
+  const subscriber = goods.subscribe((value) =>
+    localStorage.setItem("BasketData", JSON.stringify(value))
+  );
+  setInterval(() => {
+    const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
+    goods.next(data);
+  }, 1000);
+  return () => {
+    subscriber.unsubscribe();
+  };
 }
 
 function addGood(good) {
-  const newValue = goods.value.filter((goodItem) => goodItem.goodId);
-  localStorage.setItem("BasketData", JSON.stringify(newValue));
+  const newValue = goods.value;
   newValue.push(good);
   goods.next(newValue);
 }
