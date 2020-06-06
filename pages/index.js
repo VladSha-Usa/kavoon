@@ -106,6 +106,7 @@ const Home = () => {
 
           .map-image {
             height: 100vh;
+            overflow: hidden;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -150,15 +151,15 @@ const Home = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1200px) {
+          @media only screen and (max-width: 1220px) {
             .page-content {
-              max-width: 960px;
+              max-width: 1010px;
               margin-left: auto;
               margin-right: auto;
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: 1065px) {
             .page-content {
               width: 335px;
               margin-left: auto;

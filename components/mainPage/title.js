@@ -49,7 +49,7 @@ const Title = () => {
         margin-top: 30px;
       }
 
-      @media only screen and (max-width: 1165px) {
+      @media only screen and (max-width: 1220px) {
         .${backgroundClass} {
           font-size: 138px;
           left: -50px;
@@ -62,32 +62,26 @@ const Title = () => {
         }
       }
 
-      @media only screen and (max-width: 1023px) {
-
+      @media only screen and (max-width: 1065px) {
         .${backgroundClass} {
           letter-spacing: 3.37px;
           font-size: 72px;
           line-height: 60px;
           left: -20px;
-          //width: 100vw+20px;
-          //overflow: hidden;
         }
         .${titleFirstClass} {
-          //text-align: center;
           font-size: 58px;
           line-height: 62px;
           left: 0px;
           top: 0px;
         }
         .${titleSecondClass} {
-          //text-align: center;
           font-size: 58px;
           line-height: 62px;
           left: 0px;
           top: 0px;
         }
       }
-
     `}</style>
   </>)
 }
