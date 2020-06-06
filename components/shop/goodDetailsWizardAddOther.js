@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BasketLogic from "../../data/shop/logic/basket";
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
@@ -14,6 +15,7 @@ const GoodDetailsWizardAddOther = ({
           .classList.add("addition-basket-style-wrapper")
       : "";
   });
+
   return (
     <>
       <div className="addition-wrapper">
@@ -28,16 +30,19 @@ const GoodDetailsWizardAddOther = ({
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
-            <span className="good-amount">1шт.</span>
+            <span className="good-amount">{additionGoodData.amount}шт.</span>
             <span className="good-price">
               {basketStyleSettings ? "Сума: " : ""}
-              {additionGoodData.price}
+              {additionGoodData.price} грн
             </span>
             <label className="good-checkcontainer">
               <input
                 className="good-checkbox"
                 type="checkbox"
-                onChange={() => checkerStatus(!status)}
+                onChange={() => {
+                  checkerStatus(!status);
+                  BasketLogic.addGood({});
+                }}
               />
               <span className="good-checkmark"></span>
               <span className="good-checkcontainer-text">
@@ -46,7 +51,16 @@ const GoodDetailsWizardAddOther = ({
             </label>
           </div>
         </div>
-        <button className="btn-submit" type="submit">
+        <button
+          className="btn-submit"
+          type="submit"
+          onSubmit={() =>
+            localStorage.setItem(
+              "additionalGood",
+              JSON.stringify(additionGoodData)
+            )
+          }
+        >
           Зробити замовлення
         </button>
       </div>
