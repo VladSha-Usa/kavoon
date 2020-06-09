@@ -9,11 +9,11 @@ const Good1 = {
       src: '#',
     },
   ],
-  name: 'Сумка-тубус на вилку 10л',
+  name: 'Сумка-тубус на вилку',
   price: 1300,
   specification: {
-    volume: '6л',
-    height: '40см',
+    volume: 10,
+    height: 40,
     materials: 'тканина оксфорд, водовідштовхуюча\n блискавка, фурнітура WJ.',
     description:
       'В середині є додаткова кишенька.\nВ клапані - відділення для дрібничок.\nВ комплекті є лямка через плечо.\nПотрібно додаткове кріплення. ',
@@ -22,6 +22,11 @@ const Good1 = {
       '- різні комбінації сумок\n',
       '- наявність рейнкавера\n',
     ],
+  },
+  mainPicture: {
+    src: '/img/good-details-prev-slider/photo-main1.jpg',
+    srcSet:
+      '/img/good-details-prev-slider/photo-main1@2x.jpg 2x, img/good-details-prev-slider/photo-main1@3x.jpg 3x',
   },
   gallery: [
     {

@@ -2,7 +2,13 @@ const GoodDetailsWizardTitle = ({ dataForTitle }) => {
   return (
     <>
       <div className="wizard__title">
-        <span className="wizard__title-description">{dataForTitle.name}.</span>
+        <span className="wizard__title-description">
+          {dataForTitle.name}
+          {dataForTitle.specification.volume
+            ? " " + dataForTitle.specification.volume + "л"
+            : ""}
+          .
+        </span>
         <span className="wizard__title-price">{dataForTitle.price} грн</span>
       </div>
       <style jsx>{`

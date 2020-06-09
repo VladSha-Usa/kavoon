@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-
+import BasketLogic from "../../data/shop/logic/basket";
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
@@ -31,7 +31,10 @@ const GoodDetailsWizard = () => {
     fabric: fabrics[0],
     print: fabrics[0].prints[0],
   });
-
+  BasketLogic.colectDataOfGood({
+    fabric: state.fabric.name,
+    print: state.print.name,
+  });
   return (
     <>
       <div className="good-wizard-wrapper">

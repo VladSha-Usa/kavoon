@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
-import { v4 as uuidv4 } from "uuid";
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
@@ -17,7 +16,6 @@ const GoodDetailsWizardAddOther = ({
       : "";
     return BasketLogic.init();
   });
-
   return (
     <>
       <div className="addition-wrapper">
@@ -43,7 +41,6 @@ const GoodDetailsWizardAddOther = ({
                 type="checkbox"
                 onChange={() => {
                   checkerStatus(!status);
-                  BasketLogic.addGood({ count: 1, id: uuidv4() });
                 }}
               />
               <span className="good-checkmark"></span>
@@ -56,12 +53,7 @@ const GoodDetailsWizardAddOther = ({
         <button
           className="btn-submit"
           type="submit"
-          onSubmit={() =>
-            localStorage.setItem(
-              "additionalGood",
-              JSON.stringify(additionGoodData)
-            )
-          }
+          onClick={() => BasketLogic.addGood()}
         >
           Зробити замовлення
         </button>

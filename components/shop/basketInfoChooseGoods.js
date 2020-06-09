@@ -8,10 +8,6 @@ import HelperFun from "../common/helper";
 const BasketInfoChooseGoods = () => {
   const goods = useRx(BasketLogic.goods);
   const countValue = useRx(BasketLogic.count);
-  const [data, setData] = useState();
-  useEffect(() => {
-    // setData(JSON.parse(localStorage.getItem("additionalGood")));
-  });
 
   return (
     <>
@@ -30,7 +26,7 @@ const BasketInfoChooseGoods = () => {
             </div>
           ))}
           {BasketData.additionGoods.map((good, index) => (
-            <div className="choose-good-wrapper">
+            <div className="choose-good-wrapper" key={index}>
               <GoodDetailsWizardAddOther
                 additionGoodData={good}
                 basketStyleSettings={true}
