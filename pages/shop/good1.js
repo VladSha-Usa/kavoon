@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
-import { v4 as uuidv4 } from "uuid";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
@@ -36,10 +35,10 @@ const Good1 = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
+    return BasketLogic.init();
   });
   BasketLogic.colectDataOfGood({
     count: 1,
-    id: uuidv4(),
     picture: Good1Data.mainPicture,
     name: Good1Data.name,
     volume: Good1Data.specification.volume,

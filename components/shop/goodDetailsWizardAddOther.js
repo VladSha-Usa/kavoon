@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
+import { v4 as uuidv4 } from "uuid";
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
@@ -8,14 +9,6 @@ const GoodDetailsWizardAddOther = ({
   const textStatus = status ? "ти" : "но";
   const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
   const statusWhileInBasket = basketStyleSettings ? "none" : "block";
-  useEffect(() => {
-    basketStyleSettings
-      ? document
-          .querySelector(".addition-wrapper")
-          .classList.add("addition-basket-style-wrapper")
-      : "";
-    return BasketLogic.init();
-  });
   return (
     <>
       <div className="addition-wrapper">
@@ -30,7 +23,7 @@ const GoodDetailsWizardAddOther = ({
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
-            <span className="good-amount">{additionGoodData.amount}шт.</span>
+            <span className="good-amount">{additionGoodData.count}шт.</span>
             <span className="good-price">
               {basketStyleSettings ? "Сума: " : ""}
               {additionGoodData.price} грн
@@ -41,6 +34,11 @@ const GoodDetailsWizardAddOther = ({
                 type="checkbox"
                 onChange={() => {
                   checkerStatus(!status);
+                  status
+                    ? BasketLogic.colectDataOfGood({
+                        additionGoodData: { ...additionGoodData },
+                      })
+                    : BasketLogic.colectDataOfGood("deleteAddGood");
                 }}
               />
               <span className="good-checkmark"></span>
@@ -53,7 +51,11 @@ const GoodDetailsWizardAddOther = ({
         <button
           className="btn-submit"
           type="submit"
-          onClick={() => BasketLogic.addGood()}
+          onClick={() => {
+            BasketLogic.colectDataOfGood({ id: uuidv4() });
+            BasketLogic.addGood();
+            BasketLogic.init();
+          }}
         >
           Зробити замовлення
         </button>
@@ -68,10 +70,7 @@ const GoodDetailsWizardAddOther = ({
           line-height: normal;
           letter-spacing: 0.89px;
           color: var(--texticonscolor);
-          margin-top: 95px;
-        }
-        .addition-basket-style-wrapper {
-          margin-top: 0px;
+          margin-top: ${basketStyleSettings ? "0px" : "95px"};
         }
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
@@ -81,21 +80,16 @@ const GoodDetailsWizardAddOther = ({
           height: 100px;
         }
         .addition-title {
-          margin-bottom: 21px;
+          margin-bottom: ${basketStyleSettings ? "14px" : "21px "};
           display: block;
-        }
-        .addition-basket-style-wrapper .addition-title {
-          margin-bottom: 14px;
         }
         .good-title {
           padding-bottom: 10px;
         }
         .good-price {
           padding-bottom: 22px;
-        }
-        .addition-basket-style-wrapper .good-price {
-          letter-spacing: 0.75px;
-          font-size: 16px;
+          letter-spacing: ${basketStyleSettings ? "0.75px" : "none"};
+          font-size: ${basketStyleSettings ? "16px" : "17px"};
         }
         .good-checkcontainer {
           display: ${statusWhileInBasket};
@@ -180,25 +174,16 @@ const GoodDetailsWizardAddOther = ({
         }
         .addition-good-wrapper {
           display: flex;
-          margin-bottom: 29px;
-        }
-        .addition-basket-style-wrapper .addition-good-wrapper {
-          margin-bottom: 2px;
+          margin-bottom: ${basketStyleSettings ? "2px" : "29px"};
         }
         .good-description-checker {
           display: flex;
           flex-direction: column;
-          margin-left: 20px;
-        }
-        .addition-basket-style-wrapper .good-description-checker {
-          margin-left: 31px;
+          margin-left: ${basketStyleSettings ? "31px" : "20px"};
         }
         .good-amount {
-          display: none;
-        }
-        .addition-basket-style-wrapper .good-amount {
-          display: block;
-          margin-bottom: 27px;
+          display: ${basketStyleSettings ? "block" : "none"};
+          margin-bottom: ${basketStyleSettings ? "27px" : "0"};
         }
       `}</style>
     </>

@@ -68,7 +68,7 @@ const Good1 = {
     },
     name: 'Ліхтарик Petzl Tikkid',
     price: 800,
-    amount: 1,
+    count: 1,
   },
   detailsImgGallery: [
     {
