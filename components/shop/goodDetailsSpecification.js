@@ -5,12 +5,14 @@ const GoodDetailsSpecification = ({ specification }) => {
       field: "volume",
       column: false,
       left: true,
+      unitOfMeasure: "л",
     },
     {
       name: "Висота",
       field: "height",
       column: false,
       left: true,
+      unitOfMeasure: "см",
     },
     {
       name: "Матеріали",
@@ -48,7 +50,7 @@ const GoodDetailsSpecification = ({ specification }) => {
         >
           {field.name}:{" "}
           <span className="specification-parametr-main">
-            {specification[field.field]}
+            {specification[field.field]}{field.unitOfMeasure}
           </span>
         </div>
       );

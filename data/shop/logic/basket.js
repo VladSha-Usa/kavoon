@@ -1,25 +1,12 @@
 import { BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 
-const good = {
-  src: "/img/basket-img/photo-1.jpg",
-  srcSet: "/img/basket-img/photo-1@2x.jpg 2x, img/basket-img/photo-1@3x.jpg 3x",
-  name: "Сумка-тубус на вилку.",
-  volume: "10л",
-  mainTextile: "Оксфорд",
-  mainColor: "Оранджевий",
-  additionalColor: "Жовтий Назва 2",
-  brandOfAccessories: "Марка назва марки 1",
-  colorOfAccessories: "Чорний",
-  colorOfSlings: "Оранджевий",
-  price: 1300,
-  count: 1,
-  id: 1,
-};
 const goods = new BehaviorSubject([]);
+const dataOfGood = new BehaviorSubject({});
 const count = goods.pipe(
   map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0))
 );
+
 function increase(good) {
   good.count++;
   goods.next(goods.value);
@@ -40,16 +27,27 @@ function countForGood(good) {
 function init() {
   const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
   goods.next(data);
-  console.log(data);
+  const subscriber = goods.subscribe((value) =>
+    localStorage.setItem("BasketData", JSON.stringify(value))
+  );
+  setInterval(() => {
+    const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
+    goods.next(data);
+  }, 1000);
+  return () => {
+    subscriber.unsubscribe();
+  };
 }
-
-function addGood(good) {
-  const newValue = goods.value.filter((goodItem) => goodItem.goodId);
-  localStorage.setItem("BasketData", JSON.stringify(newValue));
-  newValue.push(good);
+function addGood() {
+  const newValue = goods.value;
+  newValue.push(dataOfGood.value);
   goods.next(newValue);
 }
-
+function colectDataOfGood(data) {
+  const newData = dataOfGood.value;
+  Object.assign(newData, data);
+  dataOfGood.next(newData);
+}
 const BasketLogic = {
   addGood,
   goods,
@@ -58,6 +56,7 @@ const BasketLogic = {
   decrease,
   countForGood,
   init,
+  colectDataOfGood,
 };
 
 export default BasketLogic;

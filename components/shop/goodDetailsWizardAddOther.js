@@ -14,8 +14,8 @@ const GoodDetailsWizardAddOther = ({
           .querySelector(".addition-wrapper")
           .classList.add("addition-basket-style-wrapper")
       : "";
+    return BasketLogic.init();
   });
-
   return (
     <>
       <div className="addition-wrapper">
@@ -41,7 +41,6 @@ const GoodDetailsWizardAddOther = ({
                 type="checkbox"
                 onChange={() => {
                   checkerStatus(!status);
-                  BasketLogic.addGood({});
                 }}
               />
               <span className="good-checkmark"></span>
@@ -54,12 +53,7 @@ const GoodDetailsWizardAddOther = ({
         <button
           className="btn-submit"
           type="submit"
-          onSubmit={() =>
-            localStorage.setItem(
-              "additionalGood",
-              JSON.stringify(additionGoodData)
-            )
-          }
+          onClick={() => BasketLogic.addGood()}
         >
           Зробити замовлення
         </button>
