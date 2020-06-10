@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import BasketLogic from "../../data/shop/logic/basket";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
@@ -6,7 +7,7 @@ import TitleSection from "../../components/shop/titleSection";
 import ShopStatus from "../../components/shop/shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodsList from "../../components/shop/goodsList";
-import Analytics from "../../components/common/analytics"
+import Analytics from "../../components/common/analytics";
 
 const headerHeight = 80;
 
@@ -33,11 +34,13 @@ const Shop = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
+    return BasketLogic.init();
   });
-  
+
   return (
     <>
       <Head>
+        <Analytics />
         <title>Flower's Way. Країна очима велосипедистів</title>
         <MainMetaInfo
           title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"

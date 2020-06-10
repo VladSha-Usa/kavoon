@@ -4,7 +4,15 @@ import { map } from "rxjs/operators";
 const goods = new BehaviorSubject([]);
 const dataOfGood = new BehaviorSubject({});
 const count = goods.pipe(
-  map((goodsList) => goodsList.reduce((sum, item) => sum + item.count, 0))
+  map((goodsList) =>
+    goodsList.reduce((sum, item) => {
+      if (item.additionGoodData) {
+        return sum + item.count + item.additionGoodData.count;
+      } else {
+        return sum + item.count;
+      }
+    }, 0)
+  )
 );
 
 function increase(good) {
@@ -45,7 +53,11 @@ function addGood() {
 }
 function colectDataOfGood(data) {
   const newData = dataOfGood.value;
-  Object.assign(newData, data);
+  if (data === "deleteAddGood") {
+    delete newData.additionGoodData;
+  } else {
+    Object.assign(newData, data);
+  }
   dataOfGood.next(newData);
 }
 const BasketLogic = {
