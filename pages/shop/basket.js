@@ -94,7 +94,7 @@ const Basket = () => {
             z-index: 999;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
           }
           .header-page {
             align-items: center;
