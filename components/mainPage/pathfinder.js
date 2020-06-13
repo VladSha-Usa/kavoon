@@ -1,5 +1,5 @@
-import PathfinderObject from './pathfinderObject'
-import objects from '../../data/objects'
+import PathfinderObject from "./pathfinderObject";
+import objects from "../../data/objects";
 
 const Pathfinder = () => (
   <>
@@ -9,7 +9,8 @@ const Pathfinder = () => (
     </div>
 
     <div className="pathfinder-story-text">
-      На цій сторінці ми зібрали об’єкти<br/>Львівської області варті вашої уваги
+      На цій сторінці ми зібрали об’єкти <br />
+      Львівської області варті вашої уваги
     </div>
     <div style={{ height: "1px", paddingBottom: "31px" }}>
       <img
@@ -89,10 +90,12 @@ const Pathfinder = () => (
         .vector-background {
           display: none;
         }
+        .pathfinder-story-text br {
+          display: none;
+        }
       }
     `}</style>
   </>
 );
 
-
-export default Pathfinder
+export default Pathfinder;

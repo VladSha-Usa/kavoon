@@ -1,31 +1,24 @@
 const TitleSection = () => {
-  const titleWrapper = "title__section-wrapper";
-  const titleClass = "title__section-main";
-  const backgroundClass = "title__section-background";
-  const subTitle = "title__section-subtitle";
-
-  const mainFontSize = 28;
   return (
     <>
-      <div className={titleWrapper}>
-        <div className={backgroundClass}>
+      <div className="title__section-wrapper">
+        <div className="title__section-background">
           Магазин <br /> велоспорядження
         </div>
-        <div className={titleClass}>Магазин велоспорядження</div>
-        <div className={subTitle}>
+        <div className="title__section-main">Магазин велоспорядження</div>
+        <div className="title__section-subtitle">
           Велоспорядження для легких подорожей, мандруй сміливо, безпечно, а
           головне з комфортом
         </div>
       </div>
       <style jsx>{`
-        .${titleWrapper} {
+        .title__section-wrapper {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-left: -15px;
         }
-        .${titleClass} {
-          font-size: ${mainFontSize}px;
+        .title__section-main {
+          font-size: 28px;
           font-family: Montserrat;
           font-weight: 600;
           font-stretch: normal;
@@ -37,7 +30,7 @@ const TitleSection = () => {
           text-transform: uppercase;
           margin-bottom: 15px;
         }
-        .${backgroundClass} {
+        .title__section-background {
           object-fit: contain;
           opacity: 0.12;
           font-family: Montserrat;
@@ -52,7 +45,7 @@ const TitleSection = () => {
           margin-top: -19px;
           text-transform: uppercase;
         }
-        .${subTitle} {
+        .title__section-subtitle {
           font-family: Montserrat;
           font-size: 17px;
           font-weight: normal;
@@ -64,28 +57,35 @@ const TitleSection = () => {
           color: var(--texticonscolor);
           width: 501px;
         }
-        .${backgroundClass} br {
+        .title__section-background br {
           display: none;
         }
-        @media only screen and (max-width: 1023px) {
-          .${backgroundClass} br {
+        @media only screen and (max-width: 1065px) {
+          .title__section-background br {
             display: block;
           }
-          .${titleWrapper} .${titleClass} {
-            font-size: 20px;
-            line-height: 1.55;
-            letter-apacing: 0.94px;
+          .title__section-wrapper .title__section-main {
+            font-size: 22px;
+            line-height: 32px;
+            letter-apacing: 1.03px;
             text-align: center;
+            margin-bottom: 16px;
           }
-          .${titleWrapper} .${backgroundClass} {
+          .title__section-wrapper .title__section-background {
             font-size: 22px;
             line-height: 1.51;
             letter-apacing: 1.03px;
             text-align: center;
             margin-top: -9px;
           }
-          .${subTitle} {
+          .title__section-background {
             display: none;
+          }
+          .title__section-subtitle {
+            width: 267px;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.65px;
           }
         }
       `}</style>

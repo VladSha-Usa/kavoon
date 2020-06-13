@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import BasketMainGood from "./basketMainGood";
 import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
@@ -8,10 +7,6 @@ import HelperFun from "../common/helper";
 const BasketInfoChooseGoods = () => {
   const goods = useRx(BasketLogic.goods);
   const countValue = useRx(BasketLogic.count);
-  const [data, setData] = useState();
-  useEffect(() => {
-    // setData(JSON.parse(localStorage.getItem("additionalGood")));
-  });
 
   return (
     <>
@@ -29,15 +24,17 @@ const BasketInfoChooseGoods = () => {
               <img src="/img/good-to-complect-img/cancel-icon.svg" />
             </div>
           ))}
-          {BasketData.additionGoods.map((good, index) => (
-            <div className="choose-good-wrapper">
-              <GoodDetailsWizardAddOther
-                additionGoodData={good}
-                basketStyleSettings={true}
-              />
-              <img src="/img/good-to-complect-img/cancel-icon.svg" />
-            </div>
-          ))}
+          {goods
+            .filter((good) => good.additionGoodData)
+            .map((good, index) => (
+              <div className="choose-good-wrapper" key={index}>
+                <GoodDetailsWizardAddOther
+                  additionGoodData={good.additionGoodData}
+                  basketStyleSettings={true}
+                />
+                <img src="/img/good-to-complect-img/cancel-icon.svg" />
+              </div>
+            ))}
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import BasketLogic from "../../data/shop/logic/basket";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
@@ -34,6 +35,14 @@ const Good1 = () => {
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
+    return BasketLogic.init();
+  });
+  BasketLogic.colectDataOfGood({
+    count: 1,
+    picture: Good1Data.mainPicture,
+    name: Good1Data.name,
+    volume: Good1Data.specification.volume,
+    price: Good1Data.price,
   });
   return (
     <>
@@ -120,7 +129,7 @@ const Good1 = () => {
             z-index: 999;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
           }
           .header-page {
             align-items: center;
@@ -169,7 +178,7 @@ const Good1 = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1165px) {
+          @media only screen and (max-width: 1220px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -177,7 +186,7 @@ const Good1 = () => {
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: 1065px) {
             .page-content {
               width: 335px;
               margin-left: auto;

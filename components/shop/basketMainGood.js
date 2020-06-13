@@ -10,14 +10,15 @@ const BasketMainGood = ({ basketMainGoodData }) => {
     {
       name: "Об’єм",
       field: "volume",
+      unitOfMeasure: "л",
     },
     {
       name: "Основна тканина",
-      field: "mainTextile",
+      field: "fabric",
     },
     {
       name: "Основний колір",
-      field: "mainColor",
+      field: "print",
     },
     {
       name: "Додатковий колір",
@@ -38,7 +39,7 @@ const BasketMainGood = ({ basketMainGoodData }) => {
     {
       name: "Сума",
       field: "price",
-      currencyName: true,
+      unitOfMeasure: "грн",
     },
   ];
   return (
@@ -46,15 +47,17 @@ const BasketMainGood = ({ basketMainGoodData }) => {
       <div className="main-good-wrapper">
         <img
           className="main-good-img"
-          src={basketMainGoodData.src}
-          srcSet={basketMainGoodData.srcSet}
+          src={basketMainGoodData.picture.src}
+          srcSet={basketMainGoodData.picture.srcSet}
         />
         <div className="main-good-info">
-          <div className="main-good-name">{basketMainGoodData.name}</div>
+          <div className="main-good-name">{basketMainGoodData.name}.</div>
           <div className="main-good-control-info">
             <div
               className="conrol-amount-wrapper"
-              onClick={() => amount > 1 ? BasketLogic.decrease(basketMainGoodData) : null}
+              onClick={() =>
+                amount > 1 ? BasketLogic.decrease(basketMainGoodData) : null
+              }
             >
               <img src={activeMinus} />
             </div>
@@ -75,8 +78,7 @@ const BasketMainGood = ({ basketMainGoodData }) => {
                   <div key={index} className="good-parametr">
                     {field.name}:{" "}
                     <span className="good-parametr-main">
-                      {basketMainGoodData[field.field]}{" "}
-                      {field.currencyName ? "грн" : ""}
+                      {basketMainGoodData[field.field]} {field.unitOfMeasure}
                     </span>
                   </div>
                 );
@@ -99,6 +101,8 @@ const BasketMainGood = ({ basketMainGoodData }) => {
         }
         .main-good-img {
           object-fit: contain;
+          width: 100px;
+          height: 120px;
         }
         .main-good-name {
           font-size: 20px;
