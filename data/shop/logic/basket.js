@@ -41,7 +41,7 @@ function init() {
   setInterval(() => {
     const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
     goods.next(data);
-  }, 1000);
+  }, 100);
   return () => {
     subscriber.unsubscribe();
   };
@@ -60,6 +60,10 @@ function colectDataOfGood(data) {
   }
   dataOfGood.next(newData);
 }
+function deleteGood(id) {
+  const newValue = goods.value.filter((good) => good.id !== id);
+  goods.next(newValue);
+}
 const BasketLogic = {
   addGood,
   goods,
@@ -69,6 +73,7 @@ const BasketLogic = {
   countForGood,
   init,
   colectDataOfGood,
+  deleteGood,
 };
 
 export default BasketLogic;

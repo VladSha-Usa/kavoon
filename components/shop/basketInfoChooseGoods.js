@@ -21,7 +21,10 @@ const BasketInfoChooseGoods = () => {
           {goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
               <BasketMainGood basketMainGoodData={good} />
-              <img src="/img/good-to-complect-img/cancel-icon.svg" />
+              <img
+                src="/img/good-to-complect-img/cancel-icon.svg"
+                onClick={() => BasketLogic.deleteGood(good.id)}
+              />
             </div>
           ))}
           {goods
@@ -93,6 +96,9 @@ const BasketInfoChooseGoods = () => {
           border-bottom:1.5px solid #b9c6dc;
           padding-bottom: 12px;
           margin-bottom: 20px;
+        }
+        .choose-good-wrapper img{
+          cursor: pointer;
         }
       `}</style>
     </>
