@@ -1,25 +1,22 @@
 import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 import BreadcrumbsNav from "../../components/shop/breadcrumbsNav";
-const GoodDetailsStatus = ({ breadcrumbs }) => {
-  const statusWrapper = "status-wrapper";
-  const addedGoodsText = "status-added__text";
-  const addedGoods = "status-added";
-
-  const mainFontSize = 17;
+import StatusOfAddingGoodToBasket from "./statusOfAddingGoodToBasket";
+const GoodDetailsStatus = ({ statusData }) => {
   return (
     <>
-      <div className={statusWrapper}>
-        <BreadcrumbsNav breadcrumbsData={breadcrumbs} />
-        <div className={addedGoods}>
-          <span className={addedGoodsText}>Додані товари:</span>
+      <div className="status-wrapper">
+        <BreadcrumbsNav breadcrumbsData={statusData.breadcrumbs} />
+        <div className="status-added">
+          <span className="status-added__text">Додані товари:</span>
           <ShopBasketAmount />
+          <StatusOfAddingGoodToBasket addedGoodName={statusData.name} />
         </div>
       </div>
       <style jsx>{`
-        .${statusWrapper} {
+        .status-wrapper {
           display: flex;
           justify-content: space-between;
-          font-size: ${mainFontSize}px;
+          font-size: 17px;
           font-family: Montserrat;
           font-weight: 600;
           color: #040f2a;
@@ -29,15 +26,16 @@ const GoodDetailsStatus = ({ breadcrumbs }) => {
           line-height: 1.53;
           letter-spacing: 0.89px;
         }
-        .${addedGoods} {
+        .status-added {
           display: flex;
           align-items: center;
+          position: relative;
         }
-        .${addedGoods} {
+        .status-added {
           margin-top: -6px;
           margin-right: 6px;
         }
-        .${addedGoodsText} {
+        .status-added__text {
           margin-right: 17px;
         }
       `}</style>

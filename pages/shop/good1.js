@@ -88,7 +88,7 @@ const Good1 = () => {
       </div>
       <div className="good-details-status">
         <div className="page-content">
-          <GoodDetailsStatus breadcrumbs={Good1Data.breadcrumbs} />
+          <GoodDetailsStatus statusData={Good1Data} />
         </div>
       </div>
       <div className="good-details-choose">
