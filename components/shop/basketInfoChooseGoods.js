@@ -1,5 +1,4 @@
 import BasketMainGood from "./basketMainGood";
-import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import BasketLogic from "../../data/shop/logic/basket";
 import useRx from "../../components/shop/useRx";
@@ -41,9 +40,13 @@ const BasketInfoChooseGoods = () => {
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {BasketData.mainGoods
-                .map((good) => good.price)
-                .reduce((sum, current) => sum + current, 0)}{" "}
+              {goods.reduce(
+                (sum, good) =>
+                  good.additionGoodData
+                    ? sum + good.price + good.additionGoodData.price
+                    : sum + good.price,
+                0
+              )}{" "}
               грн
             </span>
           </div>
