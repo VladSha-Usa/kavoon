@@ -54,7 +54,6 @@ const GoodDetailsWizardAddOther = ({
           onClick={() => {
             BasketLogic.colectDataOfGood({ id: uuidv4() });
             BasketLogic.addGood();
-            BasketLogic.init();
           }}
         >
           Зробити замовлення
