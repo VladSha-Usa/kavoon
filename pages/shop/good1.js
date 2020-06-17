@@ -178,7 +178,7 @@ const Good1 = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1220px) {
+          @media only screen and (max-width: 1260px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -191,6 +191,9 @@ const Good1 = () => {
               width: 335px;
               margin-left: auto;
               margin-right: auto;
+            }
+            .good-details-status {
+              margin-top: 66px;
             }
             .footer-background {
               height: 215px;

@@ -49,7 +49,7 @@ const Title = () => {
         margin-top: 30px;
       }
 
-      @media only screen and (max-width: 1220px) {
+      @media only screen and (max-width: 1260px) {
         .${backgroundClass} {
           font-size: 138px;
           left: -50px;

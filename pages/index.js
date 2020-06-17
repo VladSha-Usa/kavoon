@@ -151,7 +151,7 @@ const Home = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1220px) {
+          @media only screen and (max-width: 1260px) {
             .page-content {
               max-width: 1010px;
               margin-left: auto;

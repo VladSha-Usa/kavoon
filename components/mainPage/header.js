@@ -206,7 +206,7 @@ const Header = () => {
           height: 2px;
           background-color: var(--light-blue-grey);
         }
-        @media only screen and (max-width: 1220px) {
+        @media only screen and (max-width: 1260px) {
           .language-navigation {
             margin-right: 0px !important;
           }

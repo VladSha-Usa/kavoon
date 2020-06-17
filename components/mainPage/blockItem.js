@@ -247,7 +247,7 @@ const BlockItem = ({
           margin-right: ${style.normal.marginRight};
           margin-top: ${style.normal.marginTop};
         }
-        @media only screen and (max-width: 1220px) {
+        @media only screen and (max-width: 1260px) {
           .${blockClass} {
             width: ${style.small.imageWidth};
             margin-right: ${style.normal.marginRight};

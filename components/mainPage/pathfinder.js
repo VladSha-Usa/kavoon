@@ -81,7 +81,7 @@ const Pathfinder = () => (
         letter-spacing: 0.79px;
         color: var(--texticonscolor);
       }
-      @media only screen and (max-width: 1220px) {
+      @media only screen and (max-width: 1260px) {
         .vector-background {
           display: none;
         }

@@ -44,6 +44,23 @@ const BreadcrumbsNav = ({ breadcrumbsData }) => {
           margin-left: -12.5px;
           margin-top: 5px;
         }
+        @media only screen and (max-width: 1065px) {
+          .breadcrumbs-wrapper {
+            align-items: flex-start;
+            margin-block-end: 27px;s
+          }
+          .breadcrumbs-item:first-child {
+            white-space: nowrap;
+          }
+          .breadcrumbs-item {
+            text-align: center;
+          }
+          .breadcrumbs-wrapper .breadcrumbs-item a {
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0.84px;
+          }
+        }
       `}</style>
     </>
   );

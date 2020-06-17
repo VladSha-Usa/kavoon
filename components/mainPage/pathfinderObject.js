@@ -63,7 +63,7 @@ const PathfinderObject = ({object, direct }) => {
         position: relative;
         z-index: 100;
       }
-      @media only screen and (max-width: 1220px) {
+      @media only screen and (max-width: 1260px) {
          .pathfinder-object-text {
           font-size: 16px;
          }

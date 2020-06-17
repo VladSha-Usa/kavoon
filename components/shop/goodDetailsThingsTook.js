@@ -35,8 +35,8 @@ const GoodDetailsThingsTook = ({ things, сontent }) => {
                   </div>
                   <div className="content">
                     <div className="goods-to-complect-wrapper">
-                      {сontent.allKitDiscount.map((good) => (
-                        <GoodDiscountInComplect content={good} />
+                      {сontent.allKitDiscount.map((good, index) => (
+                        <GoodDiscountInComplect content={good} key={index} />
                       ))}
                     </div>
                     <div className="price-submit-wrapper">

@@ -66,7 +66,7 @@ const Content = ({ classPrefix }) => {
           top: -270px;
           margin-left: auto;
         }
-        @media only screen and (max-width: 1220px) {
+        @media only screen and (max-width: 1260px) {
           .content-layout {
             flex-wrap: nowrap;
           }
