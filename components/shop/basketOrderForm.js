@@ -43,11 +43,28 @@ const BasketOrderForm = () => {
                 }
               >
                 <legend className="intro-title">Оформити замовлення</legend>{" "}
-                <p className="instruction-title">
+                <p
+                  className="instruction-title"
+                  style={{
+                    marginBottom: `${
+                      (errors.username && touched.username) ||
+                      (errors.numTel && touched.numTel)
+                        ? "9px"
+                        : "19px"
+                    }`,
+                  }}
+                >
                   Залиште свої контактні дані і ми вам передзвонимо для
                   оформлення замовлення{" "}
                 </p>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    marginBottom: `${
+                      errors.username && touched.username ? "13px" : "-1px"
+                    }`,
+                  }}
+                >
                   <Field
                     id="username"
                     placeholder="Введіть своє ім’я"
@@ -65,7 +82,14 @@ const BasketOrderForm = () => {
                   )}
                   <label htmlFor="username">Ім’я</label>
                 </div>
-                <div className="row">
+                <div
+                  className="row"
+                  style={{
+                    marginBottom: `${
+                      errors.numTel && touched.numTel ? "46px" : "-1px"
+                    }`,
+                  }}
+                >
                   <MaskedInput
                     mask={[
                       "(",
@@ -141,7 +165,6 @@ const BasketOrderForm = () => {
           line-height: 1.53;
           letter-spacing: 0.89px;
           margin-left: 7px;
-          margin-bottom: 19px;
         }
         fieldset {
           border: none;
@@ -152,7 +175,6 @@ const BasketOrderForm = () => {
         .row {
           display: flex;
           flex-direction: column-reverse;
-          margin-bottom: 9px;
           width: 380px;
         }
         .row label {
@@ -160,11 +182,11 @@ const BasketOrderForm = () => {
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 0.63px;
-          margin-bottom: 5px;
+          margin-bottom: 4px;
         }
         .input-feedback {
           position: absolute;
-          margin-top: 11px;
+          margin-top: 10px;
           white-space: pre-wrap;
           height: 15px;
         }

@@ -117,9 +117,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             height: 65px;
             margin: -34px 0px 0px -15px;
           }
-          .list-elem
-            > .status-list__img-wrapper:hover
-            ~ .param__status-list__title {
+          .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
             margin-left: 50px;
           }
           .picker-param__status-img {

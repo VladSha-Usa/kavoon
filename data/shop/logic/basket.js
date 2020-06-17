@@ -3,6 +3,7 @@ import { map } from "rxjs/operators";
 
 const goods = new BehaviorSubject([]);
 const dataOfGood = new BehaviorSubject({});
+const statusOfAdding = new BehaviorSubject(false);
 const count = goods.pipe(
   map((goodsList) =>
     goodsList.reduce((sum, item) => {
@@ -41,7 +42,7 @@ function init() {
   setInterval(() => {
     const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
     goods.next(data);
-  }, 1000);
+  }, 100);
   return () => {
     subscriber.unsubscribe();
   };
@@ -50,6 +51,14 @@ function addGood() {
   const newValue = goods.value;
   newValue.push(dataOfGood.value);
   goods.next(newValue);
+  if (goods.value.some((good) => good === dataOfGood.value)) {
+    statusOfAdding.next(true);
+    setTimeout(() => {
+      statusOfAdding.next(false);
+    }, 1500);
+  } else {
+    statusOfAdding.next(false);
+  }
 }
 function colectDataOfGood(data) {
   const newData = dataOfGood.value;
@@ -60,15 +69,21 @@ function colectDataOfGood(data) {
   }
   dataOfGood.next(newData);
 }
+function deleteGood(id) {
+  const newValue = goods.value.filter((good) => good.id !== id);
+  goods.next(newValue);
+}
 const BasketLogic = {
   addGood,
   goods,
   count,
+  statusOfAdding,
   increase,
   decrease,
   countForGood,
   init,
   colectDataOfGood,
+  deleteGood,
 };
 
 export default BasketLogic;

@@ -1,5 +1,4 @@
 import BasketMainGood from "./basketMainGood";
-import BasketData from "../../data/shop/adapters/basket";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
 import BasketLogic from "../../data/shop/logic/basket";
 import useRx from "../../components/shop/useRx";
@@ -21,7 +20,10 @@ const BasketInfoChooseGoods = () => {
           {goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
               <BasketMainGood basketMainGoodData={good} />
-              <img src="/img/good-to-complect-img/cancel-icon.svg" />
+              <img
+                src="/img/good-to-complect-img/cancel-icon.svg"
+                onClick={() => BasketLogic.deleteGood(good.id)}
+              />
             </div>
           ))}
           {goods
@@ -38,9 +40,13 @@ const BasketInfoChooseGoods = () => {
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {BasketData.mainGoods
-                .map((good) => good.price)
-                .reduce((sum, current) => sum + current, 0)}{" "}
+              {goods.reduce(
+                (sum, good) =>
+                  good.additionGoodData
+                    ? sum + good.price + good.additionGoodData.price
+                    : sum + good.price,
+                0
+              )}{" "}
               грн
             </span>
           </div>
@@ -93,6 +99,9 @@ const BasketInfoChooseGoods = () => {
           border-bottom:1.5px solid #b9c6dc;
           padding-bottom: 12px;
           margin-bottom: 20px;
+        }
+        .choose-good-wrapper img{
+          cursor: pointer;
         }
       `}</style>
     </>
