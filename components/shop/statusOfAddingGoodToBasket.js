@@ -2,11 +2,18 @@ import BasketLogic from "../../data/shop/logic/basket";
 import useRx from "../../components/shop/useRx";
 const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
   const statusOfAdding = useRx(BasketLogic.statusOfAdding);
+  const goods = useRx(BasketLogic.goods);
   return (
     <>
       <div className="status-adding-wrapper">
-        <span className="status-adding-good-name">{addedGoodName}</span> успішно
-        додано до кошику!&nbsp;&nbsp;&nbsp;😊
+        {/* {if(goods.length === 0){(
+          <>Ваш кошик порожній&nbsp;&nbsp;&nbsp;😊</>
+        )}else{ (
+          <>
+            <span className="status-adding-good-name">{addedGoodName}</span>{" "}
+            успішно додано до кошику!&nbsp;&nbsp;&nbsp;😊
+          </>
+)}} */}
       </div>
       <style jsx>{`
         .status-adding-wrapper {
@@ -26,7 +33,7 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           left: -95px;
           top: 81px;
           padding: 18px 27px 13px 32px;
-          display: ${statusOfAdding ? "block" : "none"};
+          display: ${statusOfAdding || goods.length === 0 ? "block" : "none"};
           white-space: pre-wrap;
         }
         .status-adding-wrapper:before {
