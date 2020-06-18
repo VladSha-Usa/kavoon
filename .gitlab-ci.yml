@@ -1,0 +1,26 @@
+image: node:14.4.0
+
+
+services:
+  - name: amazon/dynamodb-local
+    alias: dynamodb
+
+stages:
+  - unit_tests
+
+
+before_script:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  - yarn install
+
+unit_tests:
+  variables:
+    SLS_DEBUG: "*"
+  dependencies: []
+  stage: unit_tests
+  artifacts:
+  script:
+    - yarn lint
+  tags:
+    - docker
