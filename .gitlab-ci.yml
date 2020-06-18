@@ -21,6 +21,6 @@ unit_tests:
   stage: unit_tests
   artifacts:
   script:
-    - yarn linter
+    - yarn lint
   tags:
     - docker
