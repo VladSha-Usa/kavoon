@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import ImageLink from "../common/imageLink";
 import MainMenu from "../common/mainMenu";
 import LanguagePopup from "../common/languagePopup";
+import ScreenWidth from "../common/mediaConst";
+
+const screenMobile = (css) => {
+  return `media only screen and (max-width: ${ScreenWidth.screenWidthMobile}px){
+    ${css}
+  }`;
+};
 
 const Header = () => {
   const prefix = "header";
@@ -206,13 +213,13 @@ const Header = () => {
           height: 2px;
           background-color: var(--light-blue-grey);
         }
-        @media only screen and (max-width: 1220px) {
+        @media only screen and (max-width: 1165px) {
           .language-navigation {
             margin-right: 0px !important;
           }
         }
-
-        @media only screen and (max-width: 1065px) {
+        ${screenMobile()}
+        @media only screen and (max-width: 1023px) {
           .${menuClass} {
             display: none;
           }
@@ -226,7 +233,7 @@ const Header = () => {
           }
         }
 
-        @media only screen and (min-width: 1066px) {
+        @media only screen and (min-width: 1023px) {
           .${hamburgerClass} {
             display: none;
           }
