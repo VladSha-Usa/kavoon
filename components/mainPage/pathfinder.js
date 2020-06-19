@@ -1,5 +1,6 @@
 import PathfinderObject from "./pathfinderObject";
 import objects from "../../data/objects";
+import RespScreenWidth from "../common/mediaConst";
 
 const Pathfinder = () => (
   <>
@@ -81,12 +82,12 @@ const Pathfinder = () => (
         letter-spacing: 0.79px;
         color: var(--texticonscolor);
       }
-      @media only screen and (max-width: 1220px) {
+      @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
         .vector-background {
           display: none;
         }
       }
-      @media only screen and (max-width: 1065px) {
+      @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
         .vector-background {
           display: none;
         }

@@ -8,32 +8,12 @@ import ShopStatus from "../../components/shop/shopStatus";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import GoodsList from "../../components/shop/goodsList";
 import Analytics from "../../components/common/analytics";
+import RespScreenWidth from "../../components/common/mediaConst";
 
 const headerHeight = 80;
 
-const onScroll = () => {
-  var scrollThreshold = 40;
-  var width = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
-  if (width <= 1023) {
-    scrollThreshold = 3;
-  }
-  if (
-    document.body.scrollTop > scrollThreshold ||
-    document.documentElement.scrollTop > scrollThreshold
-  ) {
-    document.getElementById("home").classList.add("header-border");
-  } else {
-    document.getElementById("home").classList.remove("header-border");
-  }
-};
-
 const Shop = () => {
   useEffect(() => {
-    document.onscroll = onScroll;
-    onScroll();
     return BasketLogic.init();
   });
 
@@ -138,7 +118,7 @@ const Shop = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1220px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -146,7 +126,7 @@ const Shop = () => {
             }
           }
 
-          @media only screen and (max-width: 1065px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
             .page-content {
               width: 335px;
               margin-left: auto;
