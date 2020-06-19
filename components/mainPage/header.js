@@ -5,7 +5,7 @@ import LanguagePopup from "../common/languagePopup";
 import ScreenWidth from "../common/mediaConst";
 
 const screenMobile = (css) => {
-  return `media only screen and (max-width: ${ScreenWidth.screenWidthMobile}px){
+  return `@media only screen and (max-width: ${ScreenWidth.screenWidthMobile}px){
     ${css}
   }`;
 };
@@ -218,7 +218,17 @@ const Header = () => {
             margin-right: 0px !important;
           }
         }
-        ${screenMobile()}
+        ${screenMobile(`${.${menuClass} {
+            display: none;
+          }
+          .${socialClass} {
+            display: none;
+          }
+          .${bannerImgClass} {
+            width: 238px;
+            height: 40px;
+            object-fit: contain;
+          }`})}
         @media only screen and (max-width: 1023px) {
           .${menuClass} {
             display: none;
