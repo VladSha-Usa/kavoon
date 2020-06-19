@@ -1,32 +1,15 @@
-import React, { useEffect } from 'react'
-import Pathfinder from '../components/mainPage/pathfinder'
-import Head from 'next/head'
-import Header from '../components/mainPage/header'
-import Content from '../components/mainPage/content'
-import Footer from '../components/mainPage/footer'
+import Pathfinder from "../components/mainPage/pathfinder";
+import Head from "next/head";
+import Header from "../components/mainPage/header";
+import Content from "../components/mainPage/content";
+import Footer from "../components/mainPage/footer";
 import MainMetaInfo from "../components/common/mainMetaInfo";
-import Analytics from "../components/common/analytics"
+import Analytics from "../components/common/analytics";
+import RespScreenWidth from "../components/common/mediaConst";
 
-const headerHeight = 80
-
-const onScroll = () => {
-  var scrollThreshold = 40
-  var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-  if (width <= 1023) {
-    scrollThreshold=3
-  }
-  if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-    document.getElementById("home").classList.add("header-border");
-  } else {
-    document.getElementById("home").classList.remove("header-border");
-  }
-}
+const headerHeight = 80;
 
 const Home = () => {
-  useEffect(() => {
-    document.onscroll = onScroll;
-    onScroll()
-  });
   return (
     <>
       <Analytics />
@@ -151,7 +134,7 @@ const Home = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1220px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
             .page-content {
               max-width: 1010px;
               margin-left: auto;
@@ -159,7 +142,7 @@ const Home = () => {
             }
           }
 
-          @media only screen and (max-width: 1065px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
             .page-content {
               width: 335px;
               margin-left: auto;
@@ -179,6 +162,6 @@ const Home = () => {
       </style>
     </>
   );
-}
+};
 
-export default Home
+export default Home;
