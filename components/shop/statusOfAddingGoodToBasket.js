@@ -1,19 +1,23 @@
 import BasketLogic from "../../data/shop/logic/basket";
 import useRx from "../../components/shop/useRx";
+import { useState, useEffect } from "react";
+
 const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
   const statusOfAdding = useRx(BasketLogic.statusOfAdding);
-  const goods = useRx(BasketLogic.goods);
+  const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
   return (
     <>
       <div className="status-adding-wrapper">
-        {/* {if(goods.length === 0){(
-          <>Ваш кошик порожній&nbsp;&nbsp;&nbsp;😊</>
-        )}else{ (
-          <>
-            <span className="status-adding-good-name">{addedGoodName}</span>{" "}
-            успішно додано до кошику!&nbsp;&nbsp;&nbsp;😊
-          </>
-)}} */}
+        {statusOfEmptyBasket ? (
+          <>Ваш кошик порожній</>
+        ) : (
+          statusOfAdding ?(
+            <>
+              <span className="status-adding-to-basket">{addedGoodName}</span>{" "}
+              успішно додано до кошику!&nbsp;&nbsp;&nbsp;😊
+            </>
+          ) : null
+        )}
       </div>
       <style jsx>{`
         .status-adding-wrapper {
@@ -33,7 +37,7 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           left: -95px;
           top: 81px;
           padding: 18px 27px 13px 32px;
-          display: ${statusOfAdding || goods.length === 0 ? "block" : "none"};
+          display: ${statusOfAdding || statusOfEmptyBasket ? "block" : "none"};
           white-space: pre-wrap;
         }
         .status-adding-wrapper:before {
@@ -52,7 +56,7 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           width: 22px;
           height: 25px;
         }
-        .status-adding-good-name {
+        .status-adding-to-basket {
           color: var(--primarycolor);
         }
       `}</style>

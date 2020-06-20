@@ -4,6 +4,7 @@ import { map } from "rxjs/operators";
 const goods = new BehaviorSubject([]);
 const dataOfGood = new BehaviorSubject({});
 const statusOfAdding = new BehaviorSubject(false);
+const statusOfEmptyBasket = new BehaviorSubject(false);
 const count = goods.pipe(
   map((goodsList) =>
     goodsList.reduce((sum, item) => {
@@ -32,6 +33,21 @@ function countForGood(good) {
         .reduce((sum, item) => sum + item.count, 0)
     )
   );
+}
+function showMessageOfEmptyBasket() {
+  console.log(goods);
+
+  if (goods.value.length === 0) {
+    setTimeout(() => {
+      statusOfEmptyBasket.next(true);
+    }, 2000);
+  }
+  if (goods.value.length === 0) {
+    setTimeout(() => {
+      statusOfEmptyBasket.next(false);
+    }, 3500);
+  }
+  return;
 }
 function init() {
   const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
@@ -78,6 +94,7 @@ const BasketLogic = {
   goods,
   count,
   statusOfAdding,
+  statusOfEmptyBasket,
   increase,
   decrease,
   countForGood,
