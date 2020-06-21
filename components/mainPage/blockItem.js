@@ -1,3 +1,4 @@
+import RespScreenWidth from "../common/mediaConst";
 const BlockItem = ({
   src,
   srcSet,
@@ -247,7 +248,7 @@ const BlockItem = ({
           margin-right: ${style.normal.marginRight};
           margin-top: ${style.normal.marginTop};
         }
-        @media only screen and (max-width: 1220px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
           .${blockClass} {
             width: ${style.small.imageWidth};
             margin-right: ${style.normal.marginRight};
@@ -263,7 +264,7 @@ const BlockItem = ({
           }
         }
 
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .block-title {
             font-size: 17px;
             width: ${style.small.imageWidth};

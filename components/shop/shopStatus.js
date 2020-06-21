@@ -1,4 +1,6 @@
 import ShopBasketAmount from "../../components/shop/shopBasketAmount";
+import RespScreenWidth from "../common/mediaConst";
+
 const ShopStatus = () => {
   const statusWrapper = "status-wrapper";
   const showedGoods = "status-showed";
@@ -56,7 +58,7 @@ const ShopStatus = () => {
         .${addedGoodsText} {
           margin-right: 8px;
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .${statusWrapper} {
             box-shadow: none;
           }
