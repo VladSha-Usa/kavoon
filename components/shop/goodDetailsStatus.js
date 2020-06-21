@@ -1,6 +1,7 @@
 import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 import BreadcrumbsNav from "../../components/shop/breadcrumbsNav";
 import StatusOfAddingGoodToBasket from "./statusOfAddingGoodToBasket";
+import RespScreenWidth from "../common/mediaConst";
 const GoodDetailsStatus = ({ statusData }) => {
   return (
     <>
@@ -38,7 +39,7 @@ const GoodDetailsStatus = ({ statusData }) => {
         .status-added__text {
           margin-right: 17px;
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .status-wrapper {
             flex-direction: column;
           }
