@@ -1,3 +1,5 @@
+import RespScreenWidth from "../common/mediaConst";
+
 const TitleSection = () => {
   return (
     <>
@@ -60,7 +62,7 @@ const TitleSection = () => {
         .title__section-background br {
           display: none;
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .title__section-background br {
             display: block;
           }

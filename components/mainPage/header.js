@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ImageLink from "../common/imageLink";
 import MainMenu from "../common/mainMenu";
 import LanguagePopup from "../common/languagePopup";
+import RespScreenWidth from "../common/mediaConst";
 
 const Header = () => {
   const prefix = "header";
@@ -12,14 +13,13 @@ const Header = () => {
   const socialClass = `${prefix}-social`;
   const hamburgerClass = `${prefix}-hamburger`;
   const [popup, setPopup] = useState(false);
-
   const onScroll = () => {
     var scrollThreshold = 40;
     var width = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth || 0
     );
-    if (width <= 1023) {
+    if (width <= RespScreenWidth.screenWidthMobile) {
       scrollThreshold = 3;
     }
     if (
@@ -33,10 +33,16 @@ const Header = () => {
   };
   const [mobileLogo, setMobileLogo] = useState();
   useEffect(() => {
+    document.onscroll = onScroll;
+    onScroll();
     window.addEventListener("resize", () => {
-      window.innerWidth <= 1065 ? setMobileLogo(true) : setMobileLogo(false);
+      window.innerWidth <= RespScreenWidth.screenWidthMobile
+        ? setMobileLogo(true)
+        : setMobileLogo(false);
     });
-    window.innerWidth <= 1065 ? setMobileLogo(true) : setMobileLogo(false);
+    window.innerWidth <= RespScreenWidth.screenWidthMobile
+      ? setMobileLogo(true)
+      : setMobileLogo(false);
   });
   return (
     <>
@@ -206,13 +212,12 @@ const Header = () => {
           height: 2px;
           background-color: var(--light-blue-grey);
         }
-        @media only screen and (max-width: 1260px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
           .language-navigation {
             margin-right: 0px !important;
           }
         }
-
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .${menuClass} {
             display: none;
           }
@@ -226,7 +231,7 @@ const Header = () => {
           }
         }
 
-        @media only screen and (min-width: 1066px) {
+        @media only screen and (min-width: ${RespScreenWidth.screenWidthMobile + 1}px) {
           .${hamburgerClass} {
             display: none;
           }

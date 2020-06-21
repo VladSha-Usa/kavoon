@@ -1,8 +1,8 @@
-import Title from './title'
-import BlockItem from './blockItem'
-
+import Title from "./title";
+import BlockItem from "./blockItem";
+import RespScreenWidth from "../common/mediaConst";
 const Content = ({ classPrefix }) => {
-  const prefix = `${classPrefix ? classPrefix + '-' : ""}content`
+  const prefix = `${classPrefix ? classPrefix + "-" : ""}content`;
 
   return (
     <>
@@ -66,12 +66,12 @@ const Content = ({ classPrefix }) => {
           top: -270px;
           margin-left: auto;
         }
-        @media only screen and (max-width: 1260px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
           .content-layout {
             flex-wrap: nowrap;
           }
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .content-layout {
             padding-top: 40px;
             flex-wrap: wrap-reverse !important;
@@ -85,6 +85,6 @@ const Content = ({ classPrefix }) => {
       `}</style>
     </>
   );
-}
+};
 
-export default Content
+export default Content;

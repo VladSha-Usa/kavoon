@@ -1,47 +1,47 @@
-import { BehaviorSubject } from "rxjs";
-import { map } from "rxjs/operators";
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const goods = new BehaviorSubject([]);
 const dataOfGood = new BehaviorSubject({});
 const statusOfAdding = new BehaviorSubject(false);
 const count = goods.pipe(
-  map((goodsList) =>
-    goodsList.reduce((sum, item) => {
-      if (item.additionGoodData) {
-        return sum + item.count + item.additionGoodData.count;
-      } else {
-        return sum + item.count;
-      }
-    }, 0)
-  )
+  map((goodsList) => goodsList.reduce((sum, item) => {
+    if (item.additionGoodData) {
+      return sum + item.count + item.additionGoodData.count;
+    }
+    return sum + item.count;
+  }, 0)),
 );
 
-function increase(good) {
-  good.count++;
-  goods.next(goods.value);
+
+function increase(goodToIncrease) {
+  const good = goods.value.find((goodItem) => goodToIncrease.id === goodItem.id);
+  if (good) {
+    good.count += 1;
+    goods.next(goods.value);
+  }
 }
-function decrease(good) {
-  good.count--;
-  goods.next(goods.value);
+function decrease(goodToDecrease) {
+  const good = goods.value.find((goodItem) => goodToDecrease.id === goodItem.id);
+  if (good) {
+    good.count -= 1;
+    goods.next(goods.value);
+  }
 }
 function countForGood(good) {
   return goods.pipe(
-    map((goodsList) =>
-      goodsList
-        .filter((item) => item.id === good.id)
-        .reduce((sum, item) => sum + item.count, 0)
-    )
+    map((goodsList) => goodsList
+      .filter((item) => item.id === good.id)
+      .reduce((sum, item) => sum + item.count, 0)),
   );
 }
 function init() {
-  const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
+  const data = JSON.parse(localStorage.getItem('BasketData')) || [];
   goods.next(data);
-  const subscriber = goods.subscribe((value) =>
-    localStorage.setItem("BasketData", JSON.stringify(value))
-  );
+  const subscriber = goods.subscribe((value) => localStorage.setItem('BasketData', JSON.stringify(value)));
   setInterval(() => {
-    const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
-    goods.next(data);
+    const newData = JSON.parse(localStorage.getItem('BasketData')) || [];
+    goods.next(newData);
   }, 100);
   return () => {
     subscriber.unsubscribe();
@@ -62,7 +62,7 @@ function addGood() {
 }
 function colectDataOfGood(data) {
   const newData = dataOfGood.value;
-  if (data === "deleteAddGood") {
+  if (data === 'deleteAddGood') {
     delete newData.additionGoodData;
   } else {
     Object.assign(newData, data);
