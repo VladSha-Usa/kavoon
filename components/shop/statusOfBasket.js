@@ -1,28 +1,33 @@
 import BasketLogic from "../../data/shop/logic/basket";
-import useRx from "../../components/shop/useRx";
-import { useState, useEffect } from "react";
+import useRx from "./useRx";
+import React, { useState, useEffect } from "react";
 
-const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
+const StatusOfBasket = ({ addedGoodName }) => {
   const statusOfAdding = useRx(BasketLogic.statusOfAdding);
   const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
+  const count = useRx(BasketLogic.count);
+  const [emptyBasket, setEmptyBasket] = useState(false);
+  useEffect(() => {
+    statusOfEmptyBasket && count === 0
+      ? setEmptyBasket(true)
+      : setEmptyBasket(false);
+  }, [statusOfEmptyBasket, count]);
   return (
     <>
       <div className="status-adding-wrapper">
-        {statusOfEmptyBasket ? (
-          <>Ваш кошик порожній</>
-        ) : (
-          statusOfAdding ?(
-            <>
-              <span className="status-adding-to-basket">{addedGoodName}</span>{" "}
-              успішно додано до кошику!&nbsp;&nbsp;&nbsp;😊
-            </>
-          ) : null
-        )}
+        {emptyBasket ? (
+          <>Ваш кошик порожній&nbsp;&nbsp;&nbsp;😩</>
+        ) : statusOfAdding ? (
+          <>
+            <span className="added-good">{addedGoodName}</span> успішно додано
+            до кошику!&nbsp;&nbsp;&nbsp;😊
+          </>
+        ) : null}
       </div>
       <style jsx>{`
         .status-adding-wrapper {
           position: absolute;
-          width: 345px;
+          width: ${emptyBasket ? "auto" : "345px"};
           box-sizing: border-box;
           border-radius: 12px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
@@ -36,9 +41,11 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           color: var(--texticonscolor);
           left: -95px;
           top: 81px;
-          padding: 18px 27px 13px 32px;
-          display: ${statusOfAdding || statusOfEmptyBasket ? "block" : "none"};
-          white-space: pre-wrap;
+          padding: ${emptyBasket
+            ? "28px 55px 28px 55px"
+            : "18px 27px 13px 32px"};
+          display: ${statusOfAdding || emptyBasket ? "block" : "none"};
+          white-space: ${emptyBasket ? "nowrap" : "pre-wrap"};
         }
         .status-adding-wrapper:before {
           position: absolute;
@@ -52,11 +59,7 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           border-color: transparent transparent #fff transparent;
           z-index: 30;
         }
-        .status-adding-wrapper img {
-          width: 22px;
-          height: 25px;
-        }
-        .status-adding-to-basket {
+        .added-good {
           color: var(--primarycolor);
         }
       `}</style>
@@ -64,4 +67,4 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
   );
 };
 
-export default StatusOfAddingGoodToBasket;
+export default StatusOfBasket;

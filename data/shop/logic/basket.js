@@ -21,10 +21,12 @@ function increase(good) {
   good.count++;
   goods.next(goods.value);
 }
+
 function decrease(good) {
   good.count--;
   goods.next(goods.value);
 }
+
 function countForGood(good) {
   return goods.pipe(
     map((goodsList) =>
@@ -34,29 +36,35 @@ function countForGood(good) {
     )
   );
 }
-function showMessageOfEmptyBasket() {
-  console.log(goods);
 
-  if (goods.value.length === 0) {
-    setTimeout(() => {
+function init() {
+  const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
+  let firstTimerOfEmtyBasket;
+  let secondTimerOfEmtyBasket;
+  if (data.length === 0) {
+    firstTimerOfEmtyBasket = setTimeout(() => {
       statusOfEmptyBasket.next(true);
     }, 2000);
-  }
-  if (goods.value.length === 0) {
     setTimeout(() => {
       statusOfEmptyBasket.next(false);
     }, 3500);
+    secondTimerOfEmtyBasket = setTimeout(() => {
+      statusOfEmptyBasket.next(true);
+    }, 11000);
+    setTimeout(() => {
+      statusOfEmptyBasket.next(false);
+    }, 12500);
   }
-  return;
-}
-function init() {
-  const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
   goods.next(data);
   const subscriber = goods.subscribe((value) =>
     localStorage.setItem("BasketData", JSON.stringify(value))
   );
   setInterval(() => {
     const data = JSON.parse(localStorage.getItem("BasketData")) ?? [];
+    if (data.length !== 0) {
+      clearTimeout(firstTimerOfEmtyBasket);
+      clearTimeout(secondTimerOfEmtyBasket);
+    }
     goods.next(data);
   }, 100);
   return () => {
@@ -76,6 +84,7 @@ function addGood() {
     statusOfAdding.next(false);
   }
 }
+
 function colectDataOfGood(data) {
   const newData = dataOfGood.value;
   if (data === "deleteAddGood") {
@@ -85,10 +94,12 @@ function colectDataOfGood(data) {
   }
   dataOfGood.next(newData);
 }
+
 function deleteGood(id) {
   const newValue = goods.value.filter((good) => good.id !== id);
   goods.next(newValue);
 }
+
 const BasketLogic = {
   addGood,
   goods,

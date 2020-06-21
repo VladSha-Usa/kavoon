@@ -1,6 +1,6 @@
 import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 import BreadcrumbsNav from "../../components/shop/breadcrumbsNav";
-import StatusOfAddingGoodToBasket from "./statusOfAddingGoodToBasket";
+import StatusOfBasket from "./statusOfBasket";
 const GoodDetailsStatus = ({ statusData }) => {
   return (
     <>
@@ -9,7 +9,7 @@ const GoodDetailsStatus = ({ statusData }) => {
         <div className="status-added">
           <span className="status-added__text">Додані товари:</span>
           <ShopBasketAmount />
-          <StatusOfAddingGoodToBasket addedGoodName={statusData.name} />
+          <StatusOfBasket addedGoodName={statusData.name} />
         </div>
       </div>
       <style jsx>{`
