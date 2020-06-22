@@ -1,18 +1,31 @@
 image: node:14.4.0
 
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+    - node_modules/
+
+
 stages:
-  - unit_tests
+  - setup
+  - tests
   - build
 
 
 before_script:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-  - yarn install
 
-unit_tests:
-  dependencies: []
-  stage: unit_tests
+install_yarn:
+  dependencies: [setup]
+  stage: setup
+  - yarn install
+ 
+
+lint:
+  dependencies: [install_yarn]
+  stage: tests
   artifacts:
   script:
     - yarn lint
@@ -20,8 +33,8 @@ unit_tests:
     - docker
 
 build:
-  dependencies: []
-  stage: unit_tests
+  dependencies: [lint]
+  stage: build
   artifacts:
   script:
     - yarn build
