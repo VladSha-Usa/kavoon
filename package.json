@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "perl -i -pe \"s/require\\('mapbox-gl/\\/\\/ require\\('mapbox-gl/\" ./node_modules/react-mapbox-gl/lib-esm/map.js"
   },
   "dependencies": {
     "firebase": "^7.14.3",
@@ -28,12 +29,12 @@
     "yup": "^0.29.1"
   },
   "devDependencies": {
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "^18.1.0",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "serverless": "^1.70.0",
-    "serverless-next.js": "^1.14.0-alpha.0"
+    "serverless-next.js": "^1.15.0-alpha.0"
   }
 }

@@ -1,26 +1,43 @@
 image: node:14.4.0
 
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+    - node_modules/
 
-services:
-  - name: amazon/dynamodb-local
-    alias: dynamodb
 
 stages:
-  - unit_tests
+  - setup
+  - tests
+  - build
 
 
 before_script:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-  - yarn install
 
-unit_tests:
-  variables:
-    SLS_DEBUG: "*"
+install_yarn:
   dependencies: []
-  stage: unit_tests
-  artifacts:
+  stage: setup
+  script:
+    - yarn install
+  tags:
+    - docker
+ 
+
+lint:
+  dependencies: [install_yarn]
+  stage: tests
   script:
     - yarn lint
+  tags:
+    - docker
+
+build:
+  dependencies: [lint]
+  stage: build
+  script:
+    - yarn build
   tags:
     - docker
