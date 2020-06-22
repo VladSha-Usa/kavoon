@@ -20,6 +20,10 @@ before_script:
 install_yarn:
   dependencies: []
   stage: setup
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
   script:
     - yarn install
   tags:
@@ -30,6 +34,9 @@ lint:
   dependencies: [install_yarn]
   stage: tests
   artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
   script:
     - yarn lint
   tags:
@@ -39,6 +46,10 @@ build:
   dependencies: [lint]
   stage: build
   artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+   
   script:
     - yarn build
   tags:
