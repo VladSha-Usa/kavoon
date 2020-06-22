@@ -1,5 +1,5 @@
 import GoodListItem from "./goodListItem";
-import GoodListData from "../../data/shop/adapters/goods";
+import GoodListData from "../../data/shop/viewModels/goods";
 import RespScreenWidth from "../common/mediaConst";
 
 const GoodsList = () => {
