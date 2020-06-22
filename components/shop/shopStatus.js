@@ -2,34 +2,25 @@ import ShopBasketAmount from "../../components/shop/shopBasketAmount";
 import RespScreenWidth from "../common/mediaConst";
 
 const ShopStatus = () => {
-  const statusWrapper = "status-wrapper";
-  const showedGoods = "status-showed";
-  const showedGoodsText = "status-showed__text";
-  const showedGoodsAmount = "status-showed__amount";
-  const showedGoodsAmountText = "status-showed__amount-text";
-  const addedGoodsText = "status-added__text";
-  const addedGoods = "status-added";
-
-  const mainFontSize = 17;
   return (
     <>
-      <div className={statusWrapper}>
-        <div className={showedGoods}>
-          <span className={showedGoodsText}>Показано:</span>
-          <span className={showedGoodsAmount}>
-            8<span className={showedGoodsAmountText}>товарів</span>
+      <div className="status-wrapper">
+        <div className="status-showed">
+          <span className="showed-text">Показано:</span>
+          <span className="showed-amount">
+            8<span className="showed-amount-text">товарів</span>
           </span>
         </div>
-        <div className={addedGoods}>
-          <span className={addedGoodsText}>Додані:</span>
+        <div className="status-added">
+          <span className="added-text">Додані:</span>
           <ShopBasketAmount />
         </div>
       </div>
       <style jsx>{`
-        .${statusWrapper} {
+        .status-wrapper {
           display: flex;
           justify-content: space-between;
-          font-size: ${mainFontSize}px;
+          font-size: 17px;
           font-family: Montserrat;
           font-weight: 600;
           color: #040f2a;
@@ -39,36 +30,34 @@ const ShopStatus = () => {
           line-height: 1.53;
           letter-spacing: 0.89px;
         }
-        .${showedGoods} {
+        .status-showed {
           display: flex;
           align-items: center;
-          margin: 0 15px 0 30px;
         }
-        .${addedGoods} {
+        .status-added {
           display: flex;
           align-items: center;
-          margin-right: 38px;
         }
-        .${showedGoodsText} {
+        .showed-text {
           margin-right: 5px;
         }
-        .${showedGoodsAmountText} {
+        .showed-amount-text {
           margin-left: 5px;
         }
-        .${addedGoodsText} {
+        .added-text {
           margin-right: 8px;
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-          .${statusWrapper} {
+          .status-wrapper {
             box-shadow: none;
           }
-          .${addedGoodsText} {
+          .added-text {
             display: none;
           }
-          .${showedGoods} {
+          .status-showed {
             margin: 0;
           }
-          .${addedGoods} {
+          .status-added {
             margin: -3px 0 0 0;
           }
         }
