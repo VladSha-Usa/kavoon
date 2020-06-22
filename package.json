@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "perl -i -pe \"s/require\\('mapbox-gl/\\/\\/ require\\('mapbox-gl/\" ./node_modules/react-mapbox-gl/lib-esm/map.js"
   },
   "dependencies": {
     "firebase": "^7.14.3",

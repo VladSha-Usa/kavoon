@@ -1,12 +1,8 @@
 image: node:14.4.0
 
-
-services:
-  - name: amazon/dynamodb-local
-    alias: dynamodb
-
 stages:
   - unit_tests
+  - build
 
 
 before_script:
@@ -15,12 +11,19 @@ before_script:
   - yarn install
 
 unit_tests:
-  variables:
-    SLS_DEBUG: "*"
   dependencies: []
   stage: unit_tests
   artifacts:
   script:
     - yarn lint
+  tags:
+    - docker
+
+build:
+  dependencies: []
+  stage: unit_tests
+  artifacts:
+  script:
+    - yarn build
   tags:
     - docker
