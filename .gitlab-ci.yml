@@ -18,9 +18,12 @@ before_script:
   - export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 install_yarn:
-  dependencies: [setup]
+  dependencies: []
   stage: setup
-  - yarn install
+  script:
+    - yarn install
+  tags:
+    - docker
  
 
 lint:
