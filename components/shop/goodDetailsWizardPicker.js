@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import RespScreenWidth from "../common/mediaConst";
 import useOutsideClick from "./useOutsideClick";
 
 const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
@@ -58,7 +59,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             line-height: normal;
             letter-spacing: 0.85px;
             color: var(--texticonscolor);
-            margin-bottom: 70px;
+            margin-bottom: 81px;
           }
           .picker-param__status {
             position: absolute;
@@ -202,6 +203,26 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           }
           .param__status-list__title {
             margin-left: 15px;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .wizard__picker-param {
+              width: 335px;
+            }
+            .picker-param__status {
+              width: 335px;
+            }
+            .list-elem .status-list__img-wrapper:hover .status-list__img {
+              position: relative;
+              height: 35px;
+              width: 35px;
+              margin: 0;
+            }
+            .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
+              margin-left: 15px;
+            }
+            .picker-param__status-list li {
+              margin-bottom: 17px;
+            }
           }
         `}
       </style>

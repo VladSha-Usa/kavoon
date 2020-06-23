@@ -126,8 +126,8 @@ const Good1 = () => {
             margin-right: auto;
           }
           .good-details-status {
-            margin-top: 115px;
-            margin-bottom: 36px;
+            margin-top: 120px;
+            margin-bottom: 60px;
           }
           .good-details-choose {
             margin-bottom: 60px;
@@ -179,6 +179,7 @@ const Good1 = () => {
             }
             .good-details-status {
               margin-top: 66px;
+              margin-bottom: 30px;
             }
             .footer-background {
               height: 215px;

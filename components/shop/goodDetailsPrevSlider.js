@@ -1,18 +1,15 @@
 import { useState } from "react";
 import Slider from "react-slick";
+import RespScreenWidth from "../common/mediaConst";
 
 const GoodDetailsPrevSlider = ({ images }) => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
-  const sliderWrapper = "good-prev__slider-wrapper";
-  const img = "details-slider__img";
-  const sliderFirst = "details-slider__first";
-  const sliderSecond = "details-slider__second";
 
   return (
     <>
-      <div className={sliderWrapper}>
-        <div className={sliderFirst}>
+      <div className="good-prev__slider-wrapper">
+        <div className="details-slider__first">
           <Slider
             asNavFor={slider2}
             ref={(slider) => setSlider1(slider)}
@@ -24,13 +21,13 @@ const GoodDetailsPrevSlider = ({ images }) => {
                   src={image.src}
                   srcSet={image.srcSet}
                   onClick={() => slider1.slickGoTo(index + 1)}
-                  className={img}
+                  className="details-slider__img"
                 />
               </div>
             ))}
           </Slider>
         </div>
-        <div className={sliderSecond}>
+        <div className="details-slider__second">
           <Slider
             asNavFor={slider1}
             ref={(slider) => setSlider2(slider)}
@@ -41,7 +38,11 @@ const GoodDetailsPrevSlider = ({ images }) => {
           >
             {images.map((image, index) => (
               <div key={index}>
-                <img src={image.src} srcSet={image.srcSet} className={img} />
+                <img
+                  src={image.src}
+                  srcSet={image.srcSet}
+                  className="details-slider__img"
+                />
               </div>
             ))}
           </Slider>
@@ -49,26 +50,26 @@ const GoodDetailsPrevSlider = ({ images }) => {
       </div>
       <style jsx global>
         {`
-          .${sliderFirst} {
+          .details-slider__first {
             margin-bottom: 50px;
           }
-          .${sliderFirst} .slick-disabled {
+          .details-slider__first .slick-disabled {
             opacity: 0.25;
           }
-          .${sliderFirst} .slick-next,
+          .details-slider__first .slick-next,
           .slick-prev {
             background: none;
           }
-          .${sliderFirst} .slick-prev {
+          .details-slider__first .slick-prev {
             left: -39px;
             top: 50%;
           }
-          .${sliderFirst} .slick-next {
+          .details-slider__first .slick-next {
             right: -40px;
             top: calc(48% - 3px);
           }
-          .${sliderFirst} .slick-next:before,
-          .${sliderFirst} .slick-prev:before {
+          .details-slider__first .slick-next:before,
+          .details-slider__first .slick-prev:before {
             content: "";
             font-size: 0px;
             line-height: 0px;
@@ -78,22 +79,22 @@ const GoodDetailsPrevSlider = ({ images }) => {
             width: 16px;
             height: 27px;
           }
-          .${sliderFirst} .slick-prev {
+          .details-slider__first .slick-prev {
             transform: rotate(180deg);
           }
-          .${sliderFirst} .slick-list {
+          .details-slider__first .slick-list {
             border-radius: 12px;
             overflow: hidden;
           }
-          .${sliderFirst} .slick-slider {
+          .details-slider__first .slick-slider {
             margin-bottom: 45px;
             width: 460px;
           }
-          .${sliderFirst} .${img} {
+          .details-slider__first .details-slider__img {
             width: 460px;
             height: 580px;
           }
-          .${sliderFirst} .slick-dots li button:before {
+          .details-slider__first .slick-dots li button:before {
             width: 8px;
             height: 8px;
             content: "";
@@ -104,40 +105,102 @@ const GoodDetailsPrevSlider = ({ images }) => {
             top: calc(50% - 4px);
             left: calc(50% - 4px);
           }
-          .${sliderFirst} .slick-dots {
+          .details-slider__first .slick-dots {
             margin-bottom: -9px;
           }
-          .${sliderFirst} .slick-dots li {
+          .details-slider__first .slick-dots li {
             margin: 0;
             width: 16px;
           }
-          .${sliderFirst} .slick-dots .slick-active button:before {
+          .details-slider__first .slick-dots .slick-active button:before {
             width: 15px;
             height: 15px;
             opacity: 1;
             top: calc(50% - 7.5px);
             left: calc(50% - 7.5px);
           }
-          .${sliderSecond} .${img} {
+          .details-slider__second .details-slider__img {
             width: 115px !important;
             height: 120px;
             border-radius: 6px;
           }
-          .${sliderSecond} .slick-slide {
+          .details-slider__second .slick-slide {
             width: 120px !important;
             cursor: pointer;
           }
-          .${sliderSecond} .slick-list,
-          .${sliderSecond} .slick-track {
+          .details-slider__second .slick-list,
+          .details-slider__second .slick-track {
             height: 120px;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+            .details-slider__first .slick-slider {
+              width: 400px;
+            }
+            .details-slider__first .details-slider__img {
+              width: 400px;
+              height: 520px;
+            }
+            .details-slider__first .slick-prev {
+              left: -29px;
+            }
+            .details-slider__first .slick-next {
+              right: -30px;
+            }
+            .details-slider__second .details-slider__img {
+              width: 95px !important;
+              height: 100px;
+              border-radius: 6px;
+            }
+            .details-slider__second .slick-slide {
+              width: 105px !important;
+              cursor: pointer;
+            }
+            .details-slider__second .slick-list,
+            .details-slider__second .slick-track {
+              height: 100px;
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .details-slider__first .slick-prev,
+            .details-slider__first .slick-next {
+              display: none !important;
+            }
+            .details-slider__second {
+              display: none;
+            }
+            .details-slider__first {
+              margin-bottom: 55px;
+            }
+            .details-slider__first .slick-slider {
+              width: 335px;
+            }
+            .details-slider__first .details-slider__img {
+              width: 335px;
+              height: 400px;
+            }
+            .details-slider__first .slick-dots {
+              margin-bottom: -2px;
+            }
           }
         `}
       </style>
       <style jsx>
         {`
-          .${sliderWrapper} {
+          .good-prev__slider-wrapper {
             width: 480px;
             margin-left: 45px;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+            .good-prev__slider-wrapper {
+              width: 420px;
+              margin-left: 35px;
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .good-prev__slider-wrapper {
+              margin-left: 0;
+              width: 335px;
+            }
           }
         `}
       </style>

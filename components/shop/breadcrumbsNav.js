@@ -1,3 +1,4 @@
+import RespScreenWidth from "../common/mediaConst";
 const BreadcrumbsNav = ({ breadcrumbsData }) => {
   return (
     <>
@@ -44,10 +45,10 @@ const BreadcrumbsNav = ({ breadcrumbsData }) => {
           margin-left: -12.5px;
           margin-top: 5px;
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .breadcrumbs-wrapper {
             align-items: flex-start;
-            margin-block-end: 27px;s
+            margin-block-end: 27px;
           }
           .breadcrumbs-item:first-child {
             white-space: nowrap;

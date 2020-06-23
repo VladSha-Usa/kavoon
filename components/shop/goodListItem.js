@@ -29,7 +29,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
               <span className={descriptionCapacityLitres}>л</span>
             </div>
             <div className={descriptionPrice}>
-              {price}
+              {price.toLocaleString({ useGrouping: true })}
               <span className={descriptionPriceCurrency}>грн</span>
             </div>
           </div>

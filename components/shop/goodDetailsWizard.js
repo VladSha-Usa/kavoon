@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import RespScreenWidth from "../common/mediaConst";
 import BasketLogic from "../../data/shop/logic/basket";
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
@@ -57,6 +58,16 @@ const GoodDetailsWizard = () => {
         .good-wizard-wrapper {
           width: 380px;
           margin-left: 96px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .good-wizard-wrapper {
+            margin-left: 0px;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .good-wizard-wrapper {
+            width: 335px;
+          }
         }
       `}</style>
     </>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
+import RespScreenWidth from "../common/mediaConst";
 import { v4 as uuidv4 } from "uuid";
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
@@ -26,7 +27,7 @@ const GoodDetailsWizardAddOther = ({
             <span className="good-amount">{additionGoodData.count}шт.</span>
             <span className="good-price">
               {basketStyleSettings ? "Сума: " : ""}
-              {additionGoodData.price} грн
+              {additionGoodData.price.toLocaleString({ useGrouping: true })} грн
             </span>
             <label className="good-checkcontainer">
               <input
@@ -183,6 +184,24 @@ const GoodDetailsWizardAddOther = ({
         .good-amount {
           display: ${basketStyleSettings ? "block" : "none"};
           margin-bottom: ${basketStyleSettings ? "27px" : "0"};
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .addition-wrapper {
+            margin-top: 100px;
+          }
+          .addition-good-wrapper {
+            margin-bottom: 35px;
+          }
+          .good-price {
+            padding-bottom: 17px;
+          }
+          .good-checkcontainer-text {
+            letter-spacing: 0px;
+            margin-left: 0;
+          }
+          .btn-submit {
+            width: 100%;
+          }
         }
       `}</style>
     </>

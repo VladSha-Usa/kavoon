@@ -41,13 +41,15 @@ const BasketInfoChooseGoods = () => {
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {goods.reduce(
-                (sum, good) =>
-                  good.additionGoodData
-                    ? sum + good.price + good.additionGoodData.price
-                    : sum + good.price,
-                0
-              )}{" "}
+              {goods
+                .reduce(
+                  (sum, good) =>
+                    good.additionGoodData
+                      ? sum + good.price + good.additionGoodData.price
+                      : sum + good.price,
+                  0
+                )
+                .toLocaleString({ useGrouping: true })}{" "}
               грн
             </span>
           </div>
