@@ -34,6 +34,14 @@ lint:
   tags:
     - docker
 
+jest:
+  dependencies: [install_yarn]
+  stage: tests
+  script:
+    - yarn jest
+  tags:
+    - docker
+
 build:
   dependencies: [lint]
   stage: build
