@@ -5,7 +5,7 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
-import BasketData from "../../data/shop/adapters/basket";
+import BasketData from "../../data/shop/viewModels/basket";
 import BasketStatus from "../../components/shop/basketStatus";
 import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
 import RespScreenWidth from "../../components/common/mediaConst";
