@@ -1,21 +1,23 @@
-import RespScreenWidth from "../common/mediaConst";
+import RespScreenWidth from '../common/mediaConst';
 
 const Title = () => {
-
-  const titleFirstClass = 'title-first'
-  const titleSecondClass = 'title-second'
-  const backgroundClass = 'title-background'
+  const titleFirstClass = 'title-first';
+  const titleSecondClass = 'title-second';
+  const backgroundClass = 'title-background';
 
   const mainFontSize = 134;
   return (
     <>
       <div className={backgroundClass}>
         FLOWERS
-        <br /> WAY
+        <br />
+        {' '}
+        WAY
       </div>
       <div className={titleFirstClass}>FLOWERS</div>
       <div className={titleSecondClass}>WAY</div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .${titleFirstClass} {
           font-family: "Archivo Black", sans-serif;
           font-size: ${mainFontSize}px;
@@ -87,9 +89,10 @@ const Title = () => {
             top: 0px;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
-}
+};
 
-export default Title
+export default Title;

@@ -1,17 +1,21 @@
-const GoodDetailsWizardTitle = ({ dataForTitle }) => {
-  return (
-    <>
-      <div className="wizard__title">
-        <span className="wizard__title-description">
-          {dataForTitle.name}
-          {dataForTitle.specification.volume
-            ? " " + dataForTitle.specification.volume + "л"
-            : ""}
-          .
-        </span>
-        <span className="wizard__title-price">{dataForTitle.price} грн</span>
-      </div>
-      <style jsx>{`
+const GoodDetailsWizardTitle = ({ dataForTitle }) => (
+  <>
+    <div className="wizard__title">
+      <span className="wizard__title-description">
+        {dataForTitle.name}
+        {dataForTitle.specification.volume
+          ? ` ${dataForTitle.specification.volume}л`
+          : ''}
+        .
+      </span>
+      <span className="wizard__title-price">
+        {dataForTitle.price}
+        {' '}
+        грн
+      </span>
+    </div>
+    <style jsx>
+      {`
         .wizard__title {
           font-family: Montserrat;
           font-size: 24px;
@@ -31,8 +35,8 @@ const GoodDetailsWizardTitle = ({ dataForTitle }) => {
         .wizard__title-price {
           color: var(--primarycolor);
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 export default GoodDetailsWizardTitle;

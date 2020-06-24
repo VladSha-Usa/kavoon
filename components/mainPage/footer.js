@@ -1,59 +1,59 @@
-import ImageLink from "../common/imageLink";
-import RespScreenWidth from "../common/mediaConst";
+import ImageLink from '../common/imageLink';
+import RespScreenWidth from '../common/mediaConst';
 
-const Footer = () => {
-  return (
-    <>
-      <footer>
-        <div className="footer-navbar">
-          <div className="footer-banner">
-            <nav>
-              <a href="#">
-                <img
-                  src="/img/logo-footer.png"
-                  srcSet="/img/logo-footer@2x.png 2x, /img/logo-footer@3x.png 3x"
-                  className="logo-footer"
-                />
-              </a>
-            </nav>
-          </div>
-          <div className="footer-social">
-            <div className="find-us-here">Шукайте нас тут: </div>
-            <nav style={{ marginRight: "5px" }}>
-              <ImageLink
-                href="#"
-                src="/img/viber-footer-icon.svg"
-                hoverSrc="/img/viber-hover.svg"
-                imgWidth="40px"
-                imgHeight="40px"
+const Footer = () => (
+  <>
+    <footer>
+      <div className="footer-navbar">
+        <div className="footer-banner">
+          <nav>
+            <a href="#">
+              <img
+                src="/img/logo-footer.png"
+                srcSet="/img/logo-footer@2x.png 2x, /img/logo-footer@3x.png 3x"
+                className="logo-footer"
               />
-            </nav>
-            <nav style={{ marginLeft: "5px", marginRight: "5px" }}>
-              <ImageLink
-                href="http://instagram.com/flowers__way/"
-                src="/img/instagram-footer-icon.svg"
-                hoverSrc="/img/instagram-hover.svg"
-                imgWidth="40px"
-                imgHeight="40px"
-              />
-            </nav>
-            <nav style={{ marginLeft: "5px" }}>
-              <ImageLink
-                href="https://www.facebook.com/ovchynnikova.nadiia/"
-                src="/img/facebook-footer-icon.svg"
-                hoverSrc="/img/facebook-hover.svg"
-                imgWidth="40px"
-                imgHeight="40px"
-              />
-            </nav>
-          </div>
+            </a>
+          </nav>
         </div>
-        <div className="footer-copyright">
-          ©2019 Flowers way. All Rights Reserved.
+        <div className="footer-social">
+          <div className="find-us-here">Шукайте нас тут: </div>
+          <nav style={{ marginRight: '5px' }}>
+            <ImageLink
+              href="#"
+              src="/img/viber-footer-icon.svg"
+              hoverSrc="/img/viber-hover.svg"
+              imgWidth="40px"
+              imgHeight="40px"
+            />
+          </nav>
+          <nav style={{ marginLeft: '5px', marginRight: '5px' }}>
+            <ImageLink
+              href="http://instagram.com/flowers__way/"
+              src="/img/instagram-footer-icon.svg"
+              hoverSrc="/img/instagram-hover.svg"
+              imgWidth="40px"
+              imgHeight="40px"
+            />
+          </nav>
+          <nav style={{ marginLeft: '5px' }}>
+            <ImageLink
+              href="https://www.facebook.com/ovchynnikova.nadiia/"
+              src="/img/facebook-footer-icon.svg"
+              hoverSrc="/img/facebook-hover.svg"
+              imgWidth="40px"
+              imgHeight="40px"
+            />
+          </nav>
         </div>
-      </footer>
+      </div>
+      <div className="footer-copyright">
+        ©2019 Flowers way. All Rights Reserved.
+      </div>
+    </footer>
 
-      <style jsx>{`
+    <style jsx>
+      {`
         .find-us-here {
           margin-right: 20px;
         }
@@ -129,9 +129,9 @@ const Footer = () => {
             object-fit: contain;
           }
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default Footer;

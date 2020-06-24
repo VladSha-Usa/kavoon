@@ -1,11 +1,11 @@
-const PageCaption = ({ caption, offset }) => {
-  return (
-    <>
-      <div>
-        <div className="pathfinder-caption-background-text">{caption}</div>
-        <div className="pathfinder-caption-text">{caption}</div>
-      </div>
-      <style jsx>{`
+const PageCaption = ({ caption, offset }) => (
+  <>
+    <div>
+      <div className="pathfinder-caption-background-text">{caption}</div>
+      <div className="pathfinder-caption-text">{caption}</div>
+    </div>
+    <style jsx>
+      {`
         .pathfinder-caption-background-text {
           object-fit: contain;
           opacity: 0.12;
@@ -36,9 +36,9 @@ const PageCaption = ({ caption, offset }) => {
           text-align: center;
           position: relative;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default PageCaption;

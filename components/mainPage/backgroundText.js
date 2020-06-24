@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const BackgroundText = () => {
-  return (
-    <>
-      <div>Путівник</div>
-      <style jsx>{`
+const BackgroundText = () => (
+  <>
+    <div>Путівник</div>
+    <style jsx>
+      {`
         .flowers-way {
           font-family: "Archivo Black", sans-serif;
           font-size: 128px;
@@ -33,9 +33,9 @@ const BackgroundText = () => {
           letter-spacing: 8.6px;
           color: #296fdc;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default Pathfinder;

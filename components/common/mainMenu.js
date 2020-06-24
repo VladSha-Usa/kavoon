@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import ImageLink from "../common/imageLink";
-import LanguagePopupMobile from "./languagePopupMobile";
+import { useState, useEffect } from 'react';
+import ImageLink from './imageLink';
+import LanguagePopupMobile from './languagePopupMobile';
 
 const MainMenu = ({ onClose }) => {
   useEffect(() => {
-    document.body.classList.add("no-scroll");
+    document.body.classList.add('no-scroll');
     return function cleanup() {
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove('no-scroll');
     };
   });
   const [popupLang, setPopupLang] = useState(false);
@@ -16,20 +16,20 @@ const MainMenu = ({ onClose }) => {
       <div className="burger__menu-wrapper">
         <div
           style={{
-            alignItems: "center",
-            position: "absolute",
-            width: "20px",
-            height: "20px",
-            top: "20px",
-            right: "20px",
+            alignItems: 'center',
+            position: 'absolute',
+            width: '20px',
+            height: '20px',
+            top: '20px',
+            right: '20px',
           }}
           onClick={() => onClose()}
         >
           <img
-            style={{ margin: "auto" }}
+            style={{ margin: 'auto' }}
             src="/img/cancelIcon.png"
             srcSet="/img/cancelIcon@2x.png 2x, img/cancelIcon@3x.png 3x"
-          ></img>
+          />
         </div>
         <div className="burger__menu-banner">
           <nav>
@@ -96,7 +96,8 @@ const MainMenu = ({ onClose }) => {
           </nav>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .burger__menu-wrapper {
           overflow: auto;
           display: flex;
@@ -202,7 +203,8 @@ const MainMenu = ({ onClose }) => {
           width: 210px;
           justify-content: space-between;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

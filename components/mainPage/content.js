@@ -1,8 +1,9 @@
-import Title from "./title";
-import BlockItem from "./blockItem";
-import RespScreenWidth from "../common/mediaConst";
+import Title from './title';
+import BlockItem from './blockItem';
+import RespScreenWidth from '../common/mediaConst';
+
 const Content = ({ classPrefix }) => {
-  const prefix = `${classPrefix ? classPrefix + "-" : ""}content`;
+  const prefix = `${classPrefix ? `${classPrefix}-` : ''}content`;
 
   return (
     <>
@@ -24,7 +25,7 @@ const Content = ({ classPrefix }) => {
           <BlockItem
             src="/img/image.jpg"
             srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
-            enabled={true}
+            enabled
             type="pathfinder"
             title="КУДИ ПОЇХАТИ?"
             button="СЮДИ"
@@ -39,7 +40,7 @@ const Content = ({ classPrefix }) => {
               src="/img/shop-image.jpg"
               srcSet="/img/shop-image@2x.jpg 2x,img/shop-image@3x.jpg 3x"
               backText="МАГАЗИН"
-              enabled={true}
+              enabled
               type="shop"
               title="ЯКЕ СПОРЯДЖЕННЯ?"
               button="ТУТ МОЖНА ПРИДБАТИ"
@@ -54,7 +55,8 @@ const Content = ({ classPrefix }) => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         .content-layout {
           position: relative;
           padding-top: 40px;
@@ -82,7 +84,8 @@ const Content = ({ classPrefix }) => {
             top: 0px;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

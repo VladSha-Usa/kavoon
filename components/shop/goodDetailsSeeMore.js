@@ -1,24 +1,25 @@
-import GoodListItem from "../../components/shop/goodListItem";
-const GoodDetailsSeeMore = ({ elseGoods }) => {
-  return (
-    <>
-      <div className="see-more-wrapper">
-        <span className="more-title">Давай ще щось подивимось</span>
-        <div className="goods-wrapper">
-          {elseGoods.map((goodListItem, i) => (
-            <GoodListItem
-              key={i}
-              src={goodListItem.image}
-              srcSet={goodListItem.srcSet}
-              href={goodListItem.href}
-              contentTitle={goodListItem.name}
-              capacity={goodListItem.volume}
-              price={goodListItem.price}
-            />
-          ))}
-        </div>
+import GoodListItem from './goodListItem';
+
+const GoodDetailsSeeMore = ({ elseGoods }) => (
+  <>
+    <div className="see-more-wrapper">
+      <span className="more-title">Давай ще щось подивимось</span>
+      <div className="goods-wrapper">
+        {elseGoods.map((goodListItem, i) => (
+          <GoodListItem
+            key={i}
+            src={goodListItem.image}
+            srcSet={goodListItem.srcSet}
+            href={goodListItem.href}
+            contentTitle={goodListItem.name}
+            capacity={goodListItem.volume}
+            price={goodListItem.price}
+          />
+        ))}
       </div>
-      <style jsx>{`
+    </div>
+    <style jsx>
+      {`
         .goods-wrapper {
           display: flex;
           flex-wrap: wrap;
@@ -37,9 +38,9 @@ const GoodDetailsSeeMore = ({ elseGoods }) => {
           text-align: center;
           margin-bottom: 51px;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default GoodDetailsSeeMore;

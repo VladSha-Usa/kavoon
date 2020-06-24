@@ -1,19 +1,23 @@
-import React, { useState } from "react";
-import BasketLogic from "../../data/shop/logic/basket";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import BasketLogic from '../../data/shop/logic/basket';
+
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
 }) => {
   const [status, checkerStatus] = useState(true);
-  const textStatus = status ? "ти" : "но";
-  const textColor = status ? "var(--primarycolor)" : "var(--texticonscolor)";
-  const statusWhileInBasket = basketStyleSettings ? "none" : "block";
+  const textStatus = status ? 'ти' : 'но';
+  const textColor = status ? 'var(--primarycolor)' : 'var(--texticonscolor)';
+  const statusWhileInBasket = basketStyleSettings ? 'none' : 'block';
   return (
     <>
       <div className="addition-wrapper">
         <span className="addition-title">
-          Дода{basketStyleSettings ? "но" : "ти"} в комплект:
+          Дода
+          {basketStyleSettings ? 'но' : 'ти'}
+          {' '}
+          в комплект:
         </span>
         <div className="addition-good-wrapper">
           <img
@@ -23,10 +27,15 @@ const GoodDetailsWizardAddOther = ({
           />
           <div className="good-description-checker">
             <span className="good-title">{additionGoodData.name}</span>
-            <span className="good-amount">{additionGoodData.count}шт.</span>
+            <span className="good-amount">
+              {additionGoodData.count}
+              шт.
+            </span>
             <span className="good-price">
-              {basketStyleSettings ? "Сума: " : ""}
-              {additionGoodData.price} грн
+              {basketStyleSettings ? 'Сума: ' : ''}
+              {additionGoodData.price}
+              {' '}
+              грн
             </span>
             <label className="good-checkcontainer">
               <input
@@ -36,14 +45,17 @@ const GoodDetailsWizardAddOther = ({
                   checkerStatus(!status);
                   status
                     ? BasketLogic.colectDataOfGood({
-                        additionGoodData: { ...additionGoodData },
-                      })
-                    : BasketLogic.colectDataOfGood("deleteAddGood");
+                      additionGoodData: { ...additionGoodData },
+                    })
+                    : BasketLogic.colectDataOfGood('deleteAddGood');
                 }}
               />
-              <span className="good-checkmark"></span>
+              <span className="good-checkmark" />
               <span className="good-checkcontainer-text">
-                Дода{textStatus} в комплект
+                Дода
+                {textStatus}
+                {' '}
+                в комплект
               </span>
             </label>
           </div>
@@ -59,7 +71,8 @@ const GoodDetailsWizardAddOther = ({
           Зробити замовлення
         </button>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .addition-wrapper {
           font-family: Montserrat;
           font-size: 17px;
@@ -69,7 +82,7 @@ const GoodDetailsWizardAddOther = ({
           line-height: normal;
           letter-spacing: 0.89px;
           color: var(--texticonscolor);
-          margin-top: ${basketStyleSettings ? "0px" : "95px"};
+          margin-top: ${basketStyleSettings ? '0px' : '95px'};
         }
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
@@ -79,7 +92,7 @@ const GoodDetailsWizardAddOther = ({
           height: 100px;
         }
         .addition-title {
-          margin-bottom: ${basketStyleSettings ? "14px" : "21px "};
+          margin-bottom: ${basketStyleSettings ? '14px' : '21px '};
           display: block;
         }
         .good-title {
@@ -87,8 +100,8 @@ const GoodDetailsWizardAddOther = ({
         }
         .good-price {
           padding-bottom: 22px;
-          letter-spacing: ${basketStyleSettings ? "0.75px" : "none"};
-          font-size: ${basketStyleSettings ? "16px" : "17px"};
+          letter-spacing: ${basketStyleSettings ? '0.75px' : 'none'};
+          font-size: ${basketStyleSettings ? '16px' : '17px'};
         }
         .good-checkcontainer {
           display: ${statusWhileInBasket};
@@ -173,18 +186,19 @@ const GoodDetailsWizardAddOther = ({
         }
         .addition-good-wrapper {
           display: flex;
-          margin-bottom: ${basketStyleSettings ? "2px" : "29px"};
+          margin-bottom: ${basketStyleSettings ? '2px' : '29px'};
         }
         .good-description-checker {
           display: flex;
           flex-direction: column;
-          margin-left: ${basketStyleSettings ? "31px" : "20px"};
+          margin-left: ${basketStyleSettings ? '31px' : '20px'};
         }
         .good-amount {
-          display: ${basketStyleSettings ? "block" : "none"};
-          margin-bottom: ${basketStyleSettings ? "27px" : "0"};
+          display: ${basketStyleSettings ? 'block' : 'none'};
+          margin-bottom: ${basketStyleSettings ? '27px' : '0'};
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

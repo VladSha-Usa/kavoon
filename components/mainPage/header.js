@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import ImageLink from "../common/imageLink";
-import MainMenu from "../common/mainMenu";
-import LanguagePopup from "../common/languagePopup";
-import RespScreenWidth from "../common/mediaConst";
+import { useState, useEffect } from 'react';
+import ImageLink from '../common/imageLink';
+import MainMenu from '../common/mainMenu';
+import LanguagePopup from '../common/languagePopup';
+import RespScreenWidth from '../common/mediaConst';
 
 const Header = () => {
-  const prefix = "header";
+  const prefix = 'header';
   const navbarClass = `${prefix}-navbar`;
   const bannerClass = `${prefix}-banner`;
   const menuClass = `${prefix}-menu`;
@@ -14,28 +14,28 @@ const Header = () => {
   const hamburgerClass = `${prefix}-hamburger`;
   const [popup, setPopup] = useState(false);
   const onScroll = () => {
-    var scrollThreshold = 40;
-    var width = Math.max(
+    let scrollThreshold = 40;
+    const width = Math.max(
       document.documentElement.clientWidth,
-      window.innerWidth || 0
+      window.innerWidth || 0,
     );
     if (width <= RespScreenWidth.screenWidthMobile) {
       scrollThreshold = 3;
     }
     if (
-      document.body.scrollTop > scrollThreshold ||
-      document.documentElement.scrollTop > scrollThreshold
+      document.body.scrollTop > scrollThreshold
+      || document.documentElement.scrollTop > scrollThreshold
     ) {
-      document.getElementById("home").classList.add("header-border");
+      document.getElementById('home').classList.add('header-border');
     } else {
-      document.getElementById("home").classList.remove("header-border");
+      document.getElementById('home').classList.remove('header-border');
     }
   };
   const [mobileLogo, setMobileLogo] = useState();
   useEffect(() => {
     document.onscroll = onScroll;
     onScroll();
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       window.innerWidth <= RespScreenWidth.screenWidthMobile
         ? setMobileLogo(true)
         : setMobileLogo(false);
@@ -54,13 +54,13 @@ const Header = () => {
               <img
                 src={
                   mobileLogo
-                    ? "/img/logo-mobile-header.png"
-                    : "/img/logotype.png"
+                    ? '/img/logo-mobile-header.png'
+                    : '/img/logotype.png'
                 }
                 srcSet={
                   mobileLogo
-                    ? "/img/logo-mobile-header@2x.png 2x, img/logo-mobile-header@3x.png 3x"
-                    : "/img/logotype@2x.png 2x, img/logotype@3x.png 3x"
+                    ? '/img/logo-mobile-header@2x.png 2x, img/logo-mobile-header@3x.png 3x'
+                    : '/img/logotype@2x.png 2x, img/logotype@3x.png 3x'
                 }
                 className={bannerImgClass}
               />
@@ -68,23 +68,23 @@ const Header = () => {
           </nav>
         </div>
         <div className={menuClass}>
-          <nav className="menu-link" style={{ marginLeft: "auto" }}>
+          <nav className="menu-link" style={{ marginLeft: 'auto' }}>
             <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">
               Магазин
             </a>
           </nav>
           <nav
             className="menu-link"
-            style={{ marginLeft: "40px", marginRight: "40px" }}
+            style={{ marginLeft: '40px', marginRight: '40px' }}
           >
             <a href="#pathfinder">Путівник</a>
           </nav>
-          <nav className="menu-link" style={{ marginRight: "auto" }}>
+          <nav className="menu-link" style={{ marginRight: 'auto' }}>
             <span className="disabled">Блог</span>
           </nav>
         </div>
         <div className={socialClass}>
-          <nav style={{ marginRight: "10px" }} className="language-navigation">
+          <nav style={{ marginRight: '10px' }} className="language-navigation">
             <LanguagePopup />
           </nav>
           <nav>
@@ -97,7 +97,7 @@ const Header = () => {
             />
           </nav>
 
-          <nav style={{ marginLeft: "15px" }}>
+          <nav style={{ marginLeft: '15px' }}>
             <ImageLink
               href="https://www.facebook.com/ovchynnikova.nadiia/"
               src="/img/facebook.svg"
@@ -106,7 +106,7 @@ const Header = () => {
               imgHeight="40px"
             />
           </nav>
-          <nav style={{ marginLeft: "15px" }}>
+          <nav style={{ marginLeft: '15px' }}>
             <ImageLink
               href="http://instagram.com/flowers__way/"
               src="/img/instagram.svg"
@@ -124,7 +124,8 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      <style jsx>{`
+      <style jsx>
+        {`
         .${navbarClass} {
           align-items: center;
           display: flex;
@@ -236,7 +237,8 @@ const Header = () => {
             display: none;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

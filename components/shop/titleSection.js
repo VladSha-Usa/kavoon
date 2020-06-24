@@ -1,19 +1,23 @@
-import RespScreenWidth from "../common/mediaConst";
+import RespScreenWidth from '../common/mediaConst';
 
-const TitleSection = () => {
-  return (
-    <>
-      <div className="title__section-wrapper">
-        <div className="title__section-background">
-          Магазин <br /> велоспорядження
-        </div>
-        <div className="title__section-main">Магазин велоспорядження</div>
-        <div className="title__section-subtitle">
-          Велоспорядження для легких подорожей, мандруй сміливо, безпечно, а
-          головне з комфортом
-        </div>
+const TitleSection = () => (
+  <>
+    <div className="title__section-wrapper">
+      <div className="title__section-background">
+        Магазин
+        {' '}
+        <br />
+        {' '}
+        велоспорядження
       </div>
-      <style jsx>{`
+      <div className="title__section-main">Магазин велоспорядження</div>
+      <div className="title__section-subtitle">
+        Велоспорядження для легких подорожей, мандруй сміливо, безпечно, а
+        головне з комфортом
+      </div>
+    </div>
+    <style jsx>
+      {`
         .title__section-wrapper {
           display: flex;
           flex-direction: column;
@@ -90,9 +94,9 @@ const TitleSection = () => {
             letter-spacing: 0.65px;
           }
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default TitleSection;

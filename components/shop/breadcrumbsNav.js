@@ -1,14 +1,14 @@
-const BreadcrumbsNav = ({ breadcrumbsData }) => {
-  return (
-    <>
-      <ul className="breadcrumbs-wrapper">
-        {breadcrumbsData.map((obj, index) => (
-          <li className="breadcrumbs-item" key={index}>
-            <a href={obj.src}>{obj.name}</a>
-          </li>
-        ))}
-      </ul>
-      <style jsx>{`
+const BreadcrumbsNav = ({ breadcrumbsData }) => (
+  <>
+    <ul className="breadcrumbs-wrapper">
+      {breadcrumbsData.map((obj, index) => (
+        <li className="breadcrumbs-item" key={index}>
+          <a href={obj.src}>{obj.name}</a>
+        </li>
+      ))}
+    </ul>
+    <style jsx>
+      {`
         .breadcrumbs-wrapper {
           display: flex;
           align-items: center;
@@ -44,8 +44,8 @@ const BreadcrumbsNav = ({ breadcrumbsData }) => {
           margin-left: -12.5px;
           margin-top: 5px;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 export default BreadcrumbsNav;

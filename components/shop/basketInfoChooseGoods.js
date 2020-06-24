@@ -1,20 +1,27 @@
-import BasketMainGood from "./basketMainGood";
-import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
-import BasketLogic from "../../data/shop/logic/basket";
-import useRx from "../../components/shop/useRx";
-import HelperFun from "../common/helper";
+import BasketMainGood from './basketMainGood';
+import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
+import useRx from './useRx';
+import HelperFun from '../common/helper';
 
-const BasketInfoChooseGoods = () => {
-  const goods = useRx(BasketLogic.goods);
-  const countValue = useRx(BasketLogic.count);
+const BasketInfoChooseGoods = (vm) => {
+  const goods = useRx(vm.goods);
+  const countValue = useRx(vm.count);
 
   return (
     <>
       <div className="info-choose-goods-wrapper">
         <div className="info-choose-status">
-          Твій кошик{" "}
+          Твій кошик
+          {' '}
           <span className="info-choose-status-amount">
-            ( {countValue} товар{HelperFun.endingOfWord(countValue)} )
+            (
+            {' '}
+            {countValue}
+            {' '}
+            товар
+            {HelperFun.endingOfWord(countValue)}
+            {' '}
+            )
           </span>
         </div>
         <div className="info-choose-goods">
@@ -33,7 +40,7 @@ const BasketInfoChooseGoods = () => {
               <div className="choose-good-wrapper" key={index}>
                 <GoodDetailsWizardAddOther
                   additionGoodData={good.additionGoodData}
-                  basketStyleSettings={true}
+                  basketStyleSettings
                 />
                 <img src="/img/good-to-complect-img/cancel-icon.svg" />
               </div>
@@ -42,18 +49,19 @@ const BasketInfoChooseGoods = () => {
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
               {goods.reduce(
-                (sum, good) =>
-                  good.additionGoodData
-                    ? sum + good.price + good.additionGoodData.price
-                    : sum + good.price,
-                0
-              )}{" "}
+                (sum, good) => (good.additionGoodData
+                  ? sum + good.price + good.additionGoodData.price
+                  : sum + good.price),
+                0,
+              )}
+              {' '}
               грн
             </span>
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .info-choose-goods-wrapper {
           font-family: Montserrat;
           font-size: 16px;
@@ -104,7 +112,8 @@ const BasketInfoChooseGoods = () => {
         .choose-good-wrapper img{
           cursor: pointer;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

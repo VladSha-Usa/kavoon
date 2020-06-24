@@ -1,45 +1,46 @@
-import Popup from "reactjs-popup";
-import GoodDiscountInComplect from "./goodDiscountInComplect";
-const GoodDetailsThingsTook = ({ things, сontent }) => {
-  return (
-    <>
-      <div className="taken-things-wrapper">
-        <div className="things-main-question">
-          Що можна покласти в комплект?
-        </div>
-        <div className="main-imgs-wrapper">
-          <div className="large-img-content">
-            <img
-              className="large-img"
-              src={things.largeImg.src}
-              srcSet={things.largeImg.srcSet}
-            />
-            <div className="img-large-sub-question">
-              Як щодо такого комлекту сумок?
-            </div>
-            <Popup
-              trigger={
-                <button className="show-complect-btn">Клікни сюди</button>
+import Popup from 'reactjs-popup';
+import GoodDiscountInComplect from './goodDiscountInComplect';
+
+const GoodDetailsThingsTook = ({ things, сontent }) => (
+  <>
+    <div className="taken-things-wrapper">
+      <div className="things-main-question">
+        Що можна покласти в комплект?
+      </div>
+      <div className="main-imgs-wrapper">
+        <div className="large-img-content">
+          <img
+            className="large-img"
+            src={things.largeImg.src}
+            srcSet={things.largeImg.srcSet}
+          />
+          <div className="img-large-sub-question">
+            Як щодо такого комлекту сумок?
+          </div>
+          <Popup
+            trigger={
+              <button className="show-complect-btn">Клікни сюди</button>
               }
-              modal
-            >
-              {(close) => (
-                <div className="complect-popup">
-                  <a className="close" onClick={close}>
-                    <img src="/img/good-to-complect-img/cancel-icon.svg" />
-                  </a>
-                  <div className="header">Замов одразу весь комлект</div>
-                  <div className="sub-title-discount">
-                    Якщо замовляти весь комлект разом, ми даємо знижку{" "}
-                    <span className="amount-percent">- 10%</span>
-                  </div>
-                  <div className="content">
-                    <div className="goods-to-complect-wrapper">
+            modal
+          >
+            {(close) => (
+              <div className="complect-popup">
+                <a className="close" onClick={close}>
+                  <img src="/img/good-to-complect-img/cancel-icon.svg" />
+                </a>
+                <div className="header">Замов одразу весь комлект</div>
+                <div className="sub-title-discount">
+                  Якщо замовляти весь комлект разом, ми даємо знижку
+                    {' '}
+                  <span className="amount-percent">- 10%</span>
+                </div>
+                <div className="content">
+                  <div className="goods-to-complect-wrapper">
                       {сontent.allKitDiscount.map((good) => (
                         <GoodDiscountInComplect content={good} />
                       ))}
                     </div>
-                    <div className="price-submit-wrapper">
+                  <div className="price-submit-wrapper">
                       <div className="price-inf">
                         <span className="price-intro">Сума:</span>
                         <span className="price-prev">1300 грн</span>
@@ -49,34 +50,35 @@ const GoodDetailsThingsTook = ({ things, сontent }) => {
                         ЗАМОВИТИ
                       </button>
                     </div>
-                  </div>
                 </div>
-              )}
-            </Popup>
-          </div>
-          <div className="small-things-wrapper">
-            <span className="small-things-title">
-              Ось ці речі ми брали з собою:
-            </span>
-            <ul className="small-content">
-              {things.smallThings.map((goodData, index) => (
-                <li className="small-item" key={index}>
-                  <a href="#">
-                    <img
+              </div>
+            )}
+          </Popup>
+        </div>
+        <div className="small-things-wrapper">
+          <span className="small-things-title">
+            Ось ці речі ми брали з собою:
+          </span>
+          <ul className="small-content">
+            {things.smallThings.map((goodData, index) => (
+              <li className="small-item" key={index}>
+                <a href="#">
+                  <img
                       className="small-img"
                       key={index}
                       src={goodData.src}
                       srcSet={goodData.srcSet}
                     />
-                    <span className="small-name">{goodData.name}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <span className="small-name">{goodData.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <style jsx>{`
+    </div>
+    <style jsx>
+      {`
         .taken-things-wrapper {
           font-family: Montserrat;
           font-size: 17px;
@@ -247,17 +249,17 @@ const GoodDetailsThingsTook = ({ things, сontent }) => {
           outline: none;
           cursor: pointer;
         }
-      `}</style>
-      <style>
-        {`
+      `}
+    </style>
+    <style>
+      {`
         .popup-content {
           width: 576px !important;
           border-radius: 10px;
           padding: 28px 35px !important;
         }
         `}
-      </style>
-    </>
-  );
-};
+    </style>
+  </>
+);
 export default GoodDetailsThingsTook;

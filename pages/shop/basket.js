@@ -5,17 +5,22 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
-import BasketData from "../../data/shop/viewModels/basket";
+
 import BasketStatus from "../../components/shop/basketStatus";
 import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
 import RespScreenWidth from "../../components/common/mediaConst";
 
+import vmFactory from "../../data/shop/viewModels/basket";
+
 const headerHeight = 80;
 
 const Basket = () => {
+  const vm = vmFactory();
+  
   useEffect(() => {
     return BasketLogic.init();
   });
+  
   return (
     <>
       <Head>
@@ -24,7 +29,7 @@ const Basket = () => {
         <MainMetaInfo
           title="Flower's Way. Країна очима велосипедистів. Сумки, велоспорядження"
           description="Велосумки для легких подорожей. Власне виробництво. просте монтування"
-          img="https://flowersway.com.ua/img/objects/Swirg2_450_320.jpg"
+          img="./img/objects/Swirg2_450_320.jpg"
         ></MainMetaInfo>
 
         <link
@@ -60,7 +65,7 @@ const Basket = () => {
       </div>
       <div id="home" className="basket-status">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketStatus breadcrumbs={BasketData.breadcrumbs} />
+          <BasketStatus breadcrumbs={vm.breadcrumbs} />
         </div>
       </div>
       <div id="home" className="basket-info-order">

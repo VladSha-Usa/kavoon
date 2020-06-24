@@ -1,6 +1,6 @@
-import PathfinderObject from "./pathfinderObject";
-import objects from "../../data/objects";
-import RespScreenWidth from "../common/mediaConst";
+import PathfinderObject from './pathfinderObject';
+import objects from '../../data/objects';
+import RespScreenWidth from '../common/mediaConst';
 
 const Pathfinder = () => (
   <>
@@ -10,12 +10,14 @@ const Pathfinder = () => (
     </div>
 
     <div className="pathfinder-story-text">
-      На цій сторінці ми зібрали об’єкти <br />
+      На цій сторінці ми зібрали об’єкти
+      {' '}
+      <br />
       Львівської області варті вашої уваги
     </div>
-    <div style={{ height: "1px", paddingBottom: "31px" }}>
+    <div style={{ height: '1px', paddingBottom: '31px' }}>
       <img
-        style={{ position: "relative", left: "477px", top: "-67px" }}
+        style={{ position: 'relative', left: '477px', top: '-67px' }}
         src="/img/vector-background.svg"
         className="vector-background"
       />
@@ -24,7 +26,8 @@ const Pathfinder = () => (
       <PathfinderObject key={index} object={object} direct={index % 2 == 0} />
     ))}
 
-    <style jsx>{`
+    <style jsx>
+      {`
       .background-path {
       }
       .vector-background {
@@ -95,7 +98,8 @@ const Pathfinder = () => (
           display: none;
         }
       }
-    `}</style>
+    `}
+    </style>
   </>
 );
 

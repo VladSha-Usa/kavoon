@@ -1,15 +1,23 @@
-const GoodDiscountInComplect = ({ content }) => {
-  return (
-    <>
-      <div className="good-wrapper">
-        <img src={content.src} srcSet={content.srcSet} className="good-img" />
-        <div className="good-main-content">
-          <span className="title">{content.name}</span>
-          <span className="volume">Об'єм: {content.volume}л</span>
-          <span className="volume">{content.price} грн</span>
-        </div>
+const GoodDiscountInComplect = ({ content }) => (
+  <>
+    <div className="good-wrapper">
+      <img src={content.src} srcSet={content.srcSet} className="good-img" />
+      <div className="good-main-content">
+        <span className="title">{content.name}</span>
+        <span className="volume">
+          Об'єм:
+          {content.volume}
+          л
+        </span>
+        <span className="volume">
+          {content.price}
+          {' '}
+          грн
+        </span>
       </div>
-      <style jsx>{`
+    </div>
+    <style jsx>
+      {`
         .good-wrapper {
           display: flex;
           margin-bottom: 18px;
@@ -28,8 +36,8 @@ const GoodDiscountInComplect = ({ content }) => {
         .good-main-content span {
           margin-bottom: 10px;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 export default GoodDiscountInComplect;

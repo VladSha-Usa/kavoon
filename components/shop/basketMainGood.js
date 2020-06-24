@@ -1,45 +1,45 @@
-import useRx from "../../components/shop/useRx";
-import BasketLogic from "../../data/shop/logic/basket";
+import useRx from './useRx';
+import BasketLogic from '../../data/shop/logic/basket';
+
 const BasketMainGood = ({ basketMainGoodData }) => {
   const amount = useRx(BasketLogic.countForGood(basketMainGoodData));
-  const activeMinus =
-    amount <= 1
-      ? "/img/remove-button-not-active.svg"
-      : "/img/remove-button.svg";
-  let fields = [
+  const activeMinus = amount <= 1
+    ? '/img/remove-button-not-active.svg'
+    : '/img/remove-button.svg';
+  const fields = [
     {
-      name: "Об’єм",
-      field: "volume",
-      unitOfMeasure: "л",
+      name: 'Об’єм',
+      field: 'volume',
+      unitOfMeasure: 'л',
     },
     {
-      name: "Основна тканина",
-      field: "fabric",
+      name: 'Основна тканина',
+      field: 'fabric',
     },
     {
-      name: "Основний колір",
-      field: "print",
+      name: 'Основний колір',
+      field: 'print',
     },
     {
-      name: "Додатковий колір",
-      field: "additionalColor",
+      name: 'Додатковий колір',
+      field: 'additionalColor',
     },
     {
-      name: "Марка фурнітури",
-      field: "brandOfAccessories",
+      name: 'Марка фурнітури',
+      field: 'brandOfAccessories',
     },
     {
-      name: "Колір фурнітури",
-      field: "colorOfAccessories",
+      name: 'Колір фурнітури',
+      field: 'colorOfAccessories',
     },
     {
-      name: "Колір строп",
-      field: "colorOfSlings",
+      name: 'Колір строп',
+      field: 'colorOfSlings',
     },
     {
-      name: "Сума",
-      field: "price",
-      unitOfMeasure: "грн",
+      name: 'Сума',
+      field: 'price',
+      unitOfMeasure: 'грн',
     },
   ];
   return (
@@ -51,13 +51,14 @@ const BasketMainGood = ({ basketMainGoodData }) => {
           srcSet={basketMainGoodData.picture.srcSet}
         />
         <div className="main-good-info">
-          <div className="main-good-name">{basketMainGoodData.name}.</div>
+          <div className="main-good-name">
+            {basketMainGoodData.name}
+            .
+          </div>
           <div className="main-good-control-info">
             <div
               className="conrol-amount-wrapper"
-              onClick={() =>
-                amount > 1 ? BasketLogic.decrease(basketMainGoodData) : null
-              }
+              onClick={() => (amount > 1 ? BasketLogic.decrease(basketMainGoodData) : null)}
             >
               <img src={activeMinus} />
             </div>
@@ -68,25 +69,31 @@ const BasketMainGood = ({ basketMainGoodData }) => {
                 onClick={() => BasketLogic.increase(basketMainGoodData)}
               />
             </div>
-            <div className="main-amount">{amount}шт.</div>
+            <div className="main-amount">
+              {amount}
+              шт.
+            </div>
           </div>
           <div className="main-good-description">
             {fields
               .filter((field) => basketMainGoodData[field.field])
-              .map((field, index) => {
-                return (
-                  <div key={index} className="good-parametr">
-                    {field.name}:{" "}
-                    <span className="good-parametr-main">
-                      {basketMainGoodData[field.field]} {field.unitOfMeasure}
-                    </span>
-                  </div>
-                );
-              })}
+              .map((field, index) => (
+                <div key={index} className="good-parametr">
+                  {field.name}
+                  :
+                  {' '}
+                  <span className="good-parametr-main">
+                    {basketMainGoodData[field.field]}
+                    {' '}
+                    {field.unitOfMeasure}
+                  </span>
+                </div>
+              ))}
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .main-good-wrapper {
           font-family: Montserrat;
           font-size: 16px;
@@ -145,7 +152,8 @@ const BasketMainGood = ({ basketMainGoodData }) => {
           letter-spacing: 0.75px;
           margin-left: 20px;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

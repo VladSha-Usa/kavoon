@@ -1,14 +1,18 @@
-import BasketLogic from "../../data/shop/logic/basket";
-import useRx from "../../components/shop/useRx";
+import BasketLogic from '../../data/shop/logic/basket';
+import useRx from './useRx';
+
 const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
   const statusOfAdding = useRx(BasketLogic.statusOfAdding);
   return (
     <>
       <div className="status-adding-wrapper">
-        <span className="status-adding-good-name">{addedGoodName}</span> успішно
+        <span className="status-adding-good-name">{addedGoodName}</span>
+        {' '}
+        успішно
         додано до кошику!&nbsp;&nbsp;&nbsp;😊
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .status-adding-wrapper {
           position: absolute;
           width: 345px;
@@ -26,7 +30,7 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
           left: -95px;
           top: 81px;
           padding: 18px 27px 13px 32px;
-          display: ${statusOfAdding ? "block" : "none"};
+          display: ${statusOfAdding ? 'block' : 'none'};
           white-space: pre-wrap;
         }
         .status-adding-wrapper:before {
@@ -48,7 +52,8 @@ const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
         .status-adding-good-name {
           color: var(--primarycolor);
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

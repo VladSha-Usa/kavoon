@@ -1,152 +1,155 @@
-import { Formik, Field } from "formik";
-import MaskedInput from "react-text-mask";
-import * as Yup from "yup";
-const BasketOrderForm = () => {
-  return (
-    <>
-      <Formik
-        initialValues={{ username: "", numTel: "" }}
-        onSubmit={async (values) => {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
-        validationSchema={Yup.object().shape({
-          username: Yup.string().required("Будь ласка заповніть поле"),
-          numTel: Yup.string()
-            .matches(
-              /^\(\+380\)\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/,
-              "Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі"
-            )
-            .required("Будь ласка заповніть поле"),
-        })}
-      >
-        {(props) => {
-          const {
-            values,
-            touched,
-            errors,
-            isSubmitting,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-          } = props;
-          return (
-            <form onSubmit={handleSubmit} className="order-form">
-              <fieldset
-                className={
-                  values.username === "" ||
-                  values.numTel === "" ||
-                  errors.username ||
-                  errors.numTel
-                    ? "order-form-disabled"
+import { Formik, Field } from 'formik';
+import MaskedInput from 'react-text-mask';
+import * as Yup from 'yup';
+
+const BasketOrderForm = () => (
+  <>
+    <Formik
+      initialValues={{ username: '', numTel: '' }}
+      onSubmit={async (values) => {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        alert(JSON.stringify(values, null, 2));
+      }}
+      validationSchema={Yup.object().shape({
+        username: Yup.string().required('Будь ласка заповніть поле'),
+        numTel: Yup.string()
+          .matches(
+            /^\(\+380\)\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/,
+            'Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі',
+          )
+          .required('Будь ласка заповніть поле'),
+      })}
+    >
+      {(props) => {
+        const {
+          values,
+          touched,
+          errors,
+          isSubmitting,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        } = props;
+        return (
+          <form onSubmit={handleSubmit} className="order-form">
+            <fieldset
+              className={
+                  values.username === ''
+                  || values.numTel === ''
+                  || errors.username
+                  || errors.numTel
+                    ? 'order-form-disabled'
                     : null
                 }
+            >
+              <legend className="intro-title">Оформити замовлення</legend>
+              {' '}
+              <p
+                className="instruction-title"
+                style={{
+                  marginBottom: `${
+                    (errors.username && touched.username)
+                      || (errors.numTel && touched.numTel)
+                      ? '9px'
+                      : '19px'
+                  }`,
+                }}
               >
-                <legend className="intro-title">Оформити замовлення</legend>{" "}
-                <p
-                  className="instruction-title"
-                  style={{
-                    marginBottom: `${
-                      (errors.username && touched.username) ||
-                      (errors.numTel && touched.numTel)
-                        ? "9px"
-                        : "19px"
-                    }`,
-                  }}
-                >
-                  Залиште свої контактні дані і ми вам передзвонимо для
-                  оформлення замовлення{" "}
-                </p>
-                <div
-                  className="row"
-                  style={{
-                    marginBottom: `${
-                      errors.username && touched.username ? "13px" : "-1px"
-                    }`,
-                  }}
-                >
-                  <Field
-                    id="username"
-                    placeholder="Введіть своє ім’я"
-                    value={values.username}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={
+                Залиште свої контактні дані і ми вам передзвонимо для
+                оформлення замовлення
+                {' '}
+              </p>
+              <div
+                className="row"
+                style={{
+                  marginBottom: `${
+                    errors.username && touched.username ? '13px' : '-1px'
+                  }`,
+                }}
+              >
+                <Field
+                  id="username"
+                  placeholder="Введіть своє ім’я"
+                  value={values.username}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
                       errors.username && touched.username
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
-                  />
-                  {errors.username && touched.username && (
-                    <div className="input-feedback">{errors.username}</div>
-                  )}
-                  <label htmlFor="username">Ім’я</label>
-                </div>
-                <div
-                  className="row"
-                  style={{
-                    marginBottom: `${
-                      errors.numTel && touched.numTel ? "46px" : "-1px"
-                    }`,
-                  }}
-                >
-                  <MaskedInput
-                    mask={[
-                      "(",
-                      "+",
+                />
+                {errors.username && touched.username && (
+                <div className="input-feedback">{errors.username}</div>
+                )}
+                <label htmlFor="username">Ім’я</label>
+              </div>
+              <div
+                className="row"
+                style={{
+                  marginBottom: `${
+                    errors.numTel && touched.numTel ? '46px' : '-1px'
+                  }`,
+                }}
+              >
+                <MaskedInput
+                  mask={[
+                      '(',
+                      '+',
                       /[1-9]/,
                       /\d/,
                       /\d/,
-                      ")",
-                      " ",
+                      ')',
+                      ' ',
                       /\d/,
                       /\d/,
-                      " ",
+                      ' ',
                       /\d/,
                       /\d/,
                       /\d/,
-                      " ",
+                      ' ',
                       /\d/,
                       /\d/,
-                      " ",
+                      ' ',
                       /\d/,
                       /\d/,
                     ]}
-                    guide={false}
-                    id="numTel"
-                    placeholder="(+380) 23 456 78 90"
-                    value={values.numTel}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className={
+                  guide={false}
+                  id="numTel"
+                  placeholder="(+380) 23 456 78 90"
+                  value={values.numTel}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
                       errors.numTel && touched.numTel
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
-                  />
-                  {errors.numTel && touched.numTel && (
-                    <div className="input-feedback">{errors.numTel}</div>
-                  )}
-                  <label htmlFor="numTel">Телефон</label>
-                </div>
-                <button
-                  type="submit"
-                  disabled={
-                    isSubmitting ||
-                    values.username === "" ||
-                    values.numTel === "" ||
-                    errors.username ||
-                    errors.numTel
+                />
+                {errors.numTel && touched.numTel && (
+                <div className="input-feedback">{errors.numTel}</div>
+                )}
+                <label htmlFor="numTel">Телефон</label>
+              </div>
+              <button
+                type="submit"
+                disabled={
+                    isSubmitting
+                    || values.username === ''
+                    || values.numTel === ''
+                    || errors.username
+                    || errors.numTel
                   }
-                >
-                  Оформити замовлення
-                </button>
-              </fieldset>
-            </form>
-          );
-        }}
-      </Formik>
-      <style jsx>{`
+              >
+                Оформити замовлення
+              </button>
+            </fieldset>
+          </form>
+        );
+      }}
+    </Formik>
+    <style jsx>
+      {`
         .order-form {
           font-family: Montserrat;
           font-style: normal;
@@ -211,9 +214,10 @@ const BasketOrderForm = () => {
           background-color: #ced6e2;
           box-shadow: none;
         }
-      `}</style>
-      <style>
-        {`
+      `}
+    </style>
+    <style>
+      {`
           .order-form .text-input:focus {
             border: solid 1px var(--primarycolor);
           }
@@ -293,8 +297,7 @@ const BasketOrderForm = () => {
             color: #d21818;
           }
         `}
-      </style>
-    </>
-  );
-};
+    </style>
+  </>
+);
 export default BasketOrderForm;

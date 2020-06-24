@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import useOutsideClick from "./useOutsideClick";
+import React, { useState, useRef } from 'react';
+import useOutsideClick from './useOutsideClick';
 
 const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
   const [isOpened, setOpened] = useState(false);
@@ -23,7 +23,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
               onClick={() => {
                 setOpened(!isOpened);
               }}
-            ></button>
+            />
           </div>
           <ul className="picker-param__status-list">
             {items.map((item, i) => (
@@ -34,7 +34,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
                 }}
                 key={i}
                 className={
-                  item === selectedItem ? "list-elem-active" : "list-elem"
+                  item === selectedItem ? 'list-elem-active' : 'list-elem'
                 }
               >
                 <span className="status-list__img-wrapper">
@@ -147,7 +147,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             transition: 0.5s ease;
           }
           #picker-param__status-more:before {
-            transform: ${isOpened ? "rotate(180deg)" : ""};
+            transform: ${isOpened ? 'rotate(180deg)' : ''};
           }
           .picker-param__status-list {
             list-style: none;

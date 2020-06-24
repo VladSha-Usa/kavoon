@@ -1,13 +1,13 @@
-import { useState } from "react";
-import Slider from "react-slick";
+import { useState } from 'react';
+import Slider from 'react-slick';
 
 const GoodDetailsPrevSlider = ({ images }) => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
-  const sliderWrapper = "good-prev__slider-wrapper";
-  const img = "details-slider__img";
-  const sliderFirst = "details-slider__first";
-  const sliderSecond = "details-slider__second";
+  const sliderWrapper = 'good-prev__slider-wrapper';
+  const img = 'details-slider__img';
+  const sliderFirst = 'details-slider__first';
+  const sliderSecond = 'details-slider__second';
 
   return (
     <>
@@ -16,7 +16,7 @@ const GoodDetailsPrevSlider = ({ images }) => {
           <Slider
             asNavFor={slider2}
             ref={(slider) => setSlider1(slider)}
-            dots={true}
+            dots
           >
             {images.map((image, index) => (
               <div key={index}>
@@ -35,8 +35,8 @@ const GoodDetailsPrevSlider = ({ images }) => {
             asNavFor={slider1}
             ref={(slider) => setSlider2(slider)}
             slidesToShow={4}
-            swipeToSlide={true}
-            focusOnSelect={true}
+            swipeToSlide
+            focusOnSelect
             arrows={false}
           >
             {images.map((image, index) => (

@@ -1,36 +1,36 @@
-const LanguagePopup = () => {
-  return (
-    <>
-      <div className="lang-wrapper">
-        <div className="choosen-lang">
-          <img
-            src="/img/country-flag-ua.png"
-            srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-          />
-          Українська
-        </div>
-        <ul className="available__list-lang">
-          <li>
-            <div className="available-lang">
-              <img
-                src="/img/country-flag-ua.png"
-                srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
-              />
-              Українська
-            </div>
-          </li>
-          <li>
-            <div className="available-lang disabled">
-              <img
-                src="/img/country-flag-en.png"
-                srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
-              />
-              English
-            </div>
-          </li>
-        </ul>
+const LanguagePopup = () => (
+  <>
+    <div className="lang-wrapper">
+      <div className="choosen-lang">
+        <img
+          src="/img/country-flag-ua.png"
+          srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+        />
+        Українська
       </div>
-      <style jsx>{`
+      <ul className="available__list-lang">
+        <li>
+          <div className="available-lang">
+            <img
+              src="/img/country-flag-ua.png"
+              srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+            />
+            Українська
+          </div>
+        </li>
+        <li>
+          <div className="available-lang disabled">
+            <img
+              src="/img/country-flag-en.png"
+              srcSet="/img/country-flag-en@2x.png 2x, img/country-flag-en@3x.png 3x"
+            />
+            English
+          </div>
+        </li>
+      </ul>
+    </div>
+    <style jsx>
+      {`
         .lang-wrapper {
           width: 170px;
           height: 45px;
@@ -144,9 +144,9 @@ const LanguagePopup = () => {
           cursor: default;
           color: #061434;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default LanguagePopup;

@@ -1,9 +1,9 @@
-import PathfinderSlider from "./pathfinderSlider";
-import RespScreenWidth from "../common/mediaConst";
+import PathfinderSlider from './pathfinderSlider';
+import RespScreenWidth from '../common/mediaConst';
 
 const PathfinderObject = ({ object, direct }) => {
-  const flexDirection = direct ? "row" : "row-reverse";
-  const textMarginStyle = direct ? "margin-left: 45px" : "margin-right: 45px";
+  const flexDirection = direct ? 'row' : 'row-reverse';
+  const textMarginStyle = direct ? 'margin-left: 45px' : 'margin-right: 45px';
 
   return (
     <>
@@ -15,7 +15,7 @@ const PathfinderObject = ({ object, direct }) => {
         <div className="image-list">
           <PathfinderSlider images={object.galleryImages} />
         </div>
-        <div style={{ flex: "auto", overflow: "hidden" }}>
+        <div style={{ flex: 'auto', overflow: 'hidden' }}>
           <div className="pathfinder-object-text">
             <p
               className="title large"
@@ -58,7 +58,7 @@ const PathfinderObject = ({ object, direct }) => {
 
           .pathfinder-object-text {
             text-align: justify;
-            ${direct ? "margin-left: 105px" : "margin-right: 105px"};
+            ${direct ? 'margin-left: 105px' : 'margin-right: 105px'};
             font-family: Montserrat;
             font-size: 17px;
             font-weight: 500;

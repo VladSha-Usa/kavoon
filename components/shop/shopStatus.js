@@ -1,14 +1,14 @@
-import ShopBasketAmount from "../../components/shop/shopBasketAmount";
-import RespScreenWidth from "../common/mediaConst";
+import ShopBasketAmount from './shopBasketAmount';
+import RespScreenWidth from '../common/mediaConst';
 
 const ShopStatus = () => {
-  const statusWrapper = "status-wrapper";
-  const showedGoods = "status-showed";
-  const showedGoodsText = "status-showed__text";
-  const showedGoodsAmount = "status-showed__amount";
-  const showedGoodsAmountText = "status-showed__amount-text";
-  const addedGoodsText = "status-added__text";
-  const addedGoods = "status-added";
+  const statusWrapper = 'status-wrapper';
+  const showedGoods = 'status-showed';
+  const showedGoodsText = 'status-showed__text';
+  const showedGoodsAmount = 'status-showed__amount';
+  const showedGoodsAmountText = 'status-showed__amount-text';
+  const addedGoodsText = 'status-added__text';
+  const addedGoods = 'status-added';
 
   const mainFontSize = 17;
   return (
@@ -17,7 +17,8 @@ const ShopStatus = () => {
         <div className={showedGoods}>
           <span className={showedGoodsText}>Показано:</span>
           <span className={showedGoodsAmount}>
-            8<span className={showedGoodsAmountText}>товарів</span>
+            8
+            <span className={showedGoodsAmountText}>товарів</span>
           </span>
         </div>
         <div className={addedGoods}>
@@ -25,7 +26,8 @@ const ShopStatus = () => {
           <ShopBasketAmount />
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .${statusWrapper} {
           display: flex;
           justify-content: space-between;
@@ -72,7 +74,8 @@ const ShopStatus = () => {
             margin: -3px 0 0 0;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

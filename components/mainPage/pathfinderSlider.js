@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Slider from "react-slick";
-import RespScreenWidth from "../common/mediaConst";
+import { useState } from 'react';
+import Slider from 'react-slick';
+import RespScreenWidth from '../common/mediaConst';
 
 const PathfinderSlider = ({ images }) => {
   const [idx, setIndex] = useState(0);
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
@@ -13,7 +13,7 @@ const PathfinderSlider = ({ images }) => {
     beforeChange: (_, nextSlide) => setIndex(nextSlide),
     afterChange: (currentSlide) => setIndex(currentSlide),
   };
-  var slider = null;
+  let slider = null;
   return (
     <>
       <div className="pathfinder-image-gallery">
@@ -31,14 +31,14 @@ const PathfinderSlider = ({ images }) => {
       </div>
 
       <div
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{ display: 'flex', justifyContent: 'center' }}
         className="switcher"
       >
         {images.map((_, index) => (
           <div
             onClick={() => slider.slickGoTo(index)}
             key={index}
-            className={idx == index ? "switcher-item-active" : "switcher-item"}
+            className={idx == index ? 'switcher-item-active' : 'switcher-item'}
           />
         ))}
       </div>
@@ -63,7 +63,8 @@ const PathfinderSlider = ({ images }) => {
       }
     `}
       </style>
-      <style jsx>{`
+      <style jsx>
+        {`
         .switcher-item-active {
           margin: 0px 2px;
           height: 15px;
@@ -106,7 +107,8 @@ const PathfinderSlider = ({ images }) => {
           height: 15px;
           position: relative;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

@@ -1,16 +1,17 @@
-import ShopBasketAmount from "../../components/shop/shopBasketAmount";
-import BreadcrumbsNav from "../../components/shop/breadcrumbsNav";
-const BasketStatus = ({ breadcrumbs }) => {
-  return (
-    <>
-      <div className="status-wrapper">
-        <BreadcrumbsNav breadcrumbsData={breadcrumbs} />
-        <div className="added-goods">
-          <span className="added-goods-text">Додані товари:</span>
-          <ShopBasketAmount />
-        </div>
+import ShopBasketAmount from './shopBasketAmount';
+import BreadcrumbsNav from './breadcrumbsNav';
+
+const BasketStatus = ({ breadcrumbs }) => (
+  <>
+    <div className="status-wrapper">
+      <BreadcrumbsNav breadcrumbsData={breadcrumbs} />
+      <div className="added-goods">
+        <span className="added-goods-text">Додані товари:</span>
+        <ShopBasketAmount />
       </div>
-      <style jsx>{`
+    </div>
+    <style jsx>
+      {`
         .status-wrapper {
           display: flex;
           justify-content: space-between;
@@ -32,9 +33,9 @@ const BasketStatus = ({ breadcrumbs }) => {
           color: var(--texticonscolor);
           margin: -3px 6px 0 0;
         }
-      `}</style>
-    </>
-  );
-};
+      `}
+    </style>
+  </>
+);
 
 export default BasketStatus;

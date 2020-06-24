@@ -1,9 +1,11 @@
-const basketData = {
+import model from '../logic/basket';
+
+const basketVM = {
   breadcrumbs: [
     { name: 'Список товарів', src: '/shop' },
-    { name: 'Сумка-тубус на вилку 10 л.', src: '/shop/good1' },
-    { name: 'Список товарів', src: '#' },
+    { name: 'Корзина', src: '#' },
   ],
+
   mainGoods: [
     {
       src: '/img/basket-img/photo-1.jpg',
@@ -23,4 +25,9 @@ const basketData = {
   additionGoods: [
   ],
 };
-export default basketData;
+
+function factory() {
+  return basketVM;
+}
+
+export default factory;

@@ -1,4 +1,5 @@
-import RespScreenWidth from "../common/mediaConst";
+import RespScreenWidth from '../common/mediaConst';
+
 const BlockItem = ({
   src,
   srcSet,
@@ -11,92 +12,92 @@ const BlockItem = ({
   button,
   icoButton,
 }) => {
-  const shapeRightClass = "block-shape-right";
-  const shapeLeftClass = "block-shape-left";
-  const titleClass = "block-shape-title";
+  const shapeRightClass = 'block-shape-right';
+  const shapeLeftClass = 'block-shape-left';
+  const titleClass = 'block-shape-title';
 
-  const vertBackgroundClass = "block-background";
-  const blockClass = "block-block";
+  const vertBackgroundClass = 'block-background';
+  const blockClass = 'block-block';
 
   const shop = {
     small: {
       fontSize: 76,
-      offsetLeft: "178px",
-      offsetTop: "-200px",
-      letterSpacing: "0.68px",
-      imageWidth: "320px",
-      imageHeight: "430px",
-      marginRight: "0px",
-      marginTop: "0px",
+      offsetLeft: '178px',
+      offsetTop: '-200px',
+      letterSpacing: '0.68px',
+      imageWidth: '320px',
+      imageHeight: '430px',
+      marginRight: '0px',
+      marginTop: '0px',
     },
     normal: {
       fontSize: 76,
-      offsetLeft: "178px",
-      offsetTop: "-200px",
-      imageWidth: "320px",
-      imageHeight: "425px",
-      marginRight: "50px",
-      marginTop: "0px",
+      offsetLeft: '178px',
+      offsetTop: '-200px',
+      imageWidth: '320px',
+      imageHeight: '425px',
+      marginRight: '50px',
+      marginTop: '0px',
     },
   };
   const pathfinder = {
     small: {
       fontSize: 33,
-      offsetLeft: "170px",
-      offsetTop: "-180px",
-      letterSpacing: "1.68px",
-      imageWidth: "320px",
-      imageHeight: "250px",
-      marginRight: "0px",
-      marginTop: "20px",
+      offsetLeft: '170px',
+      offsetTop: '-180px',
+      letterSpacing: '1.68px',
+      imageWidth: '320px',
+      imageHeight: '250px',
+      marginRight: '0px',
+      marginTop: '20px',
     },
     normal: {
       fontSize: 32,
-      offsetLeft: "100px",
-      offsetTop: "-180px",
-      letterSpacing: "1.68px",
-      imageWidth: "250px",
-      imageHeight: "200px",
-      marginRight: "0px",
-      marginTop: "0px",
+      offsetLeft: '100px',
+      offsetTop: '-180px',
+      letterSpacing: '1.68px',
+      imageWidth: '250px',
+      imageHeight: '200px',
+      marginRight: '0px',
+      marginTop: '0px',
     },
   };
   const blog = {
     small: {
       fontSize: 36,
-      offsetLeft: "170px",
-      offsetTop: "-180px",
-      letterSpacing: "1.68px",
-      imageWidth: "320px",
-      imageHeight: "250px",
-      marginRight: "0px",
-      marginTop: "20px",
+      offsetLeft: '170px',
+      offsetTop: '-180px',
+      letterSpacing: '1.68px',
+      imageWidth: '320px',
+      imageHeight: '250px',
+      marginRight: '0px',
+      marginTop: '20px',
     },
     normal: {
       fontSize: 36,
-      offsetLeft: "100px",
-      offsetTop: "-180px",
-      letterSpacing: "1.68px",
-      imageWidth: "250px",
-      imageHeight: "200px",
-      marginRight: "0px",
-      marginTop: "0px",
+      offsetLeft: '100px',
+      offsetTop: '-180px',
+      letterSpacing: '1.68px',
+      imageWidth: '250px',
+      imageHeight: '200px',
+      marginRight: '0px',
+      marginTop: '0px',
     },
   };
 
-  var style;
+  let style;
   switch (type) {
-    case "blog":
+    case 'blog':
       style = blog;
       break;
-    case "shop":
+    case 'shop':
       style = shop;
       break;
-    case "pathfinder":
+    case 'pathfinder':
       style = pathfinder;
       break;
   }
-  var opacity = 1;
+  let opacity = 1;
   if (!enabled) {
     opacity = 0.5;
   }
@@ -120,7 +121,8 @@ const BlockItem = ({
           <div className={shapeRightClass} />
         </div>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .block-title {
           text-align: center;
           margin-bottom: 14px;
@@ -148,7 +150,7 @@ const BlockItem = ({
           bottom: 0px;
           right: 0;
           display: flex;
-          cursor: ${enabled ? "pointer" : "default"};
+          cursor: ${enabled ? 'pointer' : 'default'};
           text-decoration: none;
           font-family: Montserrat;
           font-size: 16px;
@@ -168,9 +170,9 @@ const BlockItem = ({
         }
         .button-img-wrapper:hover {
           box-shadow: ${enabled
-            ? "0 14px 24px 0 rgba(13, 26, 113, 0.25)"
-            : "none"};
-          background-color: ${enabled ? "#3653e2" : "none"};
+          ? '0 14px 24px 0 rgba(13, 26, 113, 0.25)'
+          : 'none'};
+          background-color: ${enabled ? '#3653e2' : 'none'};
         }
         .button-img-wrapper div {
           margin-right: 20px;
@@ -289,7 +291,8 @@ const BlockItem = ({
             margin-top: ${style.small.marginTop};
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

@@ -1,15 +1,17 @@
-import BasketLogic from "../../data/shop/logic/basket.js";
-import useRx from "../../components/shop/useRx";
+import BasketLogic from '../../data/shop/logic/basket.js';
+import useRx from './useRx';
+
 const ShopBasketAmount = () => {
   const countValue = useRx(BasketLogic.count);
-  const displayAmount = countValue <= 0 ? "none" : "flex";
+  const displayAmount = countValue <= 0 ? 'none' : 'flex';
   return (
     <>
       <div className="added-goods-amount">
         <img src="/img/shop-icon.svg" className="added-goods-amount-img" />
         <span className="added-goods-amount-num">{countValue}</span>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .added-goods-amount {
           width: 50px;
           height: 50px;
@@ -40,7 +42,8 @@ const ShopBasketAmount = () => {
           letter-spacing: 0.65px;
           color: #fff;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

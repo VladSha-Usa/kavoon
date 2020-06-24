@@ -1,9 +1,9 @@
-import GoodListItem from "./goodListItem";
-import GoodListData from "../../data/shop/viewModels/goods";
-import RespScreenWidth from "../common/mediaConst";
+import GoodListItem from './goodListItem';
+import GoodListData from '../../data/shop/viewModels/goods';
+import RespScreenWidth from '../common/mediaConst';
 
 const GoodsList = () => {
-  const contentWrapper = "goods-list__content-wrapper";
+  const contentWrapper = 'goods-list__content-wrapper';
 
   return (
     <>
@@ -20,7 +20,8 @@ const GoodsList = () => {
           />
         ))}
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .${contentWrapper} {
           display: flex;
           flex-wrap: wrap;
@@ -31,7 +32,8 @@ const GoodsList = () => {
             justify-content: center;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

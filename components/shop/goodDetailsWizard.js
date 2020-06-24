@@ -1,17 +1,17 @@
-import React, { useReducer } from "react";
-import BasketLogic from "../../data/shop/logic/basket";
-import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
-import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
-import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
-import DataGood1 from "../../data/shop/viewModels/good1";
+import React, { useReducer } from 'react';
+import BasketLogic from '../../data/shop/logic/basket';
+import GoodDetailsWizardTitle from './goodDetailsWizardTitle';
+import GoodDetailsWizardPicker from './goodDetailsWizardPicker';
+import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
+import DataGood1 from '../../data/shop/viewModels/good1';
 
-import { bagBigFork } from "../../data/shop/data/goods";
+import { bagBigFork } from '../../data/shop/data/goods';
 
 function fabricReducer(state, action) {
   switch (action.type) {
-    case "setFabric":
+    case 'setFabric':
       return { fabric: action.payload, print: action.payload.prints[0] };
-    case "setPrint":
+    case 'setPrint':
       return { fabric: state.fabric, print: action.payload };
     default:
       throw new Error();
@@ -20,12 +20,12 @@ function fabricReducer(state, action) {
 
 function extractAction(dispatch, actionType) {
   return (payload) => {
-    dispatch({ type: actionType, payload: payload });
+    dispatch({ type: actionType, payload });
   };
 }
 
 const GoodDetailsWizard = () => {
-  const fabrics = bagBigFork.fabrics;
+  const { fabrics } = bagBigFork;
 
   const [state, dispatch] = useReducer(fabricReducer, {
     fabric: fabrics[0],
@@ -42,23 +42,25 @@ const GoodDetailsWizard = () => {
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
           items={fabrics}
-          selected={[state.fabric, extractAction(dispatch, "setFabric")]}
-        ></GoodDetailsWizardPicker>
+          selected={[state.fabric, extractAction(dispatch, 'setFabric')]}
+        />
         <GoodDetailsWizardPicker
           mainTheme="Основний колір"
           items={state.fabric.prints}
-          selected={[state.print, extractAction(dispatch, "setPrint")]}
-        ></GoodDetailsWizardPicker>
+          selected={[state.print, extractAction(dispatch, 'setPrint')]}
+        />
         <GoodDetailsWizardAddOther
           additionGoodData={DataGood1.additionGoodToCompl}
         />
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .good-wizard-wrapper {
           width: 380px;
           margin-left: 96px;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

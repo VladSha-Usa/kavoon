@@ -1,14 +1,16 @@
-import RespScreenWidth from "../common/mediaConst";
+import RespScreenWidth from '../common/mediaConst';
 
-const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
-  const imgWrapper = "item__img-wrapper";
-  const title = "item__title";
-  const description = "item__description";
-  const descriptionCapacity = "item__description-capacity";
-  const descriptionPrice = "item__description-price";
-  const descriptionPriceCurrency = "item__description-price__currency";
-  const descriptionCapacityLitres = "item__description-capacity__litres";
-  const descriptionCapacityIntro = "item__description-capacity__intro";
+const GoodListItem = ({
+  src, srcSet, contentTitle, capacity, price, href,
+}) => {
+  const imgWrapper = 'item__img-wrapper';
+  const title = 'item__title';
+  const description = 'item__description';
+  const descriptionCapacity = 'item__description-capacity';
+  const descriptionPrice = 'item__description-price';
+  const descriptionPriceCurrency = 'item__description-price__currency';
+  const descriptionCapacityLitres = 'item__description-capacity__litres';
+  const descriptionCapacityIntro = 'item__description-capacity__intro';
 
   return (
     <>
@@ -16,7 +18,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
         <div className="case-field">
           <div className={imgWrapper}>
             <img
-              style={{ width: "255px", height: "230px" }}
+              style={{ width: '255px', height: '230px' }}
               src={src}
               srcSet={srcSet}
             />
@@ -35,7 +37,8 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
           </div>
         </div>
       </a>
-      <style jsx>{`
+      <style jsx>
+        {`
         .case-field {
           width: 275px;
           height: 380px;
@@ -113,7 +116,8 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             margin-bottom: 31px;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 };

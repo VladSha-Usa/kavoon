@@ -1,17 +1,17 @@
-import Slider from "react-slick";
-import React, { useState, useRef, useEffect } from "react";
-import useOutsideClick from "./useOutsideClick";
+import Slider from 'react-slick';
+import React, { useState, useRef, useEffect } from 'react';
+import useOutsideClick from './useOutsideClick';
 
 const GoodDetailsImgGallery = ({ galleryContent }) => {
   const [isOpened, setStatus] = useState(false);
-  const displayPopUp = isOpened ? "block" : "none";
+  const displayPopUp = isOpened ? 'block' : 'none';
   const [dataOfCurrentPopUp, setData] = useState({});
   const ref = useRef();
   useOutsideClick(ref, () => {
     setStatus(false);
   });
   useEffect(() => {
-    document.querySelector(".good-details-img-gallery .slick-track").style
+    document.querySelector('.good-details-img-gallery .slick-track').style
       .transition
       ? setStatus(false)
       : null;
@@ -25,16 +25,16 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
             <div
               className="close-popup"
               onClick={() => setStatus(!isOpened)}
-            ></div>
+            />
             <img src={dataOfCurrentPopUp.src} className="popup-img" />
             <span className="popup-subtext">{dataOfCurrentPopUp.subText}</span>
           </div>
         </div>
         <Slider
-          infinite={true}
+          infinite
           slidesToShow={4}
           touchThreshold={200}
-          dots={true}
+          dots
           arrows={false}
           speed={500}
         >
@@ -51,14 +51,15 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
                   src={slideContent.src}
                   srcSet={slideContent.srcSet}
                   className="gallery-img"
-                ></img>
+                />
                 <span className="img-subtext">{slideContent.subText}</span>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         .gallery-wrapper {
           position: relative;
           font-family: Montserrat;
@@ -158,7 +159,8 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           overflow: hidden;
           border-radius: 5px;
         }
-      `}</style>
+      `}
+      </style>
       <style jsx global>
         {`
           .gallery-wrapper .slick-list {
