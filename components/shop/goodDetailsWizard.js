@@ -64,7 +64,7 @@ const GoodDetailsWizard = () => {
             margin-left: 0px;
           }
         }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .good-wizard-wrapper {
             width: 335px;
           }
