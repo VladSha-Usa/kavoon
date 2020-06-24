@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
 import RespScreenWidth from "../common/mediaConst";
-import GoodDetailsOrderBtn from "./goodDetailsOrderBtn";
 
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
@@ -50,7 +49,6 @@ const GoodDetailsWizardAddOther = ({
             </label>
           </div>
         </div>
-        <GoodDetailsOrderBtn basketStyleSettings={basketStyleSettings} />
       </div>
       <style jsx>{`
         .addition-wrapper {
@@ -62,7 +60,7 @@ const GoodDetailsWizardAddOther = ({
           line-height: normal;
           letter-spacing: 0.89px;
           color: var(--texticonscolor);
-          margin-top: ${basketStyleSettings ? "0px" : "95px"};
+          margin-top: ${basketStyleSettings ? "0px" : "-6px"};
         }
         .addition-good-img {
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
@@ -168,7 +166,7 @@ const GoodDetailsWizardAddOther = ({
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .addition-wrapper {
-            margin-top: 100px;
+            margin-top: ${basketStyleSettings ? "0px" : "11px"};
           }
           .addition-good-wrapper {
             margin-bottom: 35px;

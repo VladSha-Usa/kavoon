@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
 import RespScreenWidth from "../common/mediaConst";
 import { v4 as uuidv4 } from "uuid";
-const GoodDetailsOrderBtn = ({ basketStyleSettings }) => {
-  const statusWhileInBasket = basketStyleSettings ? "none" : "block";
+const GoodDetailsOrderBtn = () => {
   return (
     <>
       <button
@@ -32,7 +30,6 @@ const GoodDetailsOrderBtn = ({ basketStyleSettings }) => {
           text-transform: uppercase;
           cursor: pointer;
           outline: none;
-          display: ${statusWhileInBasket};
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .btn-submit {
