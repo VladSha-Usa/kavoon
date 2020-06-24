@@ -160,6 +160,12 @@ const GoodDetailsWizardAddOther = ({
           display: ${basketStyleSettings ? "block" : "none"};
           margin-bottom: ${basketStyleSettings ? "27px" : "0"};
         }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .good-checkcontainer-text {
+            letter-spacing: 0px;
+            margin-left: 0;
+          }
+        }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .addition-wrapper {
             margin-top: 100px;
@@ -170,9 +176,8 @@ const GoodDetailsWizardAddOther = ({
           .good-price {
             padding-bottom: 17px;
           }
-          .good-checkcontainer-text {
-            letter-spacing: 0px;
-            margin-left: 0;
+          .btn-submit {
+            width: 100%;
           }
         }
       `}</style>
