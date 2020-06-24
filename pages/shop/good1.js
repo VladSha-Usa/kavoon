@@ -184,6 +184,9 @@ const Good1 = () => {
             .footer-background {
               height: 215px;
             }
+            .good-details-choose {
+              margin-bottom: 40px;
+            }
           }
         `}
       </style>

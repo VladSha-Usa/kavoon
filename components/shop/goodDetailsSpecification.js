@@ -1,3 +1,5 @@
+import RespScreenWidth from "../common/mediaConst";
+
 const GoodDetailsSpecification = ({ specification }) => {
   let fields = [
     {
@@ -50,7 +52,8 @@ const GoodDetailsSpecification = ({ specification }) => {
         >
           {field.name}:{" "}
           <span className="specification-parametr-main">
-            {specification[field.field]}{field.unitOfMeasure}
+            {specification[field.field]}
+            {field.unitOfMeasure}
           </span>
         </div>
       );
@@ -78,7 +81,7 @@ const GoodDetailsSpecification = ({ specification }) => {
   return (
     <>
       <div className="specification-wrapper">
-        <div className="specification-title">Характеристика даного товару:</div>
+        <div className="specification-title">Характеристика товару:</div>
         <div className="specification-main-content">
           <div className="specification-left">{specificationLeft}</div>
           <div className="specification-right">{specificationRight}</div>
@@ -103,8 +106,29 @@ const GoodDetailsSpecification = ({ specification }) => {
           letter-spacing: 1px;
           margin-bottom: 37px;
         }
+        .specification-left {
+          width: 484px;
+        }
         .specification-right {
-          margin-left: 186px;
+          margin-left: 142px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .specification-wrapper {
+            margin-left: 0;
+          }
+          .specification-main-content {
+            display: block;
+          }
+          .specification-right {
+            margin-left: 0;
+            margin-top: 24px;
+          }
+          .specification-left {
+            width: auto;
+          }
+          .specification-title {
+            margin-bottom: 17px;
+          }
         }
       `}</style>
       <style>{`
@@ -117,6 +141,9 @@ const GoodDetailsSpecification = ({ specification }) => {
         }
         .specification-parametr-main {
           font-weight: 500;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px){
+          
         }
         `}</style>
     </>

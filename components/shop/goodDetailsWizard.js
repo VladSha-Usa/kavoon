@@ -52,6 +52,26 @@ const GoodDetailsWizard = () => {
             items={state.fabric.prints}
             selected={[state.print, extractAction(dispatch, "setPrint")]}
           ></GoodDetailsWizardPicker>
+          <GoodDetailsWizardPicker
+            mainTheme="Основна тканина"
+            items={fabrics}
+            selected={[state.fabric, extractAction(dispatch, "setFabric")]}
+          ></GoodDetailsWizardPicker>
+          <GoodDetailsWizardPicker
+            mainTheme="Основний колір"
+            items={state.fabric.prints}
+            selected={[state.print, extractAction(dispatch, "setPrint")]}
+          ></GoodDetailsWizardPicker>
+          <GoodDetailsWizardPicker
+            mainTheme="Основна тканина"
+            items={fabrics}
+            selected={[state.fabric, extractAction(dispatch, "setFabric")]}
+          ></GoodDetailsWizardPicker>
+          <GoodDetailsWizardPicker
+            mainTheme="Основний колір"
+            items={state.fabric.prints}
+            selected={[state.print, extractAction(dispatch, "setPrint")]}
+          ></GoodDetailsWizardPicker>
         </div>
         <GoodDetailsWizardAddOther
           additionGoodData={DataGood1.additionGoodToCompl}
