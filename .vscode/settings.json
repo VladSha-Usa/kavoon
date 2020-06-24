@@ -2,5 +2,9 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "editor.wrappingIndent": "deepIndent"
+  "editor.wrappingIndent": "deepIndent",
+  "emmet.extensionsPath": "",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }

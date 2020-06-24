@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import BasketLogic from "../../data/shop/logic/basket";
 import RespScreenWidth from "../common/mediaConst";
-import { v4 as uuidv4 } from "uuid";
+import GoodDetailsOrderBtn from "./goodDetailsOrderBtn";
+
 const GoodDetailsWizardAddOther = ({
   additionGoodData,
   basketStyleSettings,
@@ -49,16 +50,7 @@ const GoodDetailsWizardAddOther = ({
             </label>
           </div>
         </div>
-        <button
-          className="btn-submit"
-          type="submit"
-          onClick={() => {
-            BasketLogic.colectDataOfGood({ id: uuidv4() });
-            BasketLogic.addGood();
-          }}
-        >
-          Зробити замовлення
-        </button>
+        <GoodDetailsOrderBtn basketStyleSettings={basketStyleSettings} />
       </div>
       <style jsx>{`
         .addition-wrapper {
@@ -155,23 +147,6 @@ const GoodDetailsWizardAddOther = ({
           margin-top: 5px;
           display: block;
         }
-        .btn-submit {
-          font-family: Montserrat;
-          font-size: 16px;
-          font-weight: 600;
-          letter-spacing: 0.75px;
-          color: var(--white);
-          width: 290px;
-          height: 50px;
-          border-radius: 25px;
-          box-shadow: 0 10px 32px 0 rgba(13, 26, 113, 0.2);
-          background-color: var(--primarycolor);
-          border: none;
-          text-transform: uppercase;
-          cursor: pointer;
-          outline: none;
-          display: ${statusWhileInBasket};
-        }
         .addition-good-wrapper {
           display: flex;
           margin-bottom: ${basketStyleSettings ? "2px" : "29px"};
@@ -198,9 +173,6 @@ const GoodDetailsWizardAddOther = ({
           .good-checkcontainer-text {
             letter-spacing: 0px;
             margin-left: 0;
-          }
-          .btn-submit {
-            width: 100%;
           }
         }
       `}</style>
