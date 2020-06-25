@@ -5,8 +5,8 @@ const basketVM = {
     { name: 'Список товарів', src: '/shop' },
     { name: 'Корзина', src: '#' },
   ],
-
-  additionGoods: 
+  goods: basketModel.goods,
+  additionGoods: [],
 };
 
 function factory() {

@@ -23,5 +23,6 @@
     ],
     "ignorePatterns": [ "node_modules/", "pages/"],
     "rules": {
+      "click-events-have-key-events": "off"
     }
 }

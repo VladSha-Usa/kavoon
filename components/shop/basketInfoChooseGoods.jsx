@@ -1,3 +1,4 @@
+import React from 'react';
 import BasketMainGood from './basketMainGood';
 import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
 import useRx from './useRx';
