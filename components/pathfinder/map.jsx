@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
 
@@ -15,6 +16,7 @@ const Map = ({ objects, selected, select }) => (
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
     </Head>
     <MapGL
+      // eslint-disable-next-line react/style-prop-object
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
         height: '100%',

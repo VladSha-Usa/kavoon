@@ -1,3 +1,4 @@
+import React from 'react';
 const GoodDiscountInComplect = ({ content }) => (
   <>
     <div className="good-wrapper">

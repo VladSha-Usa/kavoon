@@ -1,3 +1,4 @@
+import React from 'react';
 import ShopBasketAmount from './shopBasketAmount';
 import RespScreenWidth from '../common/mediaConst';
 

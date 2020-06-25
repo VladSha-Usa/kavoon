@@ -1,3 +1,4 @@
+import React from 'react';
 import GoodListItem from './goodListItem';
 import GoodListData from '../../data/shop/viewModels/goods';
 import RespScreenWidth from '../common/mediaConst';
@@ -10,7 +11,7 @@ const GoodsList = () => {
       <div className={contentWrapper}>
         {GoodListData.map((goodListItem, i) => (
           <GoodListItem
-            key={i}
+            key={ i }
             src={goodListItem.image}
             srcSet={goodListItem.srcSet}
             href={goodListItem.href}

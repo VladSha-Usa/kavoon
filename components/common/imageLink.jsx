@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ImageLink = ({
   href, src, hoverSrc, imgWidth, imgHeight,
 }) => (

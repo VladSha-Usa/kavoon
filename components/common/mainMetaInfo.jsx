@@ -1,3 +1,5 @@
+import React from 'react';
+
 const MainMetaInfo = ({ title, description, img }) => (
   <>
     <meta property="og:locale" content="uk_UA" />

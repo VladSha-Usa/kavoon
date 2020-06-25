@@ -1,3 +1,4 @@
+import React from 'react';
 import RespScreenWidth from '../common/mediaConst';
 
 const TitleSection = () => (

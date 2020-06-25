@@ -1,3 +1,4 @@
+import React from 'react';
 import BasketLogic from '../../data/shop/logic/basket';
 import useRx from './useRx';
 

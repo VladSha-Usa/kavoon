@@ -31,25 +31,25 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
                 <div className="header">Замов одразу весь комлект</div>
                 <div className="sub-title-discount">
                   Якщо замовляти весь комлект разом, ми даємо знижку
-                    {' '}
+                  {' '}
                   <span className="amount-percent">- 10%</span>
                 </div>
                 <div className="content">
                   <div className="goods-to-complect-wrapper">
-                      {сontent.allKitDiscount.map((good) => (
-                        <GoodDiscountInComplect content={good} />
-                      ))}
-                    </div>
+                    {сontent.allKitDiscount.map((good) => (
+                      <GoodDiscountInComplect content={good} />
+                    ))}
+                  </div>
                   <div className="price-submit-wrapper">
-                      <div className="price-inf">
-                        <span className="price-intro">Сума:</span>
-                        <span className="price-prev">1300 грн</span>
-                        <span className="price-new">1000 грн</span>
-                      </div>
-                      <button type="submit" className="order-btn">
-                        ЗАМОВИТИ
-                      </button>
+                    <div className="price-inf">
+                      <span className="price-intro">Сума:</span>
+                      <span className="price-prev">1300 грн</span>
+                      <span className="price-new">1000 грн</span>
                     </div>
+                    <button type="submit" className="order-btn">
+                      ЗАМОВИТИ
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -64,11 +64,11 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
               <li className="small-item" key={index}>
                 <a href="#">
                   <img
-                      className="small-img"
-                      key={index}
-                      src={goodData.src}
-                      srcSet={goodData.srcSet}
-                    />
+                    className="small-img"
+                    key={index}
+                    src={goodData.src}
+                    srcSet={goodData.srcSet}
+                  />
                   <span className="small-name">{goodData.name}</span>
                 </a>
               </li>
