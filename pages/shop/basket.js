@@ -5,28 +5,15 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
-import BasketData from "../../data/shop/adapters/basket";
+import BasketData from "../../data/shop/viewModels/basket";
 import BasketStatus from "../../components/shop/basketStatus";
 import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
+import RespScreenWidth from "../../components/common/mediaConst";
 
 const headerHeight = 80;
 
-const onScroll = () => {
-  var scrollThreshold = 40;
-  if (
-    document.body.scrollTop > scrollThreshold ||
-    document.documentElement.scrollTop > scrollThreshold
-  ) {
-    document.getElementById("home").classList.add("header-border");
-  } else {
-    document.getElementById("home").classList.remove("header-border");
-  }
-};
-
 const Basket = () => {
   useEffect(() => {
-    document.onscroll = onScroll;
-    onScroll();
     return BasketLogic.init();
   });
   return (
@@ -131,7 +118,7 @@ const Basket = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1165px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -139,7 +126,7 @@ const Basket = () => {
             }
           }
 
-          @media only screen and (max-width: 1023px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
             .page-content {
               width: 335px;
               margin-left: auto;

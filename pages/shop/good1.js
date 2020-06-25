@@ -8,33 +8,18 @@ import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
 import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
 import Analytics from "../../components/common/analytics";
-import Good1Data from "../../data/shop/adapters/good1";
+import Good1Data from "../../data/shop/viewModels/good1";
 import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
-import TakenThings from "../../data/shop/adapters/takenThings";
+import TakenThings from "../../data/shop/viewModels/takenThings";
 import GoodDetailsImgGallery from "../../components/shop/goodDetailsImgGallery";
 import GoodDetailsSeeMore from "../../components/shop/goodDetailsSeeMore";
+import RespScreenWidth from "../../components/common/mediaConst";
+
 const headerHeight = 80;
 
-const onScroll = () => {
-  var scrollThreshold = 40;
-  var width = Math.max(
-    document.documentElement.clientWidth,
-    window.innerWidth || 0
-  );
-  if (
-    document.body.scrollTop > scrollThreshold ||
-    document.documentElement.scrollTop > scrollThreshold
-  ) {
-    document.getElementById("home").classList.add("header-border");
-  } else {
-    document.getElementById("home").classList.remove("header-border");
-  }
-};
 
 const Good1 = () => {
   useEffect(() => {
-    document.onscroll = onScroll;
-    onScroll();
     return BasketLogic.init();
   });
   BasketLogic.colectDataOfGood({
@@ -178,7 +163,7 @@ const Good1 = () => {
             background-color: var(--footer-back);
           }
 
-          @media only screen and (max-width: 1220px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
             .page-content {
               max-width: 960px;
               margin-left: auto;
@@ -186,7 +171,7 @@ const Good1 = () => {
             }
           }
 
-          @media only screen and (max-width: 1065px) {
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
             .page-content {
               width: 335px;
               margin-left: auto;

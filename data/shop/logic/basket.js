@@ -13,7 +13,6 @@ const count = goods.pipe(
   }, 0)),
 );
 
-
 function increase(goodToIncrease) {
   const good = goods.value.find((goodItem) => goodToIncrease.id === goodItem.id);
   if (good) {

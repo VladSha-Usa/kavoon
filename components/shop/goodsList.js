@@ -1,5 +1,6 @@
 import GoodListItem from "./goodListItem";
-import GoodListData from "../../data/shop/adapters/goods";
+import GoodListData from "../../data/shop/viewModels/goods";
+import RespScreenWidth from "../common/mediaConst";
 
 const GoodsList = () => {
   const contentWrapper = "goods-list__content-wrapper";
@@ -25,7 +26,7 @@ const GoodsList = () => {
           flex-wrap: wrap;
           justify-content: space-between;
         }
-        @media only screen and (max-width: 1065px) {
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .${contentWrapper} {
             justify-content: center;
           }

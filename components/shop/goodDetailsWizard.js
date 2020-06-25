@@ -3,7 +3,7 @@ import BasketLogic from "../../data/shop/logic/basket";
 import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
 import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
 import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
-import DataGood1 from "../../data/shop/adapters/good1";
+import DataGood1 from "../../data/shop/viewModels/good1";
 
 import { bagBigFork } from "../../data/shop/data/goods";
 
