@@ -107,10 +107,19 @@ const GoodDetailsSpecification = ({ specification }) => {
           margin-bottom: 37px;
         }
         .specification-left {
-          width: 484px;
+          max-width: 484px;
         }
         .specification-right {
           margin-left: 142px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .specification-right {
+            margin-left: 0;
+            max-width: 330px;
+          }
+          .specification-main-content {
+            justify-content: space-between;
+          }
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .specification-wrapper {
@@ -120,11 +129,13 @@ const GoodDetailsSpecification = ({ specification }) => {
             display: block;
           }
           .specification-right {
-            margin-left: 0;
             margin-top: 24px;
           }
           .specification-left {
-            width: auto;
+            max-width: auto;
+          }
+          .specification-right {
+            max-width: auto;
           }
           .specification-title {
             margin-bottom: 17px;
@@ -135,15 +146,12 @@ const GoodDetailsSpecification = ({ specification }) => {
         .specification-parametr {
           font-size: 16px;
           font-weight: 600;
-          letter-spacing: 0.6px;
+          letter-spacing: 0.84px;
           margin-bottom: 10px;
           line-height: 26px;
         }
         .specification-parametr-main {
           font-weight: 500;
-        }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px){
-          
         }
         `}</style>
     </>
