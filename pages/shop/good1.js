@@ -17,7 +17,6 @@ import RespScreenWidth from "../../components/common/mediaConst";
 
 const headerHeight = 80;
 
-
 const Good1 = () => {
   useEffect(() => {
     return BasketLogic.init();
@@ -133,7 +132,7 @@ const Good1 = () => {
             margin-bottom: 60px;
           }
           .good-details-specification {
-            margin-bottom: 120px;
+            margin-bottom: 110px;
           }
           .good-details-things-took {
             margin-bottom: 70px;
@@ -186,6 +185,9 @@ const Good1 = () => {
             }
             .good-details-choose {
               margin-bottom: 40px;
+            }
+            .good-details-specification {
+              margin-bottom: 48px;
             }
           }
         `}

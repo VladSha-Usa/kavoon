@@ -1,3 +1,5 @@
+import RespScreenWidth from "../common/mediaConst";
+
 const GoodDiscountInComplect = ({ content }) => {
   return (
     <>
@@ -23,10 +25,30 @@ const GoodDiscountInComplect = ({ content }) => {
           flex-direction: column;
           margin-left: 19px;
           padding-top: 14px;
-          letter-spacing: 0.34px;
+          letter-spacing: 0.89px;
+          line-height: 20px;
         }
         .good-main-content span {
-          margin-bottom: 10px;
+          margin-bottom: 16px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .good-img {
+            width: 100px;
+            height: 110px;
+          }
+          .good-wrapper {
+            margin-bottom: 15px;
+          }
+          .good-main-content {
+            font-size: 14px;
+          }
+          .good-main-content span {
+            margin-bottom: 10px;
+          }
+          .good-main-content {
+            margin-left: 10px;
+            padding-top: 6px;
+          }
         }
       `}</style>
     </>

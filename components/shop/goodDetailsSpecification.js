@@ -142,7 +142,7 @@ const GoodDetailsSpecification = ({ specification }) => {
           }
         }
       `}</style>
-      <style>{`
+      <style jsx global>{`
         .specification-parametr {
           font-size: 16px;
           font-weight: 600;
