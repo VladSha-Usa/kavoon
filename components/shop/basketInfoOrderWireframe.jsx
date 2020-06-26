@@ -1,13 +1,11 @@
-import BasketInfoChooseGoods from "../../components/shop/basketInfoChooseGoods";
-import BasketOrderForm from "../../components/shop/basketOrderForm";
-import BasketInfoVM frim  
-
+import BasketInfoChooseGoods from "./basketInfoChooseGoods";
+import BasketOrderForm from "./basketOrderForm";
 
 const BasketInfoOrderWireframe = (vm) => {
   return (
     <>
       <div className="info-order-wrapper">
-        <BasketInfoChooseGoods vm =  />
+        <BasketInfoChooseGoods vm = { vm. } />
         <BasketOrderForm />
       </div>
       <style jsx>{`

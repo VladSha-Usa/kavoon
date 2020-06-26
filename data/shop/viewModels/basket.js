@@ -1,10 +1,9 @@
 import basketModel from '../logic/basket';
 
+import basetStatusVM from './shop/BasketStatusVM';
+
 const basketVM = {
-  breadcrumbs: [
-    { name: 'Список товарів', src: '/shop' },
-    { name: 'Корзина', src: '#' },
-  ],
+  baskerStatusVM: basetStatusVM(),
   goods: basketModel.goods,
   additionGoods: [],
 };

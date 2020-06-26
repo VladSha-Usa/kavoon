@@ -1,7 +1,7 @@
 import ShopBasketAmount from './shopBasketAmount';
 import BreadcrumbsNav from './breadcrumbsNav';
 
-const BasketStatus = ({ breadcrumbs }) => (
+const BasketStatus = ({ vm }) => (
   <>
     <div className="status-wrapper">
       <BreadcrumbsNav breadcrumbsData={breadcrumbs} />

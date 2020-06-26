@@ -26,12 +26,12 @@ const BasketInfoChooseGoods = (vm) => {
           </span>
         </div>
         <div className="info-choose-goods">
-          {goods.map((good, index) => (
+          { goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
               <BasketMainGood basketMainGoodData={good} />
               <img
                 src="/img/good-to-complect-img/cancel-icon.svg"
-                onClick={() => BasketLogic.deleteGood(good.id)}
+                onClick={() => vm.deleteGood(good.id)}
               />
             </div>
           ))}

@@ -1,3 +1,4 @@
+import React from 'react';
 const GoodDetailsWizardTitle = ({ dataForTitle }) => (
   <>
     <div className="wizard__title">

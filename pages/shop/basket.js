@@ -65,7 +65,7 @@ const Basket = () => {
       </div>
       <div id="home" className="basket-status">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketStatus breadcrumbs={vm.breadcrumbs} />
+          <BasketStatus vm={ vm.baskerStatusVM } />
         </div>
       </div>
       <div id="home" className="basket-info-order">
