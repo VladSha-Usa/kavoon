@@ -1,17 +1,17 @@
-import React, { useReducer } from 'react';
-import BasketLogic from '../../data/shop/logic/basket';
-import GoodDetailsWizardTitle from './goodDetailsWizardTitle';
-import GoodDetailsWizardPicker from './goodDetailsWizardPicker';
-import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
-import DataGood1 from '../../data/shop/viewModels/good1';
+import React, { useReducer } from "react";
+import BasketLogic from "../../data/shop/logic/basket";
+import GoodDetailsWizardTitle from "./goodDetailsWizardTitle";
+import GoodDetailsWizardPicker from "./goodDetailsWizardPicker";
+import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
+import DataGood1 from "../../data/shop/viewModels/good1";
 
-import { bagBigFork } from '../../data/shop/data/goods';
+import { bagBigFork } from "../../data/shop/data/goods";
 
 function fabricReducer(state, action) {
   switch (action.type) {
-    case 'setFabric':
+    case "setFabric":
       return { fabric: action.payload, print: action.payload.prints[0] };
-    case 'setPrint':
+    case "setPrint":
       return { fabric: state.fabric, print: action.payload };
     default:
       throw new Error();
@@ -42,24 +42,22 @@ const GoodDetailsWizard = () => {
         <GoodDetailsWizardPicker
           mainTheme="Основна тканина"
           items={fabrics}
-          selected={[state.fabric, extractAction(dispatch, 'setFabric')]}
+          selected={[state.fabric, extractAction(dispatch, "setFabric")]}
         />
         <GoodDetailsWizardPicker
           mainTheme="Основний колір"
           items={state.fabric.prints}
-          selected={[state.print, extractAction(dispatch, 'setPrint')]}
+          selected={[state.print, extractAction(dispatch, "setPrint")]}
         />
-        <GoodDetailsWizardAddOther
-          additionGoodData={DataGood1.additionGoodToCompl}
-        />
+        <GoodDetailsWizardAddOther vm={DataGood1.additionGoodToCompl} />
       </div>
       <style jsx>
         {`
-        .good-wizard-wrapper {
-          width: 380px;
-          margin-left: 96px;
-        }
-      `}
+          .good-wizard-wrapper {
+            width: 380px;
+            margin-left: 96px;
+          }
+        `}
       </style>
     </>
   );

@@ -1,23 +1,23 @@
-import { Formik, Field } from 'formik';
-import MaskedInput from 'react-text-mask';
-import * as Yup from 'yup';
+import { Formik, Field } from "formik";
+import MaskedInput from "react-text-mask";
+import * as Yup from "yup";
 
 const BasketOrderForm = () => (
   <>
     <Formik
-      initialValues={{ username: '', numTel: '' }}
+      initialValues={{ username: "", numTel: "" }}
       onSubmit={async (values) => {
         await new Promise((resolve) => setTimeout(resolve, 500));
         alert(JSON.stringify(values, null, 2));
       }}
       validationSchema={Yup.object().shape({
-        username: Yup.string().required('Будь ласка заповніть поле'),
+        username: Yup.string().required("Будь ласка заповніть поле"),
         numTel: Yup.string()
           .matches(
             /^\(\+380\)\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/,
-            'Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі',
+            "Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі"
           )
-          .required('Будь ласка заповніть поле'),
+          .required("Будь ласка заповніть поле"),
       })}
     >
       {(props) => {
@@ -34,36 +34,34 @@ const BasketOrderForm = () => (
           <form onSubmit={handleSubmit} className="order-form">
             <fieldset
               className={
-                  values.username === ''
-                  || values.numTel === ''
-                  || errors.username
-                  || errors.numTel
-                    ? 'order-form-disabled'
-                    : null
-                }
+                values.username === "" ||
+                values.numTel === "" ||
+                errors.username ||
+                errors.numTel
+                  ? "order-form-disabled"
+                  : null
+              }
             >
-              <legend className="intro-title">Оформити замовлення</legend>
-              {' '}
+              <legend className="intro-title">Оформити замовлення</legend>{" "}
               <p
                 className="instruction-title"
                 style={{
                   marginBottom: `${
-                    (errors.username && touched.username)
-                      || (errors.numTel && touched.numTel)
-                      ? '9px'
-                      : '19px'
+                    (errors.username && touched.username) ||
+                    (errors.numTel && touched.numTel)
+                      ? "9px"
+                      : "19px"
                   }`,
                 }}
               >
-                Залиште свої контактні дані і ми вам передзвонимо для
-                оформлення замовлення
-                {' '}
+                Залиште свої контактні дані і ми вам передзвонимо для оформлення
+                замовлення{" "}
               </p>
               <div
                 className="row"
                 style={{
                   marginBottom: `${
-                    errors.username && touched.username ? '13px' : '-1px'
+                    errors.username && touched.username ? "13px" : "-1px"
                   }`,
                 }}
               >
@@ -74,13 +72,13 @@ const BasketOrderForm = () => (
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                      errors.username && touched.username
-                        ? 'text-input error'
-                        : 'text-input'
-                    }
+                    errors.username && touched.username
+                      ? "text-input error"
+                      : "text-input"
+                  }
                 />
                 {errors.username && touched.username && (
-                <div className="input-feedback">{errors.username}</div>
+                  <div className="input-feedback">{errors.username}</div>
                 )}
                 <label htmlFor="username">Ім’я</label>
               </div>
@@ -88,32 +86,32 @@ const BasketOrderForm = () => (
                 className="row"
                 style={{
                   marginBottom: `${
-                    errors.numTel && touched.numTel ? '46px' : '-1px'
+                    errors.numTel && touched.numTel ? "46px" : "-1px"
                   }`,
                 }}
               >
                 <MaskedInput
                   mask={[
-                      '(',
-                      '+',
-                      /[1-9]/,
-                      /\d/,
-                      /\d/,
-                      ')',
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                    ]}
+                    "(",
+                    "+",
+                    /[1-9]/,
+                    /\d/,
+                    /\d/,
+                    ")",
+                    " ",
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                  ]}
                   guide={false}
                   id="numTel"
                   placeholder="(+380) 23 456 78 90"
@@ -121,25 +119,25 @@ const BasketOrderForm = () => (
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                      errors.numTel && touched.numTel
-                        ? 'text-input error'
-                        : 'text-input'
-                    }
+                    errors.numTel && touched.numTel
+                      ? "text-input error"
+                      : "text-input"
+                  }
                 />
                 {errors.numTel && touched.numTel && (
-                <div className="input-feedback">{errors.numTel}</div>
+                  <div className="input-feedback">{errors.numTel}</div>
                 )}
                 <label htmlFor="numTel">Телефон</label>
               </div>
               <button
                 type="submit"
                 disabled={
-                    isSubmitting
-                    || values.username === ''
-                    || values.numTel === ''
-                    || errors.username
-                    || errors.numTel
-                  }
+                  isSubmitting ||
+                  values.username === "" ||
+                  values.numTel === "" ||
+                  errors.username ||
+                  errors.numTel
+                }
               >
                 Оформити замовлення
               </button>

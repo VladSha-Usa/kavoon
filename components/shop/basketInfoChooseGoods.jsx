@@ -1,10 +1,10 @@
-import React from 'react';
-import BasketMainGood from './basketMainGood';
-import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
-import useRx from './useRx';
-import HelperFun from '../common/helper';
+import React from "react";
+import BasketMainGood from "./basketMainGood";
+import GoodDetailsWizardAddOther from "./goodDetailsWizardAddOther";
+import useRx from "./useRx";
+import HelperFun from "../common/helper";
 
-const BasketInfoChooseGoods = (vm) => {
+const BasketInfoChooseGoods = ({ vm }) => {
   const goods = useRx(vm.goods);
   const countValue = useRx(vm.count);
 
@@ -12,23 +12,23 @@ const BasketInfoChooseGoods = (vm) => {
     <>
       <div className="info-choose-goods-wrapper">
         <div className="info-choose-status">
-          Твій кошик
-          {' '}
+          Твій кошик{" "}
           <span className="info-choose-status-amount">
-            (
-            {' '}
-            {countValue}
-            {' '}
-            товар
-            {HelperFun.endingOfWord(countValue)}
-            {' '}
-            )
+            ( {countValue} товар
+            {HelperFun.endingOfWord(countValue)} )
           </span>
         </div>
         <div className="info-choose-goods">
-          { goods.map((good, index) => (
+          {goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
-              <BasketMainGood basketMainGoodData={good} />
+              <BasketMainGood
+                vm={{
+                  good,
+                  countForGood: vm.countForGood,
+                  increase: vm.increase,
+                  decrease: vm.decrease,
+                }}
+              />
               <img
                 src="/img/good-to-complect-img/cancel-icon.svg"
                 onClick={() => vm.deleteGood(good.id)}
@@ -40,8 +40,8 @@ const BasketInfoChooseGoods = (vm) => {
             .map((good, index) => (
               <div className="choose-good-wrapper" key={index}>
                 <GoodDetailsWizardAddOther
-                  additionGoodData={good.additionGoodData}
-                  basketStyleSettings
+                  vm={good.additionGoodData}
+                  basketStyleSettings={true}
                 />
                 <img src="/img/good-to-complect-img/cancel-icon.svg" />
               </div>
@@ -50,12 +50,12 @@ const BasketInfoChooseGoods = (vm) => {
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
               {goods.reduce(
-                (sum, good) => (good.additionGoodData
-                  ? sum + good.price + good.additionGoodData.price
-                  : sum + good.price),
-                0,
-              )}
-              {' '}
+                (sum, good) =>
+                  good.additionGoodData
+                    ? sum + good.price + good.additionGoodData.price
+                    : sum + good.price,
+                0
+              )}{" "}
               грн
             </span>
           </div>

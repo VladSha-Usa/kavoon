@@ -16,11 +16,11 @@ const headerHeight = 80;
 
 const Basket = () => {
   const vm = vmFactory();
-  
+
   useEffect(() => {
     return BasketLogic.init();
   });
-  
+
   return (
     <>
       <Head>
@@ -65,12 +65,12 @@ const Basket = () => {
       </div>
       <div id="home" className="basket-status">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketStatus vm={ vm.baskerStatusVM } />
+          <BasketStatus vm={vm.basketStatusVM} />
         </div>
       </div>
       <div id="home" className="basket-info-order">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketInfoOrderWireframe />
+          <BasketInfoOrderWireframe vm={vm.basketInfoChooseGoodsVM} />
         </div>
       </div>
       <div className="footer-background">

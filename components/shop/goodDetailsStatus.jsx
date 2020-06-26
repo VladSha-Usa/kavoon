@@ -5,7 +5,7 @@ import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
 const GoodDetailsStatus = ({ statusData }) => (
   <>
     <div className="status-wrapper">
-      <BreadcrumbsNav breadcrumbsData={statusData.breadcrumbs} />
+      <BreadcrumbsNav vm={statusData.breadcrumbs} />
       <div className="status-added">
         <span className="status-added__text">Додані товари:</span>
         <ShopBasketAmount />

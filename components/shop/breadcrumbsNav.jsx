@@ -1,7 +1,7 @@
-const BreadcrumbsNav = ({ breadcrumbsData }) => (
+const BreadcrumbsNav = ({ vm }) => (
   <>
     <ul className="breadcrumbs-wrapper">
-      {breadcrumbsData.map((obj, index) => (
+      {vm.map((obj, index) => (
         <li className="breadcrumbs-item" key={index}>
           <a href={obj.src}>{obj.name}</a>
         </li>

@@ -1,11 +1,9 @@
-import basketModel from '../logic/basket';
-
-import basetStatusVM from './shop/BasketStatusVM';
+import basketStatusVM from "./shop/BasketStatusVM";
+import basketInfoChooseGoodsVM from "./shop/BasketInfoChooseGoodsVM";
 
 const basketVM = {
-  baskerStatusVM: basetStatusVM(),
-  goods: basketModel.goods,
-  additionGoods: [],
+  basketStatusVM: basketStatusVM(),
+  basketInfoChooseGoodsVM: basketInfoChooseGoodsVM(),
 };
 
 function factory() {

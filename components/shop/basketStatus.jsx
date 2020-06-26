@@ -1,13 +1,13 @@
-import ShopBasketAmount from './shopBasketAmount';
-import BreadcrumbsNav from './breadcrumbsNav';
+import ShopBasketAmount from "./shopBasketAmount";
+import BreadcrumbsNav from "./breadcrumbsNav";
 
 const BasketStatus = ({ vm }) => (
   <>
     <div className="status-wrapper">
-      <BreadcrumbsNav breadcrumbsData={breadcrumbs} />
+      <BreadcrumbsNav vm={vm.breadcrumbs} />
       <div className="added-goods">
         <span className="added-goods-text">Додані товари:</span>
-        <ShopBasketAmount />
+        <ShopBasketAmount vm={vm.count} />
       </div>
     </div>
     <style jsx>
