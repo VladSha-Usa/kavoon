@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function useRx(signal) {
-  var inital;
-  signal.subscribe((value) => inital = value ).unsubscribe();
+  let inital;
+  signal.subscribe((value) => { inital = value; }).unsubscribe();
 
   const [state, setState] = useState(inital);
   useEffect(() => {
