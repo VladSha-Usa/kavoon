@@ -2,7 +2,7 @@ import React from "react";
 import useRx from "./useRx";
 
 const ShopBasketAmount = ({ vm }) => {
-  const countValue = useRx(vm);
+  const countValue = useRx(vm.count);
   const displayAmount = countValue <= 0 ? "none" : "flex";
   return (
     <>

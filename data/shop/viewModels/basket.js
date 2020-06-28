@@ -1,9 +1,9 @@
-import basketStatusVM from './shop/BasketStatusVM';
-import basketInfoChooseGoodsVM from './shop/BasketInfoChooseGoodsVM';
+import basketStatusVM from "./shop/BasketStatusVM";
+import basketInfoOrderWireframeVM from "./shop/BasketInfoOrderWireframe";
 
 const basketVM = {
   basketStatusVM: basketStatusVM(),
-  basketInfoChooseGoodsVM: basketInfoChooseGoodsVM(),
+  basketInfoOrderWireframeVM: basketInfoOrderWireframeVM(),
 };
 
 function factory() {

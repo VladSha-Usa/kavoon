@@ -4,10 +4,10 @@ import BreadcrumbsNav from "./breadcrumbsNav";
 const BasketStatus = ({ vm }) => (
   <>
     <div className="status-wrapper">
-      <BreadcrumbsNav vm={vm.breadcrumbs} />
+      <BreadcrumbsNav vm={vm.breadcrumbsNavVM} />
       <div className="added-goods">
         <span className="added-goods-text">Додані товари:</span>
-        <ShopBasketAmount vm={vm.count} />
+        <ShopBasketAmount vm={vm.shopBasketAmountVM} />
       </div>
     </div>
     <style jsx>

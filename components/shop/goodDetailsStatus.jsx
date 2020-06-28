@@ -1,14 +1,16 @@
-import ShopBasketAmount from './shopBasketAmount';
-import BreadcrumbsNav from './breadcrumbsNav';
-import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
+import ShopBasketAmount from "./shopBasketAmount";
+import BreadcrumbsNav from "./breadcrumbsNav";
+import StatusOfAddingGoodToBasket from "./statusOfAddingGoodToBasket";
+import BreadcrumbsNavVM from "../../data/shop/viewModels/shop/BreadcrumbsNavVM";
+import ShopBasketAmountVM from "../../data/shop/viewModels/shop/ShopBasketAmountVM";
 
 const GoodDetailsStatus = ({ statusData }) => (
   <>
     <div className="status-wrapper">
-      <BreadcrumbsNav vm={statusData.breadcrumbs} />
+      <BreadcrumbsNav vm={BreadcrumbsNavVM()} />
       <div className="status-added">
         <span className="status-added__text">Додані товари:</span>
-        <ShopBasketAmount />
+        <ShopBasketAmount vm={ShopBasketAmountVM()} />
         <StatusOfAddingGoodToBasket addedGoodName={statusData.name} />
       </div>
     </div>

@@ -1,10 +1,10 @@
-import basketModel from '../../logic/basket';
-
+import { map } from "rxjs/operators";
+import basketModel from "../../logic/basket";
+import basketMainGoodVM from "./BasketMainGoodVM";
 export default () => ({
-  goods: basketModel.goods,
+  goods: basketModel.goods.pipe(
+    map((goods) => goods.map((good) => basketMainGoodVM(good)))
+  ),
   count: basketModel.count,
-  countForGood: basketModel.countForGood,
-  increase: basketModel.increase,
-  decrease: basketModel.decrease,
-  deleteGood: basketModel.deleteGood,
+  basketMainGoodVM: basketMainGoodVM(),
 });

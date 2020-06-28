@@ -5,7 +5,6 @@ import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
 import MainMetaInfo from "../../components/common/mainMetaInfo";
 import Analytics from "../../components/common/analytics";
-
 import BasketStatus from "../../components/shop/basketStatus";
 import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
 import RespScreenWidth from "../../components/common/mediaConst";
@@ -70,7 +69,7 @@ const Basket = () => {
       </div>
       <div id="home" className="basket-info-order">
         <div className="page-content" style={{ height: "100%" }}>
-          <BasketInfoOrderWireframe vm={vm.basketInfoChooseGoodsVM} />
+          <BasketInfoOrderWireframe vm={vm.basketInfoOrderWireframeVM} />
         </div>
       </div>
       <div className="footer-background">

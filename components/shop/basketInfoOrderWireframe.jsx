@@ -5,7 +5,7 @@ const BasketInfoOrderWireframe = ({ vm }) => {
   return (
     <>
       <div className="info-order-wrapper">
-        <BasketInfoChooseGoods vm={vm} />
+        <BasketInfoChooseGoods vm={vm.basketInfoChooseGoodsVM} />
         <BasketOrderForm />
       </div>
       <style jsx>{`

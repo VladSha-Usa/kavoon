@@ -73,7 +73,7 @@ const Good1 = () => {
       </div>
       <div className="good-details-status">
         <div className="page-content">
-          {/* <GoodDetailsStatus statusData={Good1Data} /> */}
+          <GoodDetailsStatus statusData={Good1Data} />
         </div>
       </div>
       <div className="good-details-choose">

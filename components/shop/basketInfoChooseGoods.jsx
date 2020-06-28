@@ -21,14 +21,7 @@ const BasketInfoChooseGoods = ({ vm }) => {
         <div className="info-choose-goods">
           {goods.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
-              <BasketMainGood
-                vm={{
-                  good,
-                  countForGood: vm.countForGood,
-                  increase: vm.increase,
-                  decrease: vm.decrease,
-                }}
-              />
+              <BasketMainGood vm={vm.basketMainGoodVM} />
               <img
                 src="/img/good-to-complect-img/cancel-icon.svg"
                 onClick={() => vm.deleteGood(good.id)}
