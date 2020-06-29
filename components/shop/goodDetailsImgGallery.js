@@ -246,6 +246,11 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
             width: 15px;
             height: 15px;
           }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .gallery-wrapper .slick-list {
+              padding-bottom: 0;
+            }
+          }
         `}
       </style>
     </>

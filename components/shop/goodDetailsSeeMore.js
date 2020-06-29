@@ -1,4 +1,6 @@
 import GoodListItem from "../../components/shop/goodListItem";
+import RespScreenWidth from "../common/mediaConst";
+
 const GoodDetailsSeeMore = ({ elseGoods }) => {
   return (
     <>
@@ -36,6 +38,20 @@ const GoodDetailsSeeMore = ({ elseGoods }) => {
           color: var(--texticonscolor);
           text-align: center;
           margin-bottom: 51px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .goods-wrapper {
+            padding: 0 15px;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .goods-wrapper {
+            padding: 0;
+            justify-content: center;
+          }
+          .more-title {
+            margin-bottom: 40px;
+          }
         }
       `}</style>
     </>
