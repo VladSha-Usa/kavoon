@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 
 function useRx(signal) {
   let inital;
-  signal
-    .subscribe((value) => {
+  let setStateFn = false;
+
+  const subscription = signal.subscribe((value) => {
+    if (!setStateFn) {
       inital = value;
-    })
-    .unsubscribe();
+    } else {
+      setStateFn(value);
+    }
+  });
 
   const [state, setState] = useState(inital);
   useEffect(() => {
-    const subscription = signal.subscribe((value) => setState(value));
+    setStateFn = setState;
     return () => {
       subscription.unsubscribe();
     };
