@@ -189,6 +189,9 @@ const Good1 = () => {
             .good-details-specification {
               margin-bottom: 48px;
             }
+            .good-details-things-took {
+              margin-bottom: 12px;
+            }
           }
         `}
       </style>

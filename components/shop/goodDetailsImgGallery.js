@@ -7,6 +7,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
   const [isOpened, setStatus] = useState(false);
   const displayPopUp = isOpened ? "flex" : "none";
   const [dataOfCurrentPopUp, setData] = useState({});
+  const [isClient, setIsClient] = useState(false);
   const ref = useRef();
   useOutsideClick(ref, () => {
     setStatus(false);
@@ -16,6 +17,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
       .transition
       ? setStatus(false)
       : null;
+    setIsClient(true);
   });
 
   return (
@@ -33,25 +35,31 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
         </div>
         <Slider
           infinite={true}
+          key={isClient ? "client" : "server"}
           slidesToShow={4}
           touchThreshold={200}
           dots={true}
           arrows={false}
           speed={500}
-          responsive={[
-            {
-              breakpoint: RespScreenWidth.screenWidthNetbook,
-              settings: {
-                slidesToShow: 3,
-              },
-            },
-            {
-              breakpoint: RespScreenWidth.screenWidthMobile,
-              settings: {
-                slidesToShow: 2,
-              },
-            },
-          ]}
+          responsive={
+            isClient
+              ? [
+                  {
+                    breakpoint: RespScreenWidth.screenWidthNetbook,
+                    settings: {
+                      slidesToShow: 3,
+                    },
+                  },
+                  {
+                    breakpoint: RespScreenWidth.screenWidthMobile,
+                    settings: {
+                      slidesToShow: 1,
+                      dots: false,
+                    },
+                  },
+                ]
+              : null
+          }
         >
           {galleryContent.map((slideContent, index) => (
             <div key={index} className="slide-wrapper">
@@ -176,6 +184,31 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           position: relative;
           overflow: hidden;
           border-radius: 5px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .slide-popup .popup-img {
+            height: 450px;
+            width: 700px;
+          }
+          .popup-subtext {
+            height: 50px;
+            padding: 15px 15px 0 15px;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .slide-popup .popup-img {
+            height: 260px;
+            width: 335px;
+          }
+          .popup-subtext {
+            height: 45px;
+            padding: 13px 10px 0 10px;
+            font-size: 14px;
+            letter-spacing: 0.74px;
+          }
+          .close-popup {
+            display: none;
+          }
         }
       `}</style>
       <style jsx global>
