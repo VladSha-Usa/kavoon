@@ -19,21 +19,21 @@ const BasketInfoChooseGoods = ({ vm }) => {
           </span>
         </div>
         <div className="info-choose-goods">
-          {goodVMs.map((good, index) => (
+          {goodVMs.map((goodVM, index) => (
             <div className="choose-good-wrapper" key={index}>
-              <BasketMainGood vm={good} />
+              <BasketMainGood vm={goodVM} />
               <img
                 src="/img/good-to-complect-img/cancel-icon.svg"
-                onClick={() => vm.deleteGood(good.good.id)}
+                onClick={() => vm.deleteGood(goodVM.good.id)}
               />
             </div>
           ))}
           {goodVMs
-            .filter((good) => good.additionGoodData)
-            .map((good, index) => (
+            .filter((goodVM) => goodVM.good.additionGoodData)
+            .map((goodVM, index) => (
               <div className="choose-good-wrapper" key={index}>
                 <GoodDetailsWizardAddOther
-                  vm={good.additionGoodData}
+                  vm={goodVM.good.additionGoodData}
                   basketStyleSettings={true}
                 />
                 <img src="/img/good-to-complect-img/cancel-icon.svg" />
