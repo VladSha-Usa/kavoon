@@ -1,16 +1,16 @@
 const endingOfWord = (value) => {
-  let lastNumOfAmount = value % 10;
-  let twoLastNumOfAmount = value % 100;
+  const lastNumOfAmount = value % 10;
+  const twoLastNumOfAmount = value % 100;
   if (lastNumOfAmount !== 1 || twoLastNumOfAmount === 11) {
     if ([12, 13, 14].includes(twoLastNumOfAmount)) {
-      return "ів";
+      return 'ів';
     }
     if ([2, 3, 4].includes(lastNumOfAmount)) {
-      return "и";
+      return 'и';
     }
-    return "ів";
+    return 'ів';
   }
-  return "";
+  return '';
 };
 const HelperFun = {
   endingOfWord,

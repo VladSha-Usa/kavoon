@@ -21,7 +21,8 @@
     "plugins": [
         "react"
     ],
-    "ignorePatterns": [ "node_modules/", "pages/", "components/"],
+    "ignorePatterns": [ "node_modules/", "pages/"],
     "rules": {
+      "click-events-have-key-events": "off"
     }
 }
