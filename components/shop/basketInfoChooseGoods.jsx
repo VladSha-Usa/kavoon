@@ -19,7 +19,7 @@ const BasketInfoChooseGoods = ({ vm }) => {
           </span>
         </div>
         <div className="info-choose-goods">
-          {/* {goodVMs.map((good, index) => (
+          {goodVMs.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
               <BasketMainGood vm={good} />
               <img
@@ -27,8 +27,8 @@ const BasketInfoChooseGoods = ({ vm }) => {
                 onClick={() => vm.deleteGood(good.good.id)}
               />
             </div>
-          ))} */}
-          {/* {goodVMs
+          ))}
+          {goodVMs
             .filter((good) => good.additionGoodData)
             .map((good, index) => (
               <div className="choose-good-wrapper" key={index}>
@@ -38,17 +38,17 @@ const BasketInfoChooseGoods = ({ vm }) => {
                 />
                 <img src="/img/good-to-complect-img/cancel-icon.svg" />
               </div>
-            ))} */}
+            ))}
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {/* {goodVMs.reduce(
+              {goodVMs.reduce(
                 (sum, good) =>
                   good.good.additionGoodData
                     ? sum + good.good.price + good.good.additionGoodData.price
                     : sum + good.good.price,
                 0
-              )}{" "} */}
+              )}{" "}
               грн
             </span>
           </div>
