@@ -5,7 +5,7 @@ import useRx from "./useRx";
 import HelperFun from "../common/helper";
 
 const BasketInfoChooseGoods = ({ vm }) => {
-  const goods = useRx(vm.goods);
+  const goodVMs = useRx(vm.goodVMs);
   const countValue = useRx(vm.count);
 
   return (
@@ -19,16 +19,16 @@ const BasketInfoChooseGoods = ({ vm }) => {
           </span>
         </div>
         <div className="info-choose-goods">
-          {goods.map((good, index) => (
+          {/* {goodVMs.map((good, index) => (
             <div className="choose-good-wrapper" key={index}>
-              <BasketMainGood vm={vm.basketMainGoodVM} />
+              <BasketMainGood vm={good} />
               <img
                 src="/img/good-to-complect-img/cancel-icon.svg"
-                onClick={() => vm.deleteGood(good.id)}
+                onClick={() => vm.deleteGood(good.good.id)}
               />
             </div>
-          ))}
-          {goods
+          ))} */}
+          {/* {goodVMs
             .filter((good) => good.additionGoodData)
             .map((good, index) => (
               <div className="choose-good-wrapper" key={index}>
@@ -38,17 +38,17 @@ const BasketInfoChooseGoods = ({ vm }) => {
                 />
                 <img src="/img/good-to-complect-img/cancel-icon.svg" />
               </div>
-            ))}
+            ))} */}
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {goods.reduce(
+              {/* {goodVMs.reduce(
                 (sum, good) =>
-                  good.additionGoodData
-                    ? sum + good.price + good.additionGoodData.price
-                    : sum + good.price,
+                  good.good.additionGoodData
+                    ? sum + good.good.price + good.good.additionGoodData.price
+                    : sum + good.good.price,
                 0
-              )}{" "}
+              )}{" "} */}
               грн
             </span>
           </div>
