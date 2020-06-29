@@ -214,7 +214,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
       <style jsx global>
         {`
           .gallery-wrapper .slick-list {
-            padding-bottom: 15px;
+            padding-bottom: 19px;
           }
           .gallery-wrapper .slick-dots li button {
             width: 8px;
