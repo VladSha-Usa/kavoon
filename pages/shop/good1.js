@@ -17,7 +17,6 @@ import RespScreenWidth from "../../components/common/mediaConst";
 
 const headerHeight = 80;
 
-
 const Good1 = () => {
   useEffect(() => {
     return BasketLogic.init();
@@ -126,23 +125,23 @@ const Good1 = () => {
             margin-right: auto;
           }
           .good-details-status {
-            margin-top: 115px;
-            margin-bottom: 36px;
+            margin-top: 120px;
+            margin-bottom: 60px;
           }
           .good-details-choose {
             margin-bottom: 60px;
           }
           .good-details-specification {
-            margin-bottom: 120px;
+            margin-bottom: 110px;
           }
           .good-details-things-took {
             margin-bottom: 70px;
           }
           .good-details-img-gallery {
-            margin-bottom: 170px;
+            margin-bottom: 145px;
           }
           .good-details-see-more {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
           }
           .header-border ::after {
             content: "";
@@ -177,8 +176,27 @@ const Good1 = () => {
               margin-left: auto;
               margin-right: auto;
             }
+            .good-details-status {
+              margin-top: 66px;
+              margin-bottom: 30px;
+            }
             .footer-background {
               height: 215px;
+            }
+            .good-details-choose {
+              margin-bottom: 40px;
+            }
+            .good-details-specification {
+              margin-bottom: 48px;
+            }
+            .good-details-things-took {
+              margin-bottom: 12px;
+            }
+            .good-details-img-gallery {
+              margin-bottom: 50px;
+            }
+            .good-details-see-more {
+              margin-bottom: 47px;
             }
           }
         `}
