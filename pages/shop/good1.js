@@ -138,10 +138,10 @@ const Good1 = () => {
             margin-bottom: 70px;
           }
           .good-details-img-gallery {
-            margin-bottom: 170px;
+            margin-bottom: 145px;
           }
           .good-details-see-more {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
           }
           .header-border ::after {
             content: "";
@@ -188,6 +188,15 @@ const Good1 = () => {
             }
             .good-details-specification {
               margin-bottom: 48px;
+            }
+            .good-details-things-took {
+              margin-bottom: 12px;
+            }
+            .good-details-img-gallery {
+              margin-bottom: 50px;
+            }
+            .good-details-see-more {
+              margin-bottom: 47px;
             }
           }
         `}

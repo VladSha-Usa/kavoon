@@ -291,6 +291,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           }
           .small-content {
             grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 0;
           }
           .small-content li {
             margin-bottom: 35px;
