@@ -1,8 +1,16 @@
-import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD:components/shop/statusOfAddingGoodToBasket.jsx
+import React from 'react';
 import BasketLogic from '../../data/shop/logic/basket';
 import useRx from './useRx';
 
+const StatusOfAddingGoodToBasket = ({ addedGoodName }) => {
+=======
+import BasketLogic from "../../data/shop/logic/basket";
+import useRx from "./useRx";
+import React, { useState, useEffect } from "react";
+
 const StatusOfBasket = ({ addedGoodName }) => {
+>>>>>>> 2e41067ab28f8974cae1196aa1f5fb02c9c385f4:components/shop/statusOfBasket.js
   const statusOfAdding = useRx(BasketLogic.statusOfAdding);
   const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
   const count = useRx(BasketLogic.count);
@@ -19,9 +27,7 @@ const StatusOfBasket = ({ addedGoodName }) => {
           <>Ваш кошик порожній&nbsp;&nbsp;&nbsp;😩</>
         ) : statusOfAdding ? (
           <>
-            <span className="added-good">{addedGoodName}</span>
-            {' '}
-            успішно додано
+            <span className="added-good">{addedGoodName}</span> успішно додано
             до кошику!&nbsp;&nbsp;&nbsp;😊
           </>
         ) : null}
@@ -30,7 +36,7 @@ const StatusOfBasket = ({ addedGoodName }) => {
         {`
         .status-adding-wrapper {
           position: absolute;
-          width: ${emptyBasket ? 'auto' : '345px'};
+          width: ${emptyBasket ? "auto" : "345px"};
           box-sizing: border-box;
           border-radius: 12px;
           box-shadow: 4px 8px 48px -1px rgba(8, 32, 79, 0.19);
@@ -45,10 +51,10 @@ const StatusOfBasket = ({ addedGoodName }) => {
           left: -95px;
           top: 81px;
           padding: ${emptyBasket
-          ? '28px 55px 28px 55px'
-          : '18px 27px 13px 32px'};
-          display: ${statusOfAdding || emptyBasket ? 'block' : 'none'};
-          white-space: ${emptyBasket ? 'nowrap' : 'pre-wrap'};
+            ? "28px 55px 28px 55px"
+            : "18px 27px 13px 32px"};
+          display: ${statusOfAdding || emptyBasket ? "block" : "none"};
+          white-space: ${emptyBasket ? "nowrap" : "pre-wrap"};
         }
         .status-adding-wrapper:before {
           position: absolute;
