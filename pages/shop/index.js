@@ -104,13 +104,13 @@ const Shop = () => {
           }
           .title-section {
             margin-top: 150px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
           }
           .shop-status {
-            margin-bottom: 51px;
+            margin-bottom: 34px;
           }
           .goods-list {
-            margin-bottom: 58px;
+            margin-bottom: 60px;
           }
           .footer-background {
             width: 100%;
