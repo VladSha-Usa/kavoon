@@ -6,9 +6,7 @@ import RespScreenWidth from '../common/mediaConst';
 const GoodDetailsThingsTook = ({ things, сontent }) => (
   <>
     <div className="taken-things-wrapper">
-      <div className="things-main-question">
-        Що можна покласти в комплект?
-      </div>
+      <div className="things-main-question">Що можна покласти в комплект?</div>
       <div className="main-imgs-wrapper">
         <div className="large-img-content">
           <img
@@ -20,9 +18,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
             Як щодо такого комлекту сумок?
           </div>
           <Popup
-            trigger={
-              <button className="show-complect-btn">Клікни сюди</button>
-              }
+            trigger={<button className="show-complect-btn">Клікни сюди</button>}
             modal
           >
             {(close) => (
@@ -32,31 +28,20 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
                 </a>
                 <div className="header">Замов одразу весь комлект</div>
                 <div className="sub-title-discount">
-                  Якщо замовляти весь комлект разом, ми даємо знижку
-                  {' '}
+                  Якщо замовляти весь комлект разом, ми даємо знижку{' '}
                   <span className="amount-percent">- 10%</span>
                 </div>
                 <div className="content">
                   <div className="goods-to-complect-wrapper">
-                    {сontent.allKitDiscount.map((good) => (
-                      <GoodDiscountInComplect content={good} />
+                    {сontent.allKitDiscount.map((good, index) => (
+                      <GoodDiscountInComplect content={good} key={index} />
                     ))}
                   </div>
-                  <div className="content">
-                    <div className="goods-to-complect-wrapper">
-                      {сontent.allKitDiscount.map((good, index) => (
-                        <GoodDiscountInComplect content={good} key={index} />
-                      ))}
-                    </div>
-                    <div className="price-submit-wrapper">
-                      <div className="price-inf">
-                        <span className="price-intro">Сума:</span>
-                        <span className="price-prev">1300 грн</span>
-                        <span className="price-new">1000 грн</span>
-                      </div>
-                      <button type="submit" className="order-btn">
-                        ЗАМОВИТИ
-                      </button>
+                  <div className="price-submit-wrapper">
+                    <div className="price-inf">
+                      <span className="price-intro">Сума:</span>
+                      <span className="price-prev">1300 грн</span>
+                      <span className="price-new">1000 грн</span>
                     </div>
                     <button type="submit" className="order-btn">
                       ЗАМОВИТИ
@@ -140,9 +125,9 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           padding-right: 30px;
         }
         .show-complect-btn:after {
-          content: "";
+          content: '';
           position: absolute;
-          background-image: url("/img/good-to-complect-img/click-here.svg");
+          background-image: url('/img/good-to-complect-img/click-here.svg');
           width: 18px;
           height: 18px;
           margin-left: 25px;
@@ -334,23 +319,23 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
     </style>
     <style jsx global>
       {`
+        .popup-content {
+          width: 571px !important;
+          border-radius: 10px;
+          padding: 29px 40px 38px 40px !important;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .popup-overlay {
+            overflow: auto;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .popup-content {
-            width: 571px !important;
-            border-radius: 10px;
-            padding: 29px 40px 38px 40px !important;
+            width: 302px !important;
+            padding: 16px 13px 28px 13px !important;
           }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
-            .popup-overlay {
-              overflow: auto;
-            }
-          }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-            .popup-content {
-              width: 302px !important;
-              padding: 16px 13px 28px 13px !important;
-            }
-          }
-        `}
+        }
+      `}
     </style>
   </>
 );
