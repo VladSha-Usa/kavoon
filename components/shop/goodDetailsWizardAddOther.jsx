@@ -45,7 +45,7 @@ const GoodDetailsWizardAddOther = ({
                   checkerStatus(!status);
                   status
                     ? BasketLogic.colectDataOfGood({
-                      additionGoodData: { ...additionGoodData },
+                      additionGoodData: { ...vm },
                     })
                     : BasketLogic.colectDataOfGood('deleteAddGood');
                 }}

@@ -2,6 +2,8 @@ import React from 'react';
 import ShopBasketAmount from './shopBasketAmount';
 import RespScreenWidth from '../common/mediaConst';
 
+import ShopBasketAmountVM from '../../data/shop/viewModels/shop/ShopBasketAmountVM';
+
 const ShopStatus = () => (
   <>
     <div className="status-wrapper">
@@ -14,7 +16,7 @@ const ShopStatus = () => (
       </div>
       <div className="status-added">
         <span className="added-text">Додані:</span>
-        <ShopBasketAmount />
+        <ShopBasketAmount vm={ShopBasketAmountVM()}/>
       </div>
     </div>
     <style jsx>

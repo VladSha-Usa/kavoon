@@ -1,9 +1,10 @@
 import ShopBasketAmount from './shopBasketAmount';
 import BreadcrumbsNav from './breadcrumbsNav';
 import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
+import RespScreenWidth from '../common/mediaConst';
+
 import BreadcrumbsNavVM from '../../data/shop/viewModels/shop/BreadcrumbsNavVM';
 import ShopBasketAmountVM from '../../data/shop/viewModels/shop/ShopBasketAmountVM';
-import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsStatus = ({ statusData }) => (
   <>
