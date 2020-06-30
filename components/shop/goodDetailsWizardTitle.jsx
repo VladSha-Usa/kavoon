@@ -1,4 +1,5 @@
-import React from 'react';
+import RespScreenWidth from '../common/mediaConst';
+
 const GoodDetailsWizardTitle = ({ dataForTitle }) => (
   <>
     <div className="wizard__title">
@@ -10,7 +11,7 @@ const GoodDetailsWizardTitle = ({ dataForTitle }) => (
         .
       </span>
       <span className="wizard__title-price">
-        {dataForTitle.price}
+        {dataForTitle.price.toLocaleString({ useGrouping: true })}
         {' '}
         грн
       </span>
@@ -28,13 +29,20 @@ const GoodDetailsWizardTitle = ({ dataForTitle }) => (
           color: var(--texticonscolor);
           display: flex;
           flex-direction: column;
-          margin-bottom: 36px;
+          margin-bottom: 35px;
         }
         .wizard__title-description {
           margin-bottom: 15px;
         }
         .wizard__title-price {
           color: var(--primarycolor);
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .wizard__title {
+            font-size: 20px;
+            letter-spacing: 1.05px;
+            margin-bottom: 30px;
+          }
         }
       `}
     </style>

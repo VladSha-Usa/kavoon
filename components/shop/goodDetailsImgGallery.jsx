@@ -1,10 +1,11 @@
 import Slider from 'react-slick';
 import React, { useState, useRef, useEffect } from 'react';
 import useOutsideClick from './useOutsideClick';
+import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsImgGallery = ({ galleryContent }) => {
   const [isOpened, setStatus] = useState(false);
-  const displayPopUp = isOpened ? 'block' : 'none';
+  const displayPopUp = isOpened ? 'flex' : 'none';
   const [dataOfCurrentPopUp, setData] = useState({});
   const ref = useRef();
   useOutsideClick(ref, () => {
@@ -37,6 +38,20 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           dots
           arrows={false}
           speed={500}
+          responsive={[
+            {
+              breakpoint: RespScreenWidth.screenWidthNetbook,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: RespScreenWidth.screenWidthMobile,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+          ]}
         >
           {galleryContent.map((slideContent, index) => (
             <div key={index} className="slide-wrapper">
@@ -63,21 +78,20 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
         .gallery-wrapper {
           position: relative;
           font-family: Montserrat;
-          font-weight: 600;
+          font-weight: 500;
           font-stretch: normal;
           font-style: normal;
           line-height: normal;
         }
         .slide-popup-wrapper {
-          position: absolute;
-          height: fit-content;
-          top: -220px;
+          position: fixed;
+          top: -0;
           bottom: 0px;
           left: 0px;
           right: 0px;
-          display: flex;
           z-index: 999;
           display: ${displayPopUp};
+          background: rgba(0, 0, 0, 0.5);
         }
         .slide-popup {
           margin: auto;
@@ -124,34 +138,39 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
           font-size: 16px;
           letter-spacing: 0.84px;
           color: var(--white);
-          padding-left: 15px;
-          display: flex;
-          align-items: center;
+          padding: 17px 15px 0 15px;
+          box-sizing: border-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: pre;
         }
         .gallery-img {
-          object-fit: contain;
           box-shadow: 2px 2px 24px 0 rgba(9, 21, 85, 0.08);
           outline: none;
           cursor: pointer;
-          width: 277px;
-          height: 203px;
+          width: 280px;
+          height: 200px;
         }
         .img-subtext {
           position: absolute;
           cursor: pointer;
-          width: calc(100% - 10px);
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: pre;
           bottom: 0;
           height: 45px;
           background-color: rgba(14, 19, 39, 0.75);
           font-size: 14px;
           letter-spacing: 0.74px;
           color: #fff;
-          display: flex;
-          align-items: center;
-          padding-left: 10px;
+          padding: 14px 10px 0 10px;
+          box-sizing: border-box;
         }
         .slide-wrapper {
           outline: none;
+          display: flex !important;
+          justify-content: center;
         }
         .slide {
           width: fit-content;
@@ -164,7 +183,7 @@ const GoodDetailsImgGallery = ({ galleryContent }) => {
       <style jsx global>
         {`
           .gallery-wrapper .slick-list {
-            padding-bottom: 10px;
+            padding-bottom: 15px;
           }
           .gallery-wrapper .slick-dots li button {
             width: 8px;

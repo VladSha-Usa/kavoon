@@ -1,3 +1,6 @@
+import React from 'react';
+import RespScreenWidth from '../common/mediaConst';
+
 const BreadcrumbsNav = ({ vm }) => (
   <>
     <ul className="breadcrumbs-wrapper">
@@ -43,6 +46,23 @@ const BreadcrumbsNav = ({ vm }) => (
           background-color: var(--primarycolor);
           margin-left: -12.5px;
           margin-top: 5px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .breadcrumbs-wrapper {
+            align-items: flex-start;
+            margin-block-end: 27px;
+          }
+          .breadcrumbs-item:first-child {
+            white-space: nowrap;
+          }
+          .breadcrumbs-item {
+            text-align: center;
+          }
+          .breadcrumbs-wrapper .breadcrumbs-item a {
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0.84px;
+          }
         }
       `}
     </style>

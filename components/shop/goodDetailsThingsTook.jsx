@@ -1,5 +1,7 @@
+import React from 'react';
 import Popup from 'reactjs-popup';
 import GoodDiscountInComplect from './goodDiscountInComplect';
+import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsThingsTook = ({ things, сontent }) => (
   <>
@@ -40,11 +42,21 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
                       <GoodDiscountInComplect content={good} />
                     ))}
                   </div>
-                  <div className="price-submit-wrapper">
-                    <div className="price-inf">
-                      <span className="price-intro">Сума:</span>
-                      <span className="price-prev">1300 грн</span>
-                      <span className="price-new">1000 грн</span>
+                  <div className="content">
+                    <div className="goods-to-complect-wrapper">
+                      {сontent.allKitDiscount.map((good, index) => (
+                        <GoodDiscountInComplect content={good} key={index} />
+                      ))}
+                    </div>
+                    <div className="price-submit-wrapper">
+                      <div className="price-inf">
+                        <span className="price-intro">Сума:</span>
+                        <span className="price-prev">1300 грн</span>
+                        <span className="price-new">1000 грн</span>
+                      </div>
+                      <button type="submit" className="order-btn">
+                        ЗАМОВИТИ
+                      </button>
                     </div>
                     <button type="submit" className="order-btn">
                       ЗАМОВИТИ
@@ -61,8 +73,8 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           </span>
           <ul className="small-content">
             {things.smallThings.map((goodData, index) => (
-              <li className="small-item" key={index}>
-                <a href="#">
+              <li key={index}>
+                <a className="small-item" href="#">
                   <img
                     className="small-img"
                     key={index}
@@ -81,7 +93,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
       {`
         .taken-things-wrapper {
           font-family: Montserrat;
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 500;
           font-stretch: normal;
           font-style: normal;
@@ -98,13 +110,13 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           margin-bottom: 61px;
         }
         .large-img {
-          margin-top: 18px;
-          margin-bottom: 41px;
-          width: 614px;
-          height: 377px;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          width: 600px;
+          height: 368px;
         }
         .img-large-sub-question {
-          margin-bottom: 9px;
+          margin-bottom: 8px;
         }
         .show-complect-btn,
         .small-more-inf {
@@ -140,7 +152,8 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           justify-content: space-between;
         }
         .small-content {
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
           flex-wrap: wrap;
           justify-content: space-between;
           margin-bottom: 30px;
@@ -148,28 +161,29 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           text-align: center;
           list-style: none;
           padding-inline-start: 0;
+          width: 100%;
         }
-        .small-item {
-          display: flex;
-          flex-direction: column;
-          width: 90px;
-          margin-bottom: 20px;
+        .small-content li {
+          margin-bottom: 25px;
         }
         .small-img {
           object-fit: contain;
-          margin-bottom: 14px;
+          margin-bottom: 19px;
           width: 70px;
           height: 70px;
         }
-        .small-item a {
+        .small-item {
           text-decoration: none;
           color: var(--texticonscolor);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-        .small-item a:hover {
+        .small-item:hover {
           color: var(--primarycolor);
         }
         .small-things-wrapper {
-          width: 449px;
+          width: 477px;
         }
         .small-things-wrapper,
         .large-img-content {
@@ -185,13 +199,12 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           font-weight: 600;
         }
         .complect-popup .close {
-          float: right;
-          margin-right: -7px;
+          position: absolute;
+          right: 30px;
           cursor: pointer;
         }
         .complect-popup .header {
           text-align: center;
-          margin-left: 12px;
           margin-bottom: 10px;
           font-size: 20px;
           padding-top: 8px;
@@ -199,14 +212,16 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
         .complect-popup .goods-to-complect-wrapper {
           display: flex;
           flex-direction: column;
-          padding-left: 4px;
-          margin-bottom: 8px;
+          margin-bottom: 3px;
         }
         .complect-popup .price-submit-wrapper {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 3px;
+        }
+        .price-inf {
+          display: flex;
+          align-items: center;
         }
         .complect-popup .price-inf .price-intro {
           padding-right: 11px;
@@ -216,6 +231,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           font-weight: 500;
           position: relative;
           text-decoration: line-through;
+          font-size: 20px;
         }
         .complect-popup .price-inf .price-new {
           color: var(--primarycolor);
@@ -225,7 +241,8 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           font-weight: 500;
           letter-spacing: 0.84px;
           font-size: 16px;
-          margin-bottom: 12px;
+          margin-bottom: 16px;
+          text-align: center;
         }
         .complect-popup .sub-title-discount .amount-percent {
           color: var(--primarycolor);
@@ -249,15 +266,89 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
           outline: none;
           cursor: pointer;
         }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .main-imgs-wrapper {
+            flex-direction: column;
+            align-items: center;
+          }
+          .large-img-content {
+            margin-bottom: 61px;
+          }
+          .large-img {
+            margin-top: 0;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .large-img {
+            width: 100%;
+            height: 210px;
+          }
+          .things-main-question {
+            margin-bottom: 36px;
+          }
+          .large-img-content {
+            margin-bottom: 55px;
+          }
+          .small-content {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+          .small-content li {
+            margin-bottom: 35px;
+          }
+          .small-things-wrapper {
+            width: 100%;
+          }
+          .small-things-title {
+            margin-bottom: 18px;
+          }
+          .small-img {
+            margin-bottom: 17px;
+          }
+          .complect-popup .header {
+            font-size: 16px;
+            padding-top: 46px;
+            margin-bottom: 13px;
+          }
+          .complect-popup .sub-title-discount {
+            margin-bottom: 26px;
+          }
+          .complect-popup .close {
+            right: 15px;
+          }
+          .complect-popup .price-submit-wrapper {
+            flex-direction: column;
+          }
+          .price-inf {
+            align-self: flex-start;
+            margin-bottom: 24px;
+          }
+          .complect-popup .order-btn {
+            width: 300px;
+          }
+          .complect-popup .goods-to-complect-wrapper {
+            margin-bottom: 9px;
+          }
+        }
       `}
     </style>
-    <style>
+    <style jsx global>
       {`
-        .popup-content {
-          width: 576px !important;
-          border-radius: 10px;
-          padding: 28px 35px !important;
-        }
+          .popup-content {
+            width: 571px !important;
+            border-radius: 10px;
+            padding: 29px 40px 38px 40px !important;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+            .popup-overlay {
+              overflow: auto;
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .popup-content {
+              width: 302px !important;
+              padding: 16px 13px 28px 13px !important;
+            }
+          }
         `}
     </style>
   </>

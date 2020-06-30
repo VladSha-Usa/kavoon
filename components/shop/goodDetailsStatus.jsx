@@ -1,8 +1,9 @@
-import ShopBasketAmount from "./shopBasketAmount";
-import BreadcrumbsNav from "./breadcrumbsNav";
-import StatusOfAddingGoodToBasket from "./statusOfAddingGoodToBasket";
-import BreadcrumbsNavVM from "../../data/shop/viewModels/shop/BreadcrumbsNavVM";
-import ShopBasketAmountVM from "../../data/shop/viewModels/shop/ShopBasketAmountVM";
+import ShopBasketAmount from './shopBasketAmount';
+import BreadcrumbsNav from './breadcrumbsNav';
+import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
+import BreadcrumbsNavVM from '../../data/shop/viewModels/shop/BreadcrumbsNavVM';
+import ShopBasketAmountVM from '../../data/shop/viewModels/shop/ShopBasketAmountVM';
+import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsStatus = ({ statusData }) => (
   <>
@@ -28,6 +29,7 @@ const GoodDetailsStatus = ({ statusData }) => (
           font-style: normal;
           line-height: 1.53;
           letter-spacing: 0.89px;
+          height: auto;
         }
         .status-added {
           display: flex;
@@ -36,10 +38,23 @@ const GoodDetailsStatus = ({ statusData }) => (
         }
         .status-added {
           margin-top: -6px;
-          margin-right: 6px;
         }
         .status-added__text {
           margin-right: 17px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .status-wrapper {
+            flex-direction: column;
+          }
+          .status-added {
+            justify-content: space-between;
+          }
+          .status-added__text {
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0.84px;
+            margin-right: 0px;
+          }
         }
       `}
     </style>

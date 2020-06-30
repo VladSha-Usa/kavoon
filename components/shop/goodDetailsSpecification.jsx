@@ -1,3 +1,5 @@
+import RespScreenWidth from '../common/mediaConst';
+
 const GoodDetailsSpecification = ({ specification }) => {
   const fields = [
     {
@@ -79,7 +81,7 @@ const GoodDetailsSpecification = ({ specification }) => {
   return (
     <>
       <div className="specification-wrapper">
-        <div className="specification-title">Характеристика даного товару:</div>
+        <div className="specification-title">Характеристика товару:</div>
         <div className="specification-main-content">
           <div className="specification-left">{specificationLeft}</div>
           <div className="specification-right">{specificationRight}</div>
@@ -105,17 +107,49 @@ const GoodDetailsSpecification = ({ specification }) => {
           letter-spacing: 1px;
           margin-bottom: 37px;
         }
+        .specification-left {
+          max-width: 484px;
+        }
         .specification-right {
-          margin-left: 186px;
+          margin-left: 142px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .specification-right {
+            margin-left: 0;
+            max-width: 330px;
+          }
+          .specification-main-content {
+            justify-content: space-between;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .specification-wrapper {
+            margin-left: 0;
+          }
+          .specification-main-content {
+            display: block;
+          }
+          .specification-right {
+            margin-top: 24px;
+          }
+          .specification-left {
+            max-width: auto;
+          }
+          .specification-right {
+            max-width: auto;
+          }
+          .specification-title {
+            margin-bottom: 17px;
+          }
         }
       `}
       </style>
-      <style>
+      <style jsx global>
         {`
         .specification-parametr {
           font-size: 16px;
           font-weight: 600;
-          letter-spacing: 0.6px;
+          letter-spacing: 0.84px;
           margin-bottom: 10px;
           line-height: 26px;
         }

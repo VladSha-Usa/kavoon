@@ -4,4 +4,8 @@
   "editor.detectIndentation": false,
   "editor.wrappingIndent": "deepIndent",
   "prettier.singleQuote": true,
+  "emmet.extensionsPath": "",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
