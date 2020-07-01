@@ -3,13 +3,12 @@ import BreadcrumbsNav from './breadcrumbsNav';
 import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
 import RespScreenWidth from '../common/mediaConst';
 
-import BreadcrumbsNavVM from '../../data/shop/viewModels/shop/BreadcrumbsNavVM';
 import ShopBasketAmountVM from '../../data/shop/viewModels/shop/ShopBasketAmountVM';
 
 const GoodDetailsStatus = ({ statusData }) => (
   <>
     <div className="status-wrapper">
-      <BreadcrumbsNav vm={BreadcrumbsNavVM()} />
+      <BreadcrumbsNav vm={statusData} />
       <div className="status-added">
         <span className="status-added__text">Додані товари:</span>
         <ShopBasketAmount vm={ShopBasketAmountVM()} />
