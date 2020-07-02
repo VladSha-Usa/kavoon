@@ -1,13 +1,12 @@
 import RespScreenWidth from '../common/mediaConst';
 import GoodDetailsPrevSlider from './goodDetailsPrevSlider';
 import GoodDetailsWizard from './goodDetailsWizard';
-import DataGood1 from '../../data/viewModels/good1';
 
-const GoodDetailsChoose = () => (
+const GoodDetailsChoose = ({ vm }) => (
   <>
     <div className="good-details-choose-wrapper">
-      <GoodDetailsPrevSlider images={DataGood1.gallery} />
-      <GoodDetailsWizard />
+      <GoodDetailsPrevSlider vm={vm.goodDetailsPrevSliderVM} />
+      <GoodDetailsWizard vm={vm.goodDetailsWizardVM} />
     </div>
     <style jsx>
       {`

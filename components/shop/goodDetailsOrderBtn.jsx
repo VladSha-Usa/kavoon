@@ -1,16 +1,15 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import BasketLogic from '../../data/logic/basket';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsOrderBtn = () => (
+const GoodDetailsOrderBtn = ({vm}) => (
   <>
     <button
       className="btn-submit"
       type="submit"
       onClick={() => {
-        BasketLogic.colectDataOfGood({ id: uuidv4() });
-        BasketLogic.addGood();
+        vm.colectDataOfGood({ id: uuidv4() });
+        vm.addGood();
       }}
     >
       Зробити замовлення

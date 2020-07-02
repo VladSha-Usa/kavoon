@@ -1,19 +1,14 @@
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsWizardTitle = ({ dataForTitle }) => (
+const GoodDetailsWizardTitle = ({ vm }) => (
   <>
     <div className="wizard__title">
       <span className="wizard__title-description">
-        {dataForTitle.name}
-        {dataForTitle.specification.volume
-          ? ` ${dataForTitle.specification.volume}л`
-          : ''}
-        .
+        {vm.name}
+        {vm.volume ? ` ${vm.volume}л` : ''}.
       </span>
       <span className="wizard__title-price">
-        {dataForTitle.price.toLocaleString({ useGrouping: true })}
-        {' '}
-        грн
+        {vm.price.toLocaleString({ useGrouping: true })} грн
       </span>
     </div>
     <style jsx>

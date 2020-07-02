@@ -2,19 +2,15 @@ import { useState } from 'react';
 import Slider from 'react-slick';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsPrevSlider = ({ images }) => {
+const GoodDetailsPrevSlider = ({ vm }) => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
   return (
     <>
       <div className="good-prev__slider-wrapper">
         <div className="details-slider__first">
-          <Slider
-            asNavFor={slider2}
-            ref={(slider) => setSlider1(slider)}
-            dots
-          >
-            {images.map((image, index) => (
+          <Slider asNavFor={slider2} ref={(slider) => setSlider1(slider)} dots>
+            {vm.gallery.map((image, index) => (
               <div key={index}>
                 <img
                   src={image.src}
@@ -35,7 +31,7 @@ const GoodDetailsPrevSlider = ({ images }) => {
             focusOnSelect
             arrows={false}
           >
-            {images.map((image, index) => (
+            {vm.gallery.map((image, index) => (
               <div key={index}>
                 <img
                   src={image.src}
@@ -69,11 +65,11 @@ const GoodDetailsPrevSlider = ({ images }) => {
           }
           .details-slider__first .slick-next:before,
           .details-slider__first .slick-prev:before {
-            content: "";
+            content: '';
             font-size: 0px;
             line-height: 0px;
             opacity: 1;
-            background-image: url("/img/good-details-prev-slider/next-icon.svg");
+            background-image: url('/img/good-details-prev-slider/next-icon.svg');
             position: absolute;
             width: 16px;
             height: 27px;
@@ -96,7 +92,7 @@ const GoodDetailsPrevSlider = ({ images }) => {
           .details-slider__first .slick-dots li button:before {
             width: 8px;
             height: 8px;
-            content: "";
+            content: '';
             object-fit: contain;
             border-radius: 50%;
             opacity: 0.25;

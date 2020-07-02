@@ -1,13 +1,9 @@
 import React, { useReducer } from 'react';
 import RespScreenWidth from '../common/mediaConst';
-import BasketLogic from '../../data/logic/basket';
 import GoodDetailsWizardTitle from './goodDetailsWizardTitle';
 import GoodDetailsWizardPicker from './goodDetailsWizardPicker';
 import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
 import GoodDetailsOrderBtn from './goodDetailsOrderBtn';
-import DataGood1 from '../../data/viewModels/good1';
-
-import { bagBigFork } from '../../data/data/goods';
 
 function fabricReducer(state, action) {
   switch (action.type) {
@@ -26,21 +22,21 @@ function extractAction(dispatch, actionType) {
   };
 }
 
-const GoodDetailsWizard = () => {
-  const { fabrics } = bagBigFork;
+const GoodDetailsWizard = ({ vm }) => {
+  const { fabrics } = vm.good;
 
   const [state, dispatch] = useReducer(fabricReducer, {
     fabric: fabrics[0],
     print: fabrics[0].prints[0],
   });
-  BasketLogic.colectDataOfGood({
+  vm.colectDataOfGood({
     fabric: state.fabric.name,
     print: state.print.name,
   });
   return (
     <>
       <div className="good-wizard-wrapper">
-        <GoodDetailsWizardTitle dataForTitle={DataGood1} />
+        <GoodDetailsWizardTitle vm={vm.goodDetailsWizardTitleVM} />
         <div className="wizard-picker-wrapper">
           <GoodDetailsWizardPicker
             mainTheme="Основна тканина"
@@ -53,34 +49,32 @@ const GoodDetailsWizard = () => {
             selected={[state.print, extractAction(dispatch, 'setPrint')]}
           />
         </div>
-        <GoodDetailsWizardAddOther
-          vm={DataGood1.additionGoodToCompl}
-        />
-        <GoodDetailsOrderBtn />
+        <GoodDetailsWizardAddOther vm={vm.goodDetailsWizardAddOtherVM} />
+        <GoodDetailsOrderBtn vm={vm.goodDetailsOrderBtnVM} />
       </div>
       <style jsx>
         {`
-        .good-wizard-wrapper {
-          width: 380px;
-          margin-left: 96px;
-        }
-        .wizard-picker-wrapper {
-          padding-bottom: 20px;
-        }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
           .good-wizard-wrapper {
-            margin-left: 0px;
-          }
-        }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-          .good-wizard-wrapper {
-            width: 335px;
+            width: 380px;
+            margin-left: 96px;
           }
           .wizard-picker-wrapper {
-            padding-bottom: 9px;
+            padding-bottom: 20px;
           }
-        }
-      `}
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+            .good-wizard-wrapper {
+              margin-left: 0px;
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .good-wizard-wrapper {
+              width: 335px;
+            }
+            .wizard-picker-wrapper {
+              padding-bottom: 9px;
+            }
+          }
+        `}
       </style>
     </>
   );
