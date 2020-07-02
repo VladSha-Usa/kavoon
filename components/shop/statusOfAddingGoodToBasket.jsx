@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BasketLogic from '../../data/shop/logic/basket';
+import BasketLogic from '../../data/logic/basket';
 import useRx from './useRx';
 import RespScreenWidth from '../common/mediaConst';
 

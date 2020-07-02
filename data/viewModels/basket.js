@@ -1,5 +1,5 @@
-import basketStatusVM from './shop/BasketStatusVM';
-import basketInfoOrderWireframeVM from './shop/BasketInfoOrderWireframeVM';
+import basketStatusVM from './basket/BasketStatusVM';
+import basketInfoOrderWireframeVM from './basket/BasketInfoOrderWireframeVM';
 
 const basketVM = {
   basketStatusVM: basketStatusVM(),

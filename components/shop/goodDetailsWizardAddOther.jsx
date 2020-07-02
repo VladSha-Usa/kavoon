@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BasketLogic from '../../data/shop/logic/basket';
+import BasketLogic from '../../data/logic/basket';
 import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsWizardAddOther = ({

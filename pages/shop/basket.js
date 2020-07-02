@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import BasketLogic from "../../data/shop/logic/basket";
+import BasketLogic from "../../data/logic/basket";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
@@ -9,7 +9,7 @@ import BasketStatus from "../../components/shop/basketStatus";
 import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
 import RespScreenWidth from "../../components/common/mediaConst";
 
-import vmFactory from "../../data/shop/viewModels/basket";
+import vmFactory from "../../data/viewModels/basket";
 
 const headerHeight = 80;
 
