@@ -1,6 +1,6 @@
 import React from 'react';
 import GoodListItem from './goodListItem';
-import GoodListData from '../../data/shop/viewModels/goods';
+import GoodListData from '../../data/viewModels/goods';
 import RespScreenWidth from '../common/mediaConst';
 
 const GoodsList = () => (

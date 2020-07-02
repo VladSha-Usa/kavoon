@@ -1,13 +1,13 @@
 import React, { useReducer } from 'react';
 import RespScreenWidth from '../common/mediaConst';
-import BasketLogic from '../../data/shop/logic/basket';
+import BasketLogic from '../../data/logic/basket';
 import GoodDetailsWizardTitle from './goodDetailsWizardTitle';
 import GoodDetailsWizardPicker from './goodDetailsWizardPicker';
 import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
 import GoodDetailsOrderBtn from './goodDetailsOrderBtn';
-import DataGood1 from '../../data/shop/viewModels/good1';
+import DataGood1 from '../../data/viewModels/good1';
 
-import { bagBigFork } from '../../data/shop/data/goods';
+import { bagBigFork } from '../../data/data/goods';
 
 function fabricReducer(state, action) {
   switch (action.type) {

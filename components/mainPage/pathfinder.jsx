@@ -1,5 +1,5 @@
 import PathfinderObject from './pathfinderObject';
-import objects from '../../data/objects';
+import objects from '../../data/viewModels/pathfinder/objects';
 import RespScreenWidth from '../common/mediaConst';
 
 const Pathfinder = () => (
