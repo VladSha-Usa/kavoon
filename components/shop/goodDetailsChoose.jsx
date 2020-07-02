@@ -1,7 +1,7 @@
 import RespScreenWidth from '../common/mediaConst';
 import GoodDetailsPrevSlider from './goodDetailsPrevSlider';
 import GoodDetailsWizard from './goodDetailsWizard';
-import DataGood1 from '../../data/shop/viewModels/good1';
+import DataGood1 from '../../data/viewModels/good1';
 
 const GoodDetailsChoose = () => (
   <>

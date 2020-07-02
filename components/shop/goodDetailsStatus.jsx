@@ -3,7 +3,7 @@ import BreadcrumbsNav from './breadcrumbsNav';
 import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
 import RespScreenWidth from '../common/mediaConst';
 
-import ShopBasketAmountVM from '../../data/shop/viewModels/shop/ShopBasketAmountVM';
+import ShopBasketAmountVM from '../../data/viewModels/basket/ShopBasketAmountVM';
 
 const GoodDetailsStatus = ({ statusData }) => (
   <>

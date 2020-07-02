@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import BasketLogic from "../../data/shop/logic/basket";
+import BasketLogic from "../../data/logic/basket";
 import Head from "next/head";
 import Header from "../../components/mainPage/header";
 import Footer from "../../components/mainPage/footer";
@@ -8,9 +8,9 @@ import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
 import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
 import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
 import Analytics from "../../components/common/analytics";
-import Good1Data from "../../data/shop/viewModels/good1";
+import Good1Data from "../../data/viewModels/good1";
 import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
-import TakenThings from "../../data/shop/viewModels/takenThings";
+import TakenThings from "../../data/viewModels/good1/takenThings";
 import GoodDetailsImgGallery from "../../components/shop/goodDetailsImgGallery";
 import GoodDetailsSeeMore from "../../components/shop/goodDetailsSeeMore";
 import RespScreenWidth from "../../components/common/mediaConst";
