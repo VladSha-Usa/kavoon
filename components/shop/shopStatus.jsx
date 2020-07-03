@@ -10,13 +10,12 @@ const ShopStatus = () => (
       <div className="status-showed">
         <span className="showed-text">Показано:</span>
         <span className="showed-amount">
-          8
-          <span className="showed-amount-text">товарів</span>
+          8<span className="showed-amount-text">товарів</span>
         </span>
       </div>
       <div className="status-added">
         <span className="added-text">Додані:</span>
-        <ShopBasketAmount vm={ShopBasketAmountVM()}/>
+        <ShopBasketAmount vm={ShopBasketAmountVM()} />
       </div>
     </div>
     <style jsx>

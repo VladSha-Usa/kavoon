@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsOrderBtn = ({vm}) => (
+const GoodDetailsOrderBtn = ({ vm }) => (
   <>
     <button
       className="btn-submit"

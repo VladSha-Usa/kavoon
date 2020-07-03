@@ -38,7 +38,7 @@ const BreadcrumbsNav = ({ vm }) => (
           font-weight: 600;
         }
         .breadcrumbs-wrapper .breadcrumbs-item:nth-child(n + 2):before {
-          content: "";
+          content: '';
           position: absolute;
           width: 2px;
           height: 16px;
