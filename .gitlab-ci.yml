@@ -2,14 +2,16 @@ image: node:14.4.0
 
 cache:
   untracked: true
-  key: '$CI_BUILD_REF_NAME'
+  key: "$CI_BUILD_REF_NAME"
   paths:
     - node_modules/
+
 
 stages:
   - setup
   - tests
   - build
+
 
 before_script:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -27,7 +29,7 @@ prettier:
   dependencies: [install_yarn]
   stage: tests
   script:
-    - yarn prettier --check .
+    - yarn prettier --write .
   tags:
     - docker
 

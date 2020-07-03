@@ -17,14 +17,14 @@ const Header = () => {
     let scrollThreshold = 40;
     const width = Math.max(
       document.documentElement.clientWidth,
-      window.innerWidth || 0
+      window.innerWidth || 0,
     );
     if (width <= RespScreenWidth.screenWidthMobile) {
       scrollThreshold = 3;
     }
     if (
-      document.body.scrollTop > scrollThreshold ||
-      document.documentElement.scrollTop > scrollThreshold
+      document.body.scrollTop > scrollThreshold
+      || document.documentElement.scrollTop > scrollThreshold
     ) {
       document.getElementById('home').classList.add('header-border');
     } else {
@@ -126,119 +126,118 @@ const Header = () => {
       </header>
       <style jsx>
         {`
-          .${navbarClass} {
-            align-items: center;
-            display: flex;
-            height: 100%;
+        .${navbarClass} {
+          align-items: center;
+          display: flex;
+          height: 100%;
+        }
+        .${bannerImgClass} {
+          width: 212px;
+          height: 35px;
+          object-fit: contain;
+        }
+        .${bannerClass} {
+          justify-content: start;
+          margin-right: auto;
+          width: 225px;
+        }
+        .${hamburgerClass} {
+          align-items: center;
+          justify-content: flex-end;
+          margin-left: auto;
+        }
+        .${hamburgerClass} img {
+          box-shadow: 0px 8px 12px 0px rgba(9, 21, 85, 0.2);
+          border-radius: 50%;
+        }
+        .${socialClass} {
+          align-items: center;
+          display: flex;
+          margin-left: auto;
+          width: 225px;
+          justify-content: flex-end;
+        }
+        .${menuClass} {
+          display: flex;
+          font-family: Montserrat;
+          font-size: 17px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 0.79px;
+          color: #061434;
+        }
+        .menu-link {
+        }
+        a:link {
+          text-decoration: none;
+          color: #061434;
+        }
+
+        a:visited {
+          text-decoration: none;
+          color: #061434;
+        }
+
+        .disabled {
+          opacity: 0.5;
+        }
+
+        .menu-link a:hover {
+          color: var(--primarycolor);
+        }
+
+        .menu-link a::after {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: -8px;
+          left: 0px;
+          width: 0%;
+          height: 2px;
+          background: var(--primarycolor);
+        }
+
+        .menu-link a:hover::after {
+          width: 100%;
+        }
+
+        .header-border header::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--light-blue-grey);
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .language-navigation {
+            margin-right: 0px !important;
           }
-          .${bannerImgClass} {
-            width: 212px;
-            height: 35px;
-            object-fit: contain;
-          }
-          .${bannerClass} {
-            justify-content: start;
-            margin-right: auto;
-            width: 225px;
-          }
-          .${hamburgerClass} {
-            align-items: center;
-            justify-content: flex-end;
-            margin-left: auto;
-          }
-          .${hamburgerClass} img {
-            box-shadow: 0px 8px 12px 0px rgba(9, 21, 85, 0.2);
-            border-radius: 50%;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .${menuClass} {
+            display: none;
           }
           .${socialClass} {
-            align-items: center;
-            display: flex;
-            margin-left: auto;
-            width: 225px;
-            justify-content: flex-end;
+            display: none;
           }
-          .${menuClass} {
-            display: flex;
-            font-family: Montserrat;
-            font-size: 17px;
-            font-weight: 500;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: 0.79px;
-            color: #061434;
+          .${bannerImgClass} {
+            width: 238px;
+            height: 40px;
+            object-fit: contain;
           }
-          .menu-link {
-          }
-          a:link {
-            text-decoration: none;
-            color: #061434;
-          }
+        }
 
-          a:visited {
-            text-decoration: none;
-            color: #061434;
+        @media only screen and (min-width: ${RespScreenWidth.screenWidthMobile + 1}px) {
+          .${hamburgerClass} {
+            display: none;
           }
-
-          .disabled {
-            opacity: 0.5;
-          }
-
-          .menu-link a:hover {
-            color: var(--primarycolor);
-          }
-
-          .menu-link a::after {
-            content: '';
-            display: block;
-            position: relative;
-            bottom: -8px;
-            left: 0px;
-            width: 0%;
-            height: 2px;
-            background: var(--primarycolor);
-          }
-
-          .menu-link a:hover::after {
-            width: 100%;
-          }
-
-          .header-border header::after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--light-blue-grey);
-          }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
-            .language-navigation {
-              margin-right: 0px !important;
-            }
-          }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-            .${menuClass} {
-              display: none;
-            }
-            .${socialClass} {
-              display: none;
-            }
-            .${bannerImgClass} {
-              width: 238px;
-              height: 40px;
-              object-fit: contain;
-            }
-          }
-
-          @media only screen and (min-width: ${RespScreenWidth.screenWidthMobile +
-            1}px) {
-            .${hamburgerClass} {
-              display: none;
-            }
-          }
-        `}
+        }
+      `}
       </style>
     </>
   );

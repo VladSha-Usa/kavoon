@@ -8,9 +8,14 @@ const GoodDiscountInComplect = ({ content }) => (
         <span className="title">{content.name}</span>
         <span className="volume">
           Об'єм:
-          {content.volume}л
+          {content.volume}
+          л
         </span>
-        <span className="volume">{content.price} грн</span>
+        <span className="volume">
+          {content.price}
+          {' '}
+          грн
+        </span>
       </div>
     </div>
     <style jsx>

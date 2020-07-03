@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import Head from 'next/head';
-import Header from '../../components/mainPage/header';
-import Footer from '../../components/mainPage/footer';
-import Caption from '../../components/common/pageCaption';
-import PFTextItem from '../../components/pathfinder/pfTextItem';
-import PFMainContent from '../../components/pathfinder/pfMainContent';
-import MainMetaInfo from '../../components/common/mainMetaInfo';
-import RespScreenWidth from '../../components/common/mediaConst';
+import React, { useEffect } from "react";
+import Head from "next/head";
+import Header from "../../components/mainPage/header";
+import Footer from "../../components/mainPage/footer";
+import Caption from "../../components/common/pageCaption";
+import PFTextItem from "../../components/pathfinder/pfTextItem";
+import PFMainContent from "../../components/pathfinder/pfMainContent";
+import MainMetaInfo from "../../components/common/mainMetaInfo";
+import RespScreenWidth from "../../components/common/mediaConst";
 
 const headerHeight = 80;
 
@@ -62,7 +62,7 @@ const Swirzh = () => {
 
       <div className="map-image">
         <div id="home" className="header">
-          <div className="page-content" style={{ height: '100%' }}>
+          <div className="page-content" style={{ height: "100%" }}>
             <Header />
           </div>
         </div>
@@ -70,12 +70,12 @@ const Swirzh = () => {
           <Caption caption="Свирж" />
           <PFTextItem
             text={text}
-            images={['/objects/Swirg2_450_320.jpg']}
+            images={["/objects/Swirg2_450_320.jpg"]}
             direct={false}
           />
           <PFTextItem
             text={text}
-            images={['/objects/Swirg2_450_320.jpg']}
+            images={["/objects/Swirg2_450_320.jpg"]}
             direct={true}
           />
           <PFMainContent />
@@ -83,7 +83,7 @@ const Swirzh = () => {
       </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
-          <Footer />{' '}
+          <Footer />{" "}
         </div>
       </div>
       <style jsx>
@@ -121,7 +121,7 @@ const Swirzh = () => {
           }
 
           .header-border ::after {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             bottom: 0;

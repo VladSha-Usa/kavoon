@@ -10,7 +10,9 @@ const Pathfinder = () => (
     </div>
 
     <div className="pathfinder-story-text">
-      На цій сторінці ми зібрали об’єкти <br />
+      На цій сторінці ми зібрали об’єкти
+      {' '}
+      <br />
       Львівської області варті вашої уваги
     </div>
     <div style={{ height: '1px', paddingBottom: '31px' }}>
@@ -26,77 +28,77 @@ const Pathfinder = () => (
 
     <style jsx>
       {`
-        .background-path {
-        }
-        .vector-background {
-          width: 484px;
-          object-fit: contain;
-        }
-        .pathfinder-caption-background-text {
-          object-fit: contain;
-          opacity: 0.12;
-          font-family: Montserrat;
-          font-size: 38px;
-          font-weight: 900;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.05;
-          letter-spacing: 1.78px;
-          color: var(--transparency);
+      .background-path {
+      }
+      .vector-background {
+        width: 484px;
+        object-fit: contain;
+      }
+      .pathfinder-caption-background-text {
+        object-fit: contain;
+        opacity: 0.12;
+        font-family: Montserrat;
+        font-size: 38px;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.05;
+        letter-spacing: 1.78px;
+        color: var(--transparency);
 
-          text-transform: uppercase;
-          text-align: center;
-          position: relative;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+      }
+      .pathfinder-caption-text {
+        font-family: Montserrat;
+        font-size: 28px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.31px;
+        color: var(--texticonscolor);
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        top: -18px;
+      }
+      .pathfinder-story-text {
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: 0.79px;
+        text-align: center;
+        color: #061434;
+      }
+      .pathfinder-object-text {
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: 0.79px;
+        color: var(--texticonscolor);
+      }
+      @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+        .vector-background {
+          display: none;
         }
-        .pathfinder-caption-text {
-          font-family: Montserrat;
-          font-size: 28px;
-          font-weight: 600;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: 1.31px;
-          color: var(--texticonscolor);
-          text-transform: uppercase;
-          text-align: center;
-          position: relative;
-          top: -18px;
+      }
+      @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+        .vector-background {
+          display: none;
         }
-        .pathfinder-story-text {
-          font-family: Montserrat;
-          font-size: 17px;
-          font-weight: 500;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.53;
-          letter-spacing: 0.79px;
-          text-align: center;
-          color: #061434;
+        .pathfinder-story-text br {
+          display: none;
         }
-        .pathfinder-object-text {
-          font-family: Montserrat;
-          font-size: 17px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.53;
-          letter-spacing: 0.79px;
-          color: var(--texticonscolor);
-        }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
-          .vector-background {
-            display: none;
-          }
-        }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-          .vector-background {
-            display: none;
-          }
-          .pathfinder-story-text br {
-            display: none;
-          }
-        }
-      `}
+      }
+    `}
     </style>
   </>
 );

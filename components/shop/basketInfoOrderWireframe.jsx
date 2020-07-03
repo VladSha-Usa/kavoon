@@ -1,5 +1,5 @@
-import BasketInfoChooseGoods from './basketInfoChooseGoods';
-import BasketOrderForm from './basketOrderForm';
+import BasketInfoChooseGoods from "./basketInfoChooseGoods";
+import BasketOrderForm from "./basketOrderForm";
 
 const BasketInfoOrderWireframe = ({ vm }) => {
   return (

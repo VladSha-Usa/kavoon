@@ -65,49 +65,49 @@ const PathfinderSlider = ({ images }) => {
       </style>
       <style jsx>
         {`
-          .switcher-item-active {
-            margin: 0px 2px;
-            height: 15px;
-            width: 15px;
-            background-image: url('/img/bulletSelected.svg');
-          }
-          .switcher-item {
-            margin: 4px 6px;
-            width: 8px;
-            height: 8px;
-            cursor: pointer;
-            background-image: url('/img/bulletRegular.svg');
-          }
+        .switcher-item-active {
+          margin: 0px 2px;
+          height: 15px;
+          width: 15px;
+          background-image: url("/img/bulletSelected.svg");
+        }
+        .switcher-item {
+          margin: 4px 6px;
+          width: 8px;
+          height: 8px;
+          cursor: pointer;
+          background-image: url("/img/bulletRegular.svg");
+        }
+        .pathfinder-image-gallery {
+          width: 450px;
+          height: 320px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+        }
+        .pathfinder-image {
+          width: 450px;
+          height: 320px;
+          object-fit: cover;
+          overflow: hidden;
+        }
+
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .pathfinder-image-gallery {
-            width: 450px;
-            height: 320px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 4px 10px 30px 0 rgba(9, 21, 85, 0.18);
+            width: 335px;
+            height: 280px;
           }
           .pathfinder-image {
-            width: 450px;
-            height: 320px;
-            object-fit: cover;
-            overflow: hidden;
+            width: 335px;
+            height: 280px;
           }
-
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-            .pathfinder-image-gallery {
-              width: 335px;
-              height: 280px;
-            }
-            .pathfinder-image {
-              width: 335px;
-              height: 280px;
-            }
-          }
-          .switcher {
-            margin-top: 15px;
-            height: 15px;
-            position: relative;
-          }
-        `}
+        }
+        .switcher {
+          margin-top: 15px;
+          height: 15px;
+          position: relative;
+        }
+      `}
       </style>
     </>
   );

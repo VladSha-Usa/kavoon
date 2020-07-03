@@ -1,11 +1,11 @@
-import Pathfinder from '../components/mainPage/pathfinder';
-import Head from 'next/head';
-import Header from '../components/mainPage/header';
-import Content from '../components/mainPage/content';
-import Footer from '../components/mainPage/footer';
-import MainMetaInfo from '../components/common/mainMetaInfo';
-import Analytics from '../components/common/analytics';
-import RespScreenWidth from '../components/common/mediaConst';
+import Pathfinder from "../components/mainPage/pathfinder";
+import Head from "next/head";
+import Header from "../components/mainPage/header";
+import Content from "../components/mainPage/content";
+import Footer from "../components/mainPage/footer";
+import MainMetaInfo from "../components/common/mainMetaInfo";
+import Analytics from "../components/common/analytics";
+import RespScreenWidth from "../components/common/mediaConst";
 
 const headerHeight = 80;
 
@@ -48,7 +48,7 @@ const Home = () => {
 
       <div className="map-image">
         <div id="home" className="header">
-          <div className="page-content" style={{ height: '100%' }}>
+          <div className="page-content" style={{ height: "100%" }}>
             <Header />
           </div>
         </div>
@@ -58,12 +58,12 @@ const Home = () => {
       </div>
       <div id="pathfinder" className="bg-block-2">
         <div className="page-content">
-          <Pathfinder />{' '}
+          <Pathfinder />{" "}
         </div>
       </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
-          <Footer />{' '}
+          <Footer />{" "}
         </div>
       </div>
       <style jsx>
@@ -103,7 +103,7 @@ const Home = () => {
           }
 
           .header-border ::after {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             bottom: 0;

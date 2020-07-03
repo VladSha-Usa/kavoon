@@ -1,17 +1,17 @@
-import BasketLogic from '../../data/shop/logic/basket';
-import useRx from './useRx';
-import React, { useState, useEffect } from 'react';
+import BasketLogic from '../../data/shop/logic/basket'
+import useRx from './useRx'
+import React, { useState, useEffect } from 'react'
 
 const StatusOfBasket = ({ addedGoodName }) => {
-  const statusOfAdding = useRx(BasketLogic.statusOfAdding);
-  const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
-  const count = useRx(BasketLogic.count);
-  const [emptyBasket, setEmptyBasket] = useState(false);
+  const statusOfAdding = useRx(BasketLogic.statusOfAdding)
+  const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket)
+  const count = useRx(BasketLogic.count)
+  const [emptyBasket, setEmptyBasket] = useState(false)
   useEffect(() => {
     statusOfEmptyBasket && count === 0
       ? setEmptyBasket(true)
-      : setEmptyBasket(false);
-  }, [statusOfEmptyBasket, count]);
+      : setEmptyBasket(false)
+  }, [statusOfEmptyBasket, count])
   return (
     <>
       <div className="status-adding-wrapper">
@@ -66,7 +66,7 @@ const StatusOfBasket = ({ addedGoodName }) => {
         `}
       </style>
     </>
-  );
-};
+  )
+}
 
-export default StatusOfBasket;
+export default StatusOfBasket

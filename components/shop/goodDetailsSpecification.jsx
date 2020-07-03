@@ -81,73 +81,73 @@ const GoodDetailsSpecification = ({ vm }) => {
       </div>
       <style jsx>
         {`
-          .specification-wrapper {
-            font-family: Montserrat;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            color: var(--texticonscolor);
-            white-space: pre-wrap;
-            margin-left: 46px;
+        .specification-wrapper {
+          font-family: Montserrat;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          color: var(--texticonscolor);
+          white-space: pre-wrap;
+          margin-left: 46px;
+        }
+        .specification-main-content {
+          display: flex;
+        }
+        .specification-title {
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          margin-bottom: 37px;
+        }
+        .specification-left {
+          max-width: 484px;
+        }
+        .specification-right {
+          margin-left: 142px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .specification-right {
+            margin-left: 0;
+            max-width: 330px;
           }
           .specification-main-content {
-            display: flex;
+            justify-content: space-between;
           }
-          .specification-title {
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 37px;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .specification-wrapper {
+            margin-left: 0;
           }
-          .specification-left {
-            max-width: 484px;
+          .specification-main-content {
+            display: block;
           }
           .specification-right {
-            margin-left: 142px;
+            margin-top: 24px;
           }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
-            .specification-right {
-              margin-left: 0;
-              max-width: 330px;
-            }
-            .specification-main-content {
-              justify-content: space-between;
-            }
+          .specification-left {
+            max-width: auto;
           }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-            .specification-wrapper {
-              margin-left: 0;
-            }
-            .specification-main-content {
-              display: block;
-            }
-            .specification-right {
-              margin-top: 24px;
-            }
-            .specification-left {
-              max-width: auto;
-            }
-            .specification-right {
-              max-width: auto;
-            }
-            .specification-title {
-              margin-bottom: 17px;
-            }
+          .specification-right {
+            max-width: auto;
           }
-        `}
+          .specification-title {
+            margin-bottom: 17px;
+          }
+        }
+      `}
       </style>
       <style jsx global>
         {`
-          .specification-parametr {
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 0.84px;
-            margin-bottom: 10px;
-            line-height: 26px;
-          }
-          .specification-parametr-main {
-            font-weight: 500;
-          }
+        .specification-parametr {
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.84px;
+          margin-bottom: 10px;
+          line-height: 26px;
+        }
+        .specification-parametr-main {
+          font-weight: 500;
+        }
         `}
       </style>
     </>

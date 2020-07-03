@@ -57,34 +57,34 @@ const Content = ({ classPrefix }) => {
 
       <style jsx>
         {`
+        .content-layout {
+          position: relative;
+          padding-top: 40px;
+          display: flex;
+          flex-wrap: wrap-reverse;
+        }
+        .content-layout-shop {
+          position: relative;
+          top: -270px;
+          margin-left: auto;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
           .content-layout {
-            position: relative;
+            flex-wrap: nowrap;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .content-layout {
             padding-top: 40px;
-            display: flex;
-            flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse !important;
           }
           .content-layout-shop {
-            position: relative;
-            top: -270px;
+            margin-right: auto;
             margin-left: auto;
+            top: 0px;
           }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
-            .content-layout {
-              flex-wrap: nowrap;
-            }
-          }
-          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
-            .content-layout {
-              padding-top: 40px;
-              flex-wrap: wrap-reverse !important;
-            }
-            .content-layout-shop {
-              margin-right: auto;
-              margin-left: auto;
-              top: 0px;
-            }
-          }
-        `}
+        }
+      `}
       </style>
     </>
   );

@@ -13,10 +13,7 @@ const Map = ({ objects, selected, select }) => (
   <>
     <Head>
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js" />
-      <link
-        href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css"
-        rel="stylesheet"
-      />
+      <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
     </Head>
     <MapGL
       // eslint-disable-next-line react/style-prop-object
@@ -24,31 +21,24 @@ const Map = ({ objects, selected, select }) => (
       containerStyle={{
         height: '100%',
         width: '100%',
-        // overflow: 'hidden',
-        // borderRadius: '15px'
+      // overflow: 'hidden',
+      // borderRadius: '15px'
       }}
       center={selected.location}
       onError={(error) => console.log(error)}
-      onStyleLoad={(map, _) =>
-        map.flyTo({ center: selected.location, zoom: 13 })
-      }
+      onStyleLoad={(map, _) => map.flyTo({ center: selected.location, zoom: 13 })}
     >
-      {objects.map((place) => (
-        <Marker
-          key={place.id}
-          coordinates={place.location}
-          anchor="bottom"
-          onClick={() => select(place)}
-        >
-          <img
-            src={
-              place === selected
-                ? '/img/map-icons/building-active.svg'
-                : '/img/map-icons/building.svg'
-            }
-          />
-        </Marker>
-      ))}
+      {objects
+        .map((place) => (
+          <Marker
+            key={place.id}
+            coordinates={place.location}
+            anchor="bottom"
+            onClick={() => select(place)}
+          >
+            <img src={place === selected ? '/img/map-icons/building-active.svg' : '/img/map-icons/building.svg'} />
+          </Marker>
+        ))}
     </MapGL>
   </>
 );

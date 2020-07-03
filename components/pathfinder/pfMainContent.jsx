@@ -1,10 +1,10 @@
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import useCollapse from 'react-collapsed';
-import VisibilitySensor from 'react-visibility-sensor';
-import RespScreenWidth from '../common/mediaConst';
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import useCollapse from "react-collapsed";
+import VisibilitySensor from "react-visibility-sensor";
+import RespScreenWidth from "../common/mediaConst";
 
-const DynamicMap = dynamic(() => import('./map'), { ssr: false });
+const DynamicMap = dynamic(() => import("./map"), { ssr: false });
 
 const PFSmallObject = ({ object, last }) => {
   const { getCollapseProps, toggleOpen, isOpen } = useCollapse({
@@ -46,18 +46,18 @@ const PFSmallObject = ({ object, last }) => {
               onClick={() => toggleOpen()}
             >
               <div className="more-button">
-                <div style={{ padding: '10px 15px' }}>
-                  {isOpen ? 'Згорнути ' : 'Більше інфо '}
+                <div style={{ padding: "10px 15px" }}>
+                  {isOpen ? "Згорнути " : "Більше інфо "}
                   {
                     <img
                       style={{
-                        top: '3px',
-                        height: '16px',
-                        width: '15px',
-                        position: 'relative',
+                        top: "3px",
+                        height: "16px",
+                        width: "15px",
+                        position: "relative",
                       }}
                       src={
-                        isOpen ? '/img/above-icon.svg' : '/img/below-icon.svg'
+                        isOpen ? "/img/above-icon.svg" : "/img/below-icon.svg"
                       }
                     />
                   }
@@ -66,15 +66,15 @@ const PFSmallObject = ({ object, last }) => {
             </a>
             <a href="javascript:void(0)" className="map">
               <div className="more-button">
-                <div style={{ padding: '10px 15px' }}>
-                  {'Мапа '}
+                <div style={{ padding: "10px 15px" }}>
+                  {"Мапа "}
                   {
                     <img
                       style={{
-                        top: '3px',
-                        height: '16px',
-                        width: '12px',
-                        position: 'relative',
+                        top: "3px",
+                        height: "16px",
+                        width: "12px",
+                        position: "relative",
                       }}
                       src="/img/map.svg"
                     />
@@ -219,17 +219,17 @@ const PFSmallObject = ({ object, last }) => {
 const smallObjects = [
   {
     id: 1,
-    type: 'building',
+    type: "building",
     location: { lat: 49.719827, lng: 24.503354 },
   },
   {
     id: 2,
-    type: 'building',
+    type: "building",
     location: { lat: 49.729227, lng: 24.513854 },
   },
   {
     id: 3,
-    type: 'building',
+    type: "building",
     location: { lat: 49.729427, lng: 24.523254 },
   },
 ];

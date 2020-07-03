@@ -1,9 +1,9 @@
-import React from 'react';
-import useRx from './useRx';
+import React from "react";
+import useRx from "./useRx";
 
 const ShopBasketAmount = ({ vm }) => {
   const countValue = useRx(vm.count);
-  const displayAmount = countValue <= 0 ? 'none' : 'flex';
+  const displayAmount = countValue <= 0 ? "none" : "flex";
   return (
     <>
       <div className="added-goods-amount">
