@@ -1,3 +1,5 @@
+import basketModel from '../../logic/basket';
+
 export default () => ({
   picture: {
     src: '/img/good-to-complect-img/flash-light-petzl-tikkid.jpg',
@@ -7,4 +9,5 @@ export default () => ({
   name: 'Ліхтарик Petzl Tikkid',
   price: 800,
   count: 1,
+  colectDataOfGood: basketModel.colectDataOfGood,
 });

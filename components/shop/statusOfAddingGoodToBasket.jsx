@@ -19,7 +19,7 @@ const StatusOfAddingGoodToBasket = ({ vm }) => {
           <>Ваш кошик порожній{'\u00A0\u00A0\u00A0'}😩</>
         ) : statusOfAdding ? (
           <>
-            <span className="added-good">{vm}</span> успішно додано до кошику!
+            <span className="added-good">{vm.name}</span> успішно додано до кошику!
             {'\u00A0\u00A0\u00A0'}😊
           </>
         ) : null}

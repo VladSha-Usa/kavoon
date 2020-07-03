@@ -9,7 +9,6 @@ import GoodDetailsChoose from '../../components/shop/goodDetailsChoose';
 import GoodDetailsSpecification from '../../components/shop/goodDetailsSpecification';
 import Analytics from '../../components/common/analytics';
 import GoodDetailsThingsTook from '../../components/shop/goodDetailsThingsTook';
-import TakenThings from '../../data/viewModels/good1/takenThings';
 import GoodDetailsImgGallery from '../../components/shop/goodDetailsImgGallery';
 import GoodDetailsSeeMore from '../../components/shop/goodDetailsSeeMore';
 import RespScreenWidth from '../../components/common/mediaConst';
@@ -80,26 +79,26 @@ const Good1 = () => {
           <GoodDetailsChoose vm={vm.goodDetailsChooseVM} />
         </div>
       </div>
-      {/* <div className="good-details-specification">
+      <div className="good-details-specification">
         <div className="page-content">
-          <GoodDetailsSpecification specification={Good1Data.specification} />
+          <GoodDetailsSpecification vm={vm.goodDetailsSpecificationVM} />
         </div>
       </div>
       <div className="good-details-things-took">
         <div className="page-content">
-          <GoodDetailsThingsTook things={TakenThings} сontent={Good1Data} />
+          <GoodDetailsThingsTook vm={vm.goodDetailsThingsTookVM} />
         </div>
       </div>
       <div className="good-details-img-gallery">
         <div className="page-content">
-          <GoodDetailsImgGallery galleryContent={Good1Data.detailsImgGallery} />
+          <GoodDetailsImgGallery vm={vm.goodDetailsImgGalleryVM} />
         </div>
       </div>
       <div className="good-details-see-more">
         <div className="page-content">
-          <GoodDetailsSeeMore elseGoods={Good1Data.moreGoods} />
+          <GoodDetailsSeeMore vm={vm.goodDetailsSeeMoreVM} />
         </div>
-      </div> */}
+      </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{' '}

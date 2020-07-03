@@ -39,14 +39,18 @@ const GoodDetailsWizard = ({ vm }) => {
         <GoodDetailsWizardTitle vm={vm.goodDetailsWizardTitleVM} />
         <div className="wizard-picker-wrapper">
           <GoodDetailsWizardPicker
-            mainTheme="Основна тканина"
-            items={fabrics}
-            selected={[state.fabric, extractAction(dispatch, 'setFabric')]}
+            vm={{
+              mainTheme: 'Основна тканина',
+              items: fabrics,
+              selected: [state.fabric, extractAction(dispatch, 'setFabric')],
+            }}
           />
           <GoodDetailsWizardPicker
-            mainTheme="Основний колір"
-            items={state.fabric.prints}
-            selected={[state.print, extractAction(dispatch, 'setPrint')]}
+            vm={{
+              mainTheme: 'Основний колір',
+              items: state.fabric.prints,
+              selected: [state.print, extractAction(dispatch, 'setPrint')],
+            }}
           />
         </div>
         <GoodDetailsWizardAddOther vm={vm.goodDetailsWizardAddOtherVM} />

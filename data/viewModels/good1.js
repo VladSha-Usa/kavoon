@@ -1,6 +1,10 @@
 import basketModel from '../logic/basket';
 import goodDetailsStatusVM from './good1/GoodDetailsStatusVM';
 import goodDetailsChooseVM from './good1/GoodDetailsChooseVM';
+import goodDetailsSpecificationVM from './good1/GoodDetailsSpecificationVM';
+import goodDetailsThingsTookVM from './good1/GoodDetailsThingsTookVM';
+import goodDetailsImgGalleryVM from './good1/GoodDetailsImgGalleryVM';
+import goodDetailsSeeMoreVM from './good1/GoodDetailsSeeMoreVM';
 
 const good1VM = {
   colectDataOfGood: basketModel.colectDataOfGood,
@@ -15,6 +19,10 @@ const good1VM = {
   volume: 10,
   goodDetailsStatusVM: goodDetailsStatusVM(),
   goodDetailsChooseVM: goodDetailsChooseVM(),
+  goodDetailsSpecificationVM: goodDetailsSpecificationVM(),
+  goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
+  goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(),
+  goodDetailsSeeMoreVM: goodDetailsSeeMoreVM(),
 };
 
 function factory() {

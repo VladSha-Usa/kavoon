@@ -1,6 +1,6 @@
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsSpecification = ({ specification }) => {
+const GoodDetailsSpecification = ({ vm }) => {
   const fields = [
     {
       name: 'Об’єм',
@@ -38,43 +38,35 @@ const GoodDetailsSpecification = ({ specification }) => {
   ];
   const specificationLeft = fields
     .filter((field) => field.left)
-    .filter((field) => specification[field.field])
+    .filter((field) => vm[field.field])
     .map((field, index) => (
       <div
         key={index}
         className="specification-parametr"
         style={
-            field.column || field.margTop
-              ? { display: 'flex', flexDirection: 'column', marginTop: '28px' }
-              : {}
-          }
+          field.column || field.margTop
+            ? { display: 'flex', flexDirection: 'column', marginTop: '28px' }
+            : {}
+        }
       >
-        {field.name}
-        :
-        {' '}
+        {field.name}:{' '}
         <span className="specification-parametr-main">
-          {specification[field.field]}
+          {vm[field.field]}
           {field.unitOfMeasure}
         </span>
       </div>
     ));
   const specificationRight = fields
     .filter((field) => !field.left)
-    .filter((field) => specification[field.field])
+    .filter((field) => vm[field.field])
     .map((field, index) => (
       <div
         key={index}
         className="specification-parametr"
-        style={
-            field.column ? { display: 'flex', flexDirection: 'column' } : {}
-          }
+        style={field.column ? { display: 'flex', flexDirection: 'column' } : {}}
       >
-        {field.name}
-        :
-        {' '}
-        <span className="specification-parametr-main">
-          {specification[field.field]}
-        </span>
+        {field.name}:{' '}
+        <span className="specification-parametr-main">{vm[field.field]}</span>
       </div>
     ));
 

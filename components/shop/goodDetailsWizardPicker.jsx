@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import RespScreenWidth from '../common/mediaConst';
 import useOutsideClick from './useOutsideClick';
 
-const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
+const GoodDetailsWizardPicker = ({ vm }) => {
   const [isOpened, setOpened] = useState(false);
-  const [selectedItem, setSelectedItem] = selected;
+  const [selectedItem, setSelectedItem] = vm.selected;
   const ref = useRef();
   useOutsideClick(ref, () => {
     setOpened(false);
@@ -12,7 +12,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
   return (
     <>
       <div className="wizard__picker-param">
-        <span className="param__general-title">{mainTheme}</span>
+        <span className="param__general-title">{vm.mainTheme}</span>
         <div className="picker-param__status" ref={ref}>
           <div className="picker-param__status-main">
             <img className="picker-param__status-img" src={selectedItem.src} />
@@ -27,7 +27,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             />
           </div>
           <ul className="picker-param__status-list">
-            {items.map((item, i) => (
+            {vm.items.map((item, i) => (
               <li
                 onClick={() => {
                   setSelectedItem(item);
@@ -93,7 +93,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             color: var(--primarycolor);
           }
           .list-elem-active .status-list__img-wrapper:after {
-            content: "";
+            content: '';
             position: absolute;
             width: 44px;
             display: block;
@@ -118,9 +118,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             height: 65px;
             margin: -34px 0px 0px -15px;
           }
-          .list-elem
-            > .status-list__img-wrapper:hover
-            ~ .param__status-list__title {
+          .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
             margin-left: 50px;
           }
           .picker-param__status-img {
@@ -140,11 +138,11 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
             margin-right: 18px;
           }
           #picker-param__status-more:before {
-            content: "";
+            content: '';
             position: absolute;
             height: 9px;
             width: 16px;
-            background-image: url("/img/wizard-picker/more-icon.svg");
+            background-image: url('/img/wizard-picker/more-icon.svg');
             margin-left: 0px;
             margin: -4.5px 0 0 -8px;
             transition: 0.5s ease;
@@ -184,7 +182,7 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
           }
 
           .picker-param__status-list::-webkit-resizer {
-            background-image: url("");
+            background-image: url('');
             background-repeat: no-repeat;
             width: 5px;
             height: 0px;
@@ -219,7 +217,9 @@ const GoodDetailsWizardPicker = ({ mainTheme, items, selected }) => {
               width: 35px;
               margin: 0;
             }
-            .list-elem > .status-list__img-wrapper:hover ~ .param__status-list__title {
+            .list-elem
+              > .status-list__img-wrapper:hover
+              ~ .param__status-list__title {
               margin-left: 15px;
             }
             .picker-param__status-list li {
