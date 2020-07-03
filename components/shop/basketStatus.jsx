@@ -1,5 +1,6 @@
-import ShopBasketAmount from "./shopBasketAmount";
-import BreadcrumbsNav from "./breadcrumbsNav";
+import ShopBasketAmount from './shopBasketAmount';
+import BreadcrumbsNav from './breadcrumbsNav';
+import RespScreenWidth from '../common/mediaConst';
 
 const BasketStatus = ({ vm }) => (
   <>
@@ -31,7 +32,22 @@ const BasketStatus = ({ vm }) => (
           line-height: 1.53;
           letter-spacing: 0.89px;
           color: var(--texticonscolor);
-          margin: -3px 6px 0 0;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .status-wrapper {
+            flex-direction: column;
+          }
+          .added-goods {
+            justify-content: space-between;
+            width: 100%;
+            margin-top: -7px;
+          }
+          .added-goods-text {
+            margin-right: 0px;
+            ont-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0.84px;
+          }
         }
       `}
     </style>

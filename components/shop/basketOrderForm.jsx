@@ -5,19 +5,19 @@ import * as Yup from "yup";
 const BasketOrderForm = () => (
   <>
     <Formik
-      initialValues={{ username: "", numTel: "" }}
+      initialValues={{ username: '', numTel: '' }}
       onSubmit={async (values) => {
         await new Promise((resolve) => setTimeout(resolve, 500));
         alert(JSON.stringify(values, null, 2));
       }}
       validationSchema={Yup.object().shape({
-        username: Yup.string().required("Будь ласка заповніть поле"),
+        username: Yup.string().required('Будь ласка заповніть поле'),
         numTel: Yup.string()
           .matches(
             /^\(\+380\)\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/,
-            "Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі"
+            'Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі'
           )
-          .required("Будь ласка заповніть поле"),
+          .required('Будь ласка заповніть поле'),
       })}
     >
       {(props) => {
@@ -34,34 +34,34 @@ const BasketOrderForm = () => (
           <form onSubmit={handleSubmit} className="order-form">
             <fieldset
               className={
-                values.username === "" ||
-                values.numTel === "" ||
+                values.username === '' ||
+                values.numTel === '' ||
                 errors.username ||
                 errors.numTel
-                  ? "order-form-disabled"
+                  ? 'order-form-disabled'
                   : null
               }
             >
-              <legend className="intro-title">Оформити замовлення</legend>{" "}
+              <legend className="intro-title">Оформити замовлення</legend>{' '}
               <p
                 className="instruction-title"
                 style={{
                   marginBottom: `${
                     (errors.username && touched.username) ||
                     (errors.numTel && touched.numTel)
-                      ? "9px"
-                      : "19px"
+                      ? '9px'
+                      : '19px'
                   }`,
                 }}
               >
                 Залиште свої контактні дані і ми вам передзвонимо для оформлення
-                замовлення{" "}
+                замовлення{' '}
               </p>
               <div
                 className="row"
                 style={{
                   marginBottom: `${
-                    errors.username && touched.username ? "13px" : "-1px"
+                    errors.username && touched.username ? '13px' : '-1px'
                   }`,
                 }}
               >
@@ -73,8 +73,8 @@ const BasketOrderForm = () => (
                   onBlur={handleBlur}
                   className={
                     errors.username && touched.username
-                      ? "text-input error"
-                      : "text-input"
+                      ? 'text-input error'
+                      : 'text-input'
                   }
                 />
                 {errors.username && touched.username && (
@@ -86,29 +86,29 @@ const BasketOrderForm = () => (
                 className="row"
                 style={{
                   marginBottom: `${
-                    errors.numTel && touched.numTel ? "46px" : "-1px"
+                    errors.numTel && touched.numTel ? '46px' : '-1px'
                   }`,
                 }}
               >
                 <MaskedInput
                   mask={[
-                    "(",
-                    "+",
+                    '(',
+                    '+',
                     /[1-9]/,
                     /\d/,
                     /\d/,
-                    ")",
-                    " ",
+                    ')',
+                    ' ',
                     /\d/,
                     /\d/,
-                    " ",
+                    ' ',
                     /\d/,
                     /\d/,
                     /\d/,
-                    " ",
+                    ' ',
                     /\d/,
                     /\d/,
-                    " ",
+                    ' ',
                     /\d/,
                     /\d/,
                   ]}
@@ -120,8 +120,8 @@ const BasketOrderForm = () => (
                   onBlur={handleBlur}
                   className={
                     errors.numTel && touched.numTel
-                      ? "text-input error"
-                      : "text-input"
+                      ? 'text-input error'
+                      : 'text-input'
                   }
                 />
                 {errors.numTel && touched.numTel && (
@@ -133,8 +133,8 @@ const BasketOrderForm = () => (
                 type="submit"
                 disabled={
                   isSubmitting ||
-                  values.username === "" ||
-                  values.numTel === "" ||
+                  values.username === '' ||
+                  values.numTel === '' ||
                   errors.username ||
                   errors.numTel
                 }
@@ -207,6 +207,7 @@ const BasketOrderForm = () => (
           font-family: Montserrat;
           margin-top: 6px;
           margin-left: 7px;
+          outline: none;
         }
         button:disabled {
           background-color: #ced6e2;

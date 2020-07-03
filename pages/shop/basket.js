@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import BasketLogic from "../../data/logic/basket";
-import Head from "next/head";
-import Header from "../../components/mainPage/header";
-import Footer from "../../components/mainPage/footer";
-import MainMetaInfo from "../../components/common/mainMetaInfo";
-import Analytics from "../../components/common/analytics";
-import BasketStatus from "../../components/shop/basketStatus";
-import BasketInfoOrderWireframe from "../../components/shop/basketInfoOrderWireframe";
-import RespScreenWidth from "../../components/common/mediaConst";
+import React, { useEffect } from 'react';
+import BasketLogic from '../../data/logic/basket';
+import Head from 'next/head';
+import Header from '../../components/mainPage/header';
+import Footer from '../../components/mainPage/footer';
+import MainMetaInfo from '../../components/common/mainMetaInfo';
+import Analytics from '../../components/common/analytics';
+import BasketStatus from '../../components/shop/basketStatus';
+import BasketInfoOrderWireframe from '../../components/shop/basketInfoOrderWireframe';
+import RespScreenWidth from '../../components/common/mediaConst';
 
-import vmFactory from "../../data/viewModels/basket";
+import vmFactory from '../../data/viewModels/basket';
 
 const headerHeight = 80;
 
@@ -58,23 +58,23 @@ const Basket = () => {
       </Head>
 
       <div id="home" className="header">
-        <div className="page-content" style={{ height: "100%" }}>
+        <div className="page-content" style={{ height: '100%' }}>
           <Header />
         </div>
       </div>
       <div id="home" className="basket-status">
-        <div className="page-content" style={{ height: "100%" }}>
+        <div className="page-content" style={{ height: '100%' }}>
           <BasketStatus vm={vm.basketStatusVM} />
         </div>
       </div>
       <div id="home" className="basket-info-order">
-        <div className="page-content" style={{ height: "100%" }}>
+        <div className="page-content" style={{ height: '100%' }}>
           <BasketInfoOrderWireframe vm={vm.basketInfoOrderWireframeVM} />
         </div>
       </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
-          <Footer />{" "}
+          <Footer />{' '}
         </div>
       </div>
       <style jsx>
@@ -97,7 +97,7 @@ const Basket = () => {
             margin-right: auto;
           }
           .header-border ::after {
-            content: "";
+            content: '';
             display: block;
             position: absolute;
             bottom: 0;
@@ -110,11 +110,11 @@ const Basket = () => {
             background-color: #ffffff;
           }
           .basket-status {
-            margin-top: 119px;
-            margin-bottom: 34px;
+            margin-top: 120px;
+            margin-bottom: 32px;
           }
           .basket-info-order {
-            margin-bottom: 106px;
+            margin-bottom: 78px;
           }
           .footer-background {
             width: 100%;
@@ -138,6 +138,9 @@ const Basket = () => {
             }
             .footer-background {
               height: 215px;
+            }
+            .basket-status {
+              margin-top: 69px;
             }
           }
         `}
