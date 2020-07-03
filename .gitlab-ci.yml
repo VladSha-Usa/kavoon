@@ -24,7 +24,7 @@ install_yarn:
     - yarn install
   tags:
     - docker
- 
+
 
 lint:
   dependencies: [install_yarn]

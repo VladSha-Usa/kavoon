@@ -11,11 +11,13 @@
     "postinstall": "perl -i -pe \"s/require\\('mapbox-gl/\\/\\/ require\\('mapbox-gl/\" ./node_modules/react-mapbox-gl/lib-esm/map.js"
   },
   "dependencies": {
+    "eslint-config-prettier": "^6.11.0",
     "firebase": "^7.14.3",
     "formik": "^2.1.4",
     "mapbox-gl": "^1.9.1",
     "next": "^9.3.6",
     "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-collapsed": "^3.0.0",
     "react-dom": "16.13.1",
