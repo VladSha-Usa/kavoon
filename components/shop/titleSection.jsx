@@ -5,11 +5,7 @@ const TitleSection = () => (
   <>
     <div className="title__section-wrapper">
       <div className="title__section-background">
-        Магазин
-        {' '}
-        <br />
-        {' '}
-        велоспорядження
+        Магазин <br /> велоспорядження
       </div>
       <div className="title__section-main">Магазин велоспорядження</div>
       <div className="title__section-subtitle">

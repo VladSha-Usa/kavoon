@@ -1,5 +1,5 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 const Stage = () => {
   return (
@@ -18,11 +18,11 @@ const Stage = () => {
       <a href="">
         <div href="#" className="button-field button-field-text">
           <img
-            style={{ marginLeft: "auto", marginRight: "6px" }}
+            style={{ marginLeft: 'auto', marginRight: '6px' }}
             src="/img/shop-icon.svg"
             className="shop-icon"
           />
-          <div style={{ marginRight: "auto", marginLeft: "6px" }}>Shop</div>
+          <div style={{ marginRight: 'auto', marginLeft: '6px' }}>Shop</div>
         </div>
       </a>
 
