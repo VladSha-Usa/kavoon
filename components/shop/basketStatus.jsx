@@ -1,5 +1,5 @@
-import ShopBasketAmount from "./shopBasketAmount";
-import BreadcrumbsNav from "./breadcrumbsNav";
+import ShopBasketAmount from './shopBasketAmount'
+import BreadcrumbsNav from './breadcrumbsNav'
 
 const BasketStatus = ({ vm }) => (
   <>
@@ -36,6 +36,6 @@ const BasketStatus = ({ vm }) => (
       `}
     </style>
   </>
-);
+)
 
-export default BasketStatus;
+export default BasketStatus
