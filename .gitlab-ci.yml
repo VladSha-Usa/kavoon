@@ -29,7 +29,7 @@ prettier:
   dependencies: [install_yarn]
   stage: tests
   script:
-    - yarn prettier
+    - yarn prettier --write .
   tags:
     - docker
 
