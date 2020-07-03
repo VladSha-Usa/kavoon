@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import BasketLogic from '../../data/logic/basket';
 import useRx from './useRx';
 import RespScreenWidth from '../common/mediaConst';
 
-const StatusOfBasket = ({ addedGoodName }) => {
-  const statusOfAdding = useRx(BasketLogic.statusOfAdding);
-  const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
-  const count = useRx(BasketLogic.count);
+const StatusOfAddingGoodToBasket = ({ vm }) => {
+  const statusOfAdding = useRx(vm.statusOfAdding);
+  const statusOfEmptyBasket = useRx(vm.statusOfEmptyBasket);
+  const count = useRx(vm.count);
   const [emptyBasket, setEmptyBasket] = useState(false);
   useEffect(() => {
     statusOfEmptyBasket && count === 0
@@ -20,8 +19,8 @@ const StatusOfBasket = ({ addedGoodName }) => {
           <>Ваш кошик порожній{'\u00A0\u00A0\u00A0'}😩</>
         ) : statusOfAdding ? (
           <>
-            <span className="added-good">{addedGoodName}</span> успішно додано
-            до кошику!{'\u00A0\u00A0\u00A0'}😊
+            <span className="added-good">{vm.name}</span> успішно додано до кошику!
+            {'\u00A0\u00A0\u00A0'}😊
           </>
         ) : null}
       </div>
@@ -88,4 +87,4 @@ const StatusOfBasket = ({ addedGoodName }) => {
   );
 };
 
-export default StatusOfBasket;
+export default StatusOfAddingGoodToBasket;

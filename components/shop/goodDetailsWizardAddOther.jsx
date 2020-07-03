@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BasketLogic from '../../data/logic/basket';
 import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsWizardAddOther = ({
@@ -44,10 +43,10 @@ const GoodDetailsWizardAddOther = ({
                 onChange={() => {
                   checkerStatus(!status);
                   status
-                    ? BasketLogic.colectDataOfGood({
-                      additionGoodData: { ...vm },
-                    })
-                    : BasketLogic.colectDataOfGood('deleteAddGood');
+                    ? vm.colectDataOfGood({
+                        additionGoodData: { ...vm },
+                      })
+                    : vm.colectDataOfGood('deleteAddGood');
                 }}
               />
               <span className="good-checkmark" />

@@ -1,12 +1,12 @@
 import GoodListItem from './goodListItem';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsSeeMore = ({ elseGoods }) => (
+const GoodDetailsSeeMore = ({ vm }) => (
   <>
     <div className="see-more-wrapper">
       <span className="more-title">Давай ще щось подивимось</span>
       <div className="goods-wrapper">
-        {elseGoods.map((goodListItem, i) => (
+        {vm.moreGoods.map((goodListItem, i) => (
           <GoodListItem
             key={i}
             src={goodListItem.image}

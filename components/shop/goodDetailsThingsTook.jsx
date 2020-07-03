@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup';
 import GoodDiscountInComplect from './goodDiscountInComplect';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDetailsThingsTook = ({ things, сontent }) => (
+const GoodDetailsThingsTook = ({ vm }) => (
   <>
     <div className="taken-things-wrapper">
       <div className="things-main-question">Що можна покласти в комплект?</div>
@@ -11,8 +11,8 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
         <div className="large-img-content">
           <img
             className="large-img"
-            src={things.largeImg.src}
-            srcSet={things.largeImg.srcSet}
+            src={vm.takenThings.largeImg.src}
+            srcSet={vm.takenThings.largeImg.srcSet}
           />
           <div className="img-large-sub-question">
             Як щодо такого комлекту сумок?
@@ -33,7 +33,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
                 </div>
                 <div className="content">
                   <div className="goods-to-complect-wrapper">
-                    {сontent.allKitDiscount.map((good, index) => (
+                    {vm.allKitDiscount.map((good, index) => (
                       <GoodDiscountInComplect content={good} key={index} />
                     ))}
                   </div>
@@ -57,7 +57,7 @@ const GoodDetailsThingsTook = ({ things, сontent }) => (
             Ось ці речі ми брали з собою:
           </span>
           <ul className="small-content">
-            {things.smallThings.map((goodData, index) => (
+            {vm.takenThings.smallThings.map((goodData, index) => (
               <li key={index}>
                 <a className="small-item" href="#">
                   <img

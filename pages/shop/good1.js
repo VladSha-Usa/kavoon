@@ -1,32 +1,31 @@
-import React, { useEffect } from "react";
-import BasketLogic from "../../data/logic/basket";
-import Head from "next/head";
-import Header from "../../components/mainPage/header";
-import Footer from "../../components/mainPage/footer";
-import MainMetaInfo from "../../components/common/mainMetaInfo";
-import GoodDetailsStatus from "../../components/shop/goodDetailsStatus";
-import GoodDetailsChoose from "../../components/shop/goodDetailsChoose";
-import GoodDetailsSpecification from "../../components/shop/goodDetailsSpecification";
-import Analytics from "../../components/common/analytics";
-import Good1Data from "../../data/viewModels/good1";
-import GoodDetailsThingsTook from "../../components/shop/goodDetailsThingsTook";
-import TakenThings from "../../data/viewModels/good1/takenThings";
-import GoodDetailsImgGallery from "../../components/shop/goodDetailsImgGallery";
-import GoodDetailsSeeMore from "../../components/shop/goodDetailsSeeMore";
-import RespScreenWidth from "../../components/common/mediaConst";
+import React, { useEffect } from 'react';
+import vmFactory from '../../data/viewModels/good1';
+import Head from 'next/head';
+import Header from '../../components/mainPage/header';
+import Footer from '../../components/mainPage/footer';
+import MainMetaInfo from '../../components/common/mainMetaInfo';
+import GoodDetailsStatus from '../../components/shop/goodDetailsStatus';
+import GoodDetailsChoose from '../../components/shop/goodDetailsChoose';
+import GoodDetailsSpecification from '../../components/shop/goodDetailsSpecification';
+import Analytics from '../../components/common/analytics';
+import GoodDetailsThingsTook from '../../components/shop/goodDetailsThingsTook';
+import GoodDetailsImgGallery from '../../components/shop/goodDetailsImgGallery';
+import GoodDetailsSeeMore from '../../components/shop/goodDetailsSeeMore';
+import RespScreenWidth from '../../components/common/mediaConst';
 
 const headerHeight = 80;
 
 const Good1 = () => {
+  const vm = vmFactory();
   useEffect(() => {
-    return BasketLogic.init();
+    return vm.init();
   });
-  BasketLogic.colectDataOfGood({
+  vm.colectDataOfGood({
     count: 1,
-    picture: Good1Data.mainPicture,
-    name: Good1Data.name,
-    volume: Good1Data.specification.volume,
-    price: Good1Data.price,
+    picture: vm.mainPicture,
+    name: vm.name,
+    volume: vm.volume,
+    price: vm.price,
   });
   return (
     <>
@@ -66,43 +65,43 @@ const Good1 = () => {
       </Head>
 
       <div id="home" className="header">
-        <div className="page-content" style={{ height: "100%" }}>
+        <div className="page-content" style={{ height: '100%' }}>
           <Header />
         </div>
       </div>
       <div className="good-details-status">
         <div className="page-content">
-          <GoodDetailsStatus statusData={Good1Data} />
+          <GoodDetailsStatus vm={vm.goodDetailsStatusVM} />
         </div>
       </div>
       <div className="good-details-choose">
         <div className="page-content">
-          <GoodDetailsChoose />
+          <GoodDetailsChoose vm={vm.goodDetailsChooseVM} />
         </div>
       </div>
       <div className="good-details-specification">
         <div className="page-content">
-          <GoodDetailsSpecification specification={Good1Data.specification} />
+          <GoodDetailsSpecification vm={vm.goodDetailsSpecificationVM} />
         </div>
       </div>
       <div className="good-details-things-took">
         <div className="page-content">
-          <GoodDetailsThingsTook things={TakenThings} сontent={Good1Data} />
+          <GoodDetailsThingsTook vm={vm.goodDetailsThingsTookVM} />
         </div>
       </div>
       <div className="good-details-img-gallery">
         <div className="page-content">
-          <GoodDetailsImgGallery galleryContent={Good1Data.detailsImgGallery} />
+          <GoodDetailsImgGallery vm={vm.goodDetailsImgGalleryVM} />
         </div>
       </div>
       <div className="good-details-see-more">
         <div className="page-content">
-          <GoodDetailsSeeMore elseGoods={Good1Data.moreGoods} />
+          <GoodDetailsSeeMore vm={vm.goodDetailsSeeMoreVM} />
         </div>
       </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
-          <Footer />{" "}
+          <Footer />{' '}
         </div>
       </div>
       <style jsx>
@@ -144,7 +143,7 @@ const Good1 = () => {
             margin-bottom: 60px;
           }
           .header-border ::after {
-            content: "";
+            content: '';
             display: block;
             position: absolute;
             bottom: 0;
