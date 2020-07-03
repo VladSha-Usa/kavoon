@@ -24,7 +24,14 @@ install_yarn:
     - yarn install
   tags:
     - docker
- 
+
+prettier:
+  dependencies: [install_yarn]
+  stage: tests
+  script:
+    - yarn prettier --write .
+  tags:
+    - docker
 
 lint:
   dependencies: [install_yarn]
