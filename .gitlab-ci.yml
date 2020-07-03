@@ -34,7 +34,7 @@ prettier:
     - docker
 
 lint:
-  dependencies: [prettier]
+  dependencies: [install_yarn]
   stage: tests
   script:
     - yarn lint
