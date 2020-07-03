@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import BasketLogic from "../../data/logic/basket";
-import Head from "next/head";
-import Header from "../../components/mainPage/header";
-import Footer from "../../components/mainPage/footer";
-import TitleSection from "../../components/shop/titleSection";
-import ShopStatus from "../../components/shop/shopStatus";
-import MainMetaInfo from "../../components/common/mainMetaInfo";
-import GoodsList from "../../components/shop/goodsList";
-import Analytics from "../../components/common/analytics";
-import RespScreenWidth from "../../components/common/mediaConst";
+import React, { useEffect } from 'react';
+import BasketLogic from '../../data/logic/basket';
+import Head from 'next/head';
+import Header from '../../components/mainPage/header';
+import Footer from '../../components/mainPage/footer';
+import TitleSection from '../../components/shop/titleSection';
+import ShopStatus from '../../components/shop/shopStatus';
+import MainMetaInfo from '../../components/common/mainMetaInfo';
+import GoodsList from '../../components/shop/goodsList';
+import Analytics from '../../components/common/analytics';
+import RespScreenWidth from '../../components/common/mediaConst';
 
 const headerHeight = 80;
 
@@ -44,7 +44,7 @@ const Shop = () => {
       </Head>
 
       <div id="home" className="header">
-        <div className="page-content" style={{ height: "100%" }}>
+        <div className="page-content" style={{ height: '100%' }}>
           <Header />
         </div>
       </div>
@@ -65,7 +65,7 @@ const Shop = () => {
       </div>
       <div className="footer-background">
         <div id="footer" className="page-content">
-          <Footer />{" "}
+          <Footer />{' '}
         </div>
       </div>
       <style jsx>
@@ -89,7 +89,7 @@ const Shop = () => {
           }
 
           .header-border ::after {
-            content: "";
+            content: '';
             display: block;
             position: absolute;
             bottom: 0;

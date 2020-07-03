@@ -6,17 +6,19 @@ const dataOfGood = new BehaviorSubject({});
 const statusOfAdding = new BehaviorSubject(false);
 const statusOfEmptyBasket = new BehaviorSubject(false);
 const count = goods.pipe(
-  map((goodsList) => goodsList.reduce((sum, item) => {
-    if (item.additionGoodData) {
-      return sum + item.count + item.additionGoodData.count;
-    }
-    return sum + item.count;
-  }, 0)),
+  map((goodsList) =>
+    goodsList.reduce((sum, item) => {
+      if (item.additionGoodData) {
+        return sum + item.count + item.additionGoodData.count;
+      }
+      return sum + item.count;
+    }, 0)
+  )
 );
 
 function increase(goodToIncrease) {
   const good = goods.value.find(
-    (goodItem) => goodToIncrease.id === goodItem.id,
+    (goodItem) => goodToIncrease.id === goodItem.id
   );
   if (good) {
     good.count += 1;
@@ -25,7 +27,7 @@ function increase(goodToIncrease) {
 }
 function decrease(goodToDecrease) {
   const good = goods.value.find(
-    (goodItem) => goodToDecrease.id === goodItem.id,
+    (goodItem) => goodToDecrease.id === goodItem.id
   );
   if (good) {
     good.count -= 1;
@@ -35,9 +37,11 @@ function decrease(goodToDecrease) {
 
 function countForGood(good) {
   return goods.pipe(
-    map((goodsList) => goodsList
-      .filter((item) => item.id === good.id)
-      .reduce((sum, item) => sum + item.count, 0)),
+    map((goodsList) =>
+      goodsList
+        .filter((item) => item.id === good.id)
+        .reduce((sum, item) => sum + item.count, 0)
+    )
   );
 }
 
@@ -60,7 +64,9 @@ function init() {
     }, 12500);
   }
   goods.next(data);
-  const subscriber = goods.subscribe((value) => localStorage.setItem('BasketData', JSON.stringify(value)));
+  const subscriber = goods.subscribe((value) =>
+    localStorage.setItem('BasketData', JSON.stringify(value))
+  );
   setInterval(() => {
     const basketData = JSON.parse(localStorage.getItem('BasketData')) || [];
     if (basketData.length !== 0) {

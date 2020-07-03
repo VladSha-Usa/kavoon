@@ -131,7 +131,7 @@ const LanguagePopup = () => (
         }
 
         .available__list-lang:after {
-          content: "";
+          content: '';
           position: absolute;
           top: -19px;
           left: 19px;

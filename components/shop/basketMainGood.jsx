@@ -1,46 +1,46 @@
-import React from "react";
-import useRx from "./useRx";
+import React from 'react';
+import useRx from './useRx';
 
 const BasketMainGood = ({ vm }) => {
   const amount = useRx(vm.countForGood(vm.good));
   const activeMinus =
     amount <= 1
-      ? "/img/remove-button-not-active.svg"
-      : "/img/remove-button.svg";
+      ? '/img/remove-button-not-active.svg'
+      : '/img/remove-button.svg';
   const fields = [
     {
-      name: "Об’єм",
-      field: "volume",
-      unitOfMeasure: "л",
+      name: 'Об’єм',
+      field: 'volume',
+      unitOfMeasure: 'л',
     },
     {
-      name: "Основна тканина",
-      field: "fabric",
+      name: 'Основна тканина',
+      field: 'fabric',
     },
     {
-      name: "Основний колір",
-      field: "print",
+      name: 'Основний колір',
+      field: 'print',
     },
     {
-      name: "Додатковий колір",
-      field: "additionalColor",
+      name: 'Додатковий колір',
+      field: 'additionalColor',
     },
     {
-      name: "Марка фурнітури",
-      field: "brandOfAccessories",
+      name: 'Марка фурнітури',
+      field: 'brandOfAccessories',
     },
     {
-      name: "Колір фурнітури",
-      field: "colorOfAccessories",
+      name: 'Колір фурнітури',
+      field: 'colorOfAccessories',
     },
     {
-      name: "Колір строп",
-      field: "colorOfSlings",
+      name: 'Колір строп',
+      field: 'colorOfSlings',
     },
     {
-      name: "Сума",
-      field: "price",
-      unitOfMeasure: "грн",
+      name: 'Сума',
+      field: 'price',
+      unitOfMeasure: 'грн',
     },
   ];
   return (
@@ -77,7 +77,7 @@ const BasketMainGood = ({ vm }) => {
               .filter((field) => vm.good[field.field])
               .map((field, index) => (
                 <div key={index} className="good-parametr">
-                  {field.name}:{" "}
+                  {field.name}:{' '}
                   <span className="good-parametr-main">
                     {vm.good[field.field]} {field.unitOfMeasure}
                   </span>
