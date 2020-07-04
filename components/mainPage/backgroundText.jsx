@@ -6,7 +6,7 @@ const BackgroundText = () => (
     <style jsx>
       {`
         .flowers-way {
-          font-family: "Archivo Black", sans-serif;
+          font-family: 'Archivo Black', sans-serif;
           font-size: 128px;
           font-weight: normal;
           font-stretch: normal;
@@ -24,7 +24,7 @@ const BackgroundText = () => (
           left: -150px;
           object-fit: contain;
           opacity: 0.08;
-          font-family: "Archivo Black", sans-serif;
+          font-family: 'Archivo Black', sans-serif;
           font-size: 184px;
           font-weight: normal;
           font-stretch: normal;

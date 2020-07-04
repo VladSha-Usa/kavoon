@@ -1,6 +1,6 @@
-import { Formik, Field } from "formik";
-import MaskedInput from "react-text-mask";
-import * as Yup from "yup";
+import { Formik, Field } from 'formik';
+import MaskedInput from 'react-text-mask';
+import * as Yup from 'yup';
 
 const BasketOrderForm = () => (
   <>
