@@ -1,5 +1,6 @@
 import BasketInfoChooseGoods from './basketInfoChooseGoods';
 import BasketOrderForm from './basketOrderForm';
+import RespScreenWidth from '../common/mediaConst';
 
 const BasketInfoOrderWireframe = ({ vm }) => {
   return (
@@ -11,6 +12,12 @@ const BasketInfoOrderWireframe = ({ vm }) => {
       <style jsx>{`
         .info-order-wrapper {
           display: flex;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .info-order-wrapper {
+            flex-direction: column;
+            align-items: center;
+          }
         }
       `}</style>
     </>

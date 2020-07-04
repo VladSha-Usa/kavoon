@@ -3,6 +3,7 @@ import BasketMainGood from './basketMainGood';
 import GoodDetailsWizardAddOther from './goodDetailsWizardAddOther';
 import useRx from './useRx';
 import HelperFun from '../common/helper';
+import RespScreenWidth from '../common/mediaConst';
 
 const BasketInfoChooseGoods = ({ vm }) => {
   const goodVMs = useRx(vm.goodVMs);
@@ -107,6 +108,12 @@ const BasketInfoChooseGoods = ({ vm }) => {
         }
         .choose-good-wrapper img{
           cursor: pointer;
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px){
+            .info-choose-goods-wrapper {
+              margin-right: 0;
+              margin-bottom: 60px;
+          }
         }
       `}
       </style>

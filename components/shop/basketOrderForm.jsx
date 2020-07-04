@@ -1,6 +1,7 @@
 import { Formik, Field } from 'formik';
 import MaskedInput from 'react-text-mask';
 import * as Yup from 'yup';
+import RespScreenWidth from '../common/mediaConst';
 
 const BasketOrderForm = () => (
   <>
@@ -213,6 +214,20 @@ const BasketOrderForm = () => (
           background-color: #ced6e2;
           box-shadow: none;
         }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+          .intro-title {
+            margin-left: 0;
+            padding-inline-start: 0;
+            padding-inline-end: 0;
+            margin: auto;
+            text-align: center;
+          }
+          .instruction-title {
+            margin-left: 0;
+            text-align: center;
+            padding: 0 35px;
+          }
+        }
       `}
     </style>
     <style>
@@ -294,6 +309,11 @@ const BasketOrderForm = () => (
             font-weight: 500;
             letter-spacing: 0.63px;
             color: #d21818;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px){
+            .order-form{
+              width: 394px
+            }
           }
         `}
     </style>
