@@ -1,9 +1,6 @@
 import ShopBasketAmount from './shopBasketAmount';
 import BreadcrumbsNav from './breadcrumbsNav';
-<<<<<<< HEAD
 import RespScreenWidth from '../common/mediaConst';
-=======
->>>>>>> master
 
 const BasketStatus = ({ vm }) => (
   <>

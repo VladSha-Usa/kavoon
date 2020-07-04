@@ -14,13 +14,8 @@ const BasketInfoChooseGoods = ({ vm }) => {
         <div className="info-choose-status">
           Твій кошик{' '}
           <span className="info-choose-status-amount">
-<<<<<<< HEAD
             ({countValue} товар
             {HelperFun.endingOfWord(countValue)})
-=======
-            ( {countValue} товар
-            {HelperFun.endingOfWord(countValue)} )
->>>>>>> master
           </span>
         </div>
         <div className="info-choose-goods">
@@ -47,7 +42,6 @@ const BasketInfoChooseGoods = ({ vm }) => {
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-<<<<<<< HEAD
               {goodVMs
                 .reduce(
                   (sum, good) =>
@@ -57,15 +51,6 @@ const BasketInfoChooseGoods = ({ vm }) => {
                   0
                 )
                 .toLocaleString({ useGrouping: true })}{' '}
-=======
-              {goodVMs.reduce(
-                (sum, good) =>
-                  good.good.additionGoodData
-                    ? sum + good.good.price + good.good.additionGoodData.price
-                    : sum + good.good.price,
-                0
-              )}{' '}
->>>>>>> master
               грн
             </span>
           </div>

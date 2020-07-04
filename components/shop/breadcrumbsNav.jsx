@@ -38,11 +38,7 @@ const BreadcrumbsNav = ({ vm }) => (
           pointer-events: none;
           font-weight: 600;
         }
-<<<<<<< HEAD
         .breadcrumbs-wrapper .breadcrumbs-item:not(:last-child):after {
-=======
-        .breadcrumbs-wrapper .breadcrumbs-item:nth-child(n + 2):before {
->>>>>>> master
           content: '';
           position: absolute;
           width: 2px;
