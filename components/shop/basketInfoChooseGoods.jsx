@@ -109,13 +109,35 @@ const BasketInfoChooseGoods = ({ vm }) => {
         .choose-good-wrapper img{
           cursor: pointer;
         }
-        @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px){
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
             .info-choose-goods-wrapper {
               margin-right: 0;
               margin-bottom: 60px;
+            }
           }
-        }
-      `}
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .info-choose-goods {
+              width: 335px;
+              box-sizing: border-box;
+              padding: 15px;
+            }
+            .info-choose-status {
+              font-size: 20px;
+              letter-spacing: 1.05px;
+            }
+            .choose-good-wrapper {
+              margin-bottom: 20px;
+            }
+            .info-choose-sum-intro {
+              font-size: 16px;
+              line-height: 26px;
+              letter-spacing: 0.84px;
+            }
+            .info-choose-goods-wrapper {
+              margin-bottom: 30px;
+            }
+          }
+        `}
       </style>
     </>
   );

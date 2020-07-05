@@ -1,5 +1,6 @@
 import React from 'react';
 import useRx from './useRx';
+import RespScreenWidth from '../common/mediaConst';
 
 const BasketMainGood = ({ vm }) => {
   const amount = useRx(vm.countForGood(vm.good));
@@ -43,6 +44,18 @@ const BasketMainGood = ({ vm }) => {
       unitOfMeasure: 'грн',
     },
   ];
+  const mainGoodDescription = fields
+    .filter((field) => vm.good[field.field])
+    .map((field, index) => (
+      <div key={index} className="good-parametr">
+        {field.name}: {field.unitOfMeasure === 'грн' ? ' ' : ''}
+        <span className="good-parametr-main">
+          {vm.good[field.field]}
+          {field.unitOfMeasure === 'грн' ? ' ' : ''}
+          {field.unitOfMeasure}
+        </span>
+      </div>
+    ));
   return (
     <>
       <div className="main-good-wrapper">
@@ -55,13 +68,13 @@ const BasketMainGood = ({ vm }) => {
           <div className="main-good-name">{vm.good.name}.</div>
           <div className="main-good-control-info">
             <div
-              className="conrol-amount-wrapper"
+              className="control-amount-wrapper"
               onClick={() => (amount > 1 ? vm.decrease(vm.good) : null)}
             >
               <img src={activeMinus} />
             </div>
             <div className="amount">{amount}</div>
-            <div className="conrol-amount-wrapper">
+            <div className="control-amount-wrapper">
               <img
                 src="/img/add-button.svg"
                 onClick={() => vm.increase(vm.good)}
@@ -73,17 +86,13 @@ const BasketMainGood = ({ vm }) => {
             </div>
           </div>
           <div className="main-good-description">
-            {fields
-              .filter((field) => vm.good[field.field])
-              .map((field, index) => (
-                <div key={index} className="good-parametr">
-                  {field.name}:{' '}
-                  <span className="good-parametr-main">
-                    {vm.good[field.field]} {field.unitOfMeasure}
-                  </span>
-                </div>
-              ))}
+            <div className="main-good-name-mob">{vm.good.name}.</div>
+            {mainGoodDescription}
           </div>
+        </div>
+        <div className="main-good-description-mob">
+          <div className="main-good-name-mob">{vm.good.name}.</div>
+          {mainGoodDescription}
         </div>
       </div>
       <style jsx>
@@ -112,6 +121,14 @@ const BasketMainGood = ({ vm }) => {
             letter-spacing: 1.05px;
             margin-bottom: 20px;
           }
+          .main-good-name-mob {
+            display: none;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+          .main-good-description-mob {
+            display: none;
+          }
           .main-good-control-info {
             font-size: 20px;
             font-weight: 600;
@@ -120,17 +137,11 @@ const BasketMainGood = ({ vm }) => {
             align-items: center;
             margin-bottom: 15px;
           }
-          .conrol-amount-wrapper {
+          .control-amount-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-          }
-          .good-parametr {
-            margin-bottom: 8px;
-          }
-          .good-parametr-main {
-            font-weight: 600;
           }
           .main-good-info {
             margin-left: 30px;
@@ -145,6 +156,50 @@ const BasketMainGood = ({ vm }) => {
             font-size: 16px;
             letter-spacing: 0.75px;
             margin-left: 20px;
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .main-amount {
+              display: none;
+            }
+            .main-good-name {
+              display: none;
+            }
+            .main-good-name-mob {
+              display: block;
+            }
+            .main-good-description-mob {
+              display: block;
+            }
+            .main-good-description {
+              display: none;
+            }
+            .main-good-wrapper {
+              flex-wrap: wrap;
+            }
+            .main-good-info {
+              align-self: center;
+              margin-left: 26px;
+            }
+            .main-good-img {
+              margin-bottom: 10px;
+            }
+            .control-amount-wrapper img {
+              height: 40px;
+              width: 40px;
+            }
+            .main-good-control-info {
+              margin-bottom: 0;
+            }
+          }
+        `}
+      </style>
+      <style jsx global>
+        {`
+          .good-parametr {
+            margin-bottom: 8px;
+          }
+          .good-parametr-main {
+            font-weight: 600;
           }
         `}
       </style>

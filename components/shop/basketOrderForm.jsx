@@ -16,7 +16,7 @@ const BasketOrderForm = () => (
         numTel: Yup.string()
           .matches(
             /^\(\+380\)\s\d{2}\s\d{3}\s\d{2}\s\d{2}$/,
-            'Невірно заповнене поле, вкажіть номер телефону у \nправильному форматі'
+            'Неправильний формат номеру телефону'
           )
           .required('Будь ласка заповніть поле'),
       })}
@@ -87,7 +87,7 @@ const BasketOrderForm = () => (
                 className="row"
                 style={{
                   marginBottom: `${
-                    errors.numTel && touched.numTel ? '46px' : '-1px'
+                    errors.numTel && touched.numTel ? '13px' : '-1px'
                   }`,
                 }}
               >
@@ -189,7 +189,6 @@ const BasketOrderForm = () => (
         .input-feedback {
           position: absolute;
           margin-top: 10px;
-          white-space: pre-wrap;
           height: 15px;
         }
         button {
@@ -226,6 +225,31 @@ const BasketOrderForm = () => (
             margin-left: 0;
             text-align: center;
             padding: 0 35px;
+          }
+        }
+        @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+          .intro-title {
+            font-size: 20px;
+          }
+          .instruction-title {
+            padding: 0 30px;
+          }
+          .row {
+            padding: 5px 0;
+            width: auto;
+            position: relative;
+          }
+          button {
+            padding: 0;
+            margin-left: 0;
+            margin-top: 2px;
+            width: 100%;
+          }
+          .instruction-title {
+            margin-bottom: 16px;
+          }
+          .input-feedback {
+            margin-top: 0;
           }
         }
       `}
@@ -313,6 +337,15 @@ const BasketOrderForm = () => (
           @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px){
             .order-form{
               width: 394px
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px){
+            .order-form{
+              width: auto
+            }
+            .order-form .text-input {
+              width: auto;
+              margin-bottom: 23px;
             }
           }
         `}
