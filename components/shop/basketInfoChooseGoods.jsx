@@ -14,8 +14,8 @@ const BasketInfoChooseGoods = ({ vm }) => {
         <div className="info-choose-status">
           Твій кошик{' '}
           <span className="info-choose-status-amount">
-            ( {countValue} товар
-            {HelperFun.endingOfWord(countValue)} )
+            ({countValue} товар
+            {HelperFun.endingOfWord(countValue)})
           </span>
         </div>
         <div className="info-choose-goods">
@@ -42,13 +42,15 @@ const BasketInfoChooseGoods = ({ vm }) => {
           <div className="info-choose-sum">
             <span className="info-choose-sum-intro">Разом:</span>
             <span className="info-choose-sum-num">
-              {goodVMs.reduce(
-                (sum, good) =>
-                  good.good.additionGoodData
-                    ? sum + good.good.price + good.good.additionGoodData.price
-                    : sum + good.good.price,
-                0
-              )}{' '}
+              {goodVMs
+                .reduce(
+                  (sum, good) =>
+                    good.good.additionGoodData
+                      ? sum + good.good.price + good.good.additionGoodData.price
+                      : sum + good.good.price,
+                  0
+                )
+                .toLocaleString({ useGrouping: true })}{' '}
               грн
             </span>
           </div>
@@ -78,7 +80,7 @@ const BasketInfoChooseGoods = ({ vm }) => {
           width: 646px;
           border-radius: 10px;
           border: solid 1.5px #b9c6dc;
-          padding: 20px 18px 23px 18px;
+          padding: 20px 18px;
         }
         .info-choose-sum {
           display: flex;
@@ -101,7 +103,7 @@ const BasketInfoChooseGoods = ({ vm }) => {
           justify-content: space-between;
           border-bottom:1.5px solid #b9c6dc;
           padding-bottom: 12px;
-          margin-bottom: 20px;
+          margin-bottom: 18px;
         }
         .choose-good-wrapper img{
           cursor: pointer;

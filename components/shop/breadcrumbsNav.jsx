@@ -31,32 +31,34 @@ const BreadcrumbsNav = ({ vm }) => (
         }
         .breadcrumbs-wrapper .breadcrumbs-item {
           margin-right: 23px;
+          position: relative;
         }
         .breadcrumbs-wrapper .breadcrumbs-item:last-child a {
           color: var(--primarycolor);
           pointer-events: none;
           font-weight: 600;
         }
-        .breadcrumbs-wrapper .breadcrumbs-item:nth-child(n + 2):before {
+        .breadcrumbs-wrapper .breadcrumbs-item:not(:last-child):after {
           content: '';
           position: absolute;
           width: 2px;
           height: 16px;
           border-radius: 1.5px;
           background-color: var(--primarycolor);
-          margin-left: -12.5px;
-          margin-top: 5px;
+          right: -12.5px;
+          top: 5px;
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .breadcrumbs-wrapper {
             align-items: flex-start;
             margin-block-end: 27px;
+            flex-wrap: wrap;
           }
           .breadcrumbs-item:first-child {
-            white-space: nowrap;
           }
           .breadcrumbs-item {
             text-align: center;
+            max-width: 145px;
           }
           .breadcrumbs-wrapper .breadcrumbs-item a {
             font-size: 16px;

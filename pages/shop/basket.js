@@ -110,11 +110,11 @@ const Basket = () => {
             background-color: #ffffff;
           }
           .basket-status {
-            margin-top: 119px;
-            margin-bottom: 34px;
+            margin-top: 120px;
+            margin-bottom: 32px;
           }
           .basket-info-order {
-            margin-bottom: 106px;
+            margin-bottom: 78px;
           }
           .footer-background {
             width: 100%;
@@ -138,6 +138,9 @@ const Basket = () => {
             }
             .footer-background {
               height: 215px;
+            }
+            .basket-status {
+              margin-top: 69px;
             }
           }
         `}

@@ -207,6 +207,7 @@ const BasketOrderForm = () => (
           font-family: Montserrat;
           margin-top: 6px;
           margin-left: 7px;
+          outline: none;
         }
         button:disabled {
           background-color: #ced6e2;
