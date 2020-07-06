@@ -44,7 +44,7 @@ const BasketStatus = ({ vm }) => (
           }
           .added-goods-text {
             margin-right: 0px;
-            ont-size: 16px;
+            font-size: 16px;
             line-height: 26px;
             letter-spacing: 0.84px;
           }

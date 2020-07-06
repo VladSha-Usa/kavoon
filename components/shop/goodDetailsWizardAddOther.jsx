@@ -169,15 +169,23 @@ const GoodDetailsWizardAddOther = ({ vm, basketStyleSettings }) => {
           @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
             .addition-wrapper {
               margin-top: ${basketStyleSettings ? '0px' : '11px'};
+              letter-spacing: ${basketStyleSettings ? '0.1px' : '0.89px'};
+              font-size: ${basketStyleSettings ? '16px' : '17px'};
+            }
+            .addition-title {
+              margin-bottom: ${basketStyleSettings ? '19px' : '21px'};
             }
             .addition-good-wrapper {
-              margin-bottom: 35px;
+              margin-bottom: ${basketStyleSettings ? '10px' : '35px'};
             }
             .good-price {
-              padding-bottom: 17px;
+              padding-bottom: ${basketStyleSettings ? '0' : '17px'};
             }
             .btn-submit {
               width: 100%;
+            }
+            .good-description-checker {
+              margin-left: ${basketStyleSettings ? '8px' : '20px'};
             }
           }
         `}
