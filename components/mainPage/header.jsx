@@ -75,7 +75,9 @@ const Header = () => {
             className="menu-link"
             style={{ marginLeft: '40px', marginRight: '40px' }}
           >
-            <a href="#pathfinder">Путівник</a>
+            <a href="#" className="disabled" disabled>
+              Путівник
+            </a>
           </nav>
           <nav className="menu-link" style={{ marginRight: 'auto' }}>
             <span className="disabled">Блог</span>
@@ -166,8 +168,6 @@ const Header = () => {
             letter-spacing: 0.79px;
             color: #061434;
           }
-          .menu-link {
-          }
           a:link {
             text-decoration: none;
             color: #061434;
@@ -180,6 +180,13 @@ const Header = () => {
 
           .disabled {
             opacity: 0.5;
+          }
+          .menu-link .disabled:hover::after {
+            width: 0%;
+            color: #061434;
+          }
+          .menu-link .disabled:hover {
+            color: #061434;
           }
 
           .menu-link a:hover {
