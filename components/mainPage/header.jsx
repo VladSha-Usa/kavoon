@@ -59,8 +59,8 @@ const Header = () => {
                 }
                 srcSet={
                   mobileLogo
-                    ? '/img/logo-mobile-header@2x.png 2x, img/logo-mobile-header@3x.png 3x'
-                    : '/img/logotype@2x.png 2x, img/logotype@3x.png 3x'
+                    ? '/img/logo-mobile-header@2x.png 2x, /img/logo-mobile-header@3x.png 3x'
+                    : '/img/logotype@2x.png 2x, /img/logotype@3x.png 3x'
                 }
                 className={bannerImgClass}
               />

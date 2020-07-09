@@ -28,7 +28,7 @@ const MainMenu = ({ onClose }) => {
           <img
             style={{ margin: 'auto' }}
             src="/img/cancelIcon.png"
-            srcSet="/img/cancelIcon@2x.png 2x, img/cancelIcon@3x.png 3x"
+            srcSet="/img/cancelIcon@2x.png 2x, /img/cancelIcon@3x.png 3x"
           />
         </div>
         <div className="burger__menu-banner">
@@ -36,7 +36,7 @@ const MainMenu = ({ onClose }) => {
             <a href="#home">
               <img
                 src="/img/logo-mobile-header.png"
-                srcSet="/img/logo-mobile-header@2x.png 2x, img/logo-mobile-header@3x.png 3x"
+                srcSet="/img/logo-mobile-header@2x.png 2x, /img/logo-mobile-header@3x.png 3x"
                 className="burger__menu-banner__img"
               />
             </a>
@@ -60,7 +60,7 @@ const MainMenu = ({ onClose }) => {
             <div className="choosen-lang">
               <img
                 src="/img/country-flag-ua.png"
-                srcSet="/img/country-flag-ua@2x.png 2x, img/country-flag-ua@3x.png 3x"
+                srcSet="/img/country-flag-ua@2x.png 2x, /img/country-flag-ua@3x.png 3x"
               />
               Українська
             </div>

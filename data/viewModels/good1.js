@@ -14,7 +14,7 @@ const good1VM = {
   mainPicture: {
     src: '/img/good-details-prev-slider/photo-main1.jpg',
     srcSet:
-      '/img/good-details-prev-slider/photo-main1@2x.jpg 2x, img/good-details-prev-slider/photo-main1@3x.jpg 3x',
+      '/img/good-details-prev-slider/photo-main1@2x.jpg 2x, /img/good-details-prev-slider/photo-main1@3x.jpg 3x',
   },
   volume: 10,
   goodDetailsStatusVM: goodDetailsStatusVM(),
