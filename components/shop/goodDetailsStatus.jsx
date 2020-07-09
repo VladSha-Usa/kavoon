@@ -1,6 +1,6 @@
 import ShopBasketAmount from './shopBasketAmount';
 import BreadcrumbsNav from './breadcrumbsNav';
-import StatusOfAddingGoodToBasket from './statusOfAddingGoodToBasket';
+import StatusOfBasket from './statusOfBasket';
 import RespScreenWidth from '../common/mediaConst';
 
 const GoodDetailsStatus = ({ vm }) => {
@@ -11,7 +11,7 @@ const GoodDetailsStatus = ({ vm }) => {
         <div className="status-added">
           <span className="status-added__text">Додані товари:</span>
           <ShopBasketAmount vm={vm.shopBasketAmountVM} />
-          <StatusOfAddingGoodToBasket vm={vm.statusOfAddingGoodToBasketVM} />
+          <StatusOfBasket vm={vm.statusOfAddingGoodToBasketVM} />
         </div>
       </div>
       <style jsx>

@@ -1,37 +1,28 @@
 import React from 'react';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
-  const imgWrapper = 'item__img-wrapper';
-  const title = 'item__title';
-  const description = 'item__description';
-  const descriptionCapacity = 'item__description-capacity';
-  const descriptionPrice = 'item__description-price';
-  const descriptionPriceCurrency = 'item__description-price__currency';
-  const descriptionCapacityLitres = 'item__description-capacity__litres';
-  const descriptionCapacityIntro = 'item__description-capacity__intro';
-
+const GoodListItem = ({ vm }) => {
   return (
     <>
-      <a href={href} target="_blank" className="case-field-link">
+      <a href={vm.href} target="_blank" className="case-field-link">
         <div className="case-field">
-          <div className={imgWrapper}>
+          <div className="img-wrapper">
             <img
               style={{ width: '255px', height: '230px' }}
-              src={src}
-              srcSet={srcSet}
+              src={vm.src}
+              srcSet={vm.srcSet}
             />
           </div>
-          <div className={title}>{contentTitle}</div>
-          <div className={description}>
-            <div className={descriptionCapacity}>
-              <span className={descriptionCapacityIntro}>Об'єм:</span>
-              {capacity}
-              <span className={descriptionCapacityLitres}>л</span>
+          <div className="title">{vm.name}</div>
+          <div className="description">
+            <div className="description-capacity">
+              <span className="description-capacity__intro">Об'єм:</span>
+              {vm.volume}
+              <span className="description-capacity__litres">л</span>
             </div>
-            <div className={descriptionPrice}>
-              {price.toLocaleString({ useGrouping: true })}
-              <span className={descriptionPriceCurrency}>грн</span>
+            <div className="description-price">
+              {vm.price.toLocaleString({ useGrouping: true })}
+              <span className="description-price__currency">грн</span>
             </div>
           </div>
         </div>
@@ -50,7 +41,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             transition: 0.2s ease-out;
             z-index: 1;
           }
-          .${imgWrapper} {
+          .img-wrapper {
             margin-top: 10px;
             margin-bottom: 15px;
             text-align: center;
@@ -61,7 +52,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             font-stretch: normal;
             font-style: normal;
           }
-          .${title} {
+          .title {
             font-weight: 600;
             line-height: 1.53;
             letter-spacing: 0.89px;
@@ -69,7 +60,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             color: var(--texticonscolor);
             white-space: pre-wrap;
           }
-          .${description} {
+          .description {
             display: flex;
             width: 100%;
             justify-content: space-between;
@@ -77,7 +68,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             position: absolute;
             bottom: 25px;
           }
-          .${descriptionCapacity} {
+          .description-capacity {
             font-weight: 600;
             font-style: normal;
             line-height: 1.53;
@@ -85,11 +76,11 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             color: var(--texticonscolor);
             margin-left: 25px;
           }
-          .${descriptionCapacityIntro} {
+          .description-capacity__intro {
             font-weight: 500;
             margin-right: 5px;
           }
-          .${descriptionPrice} {
+          .description-price {
             font-weight: 600;
             line-height: 1.65;
             letter-spacing: 0.79px;
@@ -97,7 +88,7 @@ const GoodListItem = ({ src, srcSet, contentTitle, capacity, price, href }) => {
             color: var(--primarycolor);
             margin-right: 25px;
           }
-          .${descriptionPriceCurrency} {
+          .description-price__currency {
             margin-left: 10px;
           }
           @media only screen and (min-width: ${RespScreenWidth.screenWidthMobile}px) {

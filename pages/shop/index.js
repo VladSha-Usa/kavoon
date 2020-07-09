@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import BasketLogic from '../../data/logic/basket';
 import Head from 'next/head';
 import Header from '../../components/mainPage/header';
 import Footer from '../../components/mainPage/footer';
@@ -10,11 +9,15 @@ import GoodsList from '../../components/shop/goodsList';
 import Analytics from '../../components/common/analytics';
 import RespScreenWidth from '../../components/common/mediaConst';
 
+import vmFactory from '../../data/viewModels/shop';
+
 const headerHeight = 80;
 
 const Shop = () => {
+  const vm = vmFactory();
+
   useEffect(() => {
-    return BasketLogic.init();
+    return vm.init();
   });
 
   return (
@@ -55,12 +58,12 @@ const Shop = () => {
       </div>
       <div className="shop-status">
         <div className="page-content">
-          <ShopStatus />
+          <ShopStatus vm={vm.shopStatusVM} />
         </div>
       </div>
       <div className="goods-list">
         <div className="page-content">
-          <GoodsList />
+          <GoodsList vm={vm.goodsListVM} />
         </div>
       </div>
       <div className="footer-background">

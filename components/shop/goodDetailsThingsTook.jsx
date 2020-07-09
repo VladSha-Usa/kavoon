@@ -34,7 +34,7 @@ const GoodDetailsThingsTook = ({ vm }) => (
                 <div className="content">
                   <div className="goods-to-complect-wrapper">
                     {vm.allKitDiscount.map((good, index) => (
-                      <GoodDiscountInComplect content={good} key={index} />
+                      <GoodDiscountInComplect vm={good} key={index} />
                     ))}
                   </div>
                   <div className="price-submit-wrapper">
