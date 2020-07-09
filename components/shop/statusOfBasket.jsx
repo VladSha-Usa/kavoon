@@ -1,11 +1,11 @@
-import BasketLogic from '../../data/shop/logic/basket';
-import useRx from './useRx';
 import React, { useState, useEffect } from 'react';
+import useRx from './useRx';
+import RespScreenWidth from '../common/mediaConst';
 
-const StatusOfBasket = ({ addedGoodName }) => {
-  const statusOfAdding = useRx(BasketLogic.statusOfAdding);
-  const statusOfEmptyBasket = useRx(BasketLogic.statusOfEmptyBasket);
-  const count = useRx(BasketLogic.count);
+const StatusOfBasket = ({ vm }) => {
+  const statusOfAdding = useRx(vm.statusOfAdding);
+  const statusOfEmptyBasket = useRx(vm.statusOfEmptyBasket);
+  const count = useRx(vm.count);
   const [emptyBasket, setEmptyBasket] = useState(false);
   useEffect(() => {
     statusOfEmptyBasket && count === 0
@@ -16,11 +16,12 @@ const StatusOfBasket = ({ addedGoodName }) => {
     <>
       <div className="status-adding-wrapper">
         {emptyBasket ? (
-          <>Ваш кошик порожній&nbsp;&nbsp;&nbsp;😩</>
+          <>Ваш кошик порожній{'\u00A0\u00A0\u00A0'}😩</>
         ) : statusOfAdding ? (
           <>
-            <span className="added-good">{addedGoodName}</span> успішно додано
-            до кошику!&nbsp;&nbsp;&nbsp;😊
+            <span className="added-good">{vm.name}</span> успішно додано до
+            кошику!
+            {'\u00A0\u00A0\u00A0'}😊
           </>
         ) : null}
       </div>
@@ -42,9 +43,7 @@ const StatusOfBasket = ({ addedGoodName }) => {
             color: var(--texticonscolor);
             left: -95px;
             top: 81px;
-            padding: ${emptyBasket
-              ? '28px 55px 28px 55px'
-              : '18px 27px 13px 32px'};
+            padding: ${emptyBasket ? '28px 55px' : '18px 27px 13px 32px'};
             display: ${statusOfAdding || emptyBasket ? 'block' : 'none'};
             white-space: ${emptyBasket ? 'nowrap' : 'pre-wrap'};
           }
@@ -62,6 +61,26 @@ const StatusOfBasket = ({ addedGoodName }) => {
           }
           .added-good {
             color: var(--primarycolor);
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthNetbook}px) {
+            .status-adding-wrapper {
+              left: -125px;
+            }
+            .status-adding-wrapper:before {
+              right: 20px;
+            }
+          }
+          @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
+            .status-adding-wrapper {
+              left: 0;
+              top: 70px;
+              z-index: 20;
+              padding: ${emptyBasket ? '28px 49.5px' : '18px 25px 13px 30px'};
+              width: auto;
+            }
+            .status-adding-wrapper:before {
+              right: 15px;
+            }
           }
         `}
       </style>

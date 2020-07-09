@@ -1,21 +1,12 @@
 import React from 'react';
 import GoodListItem from './goodListItem';
-import GoodListData from '../../data/viewModels/goods';
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodsList = () => (
+const GoodsList = ({ vm }) => (
   <>
     <div className="goods-list__content-wrapper">
-      {GoodListData.map((goodListItem, i) => (
-        <GoodListItem
-          key={i}
-          src={goodListItem.image}
-          srcSet={goodListItem.srcSet}
-          href={goodListItem.href}
-          contentTitle={goodListItem.name}
-          capacity={goodListItem.volume}
-          price={goodListItem.price}
-        />
+      {vm.goodVMs.map((goodListItemVM, i) => (
+        <GoodListItem vm={goodListItemVM.good} key={i} />
       ))}
     </div>
     <style jsx>

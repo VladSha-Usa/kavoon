@@ -2,20 +2,19 @@ import React from 'react';
 import ShopBasketAmount from './shopBasketAmount';
 import RespScreenWidth from '../common/mediaConst';
 
-import ShopBasketAmountVM from '../../data/viewModels/basket/ShopBasketAmountVM';
-
-const ShopStatus = () => (
+const ShopStatus = ({ vm }) => (
   <>
     <div className="status-wrapper">
       <div className="status-showed">
         <span className="showed-text">Показано:</span>
         <span className="showed-amount">
-          8<span className="showed-amount-text">товарів</span>
+          {vm.countGoodsInShop}
+          <span className="showed-amount-text">товарів</span>
         </span>
       </div>
       <div className="status-added">
         <span className="added-text">Додані:</span>
-        <ShopBasketAmount vm={ShopBasketAmountVM()} />
+        <ShopBasketAmount vm={vm.shopBasketAmountVM} />
       </div>
     </div>
     <style jsx>

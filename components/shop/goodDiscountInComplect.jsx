@@ -1,16 +1,16 @@
 import RespScreenWidth from '../common/mediaConst';
 
-const GoodDiscountInComplect = ({ content }) => (
+const GoodDiscountInComplect = ({ vm }) => (
   <>
     <div className="good-wrapper">
-      <img src={content.src} srcSet={content.srcSet} className="good-img" />
+      <img src={vm.src} srcSet={vm.srcSet} className="good-img" />
       <div className="good-main-content">
-        <span className="title">{content.name}</span>
+        <span className="title">{vm.name}</span>
         <span className="volume">
           Об'єм:
-          {content.volume}л
+          {vm.volume}л
         </span>
-        <span className="volume">{content.price} грн</span>
+        <span className="volume">{vm.price} грн</span>
       </div>
     </div>
     <style jsx>
