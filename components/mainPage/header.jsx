@@ -69,9 +69,7 @@ const Header = () => {
         </div>
         <div className={menuClass}>
           <nav className="menu-link" style={{ marginLeft: 'auto' }}>
-            <a href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua">
-              Магазин
-            </a>
+            <a href="/shop">Магазин</a>
           </nav>
           <nav
             className="menu-link"
