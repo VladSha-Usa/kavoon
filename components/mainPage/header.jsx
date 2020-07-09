@@ -69,9 +69,7 @@ const Header = () => {
         </div>
         <div className={menuClass}>
           <nav className="menu-link" style={{ marginLeft: 'auto' }}>
-            <a href="/shop">
-              Магазин
-            </a>
+            <a href="/shop">Магазин</a>
           </nav>
           <nav
             className="menu-link"
