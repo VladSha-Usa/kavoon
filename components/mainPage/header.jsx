@@ -50,7 +50,7 @@ const Header = () => {
       <header className={navbarClass}>
         <div className={bannerClass}>
           <nav>
-            <a href="#home">
+            <a href="/">
               <img
                 src={
                   mobileLogo
