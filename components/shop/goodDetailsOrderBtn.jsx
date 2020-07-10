@@ -12,7 +12,7 @@ const GoodDetailsOrderBtn = ({ vm }) => (
         vm.addGood();
       }}
     >
-      Зробити замовлення
+      Додати в корзину
     </button>
     <style jsx>
       {`
