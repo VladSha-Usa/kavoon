@@ -75,7 +75,7 @@ const Header = () => {
             className="menu-link"
             style={{ marginLeft: '40px', marginRight: '40px' }}
           >
-            <a href="#pathfinder">Путівник</a>
+            <span className="disabled">Путівник</span>
           </nav>
           <nav className="menu-link" style={{ marginRight: 'auto' }}>
             <span className="disabled">Блог</span>
@@ -165,8 +165,6 @@ const Header = () => {
             line-height: normal;
             letter-spacing: 0.79px;
             color: #061434;
-          }
-          .menu-link {
           }
           a:link {
             text-decoration: none;
