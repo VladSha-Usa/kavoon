@@ -56,11 +56,13 @@ const Home = () => {
           <Content />
         </div>
       </div>
-      <div id="pathfinder" className="bg-block-2">
-        <div className="page-content">
-          <Pathfinder />{' '}
+      {false && (
+        <div id="pathfinder" className="bg-block-2">
+          <div className="page-content">
+            <Pathfinder />{' '}
+          </div>
         </div>
-      </div>
+      )}
       <div className="footer-background">
         <div id="footer" className="page-content">
           <Footer />{' '}

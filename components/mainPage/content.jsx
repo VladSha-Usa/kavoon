@@ -25,7 +25,7 @@ const Content = ({ classPrefix }) => {
           <BlockItem
             src="/img/image.jpg"
             srcSet="/img/image@2x.jpg 2x, img/image@3x.jpg 3x"
-            enabled
+            enabled={false}
             type="pathfinder"
             title="КУДИ ПОЇХАТИ?"
             button="СЮДИ"
