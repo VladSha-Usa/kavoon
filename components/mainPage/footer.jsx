@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="footer-navbar">
         <div className="footer-banner">
           <nav>
-            <a href="#">
+            <a href="#" className="footer-banner-link">
               <img
                 src="/img/logo-footer.png"
                 srcSet="/img/logo-footer@2x.png 2x, /img/logo-footer@3x.png 3x"
@@ -29,18 +29,18 @@ const Footer = () => (
           </nav>
           <nav style={{ marginLeft: '5px', marginRight: '5px' }}>
             <ImageLink
-              href="http://instagram.com/flowers__way/"
-              src="/img/instagram-footer-icon.svg"
-              hoverSrc="/img/instagram-hover.svg"
+              href="https://www.facebook.com/ovchynnikova.nadiia/"
+              src="/img/facebook-footer-icon.svg"
+              hoverSrc="/img/facebook-hover.svg"
               imgWidth="40px"
               imgHeight="40px"
             />
           </nav>
           <nav style={{ marginLeft: '5px' }}>
             <ImageLink
-              href="https://www.facebook.com/ovchynnikova.nadiia/"
-              src="/img/facebook-footer-icon.svg"
-              hoverSrc="/img/facebook-hover.svg"
+              href="http://instagram.com/flowers__way/"
+              src="/img/instagram-footer-icon.svg"
+              hoverSrc="/img/instagram-hover.svg"
               imgWidth="40px"
               imgHeight="40px"
             />
@@ -60,6 +60,10 @@ const Footer = () => (
         .footer-navbar {
           padding-top: 40px;
           display: flex;
+        }
+        .footer-banner-link {
+          display: flex;
+          justify-content: center;
         }
         .footer-copyright {
           font-family: Montserrat;
