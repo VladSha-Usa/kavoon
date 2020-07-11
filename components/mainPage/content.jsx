@@ -44,7 +44,7 @@ const Content = ({ classPrefix }) => {
               type="shop"
               title="ЯКЕ СПОРЯДЖЕННЯ?"
               button="ТУТ МОЖНА ПРИДБАТИ"
-              href="https://www.facebook.com/pg/ovchynnikova.nadiia/shop/?ref=flowersway.com.ua"
+              href="/shop"
               icoButton="/img/shop-button-ico.svg"
             >
               Велоспорядження
