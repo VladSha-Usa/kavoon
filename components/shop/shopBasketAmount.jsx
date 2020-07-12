@@ -6,10 +6,12 @@ const ShopBasketAmount = ({ vm }) => {
   const displayAmount = countValue <= 0 ? 'none' : 'flex';
   return (
     <>
-      <div className="added-goods-amount">
-        <img src="/img/shop-icon.svg" className="added-goods-amount-img" />
-        <span className="added-goods-amount-num">{countValue}</span>
-      </div>
+      <a href={vm.href}>
+        <div className="added-goods-amount">
+          <img src="/img/shop-icon.svg" className="added-goods-amount-img" />
+          <span className="added-goods-amount-num">{countValue}</span>
+        </div>
+      </a>
       <style jsx>
         {`
           .added-goods-amount {
