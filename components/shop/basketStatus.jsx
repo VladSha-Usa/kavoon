@@ -16,7 +16,6 @@ const BasketStatus = ({ vm }) => (
         .status-wrapper {
           display: flex;
           justify-content: space-between;
-          align-items: center;
           font-family: Montserrat;
         }
         .added-goods-text {
