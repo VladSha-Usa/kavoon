@@ -14,7 +14,6 @@ const BreadcrumbsNav = ({ vm }) => (
       {`
         .breadcrumbs-wrapper {
           display: flex;
-          align-items: center;
           list-style-type: none;
           padding-inline-start: 0px;
         }
@@ -50,11 +49,8 @@ const BreadcrumbsNav = ({ vm }) => (
         }
         @media only screen and (max-width: ${RespScreenWidth.screenWidthMobile}px) {
           .breadcrumbs-wrapper {
-            align-items: flex-start;
             margin-block-end: 27px;
             flex-wrap: wrap;
-          }
-          .breadcrumbs-item:first-child {
           }
           .breadcrumbs-item {
             text-align: center;
