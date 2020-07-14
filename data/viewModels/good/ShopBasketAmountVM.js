@@ -1,6 +1,6 @@
 import basketModel from '../../logic/basket';
 
-export const createShopBasketAmount = () => ({
+export default () => ({
   count: basketModel.count,
   href: '/shop/basket',
 });

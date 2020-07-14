@@ -1,4 +1,4 @@
-import shopBasketAmountVM from './ShopBasketAmountVM';
+import shopBasketAmountVM from '../good/ShopBasketAmountVM';
 import goodsData from '../goods';
 
 export default () => ({
