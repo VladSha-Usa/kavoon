@@ -1,7 +1,7 @@
-import shopBasketAmountVM from './ShopBasketAmountVM';
 import { createBreadcrumbsForBasket } from '../good/BreadcrumbsNavVM';
+import { createShopBasketAmount } from '../good/ShopBasketAmountVM';
 
 export default () => ({
   breadcrumbsNavVM: createBreadcrumbsForBasket(),
-  shopBasketAmountVM: shopBasketAmountVM(),
+  shopBasketAmountVM: createShopBasketAmount(),
 });
