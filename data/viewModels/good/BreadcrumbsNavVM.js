@@ -5,7 +5,7 @@ const createBreadcrumbsForGood = (name) => ({
       src: '/shop',
     },
     {
-      name: name,
+      name,
       src: '#',
     },
   ],
