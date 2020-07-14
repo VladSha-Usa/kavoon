@@ -8,6 +8,38 @@ const triangularBicycleFirstAidKitFrame = {
   image: '/shop/Trykutna_veloaptechka.jpg',
   srcSet:
     '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+  gallery: [
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+    {
+      src: '/shop/Trykutna_veloaptechka.jpg',
+      srcSet:
+        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+    },
+  ],
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
