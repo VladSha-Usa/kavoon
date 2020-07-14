@@ -8,7 +8,6 @@ const triangularBicycleFirstAidKitFrame = {
   image: '/shop/Trykutna_veloaptechka.jpg',
   srcSet:
     '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -21,7 +20,6 @@ const bagBigFork = {
   image: '/shop/Sumka-tubus_na_vylku_10l.jpg',
   srcSet:
     '/shop/Sumka-tubus_na_vylku_10l@2x.jpg 2x, /shop/Sumka-tubus_na_vylku_10l@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford, RainBlaBla],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -34,7 +32,6 @@ const bananaBagSmallFork = {
   image: '/shop/Sumka-tubus_na_vylku_6l.jpg',
   srcSet:
     '/shop/Sumka-tubus_na_vylku_6l@2x.jpg 2x, /shop/Sumka-tubus_na_vylku_6l@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -47,7 +44,6 @@ const bigBagTubeOnWheel = {
   image: '/shop/Sumka-tubus_na_kermo_6l.jpg',
   srcSet:
     '/shop/Sumka-tubus_na_kermo_6l@2x.jpg 2x, /shop/Sumka-tubus_na_kermo_6l@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -60,7 +56,6 @@ const smallBagTubeOnWheel = {
   image: '/shop/Sumka-tubus_na_kermo_4l.jpg',
   srcSet:
     '/shop/Sumka-tubus_na_kermo_4l@2x.jpg 2x, /shop/Sumka-tubus_na_kermo_4l@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -72,7 +67,6 @@ const seatBag = {
   price: 1150,
   image: '/shop/Sumka_pidsedilna.jpg',
   srcSet: '/shop/Sumka_pidsedilna@2x.jpg 2x, /shop/Sumka_pidsedilna@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -85,7 +79,6 @@ const innerFrameBag = {
   image: '/shop/Sumka_trykutna_vnytriramna.jpg',
   srcSet:
     '/shop/Sumka_trykutna_vnytriramna@2x.jpg 2x, /shop/Sumka_trykutna_vnytriramna@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };
@@ -97,7 +90,6 @@ const hamster = {
   price: 450,
   image: '/shop/Homjak.jpg',
   srcSet: '/shop/Homjak@2x.jpg 2x, /shop/Homjak@3x.jpg 3x',
-  href: 'shop/good1',
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };

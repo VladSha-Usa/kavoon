@@ -7,7 +7,7 @@ const Goods = goodsData.map((goodData) => {
     price: goodData.price,
     image: goodData.image,
     srcSet: goodData.srcSet,
-    href: goodData.href,
+    href: `shop/${goodData.id}`,
   };
 });
 
