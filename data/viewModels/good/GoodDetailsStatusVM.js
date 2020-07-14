@@ -1,9 +1,9 @@
-import breadcrumbsNavVM from './BreadcrumbsNavVM';
+import { createBreadcrumbsForGood } from './BreadcrumbsNavVM';
 import shopBasketAmountVM from './ShopBasketAmountVM';
 import statusOfAddingGoodToBasketVM from './StatusOfAddingGoodToBasketVM';
 
 export default (goodData) => ({
-  breadcrumbsNavVM: breadcrumbsNavVM(goodData.breadcrumbs),
+  breadcrumbsNavVM: createBreadcrumbsForGood(goodData.name),
   shopBasketAmountVM: shopBasketAmountVM(),
   statusOfAddingGoodToBasketVM: statusOfAddingGoodToBasketVM(goodData.name),
 });
