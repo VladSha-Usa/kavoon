@@ -9,6 +9,16 @@ const triangularBicycleFirstAidKitFrame = {
   srcSet:
     '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
   href: 'shop/good1',
+  breadcrumbs: [
+    {
+      name: 'Список товарів',
+      src: '/shop',
+    },
+    {
+      name: 'Трикутна велоаптечка на раму 0.5л',
+      src: '#',
+    },
+  ],
   fabrics: [Kordura, Oxford],
   colors: ['main', 'secondary', 'additional'],
 };

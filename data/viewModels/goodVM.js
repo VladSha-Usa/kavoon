@@ -17,7 +17,10 @@ const factory = (good) => {
       srcSet: good.srcSet,
     },
     volume: good.volume,
-    goodDetailsStatusVM: goodDetailsStatusVM(),
+    goodDetailsStatusVM: goodDetailsStatusVM({
+      breadcrumbs: good.breadcrumbs,
+      name: good.name,
+    }),
     goodDetailsChooseVM: goodDetailsChooseVM(),
     goodDetailsSpecificationVM: goodDetailsSpecificationVM(),
     goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
