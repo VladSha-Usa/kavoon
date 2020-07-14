@@ -1,15 +1,15 @@
-const createBreadcrumbsForGood = ( name ) => {
-  return {
-    breadcrumbs: [
-      {
-
-      },
-      {
-        
-      }
-    ]
-  }
-};
+const createBreadcrumbsForGood = (name) => ({
+  breadcrumbs: [
+    {
+      name: 'Список товарів',
+      src: '/shop',
+    },
+    {
+      name: name,
+      src: '#',
+    },
+  ],
+});
 
 const createBreadcrumbsForBasket = () => ({
   breadcrumbs: [
@@ -19,7 +19,3 @@ const createBreadcrumbsForBasket = () => ({
 });
 
 export { createBreadcrumbsForGood, createBreadcrumbsForBasket };
-
-export default (goodData) => ({
-  breadcrumbs: goodData,
-});
