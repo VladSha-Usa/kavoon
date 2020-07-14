@@ -1,12 +1,21 @@
-export default () => ({
+const createBreadcrumbsForGood = (name) => ({
   breadcrumbs: [
     {
       name: 'Список товарів',
       src: '/shop',
     },
     {
-      name: 'Сумка-тубус на вилку 10л',
+      name,
       src: '#',
     },
   ],
 });
+
+const createBreadcrumbsForBasket = () => ({
+  breadcrumbs: [
+    { name: 'Список товарів', src: '/shop' },
+    { name: 'Твій кошик', src: '#' },
+  ],
+});
+
+export { createBreadcrumbsForGood, createBreadcrumbsForBasket };

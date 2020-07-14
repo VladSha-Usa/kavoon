@@ -1,8 +1,8 @@
 import basketModel from '../../logic/basket';
 
-export default () => ({
+export default (name) => ({
   statusOfAdding: basketModel.statusOfAdding,
-  name: 'Сумка-тубус на вилку',
+  name,
   statusOfEmptyBasket: basketModel.statusOfEmptyBasket,
   count: basketModel.count,
 });
