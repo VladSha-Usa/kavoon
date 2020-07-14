@@ -20,8 +20,7 @@ const GoodPage = ({ vm }) => {
   });
   vm.colectDataOfGood({
     count: 1,
-    image: vm.image,
-    srcSet: vm.image,
+    picture: vm.mainPicture,
     name: vm.name,
     volume: vm.volume,
     price: vm.price,

@@ -1,10 +1,10 @@
 import basketModel from '../logic/basket';
-import goodDetailsStatusVM from './good1/GoodDetailsStatusVM';
-import goodDetailsChooseVM from './good1/GoodDetailsChooseVM';
-import goodDetailsSpecificationVM from './good1/GoodDetailsSpecificationVM';
-import goodDetailsThingsTookVM from './good1/GoodDetailsThingsTookVM';
-import goodDetailsImgGalleryVM from './good1/GoodDetailsImgGalleryVM';
-import goodDetailsSeeMoreVM from './good1/GoodDetailsSeeMoreVM';
+import goodDetailsStatusVM from './good/GoodDetailsStatusVM';
+import goodDetailsChooseVM from './good/GoodDetailsChooseVM';
+import goodDetailsSpecificationVM from './good/GoodDetailsSpecificationVM';
+import goodDetailsThingsTookVM from './good/GoodDetailsThingsTookVM';
+import goodDetailsImgGalleryVM from './good/GoodDetailsImgGalleryVM';
+import goodDetailsSeeMoreVM from './good/GoodDetailsSeeMoreVM';
 
 const factory = (good) => {
   const goodVM = {
@@ -12,8 +12,10 @@ const factory = (good) => {
     init: basketModel.init,
     name: good.name,
     price: good.price,
-    image: good.image,
-    srcSet: good.srcSet,
+    mainPicture: {
+      src: good.image,
+      srcSet: good.srcSet,
+    },
     volume: good.volume,
     goodDetailsStatusVM: goodDetailsStatusVM(),
     goodDetailsChooseVM: goodDetailsChooseVM(),

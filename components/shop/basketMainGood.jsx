@@ -61,8 +61,8 @@ const BasketMainGood = ({ vm }) => {
       <div className="main-good-wrapper">
         <img
           className="main-good-img"
-          src={vm.good.image}
-          srcSet={vm.good.srcSet}
+          src={vm.good.picture.src}
+          srcSet={vm.good.picture.srcSet}
         />
         <div className="main-good-info">
           <div className="main-good-name">{vm.good.name}.</div>
