@@ -1,5 +1,4 @@
 import basketModel from '../../logic/basket';
-import { triangularBicycleFirstAidKitFrame } from '../../data/goods';
 import goodDetailsWizardTitleVM from './GoodDetailsWizardTitleVM';
 import goodDetailsWizardPickerVM from './GoodDetailsWizardPickerVM';
 import goodDetailsWizardAddOtherVM from './GoodDetailsWizardAddOtherVM';
@@ -7,7 +6,7 @@ import goodDetailsOrderBtnVM from './GoodDetailsOrderBtnVM';
 
 export default (good) => ({
   colectDataOfGood: basketModel.colectDataOfGood,
-  good: triangularBicycleFirstAidKitFrame,
+  good,
   goodDetailsWizardTitleVM: goodDetailsWizardTitleVM({
     name: good.name,
     price: good.price,

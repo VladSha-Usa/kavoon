@@ -15,29 +15,29 @@ const triangularBicycleFirstAidKitFrame = {
         '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
     },
     {
-      src: '/shop/Trykutna_veloaptechka.jpg',
+      src: 'https://via.placeholder.com/255x230.jpg?text=No+Image',
       srcSet:
-        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+        'https://via.placeholder.com/510x460@2x.jpg?text=No+Image 2x, https://via.placeholder.com/765x690@3x.jpg?text=No+Image  3x',
     },
     {
-      src: '/shop/Trykutna_veloaptechka.jpg',
+      src: 'https://via.placeholder.com/255x230.jpg?text=No+Image',
       srcSet:
-        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+        'https://via.placeholder.com/510x460@2x.jpg?text=No+Image 2x, https://via.placeholder.com/765x690@3x.jpg?text=No+Image  3x',
     },
     {
-      src: '/shop/Trykutna_veloaptechka.jpg',
+      src: 'https://via.placeholder.com/255x230.jpg?text=No+Image',
       srcSet:
-        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+        'https://via.placeholder.com/510x460@2x.jpg?text=No+Image 2x, https://via.placeholder.com/765x690@3x.jpg?text=No+Image  3x',
     },
     {
-      src: '/shop/Trykutna_veloaptechka.jpg',
+      src: 'https://via.placeholder.com/255x230.jpg?text=No+Image',
       srcSet:
-        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+        'https://via.placeholder.com/510x460@2x.jpg?text=No+Image 2x, https://via.placeholder.com/765x690@3x.jpg?text=No+Image  3x',
     },
     {
-      src: '/shop/Trykutna_veloaptechka.jpg',
+      src: 'https://via.placeholder.com/255x230.jpg?text=No+Image',
       srcSet:
-        '/shop/Trykutna_veloaptechka@2x.jpg 2x, /shop/Trykutna_veloaptechka@3x.jpg 3x',
+        'https://via.placeholder.com/510x460@2x.jpg?text=No+Image 2x, https://via.placeholder.com/765x690@3x.jpg?text=No+Image  3x',
     },
   ],
   fabrics: [Kordura, Oxford],
