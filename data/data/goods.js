@@ -4,6 +4,15 @@ const triangularBicycleFirstAidKitFrame = {
   id: 'tringular-bicycle-first-aid-kit-frame',
   name: 'Трикутна велоаптечка\nна раму',
   volume: 0.5,
+  height: 40,
+  materials: 'тканина оксфорд, водовідштовхуюча блискавка, фурнітура WJ.',
+  description:
+    'В середині є додаткова кишенька.\nВ клапані - відділення для дрібничок.\nВ комплекті є лямка через плечо.\nПотрібно додаткове кріплення. ',
+  inAddition: [
+    '- можливі різні варіації з кольором\n',
+    '- різні комбінації сумок\n',
+    '- наявність рейнкавера\n',
+  ],
   price: 400,
   image: '/shop/Trykutna_veloaptechka.jpg',
   srcSet:
