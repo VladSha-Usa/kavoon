@@ -24,7 +24,7 @@ const factory = (good) => {
     goodDetailsChooseVM: goodDetailsChooseVM(good),
     goodDetailsSpecificationVM: goodDetailsSpecificationVM(),
     goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
-    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(),
+    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(good.detailsImgGallery),
     goodDetailsSeeMoreVM: goodDetailsSeeMoreVM(),
   };
   return goodVM;
