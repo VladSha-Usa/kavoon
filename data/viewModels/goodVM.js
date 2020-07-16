@@ -21,7 +21,7 @@ const factory = (good) => {
       breadcrumbs: good.breadcrumbs,
       name: good.name,
     }),
-    goodDetailsChooseVM: goodDetailsChooseVM(),
+    goodDetailsChooseVM: goodDetailsChooseVM(good),
     goodDetailsSpecificationVM: goodDetailsSpecificationVM(),
     goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
     goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(),
