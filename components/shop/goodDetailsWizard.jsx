@@ -23,7 +23,7 @@ function extractAction(dispatch, actionType) {
 }
 
 const GoodDetailsWizard = ({ vm }) => {
-  const { fabrics } = vm.good;
+  const fabrics = vm.fabrics;
 
   const [state, dispatch] = useReducer(fabricReducer, {
     fabric: fabrics[0],
