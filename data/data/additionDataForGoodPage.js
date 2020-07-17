@@ -1,4 +1,4 @@
-export const additionDataForGoodPage = {
+const additionDataForGoodPage = {
   takenThings: {
     largeImg: {
       src: '/img/good-to-complect-img/bike-transparent-2.jpg',
@@ -146,3 +146,5 @@ export const additionDataForGoodPage = {
     },
   ],
 };
+
+export default additionDataForGoodPage;
