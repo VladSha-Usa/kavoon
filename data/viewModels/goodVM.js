@@ -6,7 +6,7 @@ import goodDetailsThingsTookVM from './good/GoodDetailsThingsTookVM';
 import goodDetailsImgGalleryVM from './good/GoodDetailsImgGalleryVM';
 import goodDetailsSeeMoreVM from './good/GoodDetailsSeeMoreVM';
 
-const factory = (good) => {
+const factory = (good, Goods, detailsImgGallery) => {
   const goodVM = {
     colectDataOfGood: basketModel.colectDataOfGood,
     init: basketModel.init,
@@ -30,8 +30,8 @@ const factory = (good) => {
       inAddition: good.inAddition,
     }),
     goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
-    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(good.detailsImgGallery),
-    goodDetailsSeeMoreVM: goodDetailsSeeMoreVM(),
+    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(detailsImgGallery),
+    goodDetailsSeeMoreVM: goodDetailsSeeMoreVM(Goods),
   };
   return goodVM;
 };

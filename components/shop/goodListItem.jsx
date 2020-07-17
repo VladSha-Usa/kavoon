@@ -1,32 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RespScreenWidth from '../common/mediaConst';
 
 const GoodListItem = ({ vm }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  });
   return (
     <>
-      <a href={vm.href} target="_blank" className="case-field-link">
-        <div className="case-field">
-          <div className="img-wrapper">
-            <img
-              style={{ width: '255px', height: '230px' }}
-              src={vm.src}
-              srcSet={vm.srcSet}
-            />
-          </div>
-          <div className="title">{vm.name}</div>
-          <div className="description">
-            <div className="description-capacity">
-              <span className="description-capacity__intro">Об'єм:</span>
-              {vm.volume}
-              <span className="description-capacity__litres">л</span>
+      {isClient ? (
+        <a href={vm.href} target="_blank" className="case-field-link">
+          <div className="case-field">
+            <div className="img-wrapper">
+              <img
+                style={{ width: '255px', height: '230px' }}
+                src={vm.src}
+                srcSet={vm.srcSet}
+              />
             </div>
-            <div className="description-price">
-              {vm.price.toLocaleString({ useGrouping: true })}
-              <span className="description-price__currency">грн</span>
+            <div className="title">{vm.name}</div>
+            <div className="description">
+              <div className="description-capacity">
+                <span className="description-capacity__intro">Об'єм:</span>
+                {vm.volume}
+                <span className="description-capacity__litres">л</span>
+              </div>
+              <div className="description-price">
+                {vm.price.toLocaleString({ useGrouping: true })}
+                <span className="description-price__currency">грн</span>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      ) : null}
       <style jsx>
         {`
           .case-field {
