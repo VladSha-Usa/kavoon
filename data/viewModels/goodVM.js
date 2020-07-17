@@ -30,7 +30,7 @@ const factory = (good) => {
       inAddition: good.inAddition,
     }),
     goodDetailsThingsTookVM: goodDetailsThingsTookVM(),
-    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(),
+    goodDetailsImgGalleryVM: goodDetailsImgGalleryVM(good.detailsImgGallery),
     goodDetailsSeeMoreVM: goodDetailsSeeMoreVM(),
   };
   return goodVM;
