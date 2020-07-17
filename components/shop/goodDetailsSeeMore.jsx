@@ -6,7 +6,7 @@ const GoodDetailsSeeMore = ({ vm }) => (
     <div className="see-more-wrapper">
       <span className="more-title">Давай ще щось подивимось</span>
       <div className="goods-wrapper">
-        {vm.moreGoods.map((goodListItem, i) => (
+        {vm.map((goodListItem, i) => (
           <GoodListItem vm={goodListItem} key={i} />
         ))}
       </div>
